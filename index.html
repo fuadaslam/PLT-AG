@@ -8,7 +8,6 @@
   <title>PLT-AG</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
-
   <!-- Favicons -->
   <link rel="icon" href="assets/img/favicon.png">
   <!-- Google Fonts -->
@@ -49,9 +48,9 @@
     }
     
     /* On hover, add a black background color with a little bit see-through */
-    .prev:hover, .next:hover {
+    /* .prev:hover, .next:hover {
       background-color: rgba(0,0,0,0.8);
-    }
+    } */
     
     /* Caption text */
     .text {
@@ -65,14 +64,45 @@
     }
     
     /* Number text (1/3 etc) */
-    .numbertext {
-      color: #f2f2f2;
+    .produc-description-div {
+      color: #000;
       font-size: 12px;
-      padding: 8px 12px;
-      position: absolute;
-      top: 0;
+      padding-left: 80px;
+      padding-right: 50px;
+      padding-top: 10;
+      padding-bottom: 10;
+      width:40vw;
+      
+      /* position: relative;
+      top: 0; */
     }
-    
+    .product-heading {
+      font-size: 50px;
+      color: #000;
+    }
+    .image-div {
+      width:35vw;
+      text-align: center;
+      padding-left: 20px;
+      padding-right: 100px;
+      padding-top: 10;
+      padding-bottom: 10;
+      /* justify-content: center; */
+    }
+    .product-image {
+      height: 40vh;
+    }
+    .grid-container-test {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      /* background-color: #2196F3; */
+      padding: 10px;
+    }
+    .grid-item-test {
+      padding: 20px;
+      font-size: 30px;
+      text-align: left;
+    }
     /* The dots/bullets/indicators */
     .dot {
       cursor: pointer;
@@ -84,11 +114,11 @@
       display: inline-block;
       transition: background-color 0.6s ease;
     }
-    
+
     .activedot, .dot:hover {
       background-color: #717171;
     }
-    
+
     /* Fading animation */
     /* .fade {
       -webkit-animation-name: fade;
@@ -123,7 +153,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  
+  <!-- <link href="assets/css/Site.css" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -131,14 +161,11 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container-fluid">
-
       <div class="row justify-content-center">
         <div class="col-xl-9 d-flex align-items-center">
           <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
           <h1 class="logo mr-auto"><a href="index.html">PLT AG</a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
-          
-
           <nav class="nav-menu d-none d-lg-block">
             <ul>
               <li class="active"><a href="index.html">Home</a></li>
@@ -152,7 +179,6 @@
           <a href="https://formfacade.com/public/101909314369188760985/all/form/1FAIpQLSclgRlvbPtu8g7O2JarmsOiVXlaoD-pPbcMUFv23w45nNboMQ" class="get-started-btn scrollto">Start learning</a>
            </div>
       </div>
-
     </div>
   </header><!-- End Header -->
 
@@ -179,7 +205,6 @@
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
-
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
             <img src="assets/img/farming.jpg" class="img-fluid" alt="">
@@ -187,7 +212,7 @@
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
             <h3>About</h3>
             <p class="font-italic">
-<p><b>
+          <p><b>
               "The uneducated of the 21st century will not be those who cannot read and write but those who cannot learn, unlearn and relearn"
             </b>      </p>
             <p>
@@ -199,9 +224,11 @@
                   </p>
                   <p>
               The big amount of new information needs to be changed into knowledge and skills of students, not only during the formalized study which prepares them for their future professions but also in their life-long learning. This means it is necessary to change the contents of study, as well as to select carefully what is to be taught.
-         <b>     Ever find it hard, then we make it simple</b>
+                <b>    
+                   Ever find it hard, then we make it simple
+                </b>
             </p>
-<div>
+          <div>
             <a class="typeform-share button" href="https://formfacade.com/public/101909314369188760985/all/form/1FAIpQLSclgRlvbPtu8g7O2JarmsOiVXlaoD-pPbcMUFv23w45nNboMQ" data-mode="popup" style="display:inline-block;text-decoration:none;background-color:#267DDD;color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:50px;text-align:center;margin:0;height:50px;padding:0px 55px;border-radius:25px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;" data-hide-headers=true data-hide-footer=true data-submit-close-delay="3" target="_blank">Our Products </i></a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
           </div>
           <div>  <a class="typeform-share button" href="https://formfacade.com/public/101909314369188760985/all/form/1FAIpQLSfXUCWmTnskG26uVwNq5x7sFoiLP_Jf_nMhgMYRa85UfBAcsw" data-mode="popup" style="display:inline-block;text-decoration:none;background-color:#267DDD;color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:50px;text-align:center;margin:0;height:50px;padding:0px 55px;border-radius:25px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;" data-hide-headers=true data-hide-footer=true data-submit-close-delay="3" target="_blank">Connect Us</i></a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
@@ -220,7 +247,6 @@
 
         <div class="section-title">
           <h2>Our key commitments </h2>
-        
         </div>
 
         <div class="row">
@@ -303,7 +329,6 @@
           </div>
 
         </div>
-
       </div>
     </section><!-- End Services Section -->
 
@@ -370,19 +395,62 @@
 
 
         <div class="section-title">
-          <h2>Slides </h2>
+          <h2>Our Products </h2>
         
         </div>
 
         <div class="slideshow-container">
 
           <div class="mySlides ">
-            <div class="numbertext">1 / 3</div>
-            <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" style="width:100%">
-            <div class="text">Caption Text</div>
+            <!-- <div class="numbertext">gfdsgfsgfdgfdg fdgfdgdfh</div>
+            <div class="imageDiv"><img src="assets/img/folic-acid.png" ></div>
+            <div class="text">Caption Text</div> -->
+            <div class="grid-container-test">
+              <div class="grid-item-test">
+                <div class="produc-description-div">
+                  <h4 class="product-heading" style="color: black;">
+                    Amino Acid 30% SL
+                    <br/>
+                    <small>(Better growth &  quality of crop)</small>
+                  </h4>
+                <p style="font-size: 18px;">
+                   
+                    Increases size of fruit .immunity & cell elongation & division resulting in higher yields
+                    <br />
+                    1 ml per lit. of water(Spray)
+                </p>
+                </div>
+              </div>
+              <div class="grid-item-test"> <div class="image-div"><img class="product-image" src="assets/img/folic-acid.png" ></div></div>
+                
+            </div>
+          </div>
+          <div class="mySlides ">
+            <!-- <div class="numbertext">gfdsgfsgfdgfdg fdgfdgdfh</div>
+            <div class="imageDiv"><img src="assets/img/folic-acid.png" ></div>
+            <div class="text">Caption Text</div> -->
+            <div class="grid-container-test">
+              <div class="grid-item-test">
+                <div class="produc-description-div">
+                  <h4 class="product-heading" style="color: black;">
+                    Amino Acid 30% SL<br/><small >(Better growth &  quality of crop)</small>
+                  </h4>
+                    
+                
+                  <p style="font-size: 18px;">
+                   
+                    Increases size of fruit .immunity & cell elongation & division resulting in higher yields
+                    <br />
+                    1 ml per lit. of water(Spray)
+                </p>
+                </div>
+              </div>
+              <div class="grid-item-test"> <div class="image-div"><img class="product-image" src="assets/img/Amino%20AG.png" ></div></div>
+                
+            </div>
           </div>
           
-          <div class="mySlides ">
+          <!-- <div class="mySlides ">
             <div class="numbertext">2 / 3</div>
             <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" style="width:100%">
             <div class="text">Caption Two</div>
@@ -390,9 +458,9 @@
           
           <div class="mySlides ">
             <div class="numbertext">3 / 3</div>
-            <img src="https://www.w3schools.com/howto/img_lights_wide.jpg" style="width:100%">
+            <img src="assets/img/folic-acid.png" style="width:100%">
             <div class="text">Caption Three</div>
-          </div>
+          </div> -->
           
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
           <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -400,11 +468,11 @@
           </div>
           <br>
           
-          <div style="text-align:center">
+          <!-- <div style="text-align:center">
             <span class="dot" onclick="currentSlide(1)"></span> 
             <span class="dot" onclick="currentSlide(2)"></span> 
             <span class="dot" onclick="currentSlide(3)"></span> 
-          </div>
+          </div> -->
           
           <script>
           var slideIndex = 1;
@@ -445,6 +513,68 @@
         
       </div>
     </section>
+
+
+<!-- 
+    
+    <div class="hero">
+      <div class="content-wrapper ">
+          <div class="content">
+              <h1>
+                  RAW MATERIALS
+              </h1>
+              <p>
+                  Good raw materials are the life of any product. Hence, we use the best quality raw materials in each of our products. This helps us optimize resource effectiveness and results in potent yet affordable products. The range includes compounds that aide soil quality, plant growth, fertility and increased shelf life of vegetables and fruits.
+
+              </p>
+
+          </div>
+      </div>
+  </div>
+  <div class="tab-content">
+      <div class="content-wrapper">
+          <ul class="products">
+              <li title="click to view information">
+                  <div class="inner">
+                      <div class="text">
+                          <h3>
+                              Humic Acid 50%  Powder
+                              <small>(Root Growth & Plant growth) (Soil Conditioner)</small>
+                          </h3>
+                          <p>
+                              Use as a soil conditioner @  5 Kg/Acre.<br />
+                              Used for treatment to bentonite granules or can be packed as it is.
+                          </p>
+                      </div>
+                      <div class="image">
+                          <img src="assets/img/folic-acid.png" alt="Humic Acid 50%  Powder" />
+                      </div>
+                  </div>
+              </li>
+              
+              <li title="click to view information">
+                  <div class="inner">
+                      <div class="text">
+                          <h3>
+                              Folic Acid
+                              <small></small>
+                          </h3>
+                          <p>
+                              Folic Acid (also known as Vitamin B9)
+                              usually used for adding into stimulants and various formulation.
+                          </p>
+                      </div>
+                      <div class="image">
+                          <img src="assets/img/folic-acid.png" alt="Folic Acid" />
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      </div> -->
+
+  </div>
+
+</div>
 
   </main><!-- End #main -->
 
