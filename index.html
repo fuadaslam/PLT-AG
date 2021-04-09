@@ -21,6 +21,7 @@
     /* Slideshow container */
     .slideshow-container {
       max-width: 1000px;
+      height: 75vh;
       position: relative;
       margin: auto;
     }
@@ -29,7 +30,7 @@
     .prev, .next {
       cursor: pointer;
       position: absolute;
-      top: 50%;
+      top: 35%;
       width: auto;
       padding: 20px;
       margin-top: -19px;
@@ -205,7 +206,7 @@
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="aboutus" class="about">
+    <section id="about" class="about">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
@@ -448,6 +449,30 @@
               </div>
             </div>
           </div>
+          <div class="mySlides ">
+            <div class="row">
+              <div class="col-sm-12 col-lg-6 col-md-6 col-xs-12">
+                <div class="grid-item-test">
+                  <div class="produc-description-div">
+                    <h4 class="product-heading" style="color: rgb(255, 255, 255);">
+                      Black Dragon
+                      <br/>
+                      <small>(Fulvic / Seaweed/ Humic Combi)</small>
+                    </h4>
+                  <p style="font-size: 18px;color: rgb(255, 255, 255);">
+                    
+                    Growth of roots and overall development.
+                      <br />
+                      It rejuvenates & replenishes the soil with functional micro organisms.
+                  </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-lg-6 col-md-6 col-xs-12">
+                <div class="image-div"><img class="product-image" src="assets/img/apple-touch-icon.png" /></div>
+              </div>
+            </div>
+          </div>
 
 
 
@@ -508,8 +533,8 @@
             <div class="text">Caption Three</div>
           </div> -->
           
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          <a class="prev" onclick="showNext(-1)">&#10094;</a>
+          <a class="next" onclick="showNext(1)">&#10095;</a>
           
           </div>
           <br>
@@ -523,9 +548,16 @@
           <script>
           var slideIndex = 1;
           showSlides(slideIndex);
-          
-          function plusSlides(n) {
-            showSlides(slideIndex += n);
+          function showNext(n) {
+            
+            showSlidesTest(slideIndex +=n);
+            
+          }
+
+          function plusSlides() {
+            slideIndex ++ ;
+            showSlides(slideIndex);
+            
           }
           
           function currentSlide(n) {
@@ -535,19 +567,60 @@
           function showSlides(n) {
             var i;
             var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
+            // var dots = document.getElementsByClassName("dot");
             if (n > slides.length) {slideIndex = 1}    
             if (n < 1) {slideIndex = slides.length}
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";  
             }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" activedot", "");
-            }
+            
+            // for (i = 0; i < dots.length; i++) {
+            //     dots[i].className = dots[i].className.replace(" activedot", "");
+            // }
             slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " activedot";
+            // dots[slideIndex-1].className += " activedot";
+            setTimeout(plusSlides, 2000); 
           }
+
+          function showSlidesTest(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            // var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            // for (i = 0; i < dots.length; i++) {
+            //     dots[i].className = dots[i].className.replace(" activedot", "");
+            // }
+            slides[slideIndex-1].style.display = "block";  
+            // dots[slideIndex-1].className += " activedot";
+          }
+
           </script>
+          <!-- <script>
+            var slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+              setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+            </script> -->
           
 
 
