@@ -8,6 +8,7 @@
   <title>PLT-AG</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
+
   <!-- Favicons -->
   <link rel="icon" href="assets/img/favicon.png">
   <!-- Google Fonts -->
@@ -331,6 +332,9 @@ input[type=text], select, textarea {
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <!-- <link href="assets/css/Site.css" rel="stylesheet"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 
 <body >
@@ -491,7 +495,7 @@ input[type=text], select, textarea {
                     method:"post",
                     success:function (response){
                         alert("Form submitted successfully")
-                        window.location.reload()
+                        // window.location.reload()
                         //window.location.href="https://google.com"
                     },
                     error:function (err){
