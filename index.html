@@ -141,7 +141,173 @@
     /* On smaller screens, decrease text size */
     @media only screen and (max-width: 300px) {
       .prev, .next,.text {font-size: 11px}
+      /* .form-container{
+        width: 100%;
+        top: 10%;
+        left: 1px;
+        right: 100%;
+        transform: translate(-90%, -90%);
+        
+      } */
     }
+    
+
+    .show-btn{
+  /* background: #fff; */
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #3498db;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+ .form-container{
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* top: 50%;
+  right: -50%;
+  transform: translate(50%, -50%); */
+  display: none;
+  background: #fff;
+   width: 100%; 
+   padding: 30px;
+  padding-top: 50px; 
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+@media screen and (max-width: 600px) {
+  .form-container{
+    width: 100%;
+    top: 1%;
+    left: 1px;
+    width: 100%;
+    transform: translate(-0%, -90%);
+    
+  }
+}
+input[type="checkbox"]{
+  display: none;
+}
+
+#show:checked ~ .form-container{
+  display: block;
+}
+.form-container .close-btn{
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.form-container .close-btn:hover{
+  color: #3498db;
+}
+.form-container .text{
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+}
+.form-container form{
+  margin-top: -20px;
+  
+}
+.form-container form .data{
+  height: 45px;
+  width: 100%;
+  margin: 40px 0;
+}
+form .data label{
+  font-size: 18px;
+}
+form .data input{
+  
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  border: 1px solid silver;
+}
+form .data input:focus{
+  
+  border-color: #3498db;
+  border-bottom-width: 2px;
+}
+form .forgot-pass{
+  margin-top: -8px;
+}
+form .forgot-pass a{
+  color: #3498db;
+  text-decoration: none;
+}
+form .forgot-pass a:hover{
+  text-decoration: underline;
+}
+form .btn{
+  margin: 30px 0;
+  height: 45px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+form .btn .inner{
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  z-index: -1;
+  background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+  transition: all 0.4s;
+}
+form .btn:hover .inner{
+  left: 0;
+}
+form .btn button{
+  height: 100%;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+form .signup-link{
+  text-align: center;
+}
+form .signup-link a{
+  color: #3498db;
+  text-decoration: none;
+}
+form .signup-link a:hover{
+  text-decoration: underline;
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  .form-main {
+    padding-top: 30px;
+  }
     </style>
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -180,6 +346,9 @@
           </nav><!-- .nav-menu -->
 
           <a href="contactUs.html" class="get-started-btn scrollto">Contact Us</a>
+
+          <!-- <a href="#about"><label for="show" class="get-started-btn scrollto show-btn" ></label>Connect Us</label></a> -->
+
            </div>
       </div>
     </div>
@@ -209,39 +378,81 @@
     <section id="about" class="about">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
-            <!-- <img src="assets/img/farming.jpg" class="img-fluid" alt=""> -->
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
+          <div class="col-lg-6 content" data-aos="fade-right">
             <h3>About</h3>
             <p class="font-italic">
-          <p><b>
-            PLT AG is an enterprise of organic agricultural commodities production to sustain the ecosystems and people. A viable alternative production method for farmers, for better harvest, try PLT AG commodities. It is an innovative and new team together from the youngsters to develop the Integrated agricultural strategies.
-            </b>      </p>
-            <p>
-              To bolster the agricultural level in the state of Kerala through newly introduced methods. We are a unique board of experts on the agrarian procedures to strengthen the agriculturalist and growers.
-            </p>  
-                  
-            
-                 
-          <div style="margin-top: 30px;">
-            <!-- <a class="btn-get-started scrollto" href="https://formfacade.com/public/101909314369188760985/all/form/1FAIpQLSclgRlvbPtu8g7O2JarmsOiVXlaoD-pPbcMUFv23w45nNboMQ" data-mode="popup" target="_blank">Our Products </i></a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> -->
-            <a class="get-started-btn scrollto" style=" border-radius: 10px; "  href="Products.html"  >Our Products </a> 
-            <!-- <a class="typeform-share button" href="https://formfacade.com/public/101909314369188760985/all/form/1FAIpQLSfXUCWmTnskG26uVwNq5x7sFoiLP_Jf_nMhgMYRa85UfBAcsw" data-mode="popup" style="display:inline-block;text-decoration:none;background-color:#8CC63F;color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:50px;text-align:center;margin:0;height:50px;padding:0px 55px;border-radius:25px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;" data-hide-headers=true data-hide-footer=true data-submit-close-delay="3" target="_blank">Connect Us</i></a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> -->
-            <a class="get-started-btn scrollto" style=" border-radius: 10px; " href="contactUs.html" >Connect Us</i></a> 
-
+              <p>
+                <b>
+                  PLT AG is an enterprise of organic agricultural commodities production to sustain the ecosystems and people. A viable alternative production method for farmers, for better harvest, try PLT AG commodities. It is an innovative and new team together from the youngsters to develop the Integrated agricultural strategies.
+                </b>
+              </p>
+              <p>
+                To bolster the agricultural level in the state of Kerala through newly introduced methods. We are a unique board of experts on the agrarian procedures to strengthen the agriculturalist and growers.
+              </p>  
+              <div style="margin-top: 30px;">
+                <!-- <a class="btn-get-started scrollto" href="https://formfacade.com/public/101909314369188760985/all/form/1FAIpQLSclgRlvbPtu8g7O2JarmsOiVXlaoD-pPbcMUFv23w45nNboMQ" data-mode="popup" target="_blank">Our Products </i></a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> -->
+                <a class="get-started-btn scrollto" style=" border-radius: 10px; "  href="Products.html"  >Our Products </a> 
+                <!-- <a class="typeform-share button" href="https://formfacade.com/public/101909314369188760985/all/form/1FAIpQLSfXUCWmTnskG26uVwNq5x7sFoiLP_Jf_nMhgMYRa85UfBAcsw" data-mode="popup" style="display:inline-block;text-decoration:none;background-color:#8CC63F;color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:50px;text-align:center;margin:0;height:50px;padding:0px 55px;border-radius:25px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;" data-hide-headers=true data-hide-footer=true data-submit-close-delay="3" target="_blank">Connect Us</i></a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> -->
+                <!-- <a class="get-started-btn scrollto" style=" border-radius: 10px; " href="contactUs.html" >Connect Us</i></a>  -->
+                <label for="show" class="get-started-btn scrollto show-btn" style=" border-radius: 10px;">Connect Us</label>
+              </div>
+            </p>
           </div>
-          <div>  
-          </div>
+          <div class="col-lg-6" >
+          
+            <div class="form-main">
+              <input type="checkbox" id="show">
+              <div class="form-container">
+                <label for="show" class="btn-get-started scrollto close-btn" >close</label>
+                <form id="submit-form" action="">
+                  <label for="fname">First Name</label>
+                  <input type="text" id="fname" name="name" placeholder="Your name..">
+                  <label for="lname">Email</label>
+                  <input type="text" id="lname" name="email" placeholder="Your last name..">
+                  <label for="country">Country</label>
+                  <select id="country" name="color">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                  </select>
+                  <label for="subject">Subject</label>
+                  <textarea id="subject" name="message" placeholder="Write something.." style="height:100px"></textarea>
+               
+                    <input type="submit"  value="Submit">
+                </form>
+                <script>
+                  $("#submit-form").submit((e)=>{
+                      e.preventDefault()
+                      $.ajax({
+                          url:"https://script.google.com/macros/s/AKfycby1LPOGsKH1hIuZAWW8yeju9IptJXd6wsTMpdiMRVvjREcDqjdO6MkuRB_pRi_T3F_9ng/exec",
+                          data:$("#submit-form").serialize(),
+                          method:"post",
+                          success:function (response){
+                              alert("Form submitted successfully")
+                              window.location.reload()
+                              //window.location.href="https://google.com"
+                          },
+                          error:function (err){
+                              alert("Something Error")
+              
+                          }
+                      })
+                  })
+                </script>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
     </section><!-- End About Section -->
 
     
 
     <!-- ======= Services Section ======= -->
+    
+
+
+
     <section id="keycommit" class="services section-bg">
       <div class="container" data-aos="fade-up">
 
@@ -782,6 +993,8 @@
       </div>
     </div>
   </div>
+
+
   <script src="assets/js/whatsapp.js"></script>
 </body>
 
