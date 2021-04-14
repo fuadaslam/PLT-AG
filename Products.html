@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <meta charset="utf-8">
@@ -27,6 +27,45 @@
   <!-- <link href="assets/css/Site.css" rel="stylesheet"> -->
 </head>
 
+  <style>
+  .filterDiv {
+    /* float: left;
+    background-color: #2196F3;
+    color: #ffffff;
+    width: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin: 2px; */
+    display: none;
+  }
+
+  .show {
+    display: grid;
+  }
+
+  /* .container {
+    margin-top: 20px;
+    overflow: hidden;
+  } */
+
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: #ddd;
+  }
+
+  .btn.active {
+    background-color: #666;
+    color: white;
+  }
+  </style>
 <body>
 
   <!-- ======= Header ======= -->
@@ -39,11 +78,11 @@
           <!-- Uncomment below if you prefer to use an image logo -->
           <nav class="nav-menu d-none d-lg-block">
             <ul>
-              <li class="active"><a href="index.html">Home</a></li>
+              <li ><a href="index.html">Home</a></li>
               <li><a href="index.html#about">About</a></li>
               <li><a href="index.html#services">Services</a></li>
               <li><a href="index.html#features">Features</a></li>
-              <li><a href="index.html#products">Products</a></li>
+              <li ><a href="index.html#products">Products</a></li>
             </ul>
           </nav><!-- .nav-menu -->
 
@@ -56,55 +95,118 @@
   <!-- ======= Hero Section ======= -->
  
 
-  <main id="main">
-    <!-- ======= Services Section ======= -->
-    <section style="margin-top:5vw" id="products" class="services section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div  class="section-title">
-          <h2>Our Products </h2>
-        </div>
-
+  <section style="padding-top:8vw; background-repeat: no-repeat;
+  background-image: url('assets/img/leaf.jpg');
+  background-attachment: fixed;  min-height: 100vh; 
+  background-size: cover;" id="products" class="services section-bg" >
+    <div class="container" data-aos="fade-up">
+      <div id="myBtnContainer">
         <div class="row">
-          <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-2 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <button class="btn active" onclick="filterSelection('all')" style="padding: 2vw;"> Show all</button>
+
+          </div>
+          <div class="col-lg-2 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <button class="btn" onclick="filterSelection('Bio-Stimulants')"> Bio Stimulants</button>
+
+          </div>
+          <div class="col-lg-2 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <button class="btn" onclick="filterSelection('Bio-Fertilizers')"> Bio Fertilizers</button>
+
+          </div>
+          <div class="col-lg-2 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <button class="btn" onclick="filterSelection('Disease-Pest-Management')"> Disease & Pest Management</button>
+
+          </div>
+          <div class="col-lg-2 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <button class="btn" onclick="filterSelection('Others')"> Others</button>
+
+          </div>
+
+        </div>
+      </div> 
+
+      <div class="row" style="margin-top: 2vw;">
+        
+        <div style="margin-bottom: 1.5vw; " class=" col-lg-4 col-md-6 Bio-Stimulants filterDiv" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box iconbox-blue">
+           
+              <img  src="assets/img/folic-acid.png" style="height: 30vh;" />
+              
+            <h4><a href="">Foundation</a></h4>
+            <p>At Asset mentor we focus on leveraging fundamentals, by using real life examples</p>
+          </div>
+        </div>
+        
+        <div style="margin-bottom: 1.5vw;" class=" col-lg-4 col-md-6 Disease-Pest-Management filterDiv" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box iconbox-blue">
-              <!-- <div class="icon"> -->
-                <!-- <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
-                </svg> -->
-                <img  src="assets/img/folic-acid.png" />
-                <!-- <i class="bx bxl-dribbble"></i> -->
-              <!-- </div> -->
-              <h4><a href="">Foundation</a></h4>
+             
+                <img  src="assets/img/folic-acid.png" style="height: 30vh;" />
+               
+              <h4><a href="">typws</a></h4>
               <p>At Asset mentor we focus on leveraging fundamentals, by using real life examples</p>
             </div>
-          </div>
-          <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-blue">
-              <!-- <div class="icon"> -->
-                <!-- <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
-                </svg> -->
-                <img  src="assets/img/folic-acid.png" />
-                <!-- <i class="bx bxl-dribbble"></i> -->
-              <!-- </div> -->
-              <h4>Amino Acid 30% SL</h4>
-              <p>Increases size of fruit .immunity & cell elongation & division resulting in higher yields
-                <br />
-                1 ml per lit. of water(Spray)</p>
-            </div>
-          </div>
           
-
         </div>
+        <div style="margin-bottom: 1.5vw;" class=" col-lg-4 col-md-6 Disease-Pest-Management filterDiv" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box iconbox-blue">
+           
+              <img  src="assets/img/Amino AG.png" style="height: 30vh;" />
+             
+            <h4><a href="">fundamentals, by using real life</a></h4>
+            <p>At Asset mentor we focus on leveraging fundamentals, by using real life examples</p>
+          </div>
+        
       </div>
-    </section><!-- End Services Section -->
+      </div>
 
-  </div>
+      
+    </div>
+  </section>
+  <script>
+  filterSelection("all")
+  function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("filterDiv");
+    if (c == "all") c = "";
+    for (i = 0; i < x.length; i++) {
+      w3RemoveClass(x[i], "show");
+      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    }
+  }
 
-</div>
+  function w3AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+    }
+  }
 
-  </main><!-- End #main -->
+  function w3RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);     
+      }
+    }
+    element.className = arr1.join(" ");
+  }
+
+  // Add active class to the current button (highlight it)
+  var btnContainer = document.getElementById("myBtnContainer");
+  var btns = btnContainer.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function(){
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
+  </script>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -114,10 +216,13 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Techie</h3>
-           
-              <strong>Phone:</strong> +91 000000000<br>
-              <strong>Email:</strong> info.example@gmail.com<br>
+            <h3>Plant labz tech</h3>
+            Kozhikode road mukkam<br/>
+            Kerala<br/>
+            +91 85904 67224<br/>
+            Info@plantlabztech.com<br/>
+              <!-- <strong>Phone:</strong> +91 000000000<br>
+              <strong>Email:</strong> info.example@gmail.com<br> -->
             </p>
           </div>
  
@@ -137,12 +242,10 @@
           </div>
         </div>
         <div class="social-links text-center text-md-right pt-3 pt-md-0">
-         
-          <a href="https://www.facebook.com/Asset-Mentor-103145961439865/" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.instagram.com/asset_mentor/" class="instagram"><i class="bx bxl-instagram"></i></a>
-         
-          <a href="https://www.linkedin.com/company/assetmentor" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
+          <a href="" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="https://youtube.com/channel/UCoZmzerLLc5-c6vqY5pJJ9w" class="youtube"><i class="bx bxl-youtube"></i></a>
+          </div>
       </div>
 
     </div>
@@ -174,12 +277,12 @@
       <span></span>
     </div>
     <div id="floating-ligar" style="display: block;">
-      <a href="tel: 918606667369">
+      <a href="tel: 8590467224">
         <svg class="svg-inline--fa fa-phone fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="phone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M493.397 24.615l-104-23.997c-11.314-2.611-22.879 3.252-27.456 13.931l-48 111.997a24 24 0 0 0 6.862 28.029l60.617 49.596c-35.973 76.675-98.938 140.508-177.249 177.248l-49.596-60.616a24 24 0 0 0-28.029-6.862l-111.997 48C3.873 366.516-1.994 378.08.618 389.397l23.997 104C27.109 504.204 36.748 512 48 512c256.087 0 464-207.532 464-464 0-11.176-7.714-20.873-18.603-23.385z"></path></svg><!-- <i class="fas fa-phone"></i> -->	
       </a>
     </div>
     <div id="floating-whatsapp" style="display: block;">
-      <a href="https://api.whatsapp.com/send?phone=918606667369">
+      <a href="https://api.whatsapp.com/send?phone=918590467224">
         <svg class="svg-inline--fa fa-whatsapp fa-w-14" aria-hidden="true" data-prefix="fab" data-icon="whatsapp" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg><!-- <i class="fab fa-whatsapp"></i> -->
       </a>
     </div>
@@ -187,13 +290,13 @@
   </div>
   
   <div id="floating-ligar" style="display: none;">
-    <a href="tel: 011">
+    <a href="tel: 8590467224">
       <svg class="svg-inline--fa fa-phone fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="phone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M493.397 24.615l-104-23.997c-11.314-2.611-22.879 3.252-27.456 13.931l-48 111.997a24 24 0 0 0 6.862 28.029l60.617 49.596c-35.973 76.675-98.938 140.508-177.249 177.248l-49.596-60.616a24 24 0 0 0-28.029-6.862l-111.997 48C3.873 366.516-1.994 378.08.618 389.397l23.997 104C27.109 504.204 36.748 512 48 512c256.087 0 464-207.532 464-464 0-11.176-7.714-20.873-18.603-23.385z"></path></svg><!-- <i class="fas fa-phone"></i> -->	
     </a>
   </div>
 
   <div id="floating-whatsapp" style="display: none;">
-    <a href="https://api.whatsapp.com/send?phone=918606667369">
+    <a href="https://api.whatsapp.com/send?phone=918590467224">
       <svg class="svg-inline--fa fa-whatsapp fa-w-14" aria-hidden="true" data-prefix="fab" data-icon="whatsapp" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg><!-- <i class="fab fa-whatsapp"></i> -->
     </a>
   </div>
@@ -213,5 +316,4 @@
   </div>
   <script src="assets/js/whatsapp.js"></script>
 </body>
-
 </html>
