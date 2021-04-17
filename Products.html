@@ -55,6 +55,7 @@
     padding: 12px 16px;
     background-color: #f1f1f1;
     cursor: pointer;
+
   }
 
   .btn:hover {
@@ -62,8 +63,8 @@
   }
 
   .btn.active {
-    background-color: #666;
-    color: white;
+    background-color: #666; 
+     color: white;
   }
   </style>
 <body>
@@ -74,16 +75,16 @@
       <div class="row justify-content-center">
         <div class="col-xl-9 d-flex align-items-center">
           <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
-          <h1 class="logo mr-auto"><a href="index.html">PLT AG</a></h1>
+          <!-- <h1 class="logo mr-auto"><a href="index.html">PLT AG</a></h1> -->
           <!-- Uncomment below if you prefer to use an image logo -->
           <nav class="nav-menu d-none d-lg-block">
-            <ul>
+            <!-- <ul>
               <li ><a href="index.html">Home</a></li>
               <li><a href="index.html#about">About</a></li>
               <li><a href="index.html#services">Services</a></li>
               <li><a href="index.html#features">Features</a></li>
               <li ><a href="index.html#products">Products</a></li>
-            </ul>
+            </ul> -->
           </nav><!-- .nav-menu -->
 
           <a href="https://formfacade.com/public/101909314369188760985/all/form/1FAIpQLSclgRlvbPtu8g7O2JarmsOiVXlaoD-pPbcMUFv23w45nNboMQ" class="get-started-btn scrollto">Contact Us</a>
@@ -102,24 +103,36 @@
     <div class="container" data-aos="fade-up">
       <div id="myBtnContainer">
         <div class="row">
-          <div class="col-lg-2 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <button class="btn active" onclick="filterSelection('all')" style="padding: 2vw;"> Show all</button>
+          <!-- <div class="col-lg-3 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <button class="btn active"  onclick="filterSelection('all')" style="padding: 2vw;"> <div>
+              <img src="assets/img/leaf.jpg " style="height: 30vh;"/>
+            </div>Show all</button>
+
+          </div> -->
+          <div class="col-lg-3 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="btn active" style="padding: 2vw; " onclick="filterSelection('Bio-Stimulants')" style="position: relative;"> <div>
+              <img src="assets/img/leaf.jpg " style="height: 30vh; "/><div style=" text-align: center;">
+                Bio Stimulants
+              </div>
+            </div> </div>
 
           </div>
-          <div class="col-lg-2 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <button class="btn" onclick="filterSelection('Bio-Stimulants')"> Bio Stimulants</button>
+          <div class="col-lg-3 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <button class="btn" style="padding: 2vw; " onclick="filterSelection('Bio-Fertilizers')"><div>
+              <img src="assets/img/leaf.jpg " style="height: 30vh;"/>
+            </div> Bio Fertilizers</button>
 
           </div>
-          <div class="col-lg-2 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <button class="btn" onclick="filterSelection('Bio-Fertilizers')"> Bio Fertilizers</button>
+          <div class="col-lg-3 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <button class="btn" style="padding: 2vw; " onclick="filterSelection('Disease-Pest-Management')"> <div>
+              <img src="assets/img/leaf.jpg " style="height: 30vh;"/>
+            </div>Disease & Pest Management</button>
 
           </div>
-          <div class="col-lg-2 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <button class="btn" onclick="filterSelection('Disease-Pest-Management')"> Disease & Pest Management</button>
-
-          </div>
-          <div class="col-lg-2 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <button class="btn" onclick="filterSelection('Others')"> Others</button>
+          <div class="col-lg-3 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <button class="btn" style="padding: 2vw;" onclick="filterSelection('Others')"> <div>
+              <img src="assets/img/leaf.jpg " style="height: 30vh;"/>
+            </div>Others</button>
 
           </div>
 
@@ -164,7 +177,7 @@
     </div>
   </section>
   <script>
-  filterSelection("all")
+  filterSelection("Bio-Stimulants")
   function filterSelection(c) {
     var x, i;
     x = document.getElementsByClassName("filterDiv");
