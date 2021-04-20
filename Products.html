@@ -55,7 +55,7 @@
     padding: 12px 16px;
     background-color: #f1f1f1;
     cursor: pointer;
-
+    /* width:13vw; */
   }
 
   .btn:hover {
@@ -65,6 +65,19 @@
   .btn.active {
     background-color: #666; 
      color: white;
+  }
+  .buttonImage{
+    /* height: 15vh; */
+    position: relative;
+    width: 100%;
+  }
+  .buttonText{
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-weight: 700;
+    width: 70%;
+    text-shadow:2px 2px rgb(87, 35, 35);
   }
   </style>
 <body>
@@ -103,36 +116,50 @@
     <div class="container" data-aos="fade-up">
       <div id="myBtnContainer">
         <div class="row">
-          <!-- <div class="col-lg-3 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <button class="btn active"  onclick="filterSelection('all')" style="padding: 2vw;"> <div>
+          <!-- <div class="col-lg-3 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <button class="btn active"  onclick="filterSelection('all')" "> <div>
               <img src="assets/img/leaf.jpg " style="height: 30vh;"/>
             </div>Show all</button>
 
           </div> -->
-          <div class="col-lg-3 col-sm-4 col-xs-4 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="btn active" style="padding: 2vw; " onclick="filterSelection('Bio-Stimulants')" style="overflow: hidden;"> <div>
-              <img src="assets/img/folic-acid.png" style="height: 30vh; "/><div style=" text-align: center;">
+          <div class="col-lg-2 col-sm-4 col-6 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="text-align: center; margin-bottom: 10px;" >
+            <div class="btn active"   onclick="filterSelection('Bio-Stimulants')" style="overflow: hidden;"> <div>
+              <img src="assets/img/folic-acid.png"class="buttonImage"/>
+              <div  class="buttonText">
                 Bio Stimulants
               </div>
-            </div> </div>
+            </div> 
+          </div>
 
           </div>
-          <div class="col-lg-3 col-sm-4 col-xs-4 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="btn" style="padding: 2vw; " onclick="filterSelection('Bio-Fertilizers')"><div>
-              <img src="assets/img/Amino AG.png " style="height: 30vh;"/>
-            </div> Bio Fertilizers</div>
+          <div class="col-lg-2 col-sm-4 col-6 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="text-align: center; margin-bottom: 10px;">
+            <div class="btn"   onclick="filterSelection('Bio-Fertilizers')"><div>
+              <img src="assets/img/Amino AG.png "class="buttonImage"/>
+            </div> 
+            <div  class="buttonText">
+              Bio Fertilizers
+            </div>
+          </div>
 
           </div>
-          <div class="col-lg-3 col-sm-4 col-xs-4 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="btn" style="padding: 2vw; " onclick="filterSelection('Disease-Pest-Management')"> <div>
-              <img src="assets/img/leaf.jpg " style="height: 30vh;"/>
-            </div>Disease & Pest Management</div>
+          <div class="col-lg-2 col-sm-4 col-6 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="text-align: center; margin-bottom: 10px;">
+            <div class="btn"   onclick="filterSelection('Disease-Pest-Management')"> <div>
+              <img src="assets/img/leaf.jpg "class="buttonImage"/>
+            </div>
+            <div  class="buttonText">
+              Disease & Pest Management
+            </div>
+          </div>
 
           </div>
-          <div class="col-lg-3 col-sm-4 col-xs-4 col-md-2 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="btn" style="padding: 2vw;" onclick="filterSelection('Others')"> <div>
-              <img src="assets/img/leaf.jpg " style="height: 30vh;"/>
-            </div>Others</div>
+          <div class="col-lg-2 col-sm-4 col-6 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="text-align: center; margin-bottom: 10px;">
+            <div class="btn" onclick="filterSelection('Others')"> <div>
+              <img src="assets/img/leaf.jpg "class="buttonImage"/>
+            </div>
+            <div  class="buttonText">
+              Others
+            </div>
+          </div>
 
           </div>
 
