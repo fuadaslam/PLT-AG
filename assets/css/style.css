@@ -426,6 +426,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero .container, #hero .container-fluid {
   padding-top: 84px;
+  padding-bottom: 84px;
 }
 
 #hero h1 {
