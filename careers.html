@@ -348,11 +348,20 @@ input[type=text], select, textarea {
           <h1 class="logo mr-auto"></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <nav class="nav-menu d-none d-lg-block">
-            
+            <ul>
+              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/#about">About</a></li>
+              <li><a href="/#services">Services</a></li>
+              <!-- <li><a href="#features">Features</a></li> -->
+              <li><a href="/#products">Products</a></li>
+              <li><a href="consultancy.html">Consultancy</a></li>
+              <li><a href="education.html">Education</a></li>
+              <li><a href="careers.html">Careers</a></li>
+            </ul>
           </nav><!-- .nav-menu -->
 
           <!-- <a href="contactUs.html" class="get-started-btn scrollto">Contact Us</a> -->
-          <!-- <label for="show" class="get-started-btn scrollto show-btn" style=" border-radius: 10px;">Connect Us</label> -->
+          <label for="show" class="get-started-btn scrollto show-btn" style=" border-radius: 10px;">Connect Us</label>
           <!-- <a href="#about"><label for="show" class="get-started-btn scrollto show-btn" ></label>Connect Us</label></a> -->
 
            </div>
@@ -367,7 +376,7 @@ input[type=text], select, textarea {
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about" style="min-height: 70vh;">
+    <section id="careers" class="about" style="min-height: 70vh;">
       <div class="container">
         <div style="text-align: center;">
         <h3>
@@ -393,6 +402,51 @@ input[type=text], select, textarea {
 
   </main><!-- End #main -->
 
+<!-- ======= Cntact us form ======= -->
+<div class="form-back">
+  <div class="form-main" >
+    <input type="checkbox" id="show">
+    <div class="form-container">
+      <label for="show" class="btn-get-started scrollto close-btn" >close</label>
+      <form id="submit-form" action="">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="name" placeholder="Your name..">
+        <label for="lname">Email</label>
+        <input type="text" id="lname" name="email" placeholder="Your last name..">
+        <label for="country">Country</label>
+        <select id="country" name="color">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="message" placeholder="Write something.." style="height:100px"></textarea>
+     
+          <input type="submit"  value="Submit">
+      </form>
+      <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycby1LPOGsKH1hIuZAWW8yeju9IptJXd6wsTMpdiMRVvjREcDqjdO6MkuRB_pRi_T3F_9ng/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    // window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+      </script>
+    </div>
+  </div>
+</div>
+<!-- ======= Cntact us form end ======= -->
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
