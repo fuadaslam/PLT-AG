@@ -87,21 +87,27 @@
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-xl-9 d-flex align-items-center">
-          <a href="index.html" class="logo mr-auto"><img src="assets/img/pltaglog.png" alt="" class="img-fluid"></a>
-          <!-- <h1 class="logo mr-auto"><a href="index.html">PLT AG</a></h1> -->
+          <a href="/" class="logo mr-auto"><img src="assets/img/pltaglog.png" alt="" class="img-fluid"></a>
+          <h1 class="logo mr-auto"></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <nav class="nav-menu d-none d-lg-block">
-            <!-- <ul>
-              <li ><a href="index.html">Home</a></li>
-              <li><a href="index.html#about">About</a></li>
-              <li><a href="index.html#services">Services</a></li>
-              <li><a href="index.html#features">Features</a></li>
-              <li ><a href="index.html#products">Products</a></li>
-            </ul> -->
+            <ul>
+              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/#about">About</a></li>
+              <li><a href="/#services">Services</a></li>
+              <!-- <li><a href="#features">Features</a></li> -->
+              <li><a href="/#products">Products</a></li>
+              <li><a href="consultancy.html">Consultancy</a></li>
+              <li><a href="education.html">Education</a></li>
+              <li><a href="careers.html">Careers</a></li>
+            </ul>
           </nav><!-- .nav-menu -->
 
-          <a href="https://formfacade.com/public/101909314369188760985/all/form/1FAIpQLSclgRlvbPtu8g7O2JarmsOiVXlaoD-pPbcMUFv23w45nNboMQ" class="get-started-btn scrollto">Contact Us</a>
-           </div>
+          <!-- <a href="contactUs.html" class="get-started-btn scrollto">Contact Us</a> -->
+          <label for="show" class="get-started-btn get-started-btn-nav scrollto show-btn" style=" border-radius: 10px;">Connect Us</label>
+          <!-- <a href="#about"><label for="show" class="get-started-btn scrollto show-btn" ></label>Connect Us</label></a> -->
+
+        </div>
       </div>
     </div>
   </header><!-- End Header -->
@@ -249,6 +255,51 @@
   }
   </script>
 
+<!-- ======= Cntact us form ======= -->
+<div class="form-back">
+  <div class="form-main" >
+    <input type="checkbox" id="show">
+    <div class="form-container">
+      <label for="show" class="btn-get-started scrollto close-btn" >close</label>
+      <form id="submit-form" action="">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="name" placeholder="Your name..">
+        <label for="lname">Email</label>
+        <input type="text" id="lname" name="email" placeholder="Your last name..">
+        <label for="country">Country</label>
+        <select id="country" name="color">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="message" placeholder="Write something.." style="height:100px"></textarea>
+     
+          <input type="submit"  value="Submit">
+      </form>
+      <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycby1LPOGsKH1hIuZAWW8yeju9IptJXd6wsTMpdiMRVvjREcDqjdO6MkuRB_pRi_T3F_9ng/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    // window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+      </script>
+    </div>
+  </div>
+</div>
+<!-- ======= Cntact us form end ======= -->
   <!-- ======= Footer ======= -->
 <footer id="footer">
 
