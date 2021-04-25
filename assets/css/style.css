@@ -45,13 +45,13 @@ h1, h2, h3, h4, h5, h6 {
   width: 20pxx;
   height: 20px;
   border-radius: 4px;
-  background: #5846f9;
+  background: #06ac00;
   color: #fff;
   transition: all 0.4s;
 }
 
 .back-to-top i:hover {
-  background: #7b27d8;
+  background: #036610;
   color: #fff;
 }
 
@@ -1818,7 +1818,7 @@ input[type=text], select, textarea {
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: rgba(123, 39, 216, 0.8);
+  background: #05943c;
   color: #fff;
   transition: 0.3s;
   border-radius: 0 5px 5px 0;
@@ -1826,11 +1826,11 @@ input[type=text], select, textarea {
 }
 
 #footer .footer-newsletter form input[type="submit"]:hover {
-  background: #5846f9;
+  background: #05943c;
 }
 
 #footer .copyright-wrap {
-  border-top: 1px solid #8577fb;
+  border-top: 1px solid #05943c;
 }
 
 #footer .credits {
