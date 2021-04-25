@@ -12,13 +12,27 @@
   <!-- Favicons -->
   <link rel="icon" href="assets/img/favicon.png">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
   <style>
-    * {box-sizing: border-box}
-    body {font-family: Verdana, sans-serif; margin:0}
-    .mySlides {display: none}
-    img {vertical-align: middle;}
-    
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: Verdana, sans-serif;
+      margin: 0
+    }
+
+    .mySlides {
+      display: none
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
     /* Slideshow container */
     .slideshow-container {
       max-width: 1000px;
@@ -26,9 +40,10 @@
       position: relative;
       margin: auto;
     }
-    
+
     /* Next & previous buttons */
-    .prev, .next {
+    .prev,
+    .next {
       cursor: pointer;
       position: absolute;
       top: 35%;
@@ -42,18 +57,18 @@
       border-radius: 0 3px 3px 0;
       user-select: none;
     }
-    
+
     /* Position the "next button" to the right */
     .next {
       right: 0;
       border-radius: 3px 0 0 3px;
     }
-    
+
     /* On hover, add a black background color with a little bit see-through */
     /* .prev:hover, .next:hover {
       background-color: rgba(0,0,0,0.8);
     } */
-    
+
     /* Caption text */
     .text {
       color: #f2f2f2;
@@ -64,7 +79,7 @@
       width: 100%;
       text-align: center;
     }
-    
+
     /* Number text (1/3 etc) */
     .produc-description-div {
       color: #000;
@@ -74,14 +89,16 @@
       padding-top: 10;
       padding-bottom: 10;
       /* width:40vw; */
-      
+
       /* position: relative;
       top: 0; */
     }
+
     .product-heading {
       font-size: 50px;
       color: #000;
     }
+
     .image-div {
       /* width:35vw; */
       text-align: center;
@@ -91,20 +108,24 @@
       padding-bottom: 10;
       /* justify-content: center; */
     }
+
     .product-image {
       height: 40vh;
     }
+
     .grid-container-test {
       display: grid;
       grid-template-columns: auto auto auto;
       /* background-color: #2196F3; */
       padding: 10px;
     }
+
     .grid-item-test {
       padding: 20px;
       font-size: 30px;
       text-align: left;
     }
+
     /* The dots/bullets/indicators */
     .dot {
       cursor: pointer;
@@ -117,7 +138,8 @@
       transition: background-color 0.6s ease;
     }
 
-    .activedot, .dot:hover {
+    .activedot,
+    .dot:hover {
       background-color: #717171;
     }
 
@@ -128,20 +150,36 @@
       animation-name: fade;
       animation-duration: 5s;
     } */
-    
+
     @-webkit-keyframes fade {
-      from {opacity: .4} 
-      to {opacity: 1}
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
     }
-    
+
     @keyframes fade {
-      from {opacity: .4} 
-      to {opacity: 1}
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
     }
-    
+
     /* On smaller screens, decrease text size */
     @media only screen and (max-width: 300px) {
-      .prev, .next,.text {font-size: 11px}
+
+      .prev,
+      .next,
+      .text {
+        font-size: 11px
+      }
+
       /* .form-container{
         width: 100%;
         top: 10%;
@@ -151,175 +189,240 @@
         
       } */
     }
-    
 
-    .show-btn{
-  /* background: #fff; */
-  padding: 10px 20px;
-  font-size: 20px;
-  font-weight: 500;
-  color: #3498db;
-  cursor: pointer;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-}
- .form-container{
-  color: black;
-  /* position: absolute;
+
+    .show-btn {
+      /* background: #fff; */
+      padding: 10px 20px;
+      font-size: 20px;
+      font-weight: 500;
+      color: #3498db;
+      cursor: pointer;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container {
+      color: black;
+      /* position: absolute;
   top: 50%;
   left: 50%; */
-  /* transform: translate(-50%, 50%); */
-  /* top: 50%;
+      /* transform: translate(-50%, 50%); */
+      /* top: 50%;
   right: -50%;
   transform: translate(50%, -50%); */
-  display: none;
-  background: #fff;
-   width: 100%; 
-   padding: 30px;
-  padding-top: 50px; 
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-}
-.form-main {
-    /* padding-top: 30px; */
-    /* margin-left: 10%; */
-    /* box-shadow: 50px  100px rgba(0,0,0,0.6), 
+      display: none;
+      background: #fff;
+      width: 100%;
+      padding: 30px;
+      padding-top: 50px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-main {
+      /* padding-top: 30px; */
+      /* margin-left: 10%; */
+      /* box-shadow: 50px  100px rgba(0,0,0,0.6), 
    -50px  -100px rgba(0,0,0,0.6); */
-    position: fixed;
-    /* top: 0; */
-    left: 50%;
-    top: -25%;
-    width: 80%;
-    /* right: 15px; */
-    z-index: 9;
-    transform: translate(-50%, 50%);
-  }
-/* .form-back {
+      position: fixed;
+      /* top: 0; */
+      left: 50%;
+      top: -25%;
+      width: 80%;
+      /* right: 15px; */
+      z-index: 9;
+      transform: translate(-50%, 50%);
+    }
+
+    /* .form-back {
   background-color: black;
   width: 100vw;
   height: 100vh;
 } */
-input[type="checkbox"]{
-  display: none;
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    #show:checked~.form-container {
+      display: block;
+    }
+
+    .form-container .close-btn {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .form-container .close-btn:hover {
+      color: #3498db;
+    }
+
+    .form-container .text {
+      font-size: 35px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .form-container form {
+      margin-top: -20px;
+
+    }
+
+    .form-container form .data {
+      height: 45px;
+      width: 100%;
+      margin: 40px 0;
+    }
+
+    form .data label {
+      font-size: 18px;
+    }
+
+    form .data input {
+
+      height: 100%;
+      width: 100%;
+      padding-left: 10px;
+      font-size: 17px;
+      border: 1px solid silver;
+    }
+
+    form .data input:focus {
+
+      border-color: #3498db;
+      border-bottom-width: 2px;
+    }
+
+    form .forgot-pass {
+      margin-top: -8px;
+    }
+
+    form .forgot-pass a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    form .forgot-pass a:hover {
+      text-decoration: underline;
+    }
+
+    form .btn {
+      margin: 30px 0;
+      height: 45px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    form .btn .inner {
+      height: 100%;
+      width: 300%;
+      position: absolute;
+      left: -100%;
+      z-index: -1;
+      background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+      transition: all 0.4s;
+    }
+
+    form .btn:hover .inner {
+      left: 0;
+    }
+
+    form .btn button {
+      height: 100%;
+      width: 100%;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    form .signup-link {
+      text-align: center;
+    }
+
+    form .signup-link a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    form .signup-link a:hover {
+      text-decoration: underline;
+    }
+
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+      /* box-shadow: 50px 50px 50px rgba(0,0,0,0.5); */
+
+    }
+
+
+    /* filipcard style */
+
+    .flip-card {
+  background-color: transparent;
+  width: 25vw;
+  height: 70vh;
 }
 
-#show:checked ~ .form-container{
-  display: block;
-}
-
-.form-container .close-btn{
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  font-size: 18px;
-  cursor: pointer;
-}
-.form-container .close-btn:hover{
-  color: #3498db;
-}
-.form-container .text{
-  font-size: 35px;
-  font-weight: 600;
-  text-align: center;
-}
-.form-container form{
-  margin-top: -20px;
-  
-}
-.form-container form .data{
-  height: 45px;
-  width: 100%;
-  margin: 40px 0;
-}
-form .data label{
-  font-size: 18px;
-}
-form .data input{
-  
-  height: 100%;
-  width: 100%;
-  padding-left: 10px;
-  font-size: 17px;
-  border: 1px solid silver;
-}
-form .data input:focus{
-  
-  border-color: #3498db;
-  border-bottom-width: 2px;
-}
-form .forgot-pass{
-  margin-top: -8px;
-}
-form .forgot-pass a{
-  color: #3498db;
-  text-decoration: none;
-}
-form .forgot-pass a:hover{
-  text-decoration: underline;
-}
-form .btn{
-  margin: 30px 0;
-  height: 45px;
-  width: 100%;
+.flip-card-inner {
   position: relative;
-  overflow: hidden;
-}
-form .btn .inner{
-  height: 100%;
-  width: 300%;
-  position: absolute;
-  left: -100%;
-  z-index: -1;
-  background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
-  transition: all 0.4s;
-}
-form .btn:hover .inner{
-  left: 0;
-}
-form .btn button{
-  height: 100%;
   width: 100%;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-form .signup-link{
+  height: 100%;
   text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-form .signup-link a{
-  color: #3498db;
-  text-decoration: none;
-}
-form .signup-link a:hover{
-  text-decoration: underline;
-}
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-  }
-  
-  input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
-    background-color: #45a049;
-    /* box-shadow: 50px 50px 50px rgba(0,0,0,0.5); */
 
-  }
-  
-    </style>
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #ffffff;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #ffffff;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+  </style>
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
@@ -337,7 +440,7 @@ input[type=text], select, textarea {
 
 </head>
 
-<body >
+<body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
@@ -364,7 +467,7 @@ input[type=text], select, textarea {
           <label for="show" class="get-started-btn scrollto show-btn" style=" border-radius: 10px;">Connect Us</label>
           <!-- <a href="#about"><label for="show" class="get-started-btn scrollto show-btn" ></label>Connect Us</label></a> -->
 
-           </div>
+        </div>
       </div>
     </div>
   </header><!-- End Header -->
@@ -377,7 +480,8 @@ input[type=text], select, textarea {
       <div class="row justify-content-center">
         <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
           <h1>Redefining strategies of agricultural commodity production</h1>
-          <h2> PLT AG is an innovative way of allowing planters to prosper their farms by adopting route maps to organic agricultural commodities.</h2>
+          <h2> PLT AG is an innovative way of allowing planters to prosper their farms by adopting route maps to organic
+            agricultural commodities.</h2>
           <div><a href="#products" class="btn-get-started scrollto">Shop with us</a></div>
         </div>
         <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
@@ -394,8 +498,8 @@ input[type=text], select, textarea {
     <section id="about" class="about">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 content" data-aos="fade-right">
-            <h3>About</h3>
+          <div class="col-lg-6 col-md-6  content" data-aos="fade-right">
+            <h3>ABOUT US</h3>
             <p class="font-italic" >
               <p>
                 <b style="color: black;">
@@ -405,64 +509,21 @@ input[type=text], select, textarea {
               <p style="color: black;">
                 We intend to bolster agricultural performance in the state of Kerala through newly tested methods. We maintain a unique board of experts on the agrarian procedures to strengthen our primary sectors. Profound research and plenty of support from the team help farmers to understand the right mechanism for the quantity and quality of products along with their real market values.
               </p>  
-              <div style="margin-top: 30px;">
-                <!-- <a class="btn-get-started scrollto" href="https://formfacade.com/public/101909314369188760985/all/form/1FAIpQLSclgRlvbPtu8g7O2JarmsOiVXlaoD-pPbcMUFv23w45nNboMQ" data-mode="popup" target="_blank">Our Products </i></a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> -->
+              <div style="margin-top: 30px; ">
                 <a class="get-started-btn scrollto" style="color: black; border-radius: 10px; border-color: #000; "  href="Products.html"  >Our Products </a> 
-                <!-- <a class="typeform-share button" href="https://formfacade.com/public/101909314369188760985/all/form/1FAIpQLSfXUCWmTnskG26uVwNq5x7sFoiLP_Jf_nMhgMYRa85UfBAcsw" data-mode="popup" style="display:inline-block;text-decoration:none;background-color:#8CC63F;color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:50px;text-align:center;margin:0;height:50px;padding:0px 55px;border-radius:25px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;" data-hide-headers=true data-hide-footer=true data-submit-close-delay="3" target="_blank">Connect Us</i></a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> -->
-                <!-- <a class="get-started-btn scrollto" style=" border-radius: 10px; " href="contactUs.html" >Connect Us</i></a>  -->
                 <label for="show" class="get-started-btn scrollto show-btn" style=" border-radius: 10px; color: black; border-color: black;">Connect Us</label>
               </div>
             </p>
           </div>
-          <div class="col-lg-6" >
-          
-            <!-- <div class="form-main">
-              <input type="checkbox" id="show">
-              <div class="form-container">
-                <label for="show" class="btn-get-started scrollto close-btn" >close</label>
-                <form id="submit-form" action="">
-                  <label for="fname">First Name</label>
-                  <input type="text" id="fname" name="name" placeholder="Your name..">
-                  <label for="lname">Email</label>
-                  <input type="text" id="lname" name="email" placeholder="Your last name..">
-                  <label for="country">Country</label>
-                  <select id="country" name="color">
-                    <option value="australia">Australia</option>
-                    <option value="canada">Canada</option>
-                    <option value="usa">USA</option>
-                  </select>
-                  <label for="subject">Subject</label>
-                  <textarea id="subject" name="message" placeholder="Write something.." style="height:100px"></textarea>
-               
-                    <input type="submit"  value="Submit">
-                </form>
-                <script>
-                  $("#submit-form").submit((e)=>{
-                      e.preventDefault()
-                      $.ajax({
-                          url:"https://script.google.com/macros/s/AKfycby1LPOGsKH1hIuZAWW8yeju9IptJXd6wsTMpdiMRVvjREcDqjdO6MkuRB_pRi_T3F_9ng/exec",
-                          data:$("#submit-form").serialize(),
-                          method:"post",
-                          success:function (response){
-                              alert("Form submitted successfully")
-                              window.location.reload()
-                              //window.location.href="https://google.com"
-                          },
-                          error:function (err){
-                              alert("Something Error")
-              
-                          }
-                      })
-                  })
-                </script>
-              </div>
-            </div> -->
+          <div class="col-lg-6 col-md-6 content logomark" data-aos="fade-right" style="text-align: right;">
+            <img src="assets/img/logomark plt-01.jpg" alt="" style="width: 70%;"/>
+            
           </div>
         </div>
       </div>
     </section><!-- End About Section -->
 
-    
+
 
     <section id="services" class="services section-bg">
       <div class="container" data-aos="fade-up">
@@ -474,49 +535,57 @@ input[type=text], select, textarea {
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box iconbox-blue">
-              <img src="assets/img/ferlilizer.jpg" alt="" style="width: 50%;"/>
+              <img src="assets/img/ferlilizer.jpg" alt="" style="width: 50%;" />
               <h4><a href="">Integrated Fertilizer Nutrient Management </a></h4>
-              <p>An exclusive project to help farmers through integrated agricultural procedures. This shall help them acquire high yields with promising income.</p>
+              <p>An exclusive project to help farmers through integrated agricultural procedures. This shall help them
+                acquire high yields with promising income.</p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
+            data-aos-delay="200">
             <div class="icon-box iconbox-orange ">
-              <img src="assets/img/pestcontorl.jpg" alt="" style="width: 50%;"/>
+              <img src="assets/img/pestcontorl.jpg" alt="" style="width: 50%;" />
               <h4><a href="">Integrated Pest Control Management </a></h4>
-              <p>Helping agricultural organizations through advanced,  extensive training and experience. It is an individual one-to-one mentoring.</p>
+              <p>Helping agricultural organizations through advanced, extensive training and experience. It is an
+                individual one-to-one mentoring.</p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
+            data-aos-delay="300">
             <div class="icon-box iconbox-pink">
-              <img src="assets/img/DiseaseControl.jpg" alt="" style="width: 50%;"/>
+              <img src="assets/img/DiseaseControl.jpg" alt="" style="width: 50%;" />
               <h4><a href="">Integrated Disease Control Management</a></h4>
-              <p>The latest technologies to make sure we are using the best resources to help you. This helps the agricultural sector of Kerala achieve progress with adequate measures.</p>
+              <p>The latest technologies to make sure we are using the best resources to help you. This helps the
+                agricultural sector of Kerala achieve progress with adequate measures.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box iconbox-yellow">
-              <img src="assets/img/FarmDevelopment.jpg" alt="" style="width: 50%;"/>
+              <img src="assets/img/FarmDevelopment.jpg" alt="" style="width: 50%;" />
               <h4><a href="">Farm Development</a></h4>
-              <p>We overcome unforeseen circumstances of land and weather through structured viable insights that shall be beneficial to farmers. </p>
+              <p>We overcome unforeseen circumstances of land and weather through structured viable insights that shall
+                be beneficial to farmers. </p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box iconbox-red">
-              <img src="assets/img/Highersustainability.jpg" alt="" style="width: 50%;"/>
+              <img src="assets/img/Highersustainability.jpg" alt="" style="width: 50%;" />
               <h4><a href="">Higher sustainability</a></h4>
-              <p>Plenty of methods to increase sustainability in agriculture. We also help to develop flexible business and farming practices.</p>
+              <p>Plenty of methods to increase sustainability in agriculture. We also help to develop flexible business
+                and farming practices.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box iconbox-teal">
-              <img src="assets/img/forcustomers.jpg" alt="" style="width: 50%;"/>
+              <img src="assets/img/forcustomers.jpg" alt="" style="width: 50%;" />
               <h4><a href="">For the consumer</a></h4>
-              <p >The consumer is economic viability and it helps to drive the evolution of every industry. Growing ethnic diversity has contributed to a shift in people’s food preferences as well.</p>
+              <p>The consumer is economic viability and it helps to drive the evolution of every industry. Growing
+                ethnic diversity has contributed to a shift in people’s food preferences as well.</p>
             </div>
           </div>
 
@@ -524,72 +593,73 @@ input[type=text], select, textarea {
       </div>
     </section><!-- End Services Section -->
 
-    <!-- ======= Features Section ======= -->
-    <!-- <section id="features" class="features">
+    <!-- ======= Certifications Section ======= -->
+    <section id="features" class="features">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Features</h2>
+          <h2>CERTIFICATION</h2>
           
         </div>
 
         <div class="row">
           
-          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column align-items-lg-center">
-            <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-receipt"></i>
-              <h4>Learner's participation</h4>
-             <p>
-              We encourage the involvement of the students
-             </p>
-            </div>
-            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-cube-alt"></i>
-              <h4>Real life example of learning</h4>
-             <p>We provide examples relating to real life situations to get stronger fundamentals </p>
-           </div>
-          
-           <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-images"></i>
-              <h4>Interactive teaching</h4>
-             <P>We believe in effectiveness of interactive classes</P>
-            </div>
-           
-            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="400">
-              <i class="bx bx-shield"></i>
-              <h4>Best study materials</h4>
-              <p>
-                We provide simple and effective study materials for practice
-            </div>
-            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-cube-alt"></i>
-              <h4>One to One mentoring</h4>
-             <p>We provide individual mentoring to students to provide better care and support</p>
-           </div>
-            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-images"></i>
-              <h4>Mock tests</h4>
-             <P>we prepare students for real exams by conducting similar mock tests</P>
+         <div class="col-lg-4">
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="assets/img/isoicon.png" alt="Avatar" style=" margin-top: 10vh; width:200px;height:200px;">
+              </div>
+              <div class="flip-card-back">
+                <img src="assets/img/QROCertificate.jpg" alt="Avatar" style="margin-top: 4vh; width:300px;height:400px;">
+              </div>
             </div>
           </div>
-          <div class="image col-lg-6 order-1 order-lg-2 " data-aos="zoom-in" data-aos-delay="100">
-            <img src="assets/img/farm.jpg" alt="" class="img-fluid">
+         </div>
+
+         <div class="col-lg-4">
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="assets/img/gmp-quality-logo.png" alt="Avatar" style=" margin-top: 10vh; width:200px;height:200px;">
+              </div>
+              <div class="flip-card-back">
+                <img src="assets/img/ENGROSSCertificate.JPG" alt="Avatar" style="margin-top: 4vh; width:300px;height:400px;">
+              </div>
+            </div>
           </div>
+         </div>
+
+         <div class="col-lg-4">
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="assets/img/iaficon.png" alt="Avatar" style=" margin-top: 10vh; width:200px;height:200px;">
+              </div>
+              <div class="flip-card-back">
+                <img src="assets/img/QROCertificate.jpg" alt="Avatar" style="margin-top: 4vh; width:300px;height:400px;">
+              </div>
+            </div>
+          </div>
+         </div>
           
         </div>
 
       </div>
-    </section> -->
+    </section>
     <!-- End Features Section -->
 
-    <!-- ======= Pricing Section ======= -->
+    <!-- ======= prosuct Section ======= -->
     <section id="products" class="pricing section-bg">
       <div class="container" data-aos="fade-up">
 
 
         <div class="section-title">
           <h2>Our Products </h2>
-        
+
         </div>
 
         <div class="slideshow-container">
@@ -598,17 +668,17 @@ input[type=text], select, textarea {
               <div class="col-sm-12 col-lg-6 col-md-6 col-xs-12">
                 <div class="grid-item-test">
                   <div class="produc-description-div">
-                    <h4 class="product-heading" style="color: rgb(0, 0, 0);">
+                    <h4 class="product-heading" style="color: rgb(255, 255, 255);">
                       Amino Acid 30% SL
-                      <br/>
-                      <small>(Better growth &  quality of crop)</small>
+                      <br />
+                      <small>(Better growth & quality of crop)</small>
                     </h4>
-                  <p style="font-size: 18px;">
-                    
+                    <p style="font-size: 18px;color: rgb(255, 255, 255);">
+
                       Increases size of fruit .immunity & cell elongation & division resulting in higher yields
                       <br />
                       1 ml per lit. of water(Spray)
-                  </p>
+                    </p>
                   </div>
                 </div>
 
@@ -623,17 +693,17 @@ input[type=text], select, textarea {
               <div class="col-sm-12 col-lg-6 col-md-6 col-xs-12">
                 <div class="grid-item-test">
                   <div class="produc-description-div">
-                    <h4 class="product-heading" style="color: rgb(0, 0, 0);">
+                    <h4 class="product-heading" style="color: rgb(255, 255, 255);">
                       Black Dragon
-                      <br/>
+                      <br />
                       <small>(Fulvic / Seaweed/ Humic Combi)</small>
                     </h4>
-                  <p style="font-size: 18px;">
-                    
-                    Growth of roots and overall development.
+                    <p style="font-size: 18px;color: rgb(255, 255, 255);">
+
+                      Growth of roots and overall development.
                       <br />
                       It rejuvenates & replenishes the soil with functional micro organisms.
-                  </p>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -642,269 +712,127 @@ input[type=text], select, textarea {
               </div>
             </div>
           </div>
-         <div>
+          <div>
 
-          <a class="get-started-btn scrollto" style=" color: black; border-radius: 10px; border-color: #000; "  href="Products.html"  >View All  </a> 
-
-         </div>
-         
-
-
-
-          <!-- <div class="mySlides ">
-            
-            <div class="grid-container-test">
-              <div class="grid-item-test">
-                <div class="produc-description-div">
-                  <h4 class="product-heading" style="color: black;">
-                    Amino Acid 30% SL
-                    <br/>
-                    <small>(Better growth &  quality of crop)</small>
-                  </h4>
-                <p style="font-size: 18px;">
-                   
-                    Increases size of fruit .immunity & cell elongation & division resulting in higher yields
-                    <br />
-                    1 ml per lit. of water(Spray)
-                </p>
-                </div>
-              </div>
-              <div class="grid-item-test"> <div class="image-div"><img class="product-image" src="assets/img/folic-acid.png" ></div></div>
-                
-            </div>
           </div>
-          <div class="mySlides ">
-           
-            <div class="grid-container-test">
-              <div class="grid-item-test">
-                <div class="produc-description-div">
-                  <h4 class="product-heading" style="color: black;">
-                    Amino Acid 30% SL<br/><small >(Better growth &  quality of crop)</small>
-                  </h4>
-                    
-                
-                  <p style="font-size: 18px;">
-                   
-                    Increases size of fruit .immunity & cell elongation & division resulting in higher yields
-                    <br />
-                    1 ml per lit. of water(Spray)
-                </p>
-                </div>
-              </div>
-              <div class="grid-item-test"> <div class="image-div"><img class="product-image" src="assets/img/Amino%20AG.png" ></div></div>
-                
-            </div>
-          </div> -->
-          
-          <!-- <div class="mySlides ">
-            <div class="numbertext">2 / 3</div>
-            <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" style="width:100%">
-            <div class="text">Caption Two</div>
-          </div>
-          
-          <div class="mySlides ">
-            <div class="numbertext">3 / 3</div>
-            <img src="assets/img/folic-acid.png" style="width:100%">
-            <div class="text">Caption Three</div>
-          </div> -->
-          
+
           <a class="prev" onclick="showNext(-1)">&#10094;</a>
           <a class="next" onclick="showNext(1)">&#10095;</a>
-          
-          </div>
-          <br>
-          
-          <!-- <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span> 
-            <span class="dot" onclick="currentSlide(2)"></span> 
-            <span class="dot" onclick="currentSlide(3)"></span> 
-          </div> -->
-          
-          <script>
+
+        </div>
+        <br>
+        <script>
           var slideIndex = 1;
           showSlides(slideIndex);
           function showNext(n) {
-            
-            showSlidesTest(slideIndex +=n);
-            
+
+            showSlidesTest(slideIndex += n);
+
           }
 
           function plusSlides() {
-            slideIndex ++ ;
+            slideIndex++;
             showSlides(slideIndex);
-            
+
           }
-          
+
           function currentSlide(n) {
             showSlides(slideIndex = n);
           }
-          
+
           function showSlides(n) {
             var i;
             var slides = document.getElementsByClassName("mySlides");
             // var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
             for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
+              slides[i].style.display = "none";
             }
-            
+
             // for (i = 0; i < dots.length; i++) {
             //     dots[i].className = dots[i].className.replace(" activedot", "");
             // }
-            slides[slideIndex-1].style.display = "block";  
+            slides[slideIndex - 1].style.display = "block";
             // dots[slideIndex-1].className += " activedot";
-            setTimeout(plusSlides, 2000); 
+            setTimeout(plusSlides, 2000);
           }
 
           function showSlidesTest(n) {
             var i;
             var slides = document.getElementsByClassName("mySlides");
             // var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
             for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
+              slides[i].style.display = "none";
             }
-            
-            // for (i = 0; i < dots.length; i++) {
-            //     dots[i].className = dots[i].className.replace(" activedot", "");
-            // }
-            slides[slideIndex-1].style.display = "block";  
-            // dots[slideIndex-1].className += " activedot";
+
+            slides[slideIndex - 1].style.display = "block";
           }
 
-          </script>
-          <!-- <script>
-            var slideIndex = 0;
-            showSlides();
-            
-            function showSlides() {
-              var i;
-              var slides = document.getElementsByClassName("mySlides");
-              var dots = document.getElementsByClassName("dot");
-              for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-              }
-              slideIndex++;
-              if (slideIndex > slides.length) {slideIndex = 1}    
-              for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-              }
-              slides[slideIndex-1].style.display = "block";  
-              dots[slideIndex-1].className += " active";
-              setTimeout(showSlides, 2000); // Change image every 2 seconds
-            }
-            </script> -->
+        </script>
       </div>
+
+      <div style="text-align: center;">
+        <a class="get-started-btn scrollto"
+          style=" color: rgb(255, 255, 255); border-radius: 10px; border-color: rgb(255, 255, 255); "
+          href="Products.html">View All </a>
+
+      </div>
+
     </section>
 
 
-<!-- 
-    
-    <div class="hero">
-      <div class="content-wrapper ">
-          <div class="content">
-              <h1>
-                  RAW MATERIALS
-              </h1>
-              <p>
-                  Good raw materials are the life of any product. Hence, we use the best quality raw materials in each of our products. This helps us optimize resource effectiveness and results in potent yet affordable products. The range includes compounds that aide soil quality, plant growth, fertility and increased shelf life of vegetables and fruits.
+    </div>
 
-              </p>
-
-          </div>
-      </div>
-  </div>
-  <div class="tab-content">
-      <div class="content-wrapper">
-          <ul class="products">
-              <li title="click to view information">
-                  <div class="inner">
-                      <div class="text">
-                          <h3>
-                              Humic Acid 50%  Powder
-                              <small>(Root Growth & Plant growth) (Soil Conditioner)</small>
-                          </h3>
-                          <p>
-                              Use as a soil conditioner @  5 Kg/Acre.<br />
-                              Used for treatment to bentonite granules or can be packed as it is.
-                          </p>
-                      </div>
-                      <div class="image">
-                          <img src="assets/img/folic-acid.png" alt="Humic Acid 50%  Powder" />
-                      </div>
-                  </div>
-              </li>
-              
-              <li title="click to view information">
-                  <div class="inner">
-                      <div class="text">
-                          <h3>
-                              Folic Acid
-                              <small></small>
-                          </h3>
-                          <p>
-                              Folic Acid (also known as Vitamin B9)
-                              usually used for adding into stimulants and various formulation.
-                          </p>
-                      </div>
-                      <div class="image">
-                          <img src="assets/img/folic-acid.png" alt="Folic Acid" />
-                      </div>
-                  </div>
-              </li>
-          </ul>
-      </div> -->
-
-  </div>
-
-</div>
+    </div>
 
   </main><!-- End #main -->
 
 
-<!-- ======= Footer ======= -->
-<footer id="footer">
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
 
-  <div class="footer-top">
-    <div class="container">
-      <div class="row">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
 
-        <div class="col-lg-3 col-md-6 footer-contact">
-          <h3>Plant labz tech</h3>
-          Kozhikode road mukkam,<br/>
-          calicut, Kerala<br/>
-          +91 85904 67224<br/>
-          Info@plantlabztech.com<br/>
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Plant labz tech</h3>
+            Kozhikode road mukkam,<br />
+            calicut, Kerala<br />
+            +91 85904 67224<br />
+            Info@plantlabztech.com<br />
             <!-- <strong>Phone:</strong> +91 000000000<br>
             <strong>Email:</strong> info.example@gmail.com<br> -->
-          </p>
-        </div>
+            </p>
+          </div>
 
-        <div class="col-lg-2 col-md-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Our Products</a></li>
+            </ul>
+          </div>
 
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Doubling Income</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Farming development</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">For the consumer</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Higher sustainability</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Management and Implementation</a></li>
-          </ul>
-        </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Integrated Fertilizer Nutrient Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Integrated Pest Control Management </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Integrated Disease Control Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Farm Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Higher sustainability</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">For the consumer</a></li>
+              
+            </ul>
+          </div>
 
-        <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
+          <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
           <h4>Join Our Newsletter</h4>
           <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
           <form action="" method="post">
@@ -912,34 +840,35 @@ input[type=text], select, textarea {
           </form>
         </div> -->
 
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-
-    <div class="copyright-wrap d-md-flex py-4">
-      <div class="mr-md-auto text-center text-md-left">
-        <div class="copyright">
-          &copy; Copyright <strong><span>Plant labz tech</span></strong>. All Rights Reserved
         </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/techie-free-skin-bootstrap-3/ -->
-          Designed by <a href="https://www.linkedin.com/in/fuad-aslam-56915a129/">Fuad Aslam</a>
-        </div>
-      </div>
-      <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="https://youtube.com/channel/UCoZmzerLLc5-c6vqY5pJJ9w" class="youtube"><i class="bx bxl-youtube"></i></a>
       </div>
     </div>
 
-  </div>
-</footer><!-- End Footer -->
+    <div class="container">
+
+      <div class="copyright-wrap d-md-flex py-4">
+        <div class="mr-md-auto text-center text-md-left">
+          <div class="copyright">
+            &copy; Copyright <strong><span>Plant labz tech</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/techie-free-skin-bootstrap-3/ -->
+            Designed by <a href="https://www.linkedin.com/in/fuad-aslam-56915a129/">Fuad Aslam</a>
+          </div>
+        </div>
+        <div class="social-links text-center text-md-right pt-3 pt-md-0">
+          <a href="" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="https://youtube.com/channel/UCoZmzerLLc5-c6vqY5pJJ9w" class="youtube"><i
+              class="bx bxl-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </footer><!-- End Footer -->
 
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
@@ -959,7 +888,7 @@ input[type=text], select, textarea {
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  
+
 
   <div id="floating-menu">
     <div id="floating-icon" style="padding: 5px;">
@@ -969,38 +898,63 @@ input[type=text], select, textarea {
     </div>
     <div id="floating-ligar" style="display: block;">
       <a href="tel: 918590467224">
-        <svg class="svg-inline--fa fa-phone fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="phone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M493.397 24.615l-104-23.997c-11.314-2.611-22.879 3.252-27.456 13.931l-48 111.997a24 24 0 0 0 6.862 28.029l60.617 49.596c-35.973 76.675-98.938 140.508-177.249 177.248l-49.596-60.616a24 24 0 0 0-28.029-6.862l-111.997 48C3.873 366.516-1.994 378.08.618 389.397l23.997 104C27.109 504.204 36.748 512 48 512c256.087 0 464-207.532 464-464 0-11.176-7.714-20.873-18.603-23.385z"></path></svg><!-- <i class="fas fa-phone"></i> -->	
+        <svg class="svg-inline--fa fa-phone fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="phone" role="img"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+          <path fill="currentColor"
+            d="M493.397 24.615l-104-23.997c-11.314-2.611-22.879 3.252-27.456 13.931l-48 111.997a24 24 0 0 0 6.862 28.029l60.617 49.596c-35.973 76.675-98.938 140.508-177.249 177.248l-49.596-60.616a24 24 0 0 0-28.029-6.862l-111.997 48C3.873 366.516-1.994 378.08.618 389.397l23.997 104C27.109 504.204 36.748 512 48 512c256.087 0 464-207.532 464-464 0-11.176-7.714-20.873-18.603-23.385z">
+          </path>
+        </svg><!-- <i class="fas fa-phone"></i> -->
       </a>
     </div>
     <div id="floating-whatsapp" style="display: block;">
       <a href="https://api.whatsapp.com/send?phone=918590467224">
-        <svg class="svg-inline--fa fa-whatsapp fa-w-14" aria-hidden="true" data-prefix="fab" data-icon="whatsapp" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg><!-- <i class="fab fa-whatsapp"></i> -->
+        <svg class="svg-inline--fa fa-whatsapp fa-w-14" aria-hidden="true" data-prefix="fab" data-icon="whatsapp"
+          role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+          <path fill="currentColor"
+            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
+          </path>
+        </svg><!-- <i class="fab fa-whatsapp"></i> -->
       </a>
     </div>
-   
+
   </div>
-  
+
   <div id="floating-ligar" style="display: none;">
     <a href="tel: 011">
-      <svg class="svg-inline--fa fa-phone fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="phone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M493.397 24.615l-104-23.997c-11.314-2.611-22.879 3.252-27.456 13.931l-48 111.997a24 24 0 0 0 6.862 28.029l60.617 49.596c-35.973 76.675-98.938 140.508-177.249 177.248l-49.596-60.616a24 24 0 0 0-28.029-6.862l-111.997 48C3.873 366.516-1.994 378.08.618 389.397l23.997 104C27.109 504.204 36.748 512 48 512c256.087 0 464-207.532 464-464 0-11.176-7.714-20.873-18.603-23.385z"></path></svg><!-- <i class="fas fa-phone"></i> -->	
+      <svg class="svg-inline--fa fa-phone fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="phone" role="img"
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+        <path fill="currentColor"
+          d="M493.397 24.615l-104-23.997c-11.314-2.611-22.879 3.252-27.456 13.931l-48 111.997a24 24 0 0 0 6.862 28.029l60.617 49.596c-35.973 76.675-98.938 140.508-177.249 177.248l-49.596-60.616a24 24 0 0 0-28.029-6.862l-111.997 48C3.873 366.516-1.994 378.08.618 389.397l23.997 104C27.109 504.204 36.748 512 48 512c256.087 0 464-207.532 464-464 0-11.176-7.714-20.873-18.603-23.385z">
+        </path>
+      </svg><!-- <i class="fas fa-phone"></i> -->
     </a>
   </div>
 
   <div id="floating-whatsapp" style="display: none;">
     <a href="https://api.whatsapp.com/send?phone=918590467224g">
-      <svg class="svg-inline--fa fa-whatsapp fa-w-14" aria-hidden="true" data-prefix="fab" data-icon="whatsapp" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg><!-- <i class="fab fa-whatsapp"></i> -->
+      <svg class="svg-inline--fa fa-whatsapp fa-w-14" aria-hidden="true" data-prefix="fab" data-icon="whatsapp"
+        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+        <path fill="currentColor"
+          d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
+        </path>
+      </svg><!-- <i class="fab fa-whatsapp"></i> -->
     </a>
   </div>
   <div id="floating-emergencia" data-toggle="modal" data-target="#modalUrgencia" style="display: none;">
-    <svg class="svg-inline--fa fa-plus fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z"></path></svg><!-- <i class="fas fa-plus"></i> -->
+    <svg class="svg-inline--fa fa-plus fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="plus" role="img"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+      <path fill="currentColor"
+        d="M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z">
+      </path>
+    </svg><!-- <i class="fas fa-plus"></i> -->
   </div>
-  
+
   <div class="modal fade col-lg-12" id="modalUrgencia" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
         <button type="button" class="fechaModal" data-dismiss="modal">×</button>
         <div class="modal-body">
-  
+
         </div>
       </div>
     </div>
