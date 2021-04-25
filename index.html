@@ -6,12 +6,11 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>PLT-AG</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link rel="icon" href="assets/img/favicon.png"> 
-  <meta content="PLT AG is an innovative way of allowing planters to prosper their farms by adopting route maps to organic agricultural commodities." name="descriptison">
-  <meta content="PLT AG is an innovative way of allowing planters to prosper their farms by adopting route maps to organic agricultural commodities." name="keywords">
-
+  <link rel="icon" href="assets/img/favicon.png">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <style>
@@ -23,16 +22,11 @@
     /* Slideshow container */
     .slideshow-container {
       max-width: 1000px;
-      /* height: 50vh; */
+      height: 50vh;
       position: relative;
       margin: auto;
     }
-    /* @media (max-width: 900px) {
-      .slideshow-container {
-        height: auto;
-      }
-
-    } */
+    
     /* Next & previous buttons */
     .prev, .next {
       cursor: pointer;
@@ -73,13 +67,12 @@
     
     /* Number text (1/3 etc) */
     .produc-description-div {
-      color: rgb(255, 255, 255);
+      color: #000;
       font-size: 12px;
       padding-left: 80px;
       /* padding-right: 50px; */
       padding-top: 10;
       padding-bottom: 10;
-      min-height: 50vh;
       /* width:40vw; */
       
       /* position: relative;
@@ -87,7 +80,8 @@
     }
     .product-heading {
       font-size: 50px;
-      color: rgb(255, 255, 255);    }
+      color: #000;
+    }
     .image-div {
       /* width:35vw; */
       text-align: center;
@@ -157,13 +151,173 @@
         
       } */
     }
-      
-      
-      
-      
-      
+    
 
+    .show-btn{
+  /* background: #fff; */
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #3498db;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+ .form-container{
+  color: black;
+  /* position: absolute;
+  top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, 50%); */
+  /* top: 50%;
+  right: -50%;
+  transform: translate(50%, -50%); */
+  display: none;
+  background: #fff;
+   width: 100%; 
+   padding: 30px;
+  padding-top: 50px; 
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+.form-main {
+    /* padding-top: 30px; */
+    /* margin-left: 10%; */
+    /* box-shadow: 50px  100px rgba(0,0,0,0.6), 
+   -50px  -100px rgba(0,0,0,0.6); */
+    position: fixed;
+    /* top: 0; */
+    left: 50%;
+    top: -25%;
+    width: 80%;
+    /* right: 15px; */
+    z-index: 9;
+    transform: translate(-50%, 50%);
+  }
+/* .form-back {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+} */
+input[type="checkbox"]{
+  display: none;
+}
+
+#show:checked ~ .form-container{
+  display: block;
+}
+
+.form-container .close-btn{
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.form-container .close-btn:hover{
+  color: #3498db;
+}
+.form-container .text{
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+}
+.form-container form{
+  margin-top: -20px;
   
+}
+.form-container form .data{
+  height: 45px;
+  width: 100%;
+  margin: 40px 0;
+}
+form .data label{
+  font-size: 18px;
+}
+form .data input{
+  
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  border: 1px solid silver;
+}
+form .data input:focus{
+  
+  border-color: #3498db;
+  border-bottom-width: 2px;
+}
+form .forgot-pass{
+  margin-top: -8px;
+}
+form .forgot-pass a{
+  color: #3498db;
+  text-decoration: none;
+}
+form .forgot-pass a:hover{
+  text-decoration: underline;
+}
+form .btn{
+  margin: 30px 0;
+  height: 45px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+form .btn .inner{
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  z-index: -1;
+  background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+  transition: all 0.4s;
+}
+form .btn:hover .inner{
+  left: 0;
+}
+form .btn button{
+  height: 100%;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+form .signup-link{
+  text-align: center;
+}
+form .signup-link a{
+  color: #3498db;
+  text-decoration: none;
+}
+form .signup-link a:hover{
+  text-decoration: underline;
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+    /* box-shadow: 50px 50px 50px rgba(0,0,0,0.5); */
+
+  }
   
     </style>
   <!-- Vendor CSS Files -->
@@ -206,7 +360,9 @@
             </ul>
           </nav><!-- .nav-menu -->
 
-          <label for="show" class="get-started-btn get-started-btn-nav scrollto show-btn" style=" border-radius: 10px;">Connect Us</label>
+          <!-- <a href="contactUs.html" class="get-started-btn scrollto">Contact Us</a> -->
+          <label for="show" class="get-started-btn scrollto show-btn" style=" border-radius: 10px;">Connect Us</label>
+          <!-- <a href="#about"><label for="show" class="get-started-btn scrollto show-btn" ></label>Connect Us</label></a> -->
 
            </div>
       </div>
@@ -215,11 +371,11 @@
 
   <!-- ======= Hero Section ======= -->
 
-  <section id="hero" class="d-flex align-items-center" style="padding-top: 200px;padding-bottom: 10vw;">
+  <section id="hero" class="d-flex align-items-center">
 
     <div class="container-fluid" data-aos="fade-up">
       <div class="row justify-content-center">
-        <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" >
+        <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
           <h1>Redefining strategies of agricultural commodity production</h1>
           <h2> PLT AG is an innovative way of allowing planters to prosper their farms by adopting route maps to organic agricultural commodities.</h2>
           <div><a href="#products" class="btn-get-started scrollto">Shop with us</a></div>
@@ -238,7 +394,7 @@
     <section id="about" class="about">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 col-md-6  content" data-aos="fade-right">
+          <div class="col-lg-6 content" data-aos="fade-right">
             <h3>About</h3>
             <p class="font-italic" >
               <p>
@@ -249,24 +405,64 @@
               <p style="color: black;">
                 We intend to bolster agricultural performance in the state of Kerala through newly tested methods. We maintain a unique board of experts on the agrarian procedures to strengthen our primary sectors. Profound research and plenty of support from the team help farmers to understand the right mechanism for the quantity and quality of products along with their real market values.
               </p>  
-              <div style="margin-top: 30px; ">
+              <div style="margin-top: 30px;">
+                <!-- <a class="btn-get-started scrollto" href="https://formfacade.com/public/101909314369188760985/all/form/1FAIpQLSclgRlvbPtu8g7O2JarmsOiVXlaoD-pPbcMUFv23w45nNboMQ" data-mode="popup" target="_blank">Our Products </i></a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> -->
                 <a class="get-started-btn scrollto" style="color: black; border-radius: 10px; border-color: #000; "  href="Products.html"  >Our Products </a> 
+                <!-- <a class="typeform-share button" href="https://formfacade.com/public/101909314369188760985/all/form/1FAIpQLSfXUCWmTnskG26uVwNq5x7sFoiLP_Jf_nMhgMYRa85UfBAcsw" data-mode="popup" style="display:inline-block;text-decoration:none;background-color:#8CC63F;color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:50px;text-align:center;margin:0;height:50px;padding:0px 55px;border-radius:25px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;" data-hide-headers=true data-hide-footer=true data-submit-close-delay="3" target="_blank">Connect Us</i></a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> -->
+                <!-- <a class="get-started-btn scrollto" style=" border-radius: 10px; " href="contactUs.html" >Connect Us</i></a>  -->
                 <label for="show" class="get-started-btn scrollto show-btn" style=" border-radius: 10px; color: black; border-color: black;">Connect Us</label>
               </div>
             </p>
           </div>
-          <div class="col-lg-6 col-md-6 content logomark" data-aos="fade-right" style="text-align: right;">
-            <img src="assets/img/logomark plt-01.jpg" alt="" style="width: 70%;"/>
-            
+          <div class="col-lg-6" >
+          
+            <!-- <div class="form-main">
+              <input type="checkbox" id="show">
+              <div class="form-container">
+                <label for="show" class="btn-get-started scrollto close-btn" >close</label>
+                <form id="submit-form" action="">
+                  <label for="fname">First Name</label>
+                  <input type="text" id="fname" name="name" placeholder="Your name..">
+                  <label for="lname">Email</label>
+                  <input type="text" id="lname" name="email" placeholder="Your last name..">
+                  <label for="country">Country</label>
+                  <select id="country" name="color">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                  </select>
+                  <label for="subject">Subject</label>
+                  <textarea id="subject" name="message" placeholder="Write something.." style="height:100px"></textarea>
+               
+                    <input type="submit"  value="Submit">
+                </form>
+                <script>
+                  $("#submit-form").submit((e)=>{
+                      e.preventDefault()
+                      $.ajax({
+                          url:"https://script.google.com/macros/s/AKfycby1LPOGsKH1hIuZAWW8yeju9IptJXd6wsTMpdiMRVvjREcDqjdO6MkuRB_pRi_T3F_9ng/exec",
+                          data:$("#submit-form").serialize(),
+                          method:"post",
+                          success:function (response){
+                              alert("Form submitted successfully")
+                              window.location.reload()
+                              //window.location.href="https://google.com"
+                          },
+                          error:function (err){
+                              alert("Something Error")
+              
+                          }
+                      })
+                  })
+                </script>
+              </div>
+            </div> -->
           </div>
         </div>
       </div>
     </section><!-- End About Section -->
 
     
-
-    <!-- ======= Services Section ======= -->
-  
 
     <section id="services" class="services section-bg">
       <div class="container" data-aos="fade-up">
@@ -278,12 +474,7 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box iconbox-blue">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
-                </svg>
-                <i class="bx bx-money"></i>
-              </div>
+              <img src="assets/img/ferlilizer.jpg" alt="" style="width: 50%;"/>
               <h4><a href="">Integrated Fertilizer Nutrient Management </a></h4>
               <p>An exclusive project to help farmers through integrated agricultural procedures. This shall help them acquire high yields with promising income.</p>
             </div>
@@ -291,12 +482,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box iconbox-orange ">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426"></path>
-                </svg>
-                <i class="bx bxs-tree"></i>
-              </div>
+              <img src="assets/img/pestcontorl.jpg" alt="" style="width: 50%;"/>
               <h4><a href="">Integrated Pest Control Management </a></h4>
               <p>Helping agricultural organizations through advanced,  extensive training and experience. It is an individual one-to-one mentoring.</p>
             </div>
@@ -304,12 +490,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box iconbox-pink">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187510058486,332.0715597781072,496.52539010469104,255.14436215662573C477.37192572678356,184.95920475031193,473.57363656557914,105.61284051026155,413.0603344069578,65.22779650032875C343.27470386102294,18.654635553484475,251.2091493199835,5.337323636656869,175.0934190732945,40.62881213300186C97.87086631185822,76.43348514350839,51.98124368387456,156.15599469081315,36.44837278890362,239.84606092416172C21.716077023791087,319.22268207091537,43.775223500013084,401.1760424656574,96.891909868211,461.97329694683043C147.22146801428983,519.5804099606455,223.5754009179313,538.201503339737,300,541.5067337569781"></path>
-                </svg>
-                <i class="bx bx-tachometer"></i>
-              </div>
+              <img src="assets/img/DiseaseControl.jpg" alt="" style="width: 50%;"/>
               <h4><a href="">Integrated Disease Control Management</a></h4>
               <p>The latest technologies to make sure we are using the best resources to help you. This helps the agricultural sector of Kerala achieve progress with adequate measures.</p>
             </div>
@@ -317,12 +498,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box iconbox-yellow">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,503.46388370962813C374.79870501325706,506.71871716319447,464.8034551963731,527.1746412648533,510.4981551193396,467.86667711651364C555.9287308511215,408.9015244558933,512.6030010748507,327.5744911775523,490.211057578863,256.5855673507754C471.097692560561,195.9906835881958,447.69079081568157,138.11976852964426,395.19560036434837,102.3242989838813C329.3053358748298,57.3949838291264,248.02791733380457,8.279543830951368,175.87071277845988,42.242879143198664C103.41431057327972,76.34704239035025,93.79494320519305,170.9812938413882,81.28167332365135,250.07896920659033C70.17666984294237,320.27484674793965,64.84698225790005,396.69656628748305,111.28512138212992,450.4950937839243C156.20124167950087,502.5303643271138,231.32542653798444,500.4755392045468,300,503.46388370962813"></path>
-                </svg>
-                <i class="bx bx-layer"></i>
-              </div>
+              <img src="assets/img/FarmDevelopment.jpg" alt="" style="width: 50%;"/>
               <h4><a href="">Farm Development</a></h4>
               <p>We overcome unforeseen circumstances of land and weather through structured viable insights that shall be beneficial to farmers. </p>
             </div>
@@ -330,12 +506,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box iconbox-red">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,532.3542879108572C369.38199826031484,532.3153073249985,429.10787420159085,491.63046689027357,474.5244479745417,439.17860296908856C522.8885846962883,383.3225815378663,569.1668002868075,314.3205725914397,550.7432151929288,242.7694973846089C532.6665558377875,172.5657663291529,456.2379748765914,142.6223662098291,390.3689995646985,112.34683881706744C326.66090330228417,83.06452184765237,258.84405631176094,53.51806209861945,193.32584062364296,78.48882559362697C121.61183558270385,105.82097193414197,62.805066853699245,167.19869350419734,48.57481801355237,242.6138429142374C34.843463184063346,315.3850353017275,76.69343916112496,383.4422959591041,125.22947124332185,439.3748458443577C170.7312796277747,491.8107796887764,230.57421082200815,532.3932930995766,300,532.3542879108572"></path>
-                </svg>
-                <i class="bx bx-slideshow"></i>
-              </div>
+              <img src="assets/img/Highersustainability.jpg" alt="" style="width: 50%;"/>
               <h4><a href="">Higher sustainability</a></h4>
               <p>Plenty of methods to increase sustainability in agriculture. We also help to develop flexible business and farming practices.</p>
             </div>
@@ -343,12 +514,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box iconbox-teal">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,566.797414625762C385.7384707136149,576.1784315230908,478.7894351017131,552.8928747891023,531.9192734346935,484.94944893311C584.6109503024035,417.5663521118492,582.489472248146,322.67544863468447,553.9536738515405,242.03673114598146C529.1557734026468,171.96086150256528,465.24506316201064,127.66468636344209,395.9583748389544,100.7403814666027C334.2173773831606,76.7482773500951,269.4350130405921,84.62216499799875,207.1952322260088,107.2889140133804C132.92018162631612,134.33871894543012,41.79353780512637,160.00259165414826,22.644507872594943,236.69541883565114C3.319112789854554,314.0945973066697,72.72355303640163,379.243833228382,124.04198916343866,440.3218312028393C172.9286146004772,498.5055451809895,224.45579914871206,558.5317968840102,300,566.797414625762"></path>
-                </svg>
-                <i class="bx bx-arch"></i>
-              </div>
+              <img src="assets/img/forcustomers.jpg" alt="" style="width: 50%;"/>
               <h4><a href="">For the consumer</a></h4>
               <p >The consumer is economic viability and it helps to drive the evolution of every industry. Growing ethnic diversity has contributed to a shift in people’s food preferences as well.</p>
             </div>
@@ -358,9 +524,65 @@
       </div>
     </section><!-- End Services Section -->
 
-    
+    <!-- ======= Features Section ======= -->
+    <!-- <section id="features" class="features">
+      <div class="container" data-aos="fade-up">
 
-    <!-- ======= Products Section ======= -->
+        <div class="section-title">
+          <h2>Features</h2>
+          
+        </div>
+
+        <div class="row">
+          
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column align-items-lg-center">
+            <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-receipt"></i>
+              <h4>Learner's participation</h4>
+             <p>
+              We encourage the involvement of the students
+             </p>
+            </div>
+            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-cube-alt"></i>
+              <h4>Real life example of learning</h4>
+             <p>We provide examples relating to real life situations to get stronger fundamentals </p>
+           </div>
+          
+           <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-images"></i>
+              <h4>Interactive teaching</h4>
+             <P>We believe in effectiveness of interactive classes</P>
+            </div>
+           
+            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-shield"></i>
+              <h4>Best study materials</h4>
+              <p>
+                We provide simple and effective study materials for practice
+            </div>
+            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-cube-alt"></i>
+              <h4>One to One mentoring</h4>
+             <p>We provide individual mentoring to students to provide better care and support</p>
+           </div>
+            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-images"></i>
+              <h4>Mock tests</h4>
+             <P>we prepare students for real exams by conducting similar mock tests</P>
+            </div>
+          </div>
+          <div class="image col-lg-6 order-1 order-lg-2 " data-aos="zoom-in" data-aos-delay="100">
+            <img src="assets/img/farm.jpg" alt="" class="img-fluid">
+          </div>
+          
+        </div>
+
+      </div>
+    </section> -->
+    <!-- End Features Section -->
+
+    <!-- ======= Pricing Section ======= -->
     <section id="products" class="pricing section-bg">
       <div class="container" data-aos="fade-up">
 
@@ -376,25 +598,23 @@
               <div class="col-sm-12 col-lg-6 col-md-6 col-xs-12">
                 <div class="grid-item-test">
                   <div class="produc-description-div">
-                    <h4 style="color: #ffffff;" >
+                    <h4 class="product-heading" style="color: rgb(0, 0, 0);">
                       Amino Acid 30% SL
                       <br/>
                       <small>(Better growth &  quality of crop)</small>
                     </h4>
-                    <p style="font-size: 18px;">
-                      
-                        Increases size of fruit .immunity & cell elongation & division resulting in higher yields
-                        <br />
-                        1 ml per lit. of water(Spray)
-                    </p>
+                  <p style="font-size: 18px;">
+                    
+                      Increases size of fruit .immunity & cell elongation & division resulting in higher yields
+                      <br />
+                      1 ml per lit. of water(Spray)
+                  </p>
                   </div>
                 </div>
 
               </div>
               <div class="col-sm-12 col-lg-6 col-md-6 col-xs-12">
-                <div class="image-div">
-                  <img class="product-image" src="assets/img/folic-acid.png" />
-                </div>
+                <div class="image-div"><img class="product-image" src="assets/img/folic-acid.png" /></div>
               </div>
             </div>
           </div>
@@ -403,33 +623,90 @@
               <div class="col-sm-12 col-lg-6 col-md-6 col-xs-12">
                 <div class="grid-item-test">
                   <div class="produc-description-div">
-                    <h4 style="color: #ffffff;" >
+                    <h4 class="product-heading" style="color: rgb(0, 0, 0);">
                       Black Dragon
                       <br/>
                       <small>(Fulvic / Seaweed/ Humic Combi)</small>
                     </h4>
-                    <p style="font-size: 18px;">
-                      
-                      Growth of roots and overall development.
-                        <br />
-                        It rejuvenates & replenishes the soil with functional micro organisms.
-                    </p>
+                  <p style="font-size: 18px;">
+                    
+                    Growth of roots and overall development.
+                      <br />
+                      It rejuvenates & replenishes the soil with functional micro organisms.
+                  </p>
                   </div>
                 </div>
               </div>
               <div class="col-sm-12 col-lg-6 col-md-6 col-xs-12">
-                <div class="image-div">
-                  <img class="product-image" src="assets/img/Amino%20AG.png" />
-                </div>
+                <div class="image-div"><img class="product-image" src="assets/img/Amino%20AG.png" /></div>
               </div>
             </div>
           </div>
-        </div>
+         <div>
+
+          <a class="get-started-btn scrollto" style=" color: black; border-radius: 10px; border-color: #000; "  href="Products.html"  >View All  </a> 
+
+         </div>
          
 
 
 
+          <!-- <div class="mySlides ">
+            
+            <div class="grid-container-test">
+              <div class="grid-item-test">
+                <div class="produc-description-div">
+                  <h4 class="product-heading" style="color: black;">
+                    Amino Acid 30% SL
+                    <br/>
+                    <small>(Better growth &  quality of crop)</small>
+                  </h4>
+                <p style="font-size: 18px;">
+                   
+                    Increases size of fruit .immunity & cell elongation & division resulting in higher yields
+                    <br />
+                    1 ml per lit. of water(Spray)
+                </p>
+                </div>
+              </div>
+              <div class="grid-item-test"> <div class="image-div"><img class="product-image" src="assets/img/folic-acid.png" ></div></div>
+                
+            </div>
+          </div>
+          <div class="mySlides ">
+           
+            <div class="grid-container-test">
+              <div class="grid-item-test">
+                <div class="produc-description-div">
+                  <h4 class="product-heading" style="color: black;">
+                    Amino Acid 30% SL<br/><small >(Better growth &  quality of crop)</small>
+                  </h4>
+                    
+                
+                  <p style="font-size: 18px;">
+                   
+                    Increases size of fruit .immunity & cell elongation & division resulting in higher yields
+                    <br />
+                    1 ml per lit. of water(Spray)
+                </p>
+                </div>
+              </div>
+              <div class="grid-item-test"> <div class="image-div"><img class="product-image" src="assets/img/Amino%20AG.png" ></div></div>
+                
+            </div>
+          </div> -->
           
+          <!-- <div class="mySlides ">
+            <div class="numbertext">2 / 3</div>
+            <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" style="width:100%">
+            <div class="text">Caption Two</div>
+          </div>
+          
+          <div class="mySlides ">
+            <div class="numbertext">3 / 3</div>
+            <img src="assets/img/folic-acid.png" style="width:100%">
+            <div class="text">Caption Three</div>
+          </div> -->
           
           <a class="prev" onclick="showNext(-1)">&#10094;</a>
           <a class="next" onclick="showNext(1)">&#10095;</a>
@@ -437,7 +714,11 @@
           </div>
           <br>
           
-         
+          <!-- <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div> -->
           
           <script>
           var slideIndex = 1;
@@ -494,129 +775,94 @@
           }
 
           </script>
-          
-        <div style="text-align: center;">
-            <a class="get-started-btn scrollto" style=" color: rgb(255, 255, 255); border-radius: 10px; border-color: rgb(255, 255, 255); "  href="Products.html"  >View All  </a> 
-        </div>
+          <!-- <script>
+            var slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+              setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+            </script> -->
       </div>
     </section>
+
+
+<!-- 
+    
+    <div class="hero">
+      <div class="content-wrapper ">
+          <div class="content">
+              <h1>
+                  RAW MATERIALS
+              </h1>
+              <p>
+                  Good raw materials are the life of any product. Hence, we use the best quality raw materials in each of our products. This helps us optimize resource effectiveness and results in potent yet affordable products. The range includes compounds that aide soil quality, plant growth, fertility and increased shelf life of vegetables and fruits.
+
+              </p>
+
+          </div>
+      </div>
   </div>
+  <div class="tab-content">
+      <div class="content-wrapper">
+          <ul class="products">
+              <li title="click to view information">
+                  <div class="inner">
+                      <div class="text">
+                          <h3>
+                              Humic Acid 50%  Powder
+                              <small>(Root Growth & Plant growth) (Soil Conditioner)</small>
+                          </h3>
+                          <p>
+                              Use as a soil conditioner @  5 Kg/Acre.<br />
+                              Used for treatment to bentonite granules or can be packed as it is.
+                          </p>
+                      </div>
+                      <div class="image">
+                          <img src="assets/img/folic-acid.png" alt="Humic Acid 50%  Powder" />
+                      </div>
+                  </div>
+              </li>
+              
+              <li title="click to view information">
+                  <div class="inner">
+                      <div class="text">
+                          <h3>
+                              Folic Acid
+                              <small></small>
+                          </h3>
+                          <p>
+                              Folic Acid (also known as Vitamin B9)
+                              usually used for adding into stimulants and various formulation.
+                          </p>
+                      </div>
+                      <div class="image">
+                          <img src="assets/img/folic-acid.png" alt="Folic Acid" />
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      </div> -->
+
+  </div>
+
 </div>
+
   </main><!-- End #main -->
 
-<!-- ======= Cntact us form ======= -->
-<div class="form-back">
-  <div class="form-main" >
-    <input type="checkbox" id="show">
-    <div class="form-container">
-      <div style="margin-bottom: 20px;">
-        <label for="show" class="btn-get-started scrollto close-btn"  >close</label>
-      </div>
-      <!-- <form id="submit-form" action="">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="name" placeholder="Your name..">
-        <label for="lname">Email</label>
-        <input type="text" id="lname" name="email" placeholder="Your last name..">
-        <label for="country">Country</label>
-        <select id="country" name="color">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="message" placeholder="Write something.." style="height:100px"></textarea>
-    
-          <input type="submit"  value="Submit">
-      </form> -->
-      <div class="testbox">
-        <form id="submit-form" action="">
-          <div class="banner">
-            <h1 style="color: white; ">Contact us</h1>
-          </div>
-          <!-- <div class="item">
-            <p>Name</p>
-            <div class="name-item">
-              <input type="text" name="name" placeholder="First" />
-              <input type="text" name="name" placeholder="Last" />
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="item">
-              <p>Email</p>
-              <input type="text" name="name"/>
-            </div>
-            <div class="item">
-              <p>Phone</p>
-              <input type="text" name="name"/>
-            </div>
-          </div>
-          <div class="item">
-            <p>Student Status</p>
-            <input type="text" name="name"/>
-          </div>
-         
-          
-          
-          
-          <div class="item">
-            <p>Monthly Rent and Utilities</p>
-            <input type="text" name="name"/>
-          </div>
-          <div class="item">
-            <p>Please provide any other pertinent information</p>
-            <textarea rows="3" required></textarea>
-          </div>
-          <div class="btn-block">
-            <button type="submit" href="/">APPLY</button>
-          </div> -->
-          <div style="height: 20px;">
-
-          </div>
-          <label for="fname">First Name</label>
-        <input type="text" id="fname" name="name" placeholder="Your name..">
-        <label for="email">Email</label>
-        <input type="text" id="lname" name="email" placeholder="Your email..">
-        <label for="country">Country</label>
-        <select id="country" name="color">
-          <option value="india">India</option>
-
-          <!-- <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option> -->
-
-        </select>
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="message" placeholder="Write something.." style="height:100px"></textarea>
-        
-          <div style="text-align: center; margin-top: 10px;">
-            <input type="submit"  value="Submit">
-          </div>
-        </form>
-        </div>
-      </div>
-      <script>
-        $("#submit-form").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"https://script.google.com/macros/s/AKfycby1LPOGsKH1hIuZAWW8yeju9IptJXd6wsTMpdiMRVvjREcDqjdO6MkuRB_pRi_T3F_9ng/exec",
-                data:$("#submit-form").serialize(),
-                method:"post",
-                success:function (response){
-                    alert("Form submitted successfully")
-                    // window.location.reload()
-                    //window.location.href="https://google.com"
-                },
-                error:function (err){
-                    alert("Something Error")
-    
-                }
-            })
-        })
-      </script>
-    </div>
-  </div>
-</div>
-<!-- ======= Cntact us form end ======= -->
 
 <!-- ======= Footer ======= -->
 <footer id="footer">
@@ -650,10 +896,10 @@
         <div class="col-lg-3 col-md-6 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#services">Integrated Fertilizer Nutrient Management</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#services">Integrated Pest Control Management </a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#services">Integrated Disease Control Management</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#services">Farm Development</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Doubling Income</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Farming development</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">For the consumer</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Higher sustainability</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#">Management and Implementation</a></li>
           </ul>
         </div>
