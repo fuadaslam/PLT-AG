@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 
 <head>
   <meta charset="utf-8">
@@ -27,60 +25,94 @@
   <!-- <link href="assets/css/Site.css" rel="stylesheet"> -->
 </head>
 
-  <style>
-  .filterDiv {
-    /* float: left;
-    background-color: #2196F3;
-    color: #ffffff;
-    width: 100px;
-    line-height: 100px;
-    text-align: center;
-    margin: 2px; */
-    display: none;
-  }
 
-  .show {
-    display: grid;
-  }
 
-  /* .container {
-    margin-top: 20px;
-    overflow: hidden;
-  } */
 
-  /* Style the buttons */
-  .btn {
-    border: none;
-    outline: none;
-    padding: 12px 16px;
-    background-color: #f1f1f1;
-    cursor: pointer;
-    /* width:13vw; */
-  }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
 
-  .btn:hover {
-    background-color: #ddd;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  .btn.active {
-    background-color: #666; 
-     color: white;
-  }
-  .buttonImage{
-    /* height: 15vh; */
-    position: relative;
-    width: 100%;
-  }
-  .buttonText{
-    position: absolute;
-    top: 50%;
-    color: white;
-    font-weight: 700;
-    width: 70%;
-    text-shadow:2px 2px rgb(87, 35, 35);
-  }
-  </style>
-<body>
+body {
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.showbtn {
+  display: block;
+}
+
+/* Style the buttons */
+.btnfilter {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btnfilter:hover {
+  background-color: #ddd;
+}
+
+.btnfilter.activebtn {
+  background-color: #666;
+  color: white;
+}
+.head,.text {
+  color: black;
+}
+.image{
+  height: 250px;
+  margin-bottom: 15px;
+}
+</style>
+
 
   <!-- ======= Header ======= -->
   <header id="header" style="background: rgba(0, 0, 0, 0.8); " class="fixed-top " >
@@ -92,11 +124,11 @@
           <!-- Uncomment below if you prefer to use an image logo -->
           <nav class="nav-menu d-none d-lg-block">
             <ul>
-              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/#product">Products</a></li>
+              <li class="/#home"><a href="/">Home</a></li>
               <li><a href="/#about">About</a></li>
               <li><a href="/#services">Services</a></li>
               <!-- <li><a href="#features">Features</a></li> -->
-              <li><a href="/#products">Products</a></li>
               <li><a href="consultancy.html">Consultancy</a></li>
               <li><a href="education.html">Education</a></li>
               <li><a href="careers.html">Careers</a></li>
@@ -112,148 +144,142 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
- 
 
-  <section style="padding-top:120px; background-repeat: no-repeat;
-  background-image: url('assets/img/leaf.jpg');
-  background-attachment: fixed;  min-height: 100vh; 
-  background-size: cover;" id="products" class="services section-bg" >
-    <div class="container" data-aos="fade-up">
-      <div id="myBtnContainer">
-        <div class="row">
-          <!-- <div class="col-lg-3 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <button class="btn active"  onclick="filterSelection('all')" "> <div>
-              <img src="assets/img/leaf.jpg " style="height: 30vh;"/>
-            </div>Show all</button>
-
-          </div> -->
-          <div class="col-lg-2 col-sm-4 col-6 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="text-align: center; margin-bottom: 10px;" >
-            <div class="btn active"   onclick="filterSelection('Bio-Stimulants')" style="overflow: hidden;"> <div>
-              <img src="assets/img/folic-acid.png"class="buttonImage"/>
-              <div  class="buttonText">
-                Bio Stimulants
-              </div>
-            </div> 
-          </div>
-
-          </div>
-          <div class="col-lg-2 col-sm-4 col-6 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="text-align: center; margin-bottom: 10px;">
-            <div class="btn"   onclick="filterSelection('Bio-Fertilizers')"><div>
-              <img src="assets/img/Amino AG.png "class="buttonImage"/>
-            </div> 
-            <div  class="buttonText">
-              Bio Fertilizers
-            </div>
-          </div>
-
-          </div>
-          <div class="col-lg-2 col-sm-4 col-6 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="text-align: center; margin-bottom: 10px;">
-            <div class="btn"   onclick="filterSelection('Disease-Pest-Management')"> <div>
-              <img src="assets/img/leaf.jpg "class="buttonImage"/>
-            </div>
-            <div  class="buttonText">
-              Disease & Pest Management
-            </div>
-          </div>
-
-          </div>
-          <div class="col-lg-2 col-sm-4 col-6 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" style="text-align: center; margin-bottom: 10px;">
-            <div class="btn" onclick="filterSelection('Others')"> <div>
-              <img src="assets/img/leaf.jpg "class="buttonImage"/>
-            </div>
-            <div  class="buttonText">
-              Others
-            </div>
-          </div>
-
-          </div>
-
-        </div>
-      </div> 
+<!-- MAIN (Center website) -->
+<section style="padding-top:120px; background-repeat: no-repeat;
+background-image: url('assets/img/leaf.jpg');
+background-attachment: fixed;  min-height: 100vh; 
+background-size: auto;" id="products" class="services section-bg" >
 
 
-      <div class="row" style="margin-top: 2vw;">
-        
-        <div style="margin-bottom: 1.5vw; " class=" col-lg-4 col-md-6 Bio-Stimulants filterDiv" data-aos="zoom-in" data-aos-delay="100">
-          <div class="icon-box iconbox-blue">
-           
-              <img  src="assets/img/folic-acid.png" style="height: 30vh;" />
-              
-            <h4><a href="">Foundation</a></h4>
-            <p>At Asset mentor we focus on leveraging fundamentals, by using real life examples</p>
-          </div>
-        </div>
-        
-        <div style="margin-bottom: 1.5vw;" class=" col-lg-4 col-md-6 Disease-Pest-Management filterDiv" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-blue">
-             
-                <img  src="assets/img/folic-acid.png" style="height: 30vh;" />
-               
-              <h4><a href="">typws</a></h4>
-              <p>At Asset mentor we focus on leveraging fundamentals, by using real life examples</p>
-            </div>
-          
-        </div>
-        <div style="margin-bottom: 1.5vw;" class=" col-lg-4 col-md-6 Disease-Pest-Management filterDiv" data-aos="zoom-in" data-aos-delay="100">
-          <div class="icon-box iconbox-blue">
-           
-              <img  src="assets/img/Amino AG.png" style="height: 30vh;" />
-             
-            <h4><a href="">fundamentals, by using real life</a></h4>
-            <p>At Asset mentor we focus on leveraging fundamentals, by using real life examples</p>
-          </div>
-        
-      </div>
-      </div>
+<div class="main">
 
-      
+<div id="myBtnContainerfilter">
+  <button class="btnfilter " onclick="filterSelection('all')"> Show all</button>
+  <button class="btnfilter activebtn" onclick="filterSelection('nature')"> Nature</button>
+  <button class="btnfilter" onclick="filterSelection('cars')"> Cars</button>
+  <button class="btnfilter" onclick="filterSelection('people')"> People</button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column nature">
+    <div class="content">
+      <img  src="assets/img/No img.png" alt="Mountains" class="image">
+      <h4 class="head">Mountains</h4>
+      <p class="text">Lorem ipsum dolor..</p>
     </div>
-  </section>
-  <script>
-  filterSelection("Bio-Stimulants")
-  function filterSelection(c) {
-    var x, i;
-    x = document.getElementsByClassName("filterDiv");
-    if (c == "all") c = "";
-    for (i = 0; i < x.length; i++) {
-      w3RemoveClass(x[i], "show");
-      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  </div>
+  <div class="column nature">
+    <div class="content">
+    <img  src="assets/img/No img.png" alt="Lights" class="image">
+      <h4 class="head">Lights</h4>
+      <p class="text">Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column nature">
+    <div class="content">
+    <img src="assets/img/No img.png" alt="Nature" class="image">
+      <h4 class="head">Forest</h4>
+      <p class="text">Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  
+  <div class="column cars">
+    <div class="content">
+      <img  src="assets/img/No img.png" alt="Car" class="image">
+      <h4 class="head">Retro</h4>
+      <p class="text">Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column cars">
+    <div class="content">
+    <img src="assets/img/No img.png" alt="Car" class="image">
+      <h4 class="head">Fast</h4>
+      <p class="text">Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column cars">
+    <div class="content">
+    <img src="assets/img/No img.png" alt="Car" class="image">
+      <h4 class="head">Classic</h4>
+      <p class="text">Lorem ipsum dolor..</p>
+    </div>
+  </div>
+
+  <div class="column people">
+    <div class="content">
+      <img src="assets/img/No img.png" alt="Car" class="image">
+      <h4 class="head">Girl</h4>
+      <p class="text">Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column people">
+    <div class="content">
+    <img src="assets/img/No img.png" alt="Car" class="image">
+      <h4 class="head">Man</h4>
+      <p class="text">Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column people">
+    <div class="content">
+    <img src="assets/img/No img.png" alt="Car" class="image">
+      <h4 class="head">Woman</h4>
+      <p class="text">Lorem ipsum dolor..</p>
+    </div>
+  </div>
+<!-- END GRID -->
+</div>
+
+<!-- END MAIN -->
+</div>
+</section>
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "showbtn");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "showbtn");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
     }
   }
+  element.className = arr1.join(" ");
+}
 
-  function w3AddClass(element, name) {
-    var i, arr1, arr2;
-    arr1 = element.className.split(" ");
-    arr2 = name.split(" ");
-    for (i = 0; i < arr2.length; i++) {
-      if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-    }
-  }
 
-  function w3RemoveClass(element, name) {
-    var i, arr1, arr2;
-    arr1 = element.className.split(" ");
-    arr2 = name.split(" ");
-    for (i = 0; i < arr2.length; i++) {
-      while (arr1.indexOf(arr2[i]) > -1) {
-        arr1.splice(arr1.indexOf(arr2[i]), 1);     
-      }
-    }
-    element.className = arr1.join(" ");
-  }
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainerfilter");
+var btns = btnContainer.getElementsByClassName("btnfilter");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("activebtn");
+    current[0].className = current[0].className.replace(" activebtn", "");
+    this.className += " activebtn";
+  });
+}
 
-  // Add active class to the current button (highlight it)
-  var btnContainer = document.getElementById("myBtnContainer");
-  var btns = btnContainer.getElementsByClassName("btn");
-  for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function(){
-      var current = document.getElementsByClassName("active");
-      current[0].className = current[0].className.replace(" active", "");
-      this.className += " active";
-    });
-  }
-  </script>
+</script>
 
 <!-- ======= Cntact us form ======= -->
 <div class="form-back">
@@ -441,5 +467,4 @@
     </div>
   </div>
   <script src="assets/js/whatsapp.js"></script>
-</body>
-</html>
+
