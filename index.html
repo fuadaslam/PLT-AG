@@ -464,7 +464,7 @@
           </nav><!-- .nav-menu -->
 
           <!-- <a href="contactUs.html" class="get-started-btn scrollto">Contact Us</a> -->
-          <label for="show" class="get-started-btn scrollto show-btn" style=" border-radius: 10px;">Connect Us</label>
+          <label for="show" class="get-started-button scrollto show-btn" style=" border-radius: 10px;">Connect Us</label>
           <!-- <a href="#about"><label for="show" class="get-started-btn scrollto show-btn" ></label>Connect Us</label></a> -->
 
         </div>
@@ -664,7 +664,7 @@
                 <div class="grid-item-test">
                   <div class="produc-description-div">
                     <h4 class="product-heading" style="color: rgb(255, 255, 255);">
-                      Amino Acid 30% SL
+                      Amino 40
                       <br />
                       <small>(Better growth & quality of crop)</small>
                     </h4>
@@ -679,7 +679,7 @@
 
               </div>
               <div class="col-sm-12 col-lg-6 col-md-6 col-xs-12">
-                <div class="image-div"><img class="product-image" src="assets/img/No img.png" /></div>
+                <div class="image-div"><img class="product-image" src="assets/img/amino40bottle1.png" /></div>
               </div>
             </div>
           </div>
@@ -689,7 +689,7 @@
                 <div class="grid-item-test">
                   <div class="produc-description-div">
                     <h4 class="product-heading" style="color: rgb(255, 255, 255);">
-                      Black Dragon
+                      Humister 95
                       <br />
                       <small>(Fulvic / Seaweed/ Humic Combi)</small>
                     </h4>
@@ -703,7 +703,7 @@
                 </div>
               </div>
               <div class="col-sm-12 col-lg-6 col-md-6 col-xs-12">
-                <div class="image-div"><img class="product-image" src="assets/img/No img.png" /></div>
+                <div class="image-div"><img class="product-image" src="assets/img/humistarPouchMockup.png" /></div>
               </div>
             </div>
           </div>
@@ -784,6 +784,53 @@
     </div>
 
   </main><!-- End #main -->
+
+  
+<!-- ======= Cntact us form ======= -->
+<!-- <div class="form-back">
+  <div class="form-main" >
+    <input type="checkbox" id="show">
+    <div class="form-container">
+      <label for="show" class="btn-get-started scrollto close-btn" >close</label>
+      <form id="submit-form" action="">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="name" placeholder="Your name..">
+        <label for="lname">Email</label>
+        <input type="text" id="lname" name="email" placeholder="Your last name..">
+        <label for="country">Country</label>
+        <select id="country" name="color">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="message" placeholder="Write something.." style="height:100px"></textarea>
+     
+          <input type="submit"  value="Submit">
+      </form>
+      <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycby1LPOGsKH1hIuZAWW8yeju9IptJXd6wsTMpdiMRVvjREcDqjdO6MkuRB_pRi_T3F_9ng/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    // window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+      </script>
+    </div>
+  </div>
+</div> -->
+<!-- ======= Cntact us form end ======= -->
 
 
   <!-- ======= Footer ======= -->

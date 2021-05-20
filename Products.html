@@ -38,6 +38,7 @@
 body {
   background-color: #f1f1f1;
   padding: 20px;
+  margin-top: 20px;
   font-family: Arial;
 }
 
@@ -83,7 +84,7 @@ h1 {
 }
 
 /* The "show" class is added to the filtered elements */
-.showbtn {
+.showfilter {
   display: block;
 }
 
@@ -146,7 +147,7 @@ h1 {
 
 
 <!-- MAIN (Center website) -->
-<section style="padding-top:120px; background-repeat: no-repeat;
+<section style="padding-top:140px; background-repeat: no-repeat;
 background-image: url('assets/img/leaf.jpg');
 background-attachment: fixed;  min-height: 100vh; 
 background-size: auto;" id="products" class="services section-bg" >
@@ -156,74 +157,75 @@ background-size: auto;" id="products" class="services section-bg" >
 
 <div id="myBtnContainerfilter">
   <button class="btnfilter " onclick="filterSelection('all')"> Show all</button>
-  <button class="btnfilter activebtn" onclick="filterSelection('nature')"> Nature</button>
-  <button class="btnfilter" onclick="filterSelection('cars')"> Cars</button>
-  <button class="btnfilter" onclick="filterSelection('people')"> People</button>
+  <button class="btnfilter activebtn" onclick="filterSelection('fertilizer')"> Fertilizer </button>
+  <button class="btnfilter" onclick="filterSelection('plantgrowthregulators')"> Plant growth regulators</button>
+  <button class="btnfilter" onclick="filterSelection('pestanddisease')"> Pest and Disease </button>
+  <button class="btnfilter" onclick="filterSelection('other')"> Other </button>
 </div>
 
 <!-- Portfolio Gallery Grid -->
 <div class="row">
-  <div class="column nature">
+  <div class="column fertilizer">
     <div class="content">
-      <img  src="assets/img/No img.png" alt="Mountains" class="image">
+      <img  src="assets/img/proton1bottle.png" alt="fertilizer" class="image">
       <h4 class="head">Mountains</h4>
       <p class="text">Lorem ipsum dolor..</p>
     </div>
   </div>
-  <div class="column nature">
+  <div class="column fertilizer">
     <div class="content">
-    <img  src="assets/img/No img.png" alt="Lights" class="image">
+    <img  src="assets/img/No img.png" alt="fertilizer" class="image">
       <h4 class="head">Lights</h4>
       <p class="text">Lorem ipsum dolor..</p>
     </div>
   </div>
-  <div class="column nature">
+  <div class="column fertilizer">
     <div class="content">
-    <img src="assets/img/No img.png" alt="Nature" class="image">
+    <img src="assets/img/No img.png" alt="fertilizer" class="image">
       <h4 class="head">Forest</h4>
       <p class="text">Lorem ipsum dolor..</p>
     </div>
   </div>
   
-  <div class="column cars">
+  <div class="column plantgrowthregulators">
     <div class="content">
-      <img  src="assets/img/No img.png" alt="Car" class="image">
+      <img  src="assets/img/No img.png" alt="plantgrowthregulators" class="image">
       <h4 class="head">Retro</h4>
       <p class="text">Lorem ipsum dolor..</p>
     </div>
   </div>
-  <div class="column cars">
+  <div class="column plantgrowthregulators">
     <div class="content">
-    <img src="assets/img/No img.png" alt="Car" class="image">
+    <img src="assets/img/No img.png" alt="plantgrowthregulators" class="image">
       <h4 class="head">Fast</h4>
       <p class="text">Lorem ipsum dolor..</p>
     </div>
   </div>
-  <div class="column cars">
+  <div class="column plantgrowthregulators">
     <div class="content">
-    <img src="assets/img/No img.png" alt="Car" class="image">
+    <img src="assets/img/No img.png" alt="plantgrowthregulators" class="image">
       <h4 class="head">Classic</h4>
       <p class="text">Lorem ipsum dolor..</p>
     </div>
   </div>
 
-  <div class="column people">
+  <div class="column pestanddisease">
     <div class="content">
-      <img src="assets/img/No img.png" alt="Car" class="image">
+      <img src="assets/img/No img.png" alt="pestanddisease" class="image">
       <h4 class="head">Girl</h4>
       <p class="text">Lorem ipsum dolor..</p>
     </div>
   </div>
-  <div class="column people">
+  <div class="column pestanddisease">
     <div class="content">
-    <img src="assets/img/No img.png" alt="Car" class="image">
+    <img src="assets/img/No img.png" alt="pestanddisease" class="image">
       <h4 class="head">Man</h4>
       <p class="text">Lorem ipsum dolor..</p>
     </div>
   </div>
-  <div class="column people">
+  <div class="column pestanddisease">
     <div class="content">
-    <img src="assets/img/No img.png" alt="Car" class="image">
+    <img src="assets/img/No img.png" alt="pestanddisease" class="image">
       <h4 class="head">Woman</h4>
       <p class="text">Lorem ipsum dolor..</p>
     </div>
@@ -241,8 +243,8 @@ function filterSelection(c) {
   x = document.getElementsByClassName("column");
   if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "showbtn");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "showbtn");
+    w3RemoveClass(x[i], "showfilter");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "showfilter");
   }
 }
 
@@ -282,8 +284,8 @@ for (var i = 0; i < btns.length; i++) {
 </script>
 
 <!-- ======= Cntact us form ======= -->
-<div class="form-back">
-  <div class="form-main" >
+<!-- <div class="form-back">
+  <div class="form-main-contact" >
     <input type="checkbox" id="show">
     <div class="form-container">
       <label for="show" class="btn-get-started scrollto close-btn" >close</label>
@@ -324,7 +326,7 @@ for (var i = 0; i < btns.length; i++) {
       </script>
     </div>
   </div>
-</div>
+</div> -->
 <!-- ======= Cntact us form end ======= -->
   <!-- ======= Footer ======= -->
 <footer id="footer">
@@ -459,7 +461,7 @@ for (var i = 0; i < btns.length; i++) {
   <div class="modal fade col-lg-12" id="modalUrgencia" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
-        <button type="button" class="fechaModal" data-dismiss="modal">×</button>
+        <button type="button" class="fechaModal" data-dismiss="modal"></button>
         <div class="modal-body">
   
         </div>
