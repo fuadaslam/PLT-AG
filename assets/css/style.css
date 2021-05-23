@@ -1623,7 +1623,8 @@ section {
   .banner {
     position: relative;
     height: 210px;
-    background-image: url("/assets/img/footerimg.jpg");      background-size: cover;
+    background-image: url("https://drive.google.com/uc?export=view&id=117ZjRuEBYZ1K38d7HakbRXs51-aGAzmu");      background-size: cover;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1767,7 +1768,7 @@ input[type=text], select, textarea {
 #footer {
   color: #fff;
   font-size: 14px;
-  background: linear-gradient(20deg, rgba(4, 37, 9, 0.493) 0%, rgba(15, 44, 18, 0.527) 100%), url("../img/footerimg.jpg") center center no-repeat;
+  background: linear-gradient(20deg, rgba(4, 37, 9, 0.493) 0%, rgba(15, 44, 18, 0.527) 100%), url("https://drive.google.com/uc?export=view&id=117ZjRuEBYZ1K38d7HakbRXs51-aGAzmu") center center no-repeat;
   background-size: cover;
 }
 
@@ -1785,7 +1786,8 @@ input[type=text], select, textarea {
 }
 #services {
   font-size: 14px;
-  background: linear-gradient(20deg, rgba(46, 134, 60, 0.575) 0%, rgba(14, 58, 19, 0.445) 100%), url("../img/leaf.jpg") center center no-repeat;
+  background: linear-gradient(20deg, rgba(46, 134, 60, 0.575) 0%, rgba(14, 58, 19, 0.445) 100%), url("  https://drive.google.com/uc?export=view&id=181Hm_Z2TFiBLQ0Kur_pqt15HypWz62aU");
+ 
   background-size: cover;
 }
 
@@ -1794,7 +1796,7 @@ input[type=text], select, textarea {
 {
   color: rgb(255, 255, 255);
   font-size: 14px;
-  background: linear-gradient(20deg, rgba(4, 37, 9, 0.493) 0%, rgba(15, 44, 18, 0.527) 100%), url("../img/productsimgbg.jpg") center center no-repeat;
+  background: linear-gradient(20deg, rgba(4, 37, 9, 0.493) 0%, rgba(15, 44, 18, 0.527) 100%), url("https://drive.google.com/uc?export=view&id=1fuBBqQS4ZscDT1mUvOwonMqGqrjtN5-8");
   background-color: #ffffff;
   background-size: cover;
 }
