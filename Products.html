@@ -116,9 +116,7 @@
     margin-bottom: 15px;
   }
 
-  #more {
-    display: none;
-  }
+
 </style>
 
 
@@ -173,9 +171,8 @@ background-size: auto;" class="services section-bg">
     </div>
 
     <!-- Portfolio Gallery Grid -->
-    <div class="row">
-      <div class="
-      col-lg-4 col-md-4 col-sm-6">
+    <div class="row" >
+      <div class="col-lg-4 col-md-4 col-sm-6">
         <div class="column fertilizer ">
           <div class="content">
             <img src="assets/img/MOCKUPnutrimixblue.png" alt="fertilizer" class="image">
@@ -188,8 +185,6 @@ background-size: auto;" class="services section-bg">
                 Acid, Humic, Seaweed Amino Acid and much more
               </p>
             </div>
-
-
             <!-- <button onclick="myFunction()" id="myBtn">Read more</button> -->
           </div>
         </div>
@@ -342,7 +337,8 @@ background-size: auto;" class="services section-bg">
           </div>
         </div>
       </div>
-      
+
+
       <div class="col-lg-4 col-md-4 col-sm-6">
         <div class="column plantgrowthregulators ">
           <div class="content">
@@ -372,7 +368,6 @@ background-size: auto;" class="services section-bg">
       </div>
 
       <div class="col-lg-4 col-md-4 col-sm-6">
-
         <div class="column pestanddisease  ">
           <div class="content">
             <img src="assets/img/agriboss.png" alt="pestanddisease" class="image">
@@ -380,7 +375,6 @@ background-size: auto;" class="services section-bg">
             <p class="text">PLT AGRI BOSS is a systemic product against groups of aphids and thripes.
               Those attack on plants by sucking its fluid from tender new growth and results in deformed growth,
               flowering and discoloration.
-
             </p>
           </div>
         </div>
@@ -410,7 +404,6 @@ background-size: auto;" class="services section-bg">
             <h4 class="head">Bone Meal</h4>
             <p class="text">It's a great source of phosphorus, which is an essential nutrient for plants to help them
               flower and new plants to produce strong roots,
-              <span id="dots">...</span><span id="more"></span>
               so is good for root vegetables such as onions, garlic, carrot and parsnip.
               </span>
             </p>
@@ -424,7 +417,6 @@ background-size: auto;" class="services section-bg">
             <h4 class="head">Neem cake</h4>
             <p class="text">Neem Cake is used as an organic fertilizer because of the various micro and macro nutrients
               which it is composed of. It will control.
-              <span id="dots">...</span><span id="more"></span>
               At the same time, soil based pathogens as well as nematodes. It will also inhibit nitrification of the
               soil plus enhance the efficiency of nitrogen providing fertilizer.
               </span>
@@ -440,7 +432,6 @@ background-size: auto;" class="services section-bg">
             <img src="assets/img/vgb garden.jpeg" alt="other" class="image">
             <h4 class="head">Vegetable garden mix</h4>
             <p class="text">Ornanic manure prepared with coco peat, Neam cake, born meal, shrimp shell dust,
-              <span id="dots">...</span><span id="more"></span>
               Potash, micro nutrients etc.Suggested for Vegitables and Flower gardens.
               </span>
             </p>
@@ -456,7 +447,6 @@ background-size: auto;" class="services section-bg">
             <h4 class="head">Vermicompost (vermi-compost, vermiculture)</h4>
             <p class="text">Vermicompost (vermi-compost, vermiculture) is the product of the composting process using
               various species of worms,
-              <span id="dots">...</span><span id="more"></span>
               usually red wigglers, white worms, and other earthworms, to create a mixture of decomposing vegetable or
               food waste, bedding materials, and vermicast.
               </span>
@@ -472,7 +462,6 @@ background-size: auto;" class="services section-bg">
             <h4 class="head">Farm yard Manure (FYM)</h4>
             <p class="text">Farm yard Manure (FYM) is prepared basically using cow dung, cow urine, waste straw and
               other dairy wastes.
-              <span id="dots">...</span><span id="more"></span>
               It is highly useful and some of its properties are given below : FYM is rich in nutrients. ... When cow
               dung and urine are mixed, a balanced nutrition is made available to the plants.
               </span>
@@ -487,7 +476,6 @@ background-size: auto;" class="services section-bg">
             <img src="assets/img/cocopeat.jpeg" alt="other" class="image">
             <h4 class="head">Cocopeat</h4>
             <p class="text">High water holding capacity of cocopeat helps in retaining the moisture.
-              <span id="dots">...</span><span id="more"></span>
               coco peat blocks will expandable up to 15 liters cocopeat / agropeat is an ideal media for all types of
               potted plants as well as for growing vegetables, flowers or herbs from seeds.
               </span>
@@ -503,7 +491,6 @@ background-size: auto;" class="services section-bg">
             <h4 class="head">Cpom</h4>
             <p class="text">Improves yield in floriculture crops. Reduces soil temperature. Supports soil’s
               microbiological activity (or the life of the soil). High moisture retention.
-              <span id="dots">...</span><span id="more"></span>
               Improves yield in floriculture crops. Reduces soil temperature. Supports soil’s microbiological activity
               (or the life of the soil). High moisture retention.
               </span>
@@ -533,23 +520,6 @@ background-size: auto;" class="services section-bg">
   </div>
 </section>
 <script>
-
-  function myFunction() {
-    var dots = document.getElementById("dots");
-    var moreText = document.getElementById("more");
-    var btnText = document.getElementById("myBtn");
-
-    if (dots.style.display === "none") {
-      dots.style.display = "inline";
-      btnText.innerHTML = "Read more";
-      moreText.style.display = "none";
-    } else {
-      dots.style.display = "none";
-      btnText.innerHTML = "Read less";
-      moreText.style.display = "inline";
-    }
-  }
-
 
   filterSelection("all")
   function filterSelection(c) {
