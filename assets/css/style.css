@@ -1781,7 +1781,7 @@ input[type=text], select, textarea {
 #careers {
   color: #fff;
   font-size: 14px;
-  background: linear-gradient(20deg, rgba(46, 134, 60, 0.575) 0%, rgba(14, 58, 19, 0.445) 100%), url("../img/about\ us.jpg") center center no-repeat;
+  background: linear-gradient(20deg, rgba(46, 134, 60, 0.575) 0%, rgba(14, 58, 19, 0.445) 100%), url("../img/leaf.jpg") center center no-repeat;
   background-size: cover;
 }
 #services {
