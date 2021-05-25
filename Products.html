@@ -116,6 +116,13 @@
     width: 300px;
     margin-bottom: 15px;
   }
+
+
+.transferButton{
+  border: none;
+  background-color: white;
+}
+
   @media only screen and (max-width: 800px) {
 
 .image{
@@ -195,9 +202,13 @@ background-size: auto;" class="services section-bg">
 
     <!-- Portfolio Gallery Grid -->
     <div class="row" >
-      <div class="col-lg-4 col-md-4 ">
+      <!-- <a href="description.html" > -->
+      <div class="col-lg-4 col-md-4 ">      
+
         <div class="column fertilizer ">
           <div class="content">
+            <button class="transferButton" onclick="pass('assets/img/MOCKUPnutrimixblue.png','PLT NUTRI MIX','rganic Fertilizer provides bio enriched organic manure with nitrogen, phosphorus,potash, organic carbon ,npk solubulising bacteria and contain hormones that prevent diseases and promote growth. Bio enriched organic manure including Neemcake, Protein, Fat, Bio-phosphorous, Bio-Pottash, Fulvic Acid, Humic, Seaweed Amino Acid and much more')">
+
             <img src="assets/img/MOCKUPnutrimixblue.png" alt="fertilizer" class="image">
             <h4 class="head">PLT NUTRI MIX</h4>
             <div class="container">
@@ -207,7 +218,7 @@ background-size: auto;" class="services section-bg">
                 Bio enriched organic manure including Neemcake, Protein, Fat, Bio-phosphorous, Bio-Pottash, Fulvic
                 Acid, Humic, Seaweed Amino Acid and much more
               </p>
-            </div>
+            </div></button>
             <!-- <button onclick="myFunction()" id="myBtn">Read more</button> -->
           </div>
         </div>
@@ -570,7 +581,13 @@ background-size: auto;" class="services section-bg">
     element.className = arr1.join(" ");
   }
 
+  function pass(imageName,title,description){
+    localStorage.setItem("description",description)
+    localStorage.setItem("image",imageName)
+    localStorage.setItem("title",title)
 
+    location.href = "description.html";
+  }
   // Add active class to the current button (highlight it)
   var btnContainer = document.getElementById("myBtnContainerfilter");
   var btns = btnContainer.getElementsByClassName("btnfilter");
