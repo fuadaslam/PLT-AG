@@ -37,8 +37,6 @@
 
   body {
     background-color: #f1f1f1;
-    padding: 20px;
-    margin-top: 20px;
     font-family: Arial;
   }
 
@@ -53,9 +51,9 @@
     word-break: break-all;
   }
 
-  .row {
+  /* .row {
     margin: 10px -16px;
-  }
+  } */
 
   /* Add padding BETWEEN each column */
   .row,
@@ -95,6 +93,7 @@
     padding: 12px 16px;
     background-color: white;
     cursor: pointer;
+    border: 1px solid #eee;
   }
 
   .btnfilter:hover {
@@ -113,12 +112,15 @@
 
   .image {
     height: 300px;
-    width: 300px;
+    justify-content: center;
+    width: 100%;
     transition: transform .9s;
 
   }
 
-
+#myBtnContainerfilter{
+  margin-left: 25px;
+}
 .transferButton{
   border: none;
   background-color: white;
@@ -131,11 +133,11 @@
   background-color: gray;
 }
 .image:hover {
-  transform: scale(1.5);
+  transform: scale(0.8);
 }
 .productImageContainer{
-  height: 300px;
-    width: 300px;
+    height: 300px;
+    /* width: 300px; */
     margin-bottom: 15px;
     overflow: hidden;
 
@@ -221,527 +223,292 @@ background-size: auto;" class="services section-bg">
     </div>
 
     <div id="myBtnContainerfilter">
-     
+    
       <button class="btnfilter activebtn" onclick="filterSelection('fertilizer')"> Fertilizer </button>
       <button class="btnfilter" onclick="filterSelection('plantgrowthregulators')"> Plant growth regulators</button>
       <button class="btnfilter" onclick="filterSelection('pestanddisease')"> Pest and Disease </button>
-       <button class="btnfilter  " onclick="filterSelection('all')"> Show all</button>
       <button class="btnfilter" onclick="filterSelection('other')"> Other </button>
+      <button class="btnfilter" onclick="filterSelection('all')"> Show all</button>
     </div>
 
-    <!-- Portfolio Gallery Grid -->
-    <div class="row" >
-      <!-- <a href="description.html" > -->
-      <div class="col-lg-4 col-md-4 ">      
+   
+    <div id="productsByJs" class="row" >
 
-        <div class="column fertilizer ">
-          <div class="content">
-            <button class="transferButton" onclick="pass('assets/img/MOCKUPnutrimixblue.png',
-            '<h5>Organic Fertilizer provides bio enriched organic manure with nitrogen, phosphorus,potash, organic carbon which contains hormones that prevent diseases and promote growth. ‘PLT Nutrimix’ enriched with NPK solubilizing bacteria; it provides plants 6 to 16 kg of nitrogen from the atmosphere. Easily gives Phosphorus and potash from soil and fertilizer. Bio enriched organic manure including, Neem cake,Protein, Fat, Bio-phosphorous, Bio-Potash, Fulvic Acid, Humic, Seaweed,Amino Acid etc. It increases the health and immunity of both plants and soil. Yieldincreases by 30% to 35% with the use of PLT Nutrimix.</h5>',
-            '<ul><li>Increases the overall growth of the plant enhances the growth of baneficial soil microflora.</li><li>20% decrease in the use of chemical fertilizer</li><li>Plt nutri mix provide balanced  NPK into the soil</li><li>npk solubilising bacterias help to undertake more npk from soil</li><li>increases crop production upto 35 % </li><li> increases cell multiplication and flowering</li></ul>')">
-              <div class="productImageContainer">
-              <img src="assets/img/MOCKUPnutrimixblue.png" alt="fertilizer" class="image">
-            </div>
-              <div class="container">
-                <h4 class="head">PLT NUTRI MIX</h4>
-                <p class="text"> Organic Fertilizer provides bio enriched  organic manure with nitrogen, phosphorus, potash, organic carbon ,npk solubulising bacteria and contain hormones that prevent diseases and promote growth. 
-                  Bio enriched organic manure including ,Neemcake, Protein, Fat, Bio-phosphorous, Bio-Pottash, Fulvic Acid, Humic, Seaweed Amino Acid and much more
-                  
-                </p>
-              </div>
-            </button>
-            <!-- <button onclick="myFunction()" id="myBtn">Read more</button> -->
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-4 ">
-        <div class="column fertilizer ">
-          <div class="content">
-            <button class="transferButton" onclick="pass('assets/img/ph tuner new blue.png',
-            '<h5>Soil ph affects the amount of nutrients and chemicals that are soluble in soil water, and therefore the amount of nutrients available to plants.The ph level of the soil must be on seven. If Soil PH is normal soil pathogens and pest will not attack plants.PLT PH TUNER is 100% natural that the microbes in the soil will not be destroyed.The leonardite is used as soil conditioner, as a stabilizer for ion exhange and chelate soil nutrients. Enhance long term ph and rooting of plants.The non-treated mussel shells contained in the PLT PH TUNER stays in the soil for a long time and whenever the pH decreases, it gradually dissolves in the soil and gradually normalizes the pH of the soil. PLT PH TUNER is a unique product that provides continuous service for plants throughout the year.</h5>',
-            '<ul><li></li></ul>')">
-
-            <div class="productImageContainer">
-              <img src="assets/img/ph tuner new blue.png" alt="fertilizer" class="image">
-            </div>
-            <h4 class="head">PLT PH TUNER</h4>
-            <p class="text">Soil ph affects the amount of nutrients and chemicals that are soluble in soil water, and therefore the amount of nutrients available to plants.
-              The ph level of the soil must be on seven. If Soil PH is normal soil pathogens and pest will not attack plants.
-            
-            </p>
-          </div>
-        </button>
-        </div>
-      </div>
-
-
-      <div class="col-lg-4 col-md-4 ">
-        <div class="column fertilizer ">
-          <div class="content">
-            <button class="transferButton" onclick="pass('assets/img/agri dolomite.png',
-            '<h5>Agri Dolomite is high form of DOLOMITE a type of limestone, provides valuable nutrients like 80% Calcium Carbonate, 12% MAGNESIUM to plants and helps change the pH of the soil by raising it to match the plants needs. Agri Dolomite maintain the soil ph to 6.5-7.5 for long period which enables more nutrient uptake to the plants.</h5>',
-            '<ul><li></li></ul>')">
-
-            <div class="productImageContainer">
-              <img src="assets/img/agri dolomite.png" alt="fertilizer" class="image">
-            </div>
-            <h4 class="head">PLT AGRI DOLOMITE</h4>
-            <p class="text">Agri Dolomite is high form of DOLOMITE, a type of limestone, provides valuable nutrients like 80% CALCIUM CARBONATE  , 12% MAGNESIUM  to plants and helps change the pH of the soil by raising it to match the plants' needs. 
-              Agri Dolomite maintain the soil ph to 6.5-7.5 for long period which enables more nutrient uptake to the plants.
-              
-            </p>
-          </div>
-        </button>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-4 ">
-        <div class="column fertilizer ">
-          <div class="content">
-                        <button class="transferButton" onclick="pass('assets/img/starshine21kg.png','<h5>PLT Star Shine’ is a soil conditioner with seaweed extract and Humic being the main active ingredient. Especially designed for seasonal / cash crops. It Supplies well balanced crop nutrients. Helps plant to endure environmental stress.This formulation has been made by more than 22 components; it’s a complete package of nutrients, enzymes, auxins, and proteins.</h5>','<ul><li>Induces the growth and flowering of the plant.</li><li>Improves fruit setting.</li><li>Reduces flower fall.</li><li>Increases active ingredients and stimulates growth.</li><li>Improves fertility of the soil.</li></ul>')">
-
-            <div class="productImageContainer">
-              <img src="assets/img/starshine21kg.png" alt="fertilizer" class="image">
-            </div>
-            <h4 class="head">PLT STAR SHINE</h4>
-            <p class="text">PLT STAR  SHINE is a soil conditioner with seaweed extract and humic being the main active ingredient. Especially designed for seasonal/cash crops. supply well balanced crop nutrients, it’s a complete package of nutrients ,enzymes, auxins & proteins.
-
-            </p>
-          </div>
-        </button>
-        </div>
-      </div>
-<!-- plantgrowthregulators -->
-
-<div class="col-lg-4 col-md-4 ">
-  <div class="column plantgrowthregulators  ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('assets/img/soiltopup PouchMockup1.png','<h5>PLT SOIL TOPUP is a unique product that can enhance utilization rate of fertilizers and consequently increases crop yield. The damage caused by chemical fertilizers can be minimized and also it enhances the productivity of crops. It can be mixed with chemical fertilizers and organic fertilizers to boost the nutrient uptake of the crop. Establishes a beneficial residual effect, which is retained on the soil for the benefit of the next cropping.</h5>','<ul><li>PLT SOIL TOPUP increases the root mass for more absorption of nutrients from soil.</li><li>Thickens the cell wall of plants for better resistance to pest and thus less use of pesticides.</li><li>Increases production substantially with less input.</li><li>Sustainable /slow release of NPK to prevent wastage.</li><li>Creates a protective environment in the soil increases production up to 35%.</li><li>It provides organic matter into the soil and helps to rebuild the soil structure.</li></ul>')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/soiltopup PouchMockup1.png" alt="plantgrowthregulators" class="image">
-      </div>
-      <h4 class="head">PLT SOIL TOPUP </h4>
-      <p class="text">PLT SOIL TOPUP is an unique product that can enhance utilization rate of fertilizers and consequently increases crop yield. The damage caused by chemical fertilizers can be minimize and also it enhance the productivity of crops. It can be mixed with chemical fertilizers and organic fertilizers to boost the nutrient uptake of the crop.
-
-      </p>
-    </div>
-  </button>
-  </div>
-</div>
-<div class="col-lg-4 col-md-4 ">
-  <div class="column plantgrowthregulators  ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('assets/img/humistarPouchMockup.png','<h5>A natural trace mineral and humic acid based granular soil conditioner that acts as an organic chelator and microbial stimulator. Humic acid is a group of molecules that bind to, and help plant roots receive, water and nutrients. High humic acid levels can dramatically increase yields. It has unique carbon matrix incorporation a high concentration of trace minerals and organic acids, specifically humic acid,which improves that plants ability to take in vital nutrients for plant growth anddevelopment.</h5>','<ul><li>Increases soil carbon.</li><li>Improves plant health.</li><li>Increases the microbial activity in the soil.</li><li>Stimulates white root development.</li><li>Increases carbon content in the soil.</li><li>Increases nutrient uptake.</li><li>It increases crop resistance and improves crop quality.</li><li>Improves long-term soil PH.</li></ul>')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/humistarPouchMockup.png" alt="plantgrowthregulators" class="image">
-      </div>
-      <h4 class="head">PLT HUMISTAR 95 </h4>
-      <p class="text"> A natural trace mineral and humic acid based granular soil conditioner that acts as an
-        organic chelator and microbial stimulator. Humic acid is a group of molecules that bind to and help plant
-        roots receive. Water and nutrients. High humic acid levels can dramatically increase yields.
-      </p>
-    </div></button>
-  </div>
-</div>
-<div class="col-lg-4 col-md-4 ">
-
-  <div class="column plantgrowthregulators ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('assets/img/seatonegel  PouchMockup.png','<h5>PLT SEATONE GEL is an organic extract derived from nutrition marine algae.it contains humic, fulvic, vitamins, cytokines & seaweed and is mixed with water for basal application in soil or through drip irrigation. Especially designed for all kinds of seasonal crops/ cash crops. Supply well-balanced crop nutrients and help plants to endure environmental stress.</h5>','<ul><li>Increases the size, colour, and weight of fruit.</li><li>Reduces weathering of young flowers and fruits.</li><li>Increases yield by 20-35%.</li><li>Increases root and shoot growth.</li><li>Strengthens the natural ability to resist pest and disease.</li><li>Improves the yield and quality of produce.</li></ul>,')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/seatonegel  PouchMockup.png" alt="plantgrowthregulators" class="image">
-      </div>
-      <h4 class="head">PLT SEATONE GEL PLUS </h4>
-      <p class="text">PLT SEATONE GEL PLUS is an organic extract derived from nutrition marine algae. It contains  humic, fulvic, vitamins ,cytokines & seaweed and is mixed with water for basal application in soil or through drip irrigation. supply well balanced crop nutrients.       
-      </p>
-    </div></button>
-  </div>
-</div>
-<div class="col-lg-4 col-md-4 ">
-  <div class="column plantgrowthregulators ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('assets/img/Paint Bucket Mockup 2.png','<h5>Rejuvenates and replenishes the soil with functional micro-organisms. Treating and preservation of soil microflora from beginning to end by the use of inoculants, organic amendments generate a more favourable soil microbiological environmentfor best possible for crop production.</h5>','<ul><li>Increases the size, colour and weight of fruit.</li><li>Reduces weathering of young flowers and fruits.</li><li>Increases yield by 20-35%.</li><li>Increases root and shoot growth.</li><li>Strengthens the natural ability to resist pest and disease.</li><li> Improves the yield and quality of produce.</li></ul>,')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/Paint Bucket Mockup 2.png" alt="plantgrowthregulators" class="image">
-      </div>
-      <h4 class="head">PLT SEATONE GEL</h4>
-      <p class="text">Rejuvenates and replenishes the soil with functional micro-organisms. Treating and
-        preservation of soil microflora from beginning to end by the use of inoculants,
-        organic amendments generate a more favourable soil microbiological environment
-        for best possible for crop production.
-        
-      </p>
-    </div></button>
-  </div>
-</div>
-<div class="col-lg-4 col-md-4 ">
-  <div class="column plantgrowthregulators  ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('assets/img/proton1bottle.png','<h5>PROTON is an effective organic plant growth promoter derived from vegetable source and suitable in all crops. PROTON promotes activation of nutrient uptake by crops. Improves size and colour of fruit and mainly it promotes fruit enhancing in all types of crops.</h5>','<ul><li>Increases flowering.</li><li>Enhances colour and size of fruits.</li><li>Reduces flower falling and fruit falling.</li><li>Provides all micronutrients to the crops.</li></ul>')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/proton1bottle.png" alt="plantgrowthregulators" class="image">
-      </div>
-      <h4 class="head">PLT PROTON</h4>
-      <p class="text">PLT PROTON is an effective organic plant growth promoter contains all micro nutrients which
-        enhance fruiting and flowering. PROTON boosts up the growth and development of plant resulting into health
-        and Improvement of quality and yield. PROTON is a special formula, containing specific micro nutrients
-        meant for plantation crops, which give plants growth promotion and maximum yield.
-      </p>
-    </div></button>
-  </div>
-</div>
-<div class="col-lg-4 col-md-4 ">
-  <div class="column plantgrowthregulators  ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('assets/img/growton.png','<h5>GROWTON promotes the activation of vegetative development, improves the size and colour of fruits mainly promotes vegetative growth in all types of crops.Growton is a Nanotechnology product especially for the growth of new shoots and leaves.</h5>','<ul><li>Increases photosynthesis thereby building strong plants giving better harvests.</li><li>It helps to produce chlorophyll (increases leaf colure and strature).</li><li>Improves overall growth.</li><li>Increases yield by 20-35%.</li><li>Increase shoot growth.</li><li>Strengthens the natural ability to resist pests and diseases.</li><li>Improves the yield and quality of produce.</li></ul>,')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/growton.png" alt="plantgrowthregulators" class="image">
-      </div>
-      <h4 class="head">PLT GROWTON</h4>
-      <p class="text">PLT GROWTON promotes the activation of vegetative development, mainly promotes the growth of
-        new shoots and leaves. GROWTON is an effective organic plant growth promoter derived from vegetable source
-        and suitable to promote cholorophyl production which improves the absorption and transport of nutrients.
-      </p>
-    </div></button>
-  </div>
-</div>
-<div class="col-lg-4 col-md-4 ">
-  <div class="column plantgrowthregulators ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('assets/img/fruton 1bottle.png','<h5>FRUTON is a Nanotechnology product, especially for fruit falling. It promotes the activation of nutrient uptake by the crop. Improves the size and colour of the fruit.It mainly prevents fruit fall in all types of crop.</h5>','<ul><li>Improves nutrient uptake of crops.</li><li>Reduces flower and fruit falling.</li><li>Contains high amount of Boron and trace elements.</li><li>Increases flower production, retention, pollen tube elongation and germination.</li><li>Increases size and colour of fruits.</li></ul>,')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/fruton 1bottle.png" alt="plantgrowthregulators" class="image">
-      </div>
-      <h4 class="head">FRUTON</h4>
-      <p class="text">PLT FRUTON is a Nano technology product , promotes nutrient uptakes of crops and prevent
-        fruit falling in all types of crops. The bio extract contains high amount of boron and other trace
-        elements which increase more availability of nutrients. Increases the quality of yields and improves their
-        physical appearance.
-      </p>
-    </div></button>
-  </div>
-</div>
-<div class="col-lg-4 col-md-4 ">
-  <div class="column plantgrowthregulators ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('assets/img/amino40bottle1.png','<h5>It is a rich farming input for soil application and thus enhances nutritional uptake and their utilization which improves colour, size, lustre and flowering.It is a bio nutritional product, accelerates cell division and increases flowering.</h5>','<li><ul>Improves flowering and fruiting.</li><li>Improves quality and speed of flowering.</li><li>Improves fruit set and help them grow healthy.</li><li>Improves overall growth of the plant.</li></ul>,')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/amino40bottle1.png" alt="plantgrowthregulators" class="image">
-      </div>
-      <h4 class="head">PLT AMINO 40</h4>
-      <p class="text">It is a nutritional product ,accelerates cell division and increase colour, size , luster
-        and flowering. Amino boosts up the growth and development of plant resulting into health and Improvement
-        of quality and yield.
-      </p>
-    </div></button>
-  </div>
-</div>
-
-<div class="col-lg-4 col-md-4 ">
-  <div class="column plantgrowthregulators ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('assets/img/humistarl.png','<h5>Humic acids biologically stimulate the plant and the activities of micro-organisms.Stimulate root growth, uptake of nutrients and proliferation of desirable micro-organisms in soil. Enhance plant’s natural resistance against disease and pest.</h5>','<li><ul>Increases the microbial activity of the soil.</li><li>Stimulates root development.</li><li>Increases carbon content in the soil.</li><li>Increases nutrient uptake.</li><li>Increases crop resistance and improves crop quality.</li><li>Improves long term soil PH.</li></ul>,')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/humistarl.png" alt="plantgrowthregulators" class="image">
-      </div>
-      <h4 class="head">PLT HUMISTAR 18</h4>
-      <p class="text">Humic acids biologically stimulate the plant and the activities of micro-organisms.
-        Stimulate root growth, uptake of nutrients and proliferation of desirable micro-organisms in soil. Enhance
-        plant’s natural resistance against disease and pest.
-      </p>
-    </div></button>
-  </div>
-</div>
-
-
-<div class="col-lg-4 col-md-4 ">
-  <div class="column plantgrowthregulators ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('assets/img/nano king.png','<h5>PLT NANO KING is a concentrated organic growth stimulants containing 12 essential Amino acids , fulvic acids and flower stimulants.</h5>','</li><li>Improves yield drastically.</li><li>Improves quality & Taste.</li><li>Improves fruit set & help them grow healthy.</li><li>It improves resistance against various diseases & insects.</li><li>Easily absorbed by plants both through roots and leaves.</li><li>Can be used both protective and creative treatment.</li><li>Increases crop yield remarkably.</li><li>Improves general plant immunity system.</li><li>Effective on all crops, fruits, and vegetables.</li></ul>,')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/nano king.png" alt="plantgrowthregulators" class="image">
-      </div>
-      <h4 class="head">PLT NANO KING</h4>
-      <p class="text">PLT NANO KING is a concentrated organic growth stimulants containing 12 essential Amino
-        acids , fulvic acids and flower stimulants.
-      </p>
-    </div></button>
-  </div>
-</div>
- <!-- ---- others --- -->
-
- <div class="col-lg-4 col-md-4 ">
-
-  <div class="column other ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('image','title','desc')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/pltb bone meal.png" alt="other" class="image">
-      </div>
-      <h4 class="head">Bone Meal</h4>
-      <p class="text">It's a great source of phosphorus, which is an essential nutrient for plants to help them
-        flower and new plants to produce strong roots,so is good for root vegetables.
-        </span>
-      </p>
-    </div></button>
-  </div>
-</div>
-<div class="col-lg-4 col-md-4 ">
-  <div class="column other  ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('image','title','desc')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/plt neem cake.png" alt="other" class="image">
-      </div>
-      <h4 class="head">Neem cake</h4>
-      <p class="text">Neem Cake is used as an organic fertilizer because of the various micro and macro nutrients
-        which it is composed of. It will control. At the same time, soil based pathogens as well as nematodes. It will also inhibit nitrification of the
-        soil plus enhance the efficiency of nitrogen providing fertilizer.
-        </span>
-      </p>
-    </div></button>
   </div>
 
-</div>
-
-<div class="col-lg-4 col-md-4 ">
-  <div class="column other  ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('image','title','desc')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/vgb garden.jpeg" alt="other" class="image">
-      </div>
-      <h4 class="head">Vegetable garden mix</h4>
-      <p class="text">Ornanic manure prepared with coco peat, Neam cake, born meal, shrimp shell dust,
-        Potash, micro nutrients etc.Suggested for Vegitables and Flower gardens.
-        </span>
-      </p>
-    </div></button>
-  </div>
-</div>
-
-<div class="col-lg-4 col-md-4 ">
-
-  <div class="column other  ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('image','title','desc')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/PLT VERMI COMPOST.png" alt="other" class="image">
-      </div>
-      <h4 class="head">Vermicompost (vermi-compost, vermiculture)</h4>
-      <p class="text">Vermicompost (vermi-compost, vermiculture) is the product of the composting process using
-        various species of worms,
-        usually red wigglers, white worms, and other earthworms, to create a mixture of decomposing vegetable or
-        food waste, bedding materials, and vermicast.
-        </span>
-      </p>
-    </div></button>
-  </div>
-
-</div>
-<div class="col-lg-4 col-md-4 ">
-  <div class="column other  ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('image','title','desc')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/plt compost.png" alt="other" class="image">
-      </div>
-      <h4 class="head">Farm yard Manure (FYM)</h4>
-      <p class="text">Farm yard Manure (FYM) is prepared basically using cow dung, cow urine, waste straw and
-        other dairy wastes.
-        It is highly useful and some of its properties are given below : FYM is rich in nutrients. When cow
-        dung and urine are mixed, a balanced nutrition is made available to the plants.
-        </span>
-      </p>
-    </div></button>
-  </div>
-</div>
-<div class="col-lg-4 col-md-4 ">
-
-  <div class="column other  ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('image','title','desc')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/cocopeat.jpeg" alt="other" class="image">
-      </div>
-      <h4 class="head">Cocopeat</h4>
-      <p class="text">High water holding capacity of cocopeat helps in retaining the moisture.
-        coco peat blocks will expandable up to 15 liters cocopeat / agropeat is an ideal media for all types of
-        potted plants as well as for growing vegetables, flowers or herbs from seeds.
-        </span>
-      </p>
-    </div></button>
-  </div>
-
-</div>
-<div class="col-lg-4 col-md-4 ">
-  <div class="column other  ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('image','title','desc')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/cpom.jpeg" alt="other" class="image">
-      </div>
-      <h4 class="head">Cpom</h4>
-      <p class="text">Improves yield in floriculture crops. Reduces soil temperature. Supports soil’s
-        microbiological activity (or the life of the soil). High moisture retention.
-        Improves yield in floriculture crops. Reduces soil temperature. Supports soil’s microbiological activity
-        (or the life of the soil). High moisture retention.
-        </span>
-      </p>
-    </div></button>
-  </div>
-</div>
-<div class="col-lg-4 col-md-4 ">
-  <div class="column other  ">
-    <div class="content">
-                  <button class="transferButton" onclick="pass('image','title','desc')">
-
-      <div class="productImageContainer">
-        <img src="assets/img/grow bag.png" alt="other" class="image">
-      </div>
-      <h4 class="head">Grow Bag</h4>
-      <p class="text">
-        </span>
-      </p>
-    </div></button>
-  </div>
-</div>
-<!-- -----others end----- -->
-  
-      <!-- plant -->
-
-      <div class="col-lg-4 col-md-4 ">
-        <div class="column pestanddisease">
-          <div class="content">
-                        <button class="transferButton" onclick="pass('assets/img/agrostick.png','<h5>Useful as a Spreader, Activator, Penetrator increases efficiency of Spraying. Recommended in rainy season to avoid washout, which reduces consumption of Agro Chemicals.</h5>','<li><ul></li></ul>')">
-
-            <div class="productImageContainer">
-              <img src="assets/img/agrostick.png" alt="pestanddisease" class="image">
-            </div>
-            <h4 class="head">PLT AGRO STICK</h4>
-            <p class="text">Useful as a Spreader, Activator, Penetrator increases efficiency of Spraying. Recommended in
-              rainy season to avoid washout, which reduces consumption of Agro Chemicals.
-            </p>
-          </div>      </button>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-4 ">
-        <div class="column pestanddisease  ">
-          <div class="content">
-                        <button class="transferButton" onclick="pass('assets/img/agriboss.png','<h5>PLT AGRI BOSS is a systemic product against groups of aphids and thrips.Those attacks on plants by sucking its fluid from tender new growth and results in deformed growth, flowering, and discoloration. This is the product with translaminar bioactivity along with contact poison properties against thrips aphids and other insects. </h5>','<li><ul>It improves crop photosynthesis.</li><li>Increases production of crops.</li><li>It helps to prevent insect disease attack.</li></ul>,')">
-
-            <div class="productImageContainer">
-              <img src="assets/img/agriboss.png" alt="pestanddisease" class="image">
-            </div>
-            <h4 class="head">PLT AGRI BOSS </h4>
-            <p class="text">PLT AGRI BOSS is a systemic product against groups of aphids and thripes.
-              Those attack on plants by sucking its fluid from tender new growth and results in deformed growth,
-              flowering and discoloration.
-            </p>
-          </div>        </button>
-
-        </div>
-
-      </div>
-      <div class="col-lg-4 col-md-4 ">
-        <div class="column pestanddisease  ">
-          <div class="content">
-                        <button class="transferButton" onclick="pass('assets/img/curetone1.png','<h5>(Organic Plant disease Protector) It is a highly effective fungicide which prevents and protects crops from fungal diseases, it is very effective for mahali disease of areca nut and against diseases caused by oomycetes fungi like phytophthora palmivora root rot, phythumrot, downy mildew, and for taking blight diseases.</h5>','</li><ul>Activates defense mechanism of plants. </li><li>Highly effective on fungal infections like downey mildew, powdery mildew,mahali diseases in areca nut, etc.</li></ul>,')">
-
-            <div class="productImageContainer">
-              <img src="assets/img/curetone1.png" alt="pestanddisease" class="image">
-            </div>
-            <h4 class="head">PLT Cureton</h4>
-            <p class="text">PLT CURETONE contains natural salt of phosphonic acid, which is an organic plant growth
-              protector. It is highly effective fungicide which prevents and protects crops from fungal diseases.
-            </p>
-          </div>
-        </button>
-        </div>
-      </div>
-
-      <!-- plant end -->
-
-         
-  
-  
-
-      <!-- END GRID -->
-    </div>
-
-    <!-- END MAIN -->
   </div>
 </section>
+
 <script>
+  
+  filterSelection("fertilizer")
 
-  filterSelection("all")
+  
+  
   function filterSelection(c) {
-    var x, i;
-    x = document.getElementsByClassName("column");
-    if (c == "all") c = "";
-    for (i = 0; i < x.length; i++) {
-      w3RemoveClass(x[i], "showfilter");
-      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "showfilter");
+    var btnContainer = document.getElementById("myBtnContainerfilter");
+    var btns = btnContainer.getElementsByClassName("btnfilter");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("activebtn");
+        current[0].className = current[0].className.replace(" activebtn", "");
+        this.className += " activebtn";
+      });
     }
-  }
+    document.getElementById('productsByJs').innerHTML ="" 
+    const prodArray = [{
+      type:"fertilizer",
+      imageToPass:"assets/img/MOCKUPnutrimixblue.png",
+      head:"<h5>Organic Fertilizer provides bio enriched organic manure with nitrogen, phosphorus,potash, organic carbon which contains hormones that prevent diseases and promote growth. ‘PLT Nutrimix’ enriched with NPK solubilizing bacteria; it provides plants 6 to 16 kg of nitrogen from the atmosphere. Easily gives Phosphorus and potash from soil and fertilizer. Bio enriched organic manure including, Neem cake,Protein, Fat, Bio-phosphorous, Bio-Potash, Fulvic Acid, Humic, Seaweed,Amino Acid etc. It increases the health and immunity of both plants and soil. Yieldincreases by 30% to 35% with the use of PLT Nutrimix.</h5>",
+      points:"<ul><li>Increases the overall growth of the plant enhances the growth of baneficial soil microflora.</li><li>20% decrease in the use of chemical fertilizer</li><li>Plt nutri mix provide balanced  NPK into the soil</li><li>npk solubilising bacterias help to undertake more npk from soil</li><li>increases crop production upto 35 % </li><li> increases cell multiplication and flowering</li></ul>",
+      head2:"PLT NUTRI MIX",
+      text:"Organic Fertilizer provides bio enriched  organic manure with nitrogen, phosphorus, potash, organic carbon ,npk solubulising bacteria and contain hormones that prevent diseases and promote growth. Bio enriched organic manure including ,Neemcake, Protein, Fat, Bio-phosphorous, Bio-Pottash, Fulvic Acid, Humic, Seaweed Amino Acid and much more"
 
-  function w3AddClass(element, name) {
-    var i, arr1, arr2;
-    arr1 = element.className.split(" ");
-    arr2 = name.split(" ");
-    for (i = 0; i < arr2.length; i++) {
-      if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+    },{
+      type:"fertilizer",
+      imageToPass:"assets/img/ph tuner new blue.png",
+      head:'<h5>Soil ph affects the amount of nutrients and chemicals that are soluble in soil water, and therefore the amount of nutrients available to plants.The ph level of the soil must be on seven. If Soil PH is normal soil pathogens and pest will not attack plants.PLT PH TUNER is 100% natural that the microbes in the soil will not be destroyed.The leonardite is used as soil conditioner, as a stabilizer for ion exhange and chelate soil nutrients. Enhance long term ph and rooting of plants.The non-treated mussel shells contained in the PLT PH TUNER stays in the soil for a long time and whenever the pH decreases, it gradually dissolves in the soil and gradually normalizes the pH of the soil. PLT PH TUNER is a unique product that provides continuous service for plants throughout the year.</h5>',
+      points:"<ul><li></li></ul>",
+      head2:"PLT PH TUNER",
+      text:'<p class="text">Soil ph affects the amount of nutrients and chemicals that are soluble in soil water, and therefore the amount of nutrients available to plants.The ph level of the soil must be on seven. If Soil PH is normal soil pathogens and pest will not attack plants.</p>',
+    },
+    {
+      type:"fertilizer",
+      imageToPass:"assets/img/agri dolomite.png",
+      head:'<h5>Agri Dolomite is high form of DOLOMITE a type of limestone, provides valuable nutrients like 80% Calcium Carbonate, 12% MAGNESIUM to plants and helps change the pH of the soil by raising it to match the plants needs. Agri Dolomite maintain the soil ph to 6.5-7.5 for long period which enables more nutrient uptake to the plants.</h5>',    
+
+      points:'<ul><li></li></ul>',
+      head2:"PLT AGRI DOLOMITE",
+      text:"Agri Dolomite is high form of DOLOMITE, a type of limestone, provides valuable nutrients like 80% CALCIUM CARBONATE  , 12% MAGNESIUM  to plants and helps change the pH of the soil by raising it to match the plants' needs. Agri Dolomite maintain the soil ph to 6.5-7.5 for long period which enables more nutrient uptake to the plants.",
+    },
+    {
+      type:"fertilizer",
+      imageToPass:"assets/img/starshine21kg.png",
+      head:'<h5>PLT Star Shine’ is a soil conditioner with seaweed extract and Humic being the main active ingredient. Especially designed for seasonal / cash crops. It Supplies well balanced crop nutrients. Helps plant to endure environmental stress.This formulation has been made by more than 22 components; it’s a complete package of nutrients, enzymes, auxins, and proteins.</h5>',
+      points:'<ul><li>Induces the growth and flowering of the plant.</li><li>Improves fruit setting.</li><li>Reduces flower fall.</li><li>Increases active ingredients and stimulates growth.</li><li>Improves fertility of the soil.</li></ul>',
+      head2:"PLT STAR SHINE",
+      text:"PLT STAR  SHINE is a soil conditioner with seaweed extract and humic being the main active ingredient. Especially designed for seasonal/cash crops. supply well balanced crop nutrients, it’s a complete package of nutrients ,enzymes, auxins & proteins."
+    },{
+      type:"plantgrowthregulators",
+      imageToPass:"assets/img/soiltopup PouchMockup1.png",
+      head:'<h5>PLT SOIL TOPUP is a unique product that can enhance utilization rate of fertilizers and consequently increases crop yield. The damage caused by chemical fertilizers can be minimized and also it enhances the productivity of crops. It can be mixed with chemical fertilizers and organic fertilizers to boost the nutrient uptake of the crop. Establishes a beneficial residual effect, which is retained on the soil for the benefit of the next cropping.</h5>',
+      points:'<ul><li>PLT SOIL TOPUP increases the root mass for more absorption of nutrients from soil.</li><li>Thickens the cell wall of plants for better resistance to pest and thus less use of pesticides.</li><li>Increases production substantially with less input.</li><li>Sustainable /slow release of NPK to prevent wastage.</li><li>Creates a protective environment in the soil increases production up to 35%.</li><li>It provides organic matter into the soil and helps to rebuild the soil structure.</li></ul>',
+      head2:"PLT SOIL TOPUP",
+      text:"PLT SOIL TOPUP is an unique product that can enhance utilization rate of fertilizers and consequently increases crop yield. The damage caused by chemical fertilizers can be minimize and also it enhance the productivity of crops. It can be mixed with chemical fertilizers and organic fertilizers to boost the nutrient uptake of the crop."
+    },{
+      type:"plantgrowthregulators",
+      imageToPass:"assets/img/humistarPouchMockup.png",
+      head:'<h5>A natural trace mineral and humic acid based granular soil conditioner that acts as an organic chelator and microbial stimulator. Humic acid is a group of molecules that bind to, and help plant roots receive, water and nutrients. High humic acid levels can dramatically increase yields. It has unique carbon matrix incorporation a high concentration of trace minerals and organic acids, specifically humic acid,which improves that plants ability to take in vital nutrients for plant growth anddevelopment.</h5>',
+      points:'<ul><li>Increases soil carbon.</li><li>Improves plant health.</li><li>Increases the microbial activity in the soil.</li><li>Stimulates white root development.</li><li>Increases carbon content in the soil.</li><li>Increases nutrient uptake.</li><li>It increases crop resistance and improves crop quality.</li><li>Improves long-term soil PH.</li></ul>',
+      head2:"PLT HUMISTAR 95 ",
+      text:"A natural trace mineral and humic acid based granular soil conditioner that acts as an organic chelator and microbial stimulator. Humic acid is a group of molecules that bind to and help plant roots receive. Water and nutrients. High humic acid levels can dramatically increase yields."
+    },
+    {
+      type:"plantgrowthregulators",
+      imageToPass:"assets/img/seatonegel  PouchMockup.png",
+      head:'<h5>PLT SEATONE GEL is an organic extract derived from nutrition marine algae.it contains humic, fulvic, vitamins, cytokines & seaweed and is mixed with water for basal application in soil or through drip irrigation. Especially designed for all kinds of seasonal crops/ cash crops. Supply well-balanced crop nutrients and help plants to endure environmental stress.</h5>',
+      points:'<ul><li>Increases the size, colour, and weight of fruit.</li><li>Reduces weathering of young flowers and fruits.</li><li>Increases yield by 20-35%.</li><li>Increases root and shoot growth.</li><li>Strengthens the natural ability to resist pest and disease.</li><li>Improves the yield and quality of produce.</li></ul>,',
+      head2:"PLT SEATONE GEL PLUS ",
+      text:'PLT SEATONE GEL PLUS is an organic extract derived from nutrition marine algae. It contains  humic, fulvic, vitamins ,cytokines & seaweed and is mixed with water for basal application in soil or through drip irrigation. supply well balanced crop nutrients.'
+    },
+    {
+      type:"plantgrowthregulators",
+      imageToPass:"assets/img/Paint Bucket Mockup 2.png",
+      head:'<h5>Rejuvenates and replenishes the soil with functional micro-organisms. Treating and preservation of soil microflora from beginning to end by the use of inoculants, organic amendments generate a more favourable soil microbiological environmentfor best possible for crop production.</h5>',
+      points:'<ul><li>Increases the size, colour and weight of fruit.</li><li>Reduces weathering of young flowers and fruits.</li><li>Increases yield by 20-35%.</li><li>Increases root and shoot growth.</li><li>Strengthens the natural ability to resist pest and disease.</li><li> Improves the yield and quality of produce.</li></ul>,',
+      head2:"PLT SEATONE GEL",
+      text:'Rejuvenates and replenishes the soil with functional micro-organisms. Treating and preservation of soil microflora from beginning to end by the use of inoculants, organic amendments generate a more favourable soil microbiological environment for best possible for crop production.'
     }
-  }
+    ,{
+      type:"plantgrowthregulators",
+      imageToPass:"assets/img/proton1bottle.png",
+      head:'<h5>PROTON is an effective organic plant growth promoter derived from vegetable source and suitable in all crops. PROTON promotes activation of nutrient uptake by crops. Improves size and colour of fruit and mainly it promotes fruit enhancing in all types of crops.</h5>',
+      points:'<ul><li>Increases flowering.</li><li>Enhances colour and size of fruits.</li><li>Reduces flower falling and fruit falling.</li><li>Provides all micronutrients to the crops.</li></ul>',
+      head2:'PLT PROTON',
+      text:'PLT PROTON is an effective organic plant growth promoter contains all micro nutrients which enhance fruiting and flowering. PROTON boosts up the growth and development of plant resulting into health and Improvement of quality and yield. PROTON is a special formula, containing specific micro nutrients meant for plantation crops, which give plants growth promotion and maximum yield.'
+    }
+    ,{
+      type:"plantgrowthregulators",
+      imageToPass:"assets/img/growton.png",
+      head:'<h5>GROWTON promotes the activation of vegetative development, improves the size and colour of fruits mainly promotes vegetative growth in all types of crops.Growton is a Nanotechnology product especially for the growth of new shoots and leaves.</h5>',
+      points:'<ul><li>Increases photosynthesis thereby building strong plants giving better harvests.</li><li>It helps to produce chlorophyll (increases leaf colure and strature).</li><li>Improves overall growth.</li><li>Increases yield by 20-35%.</li><li>Increase shoot growth.</li><li>Strengthens the natural ability to resist pests and diseases.</li><li>Improves the yield and quality of produce.</li></ul>,',
+      head2:"PLT GROWTON",
+      text:'PLT GROWTON promotes the activation of vegetative development, mainly promotes the growth of new shoots and leaves. GROWTON is an effective organic plant growth promoter derived from vegetable source and suitable to promote cholorophyl production which improves the absorption and transport of nutrients.'
+    },
+    {
+      type:"plantgrowthregulators",
+      imageToPass:"assets/img/fruton 1bottle.png",
+      head:'<h5>FRUTON is a Nanotechnology product, especially for fruit falling. It promotes the activation of nutrient uptake by the crop. Improves the size and colour of the fruit.It mainly prevents fruit fall in all types of crop.</h5>',
+      points:'<ul><li>Improves nutrient uptake of crops.</li><li>Reduces flower and fruit falling.</li><li>Contains high amount of Boron and trace elements.</li><li>Increases flower production, retention, pollen tube elongation and germination.</li><li>Increases size and colour of fruits.</li></ul>,',
+      head2:"FRUTON",
+      text:'PLT FRUTON is a Nano technology product , promotes nutrient uptakes of crops and prevent fruit falling in all types of crops. The bio extract contains high amount of boron and other trace elements which increase more availability of nutrients. Increases the quality of yields and improves their physical appearance.'
+    },{
+      type:"plantgrowthregulators",
+      imageToPass:"assets/img/amino40bottle1.png",
+      head:'<h5>It is a rich farming input for soil application and thus enhances nutritional uptake and their utilization which improves colour, size, lustre and flowering.It is a bio nutritional product, accelerates cell division and increases flowering.</h5>',
+      points:'<li><ul>Improves flowering and fruiting.</li><li>Improves quality and speed of flowering.</li><li>Improves fruit set and help them grow healthy.</li><li>Improves overall growth of the plant.</li></ul>,',
+      head2:"PLT AMINO 40",
+      text:'It is a nutritional product ,accelerates cell division and increase colour, size , luster and flowering. Amino boosts up the growth and development of plant resulting into health and Improvement of quality and yield.'
+    },{
+      type:"plantgrowthregulators",
+      imageToPass:'assets/img/humistarl.png',
+      head:'<h5>Humic acids biologically stimulate the plant and the activities of micro-organisms.Stimulate root growth, uptake of nutrients and proliferation of desirable micro-organisms in soil. Enhance plant’s natural resistance against disease and pest.</h5>',
+      points:'<li><ul>Increases the microbial activity of the soil.</li><li>Stimulates root development.</li><li>Increases carbon content in the soil.</li><li>Increases nutrient uptake.</li><li>Increases crop resistance and improves crop quality.</li><li>Improves long term soil PH.</li></ul>,',
+      head2:"PLT HUMISTAR 18",
+      text:'Humic acids biologically stimulate the plant and the activities of micro-organisms. Stimulate root growth, uptake of nutrients and proliferation of desirable micro-organisms in soil. Enhance plant’s natural resistance against disease and pest.'
+    },{
+      type:'plantgrowthregulators',
+      imageToPass:'assets/img/nano king.png',
+      head:'<h5>PLT NANO KING is a concentrated organic growth stimulants containing 12 essential Amino acids , fulvic acids and flower stimulants.</h5>',
+      points:'</li><li>Improves yield drastically.</li><li>Improves quality & Taste.</li><li>Improves fruit set & help them grow healthy.</li><li>It improves resistance against various diseases & insects.</li><li>Easily absorbed by plants both through roots and leaves.</li><li>Can be used both protective and creative treatment.</li><li>Increases crop yield remarkably.</li><li>Improves general plant immunity system.</li><li>Effective on all crops, fruits, and vegetables.</li></ul>,',
+      head2:'PLT NANO KING',
+      text:'PLT NANO KING is a concentrated organic growth stimulants containing 12 essential Amino acids , fulvic acids and flower stimulants.'
+    },
+    {
+      type:'other',
+      imageToPass:'assets/img/pltb bone meal.png',
+      head:'<h5>Bone Meal is a great source of phosphorus, which is an essential nutrient for plants to help them flower and new plants to produce strong roots,so is good for root vegetables.</h5>',
+      points:'',
+      head2:'Bone Meal',
+      text:"It's a great source of phosphorus, which is an essential nutrient for plants to help them flower and new plants to produce strong roots,so is good for root vegetables."
 
-  function w3RemoveClass(element, name) {
-    var i, arr1, arr2;
-    arr1 = element.className.split(" ");
-    arr2 = name.split(" ");
-    for (i = 0; i < arr2.length; i++) {
-      while (arr1.indexOf(arr2[i]) > -1) {
-        arr1.splice(arr1.indexOf(arr2[i]), 1);
+    },
+    {
+      type:'other',
+      imageToPass:'assets/img/plt neem cake.png',
+      head:'<h5>Neem Cake is used as an organic fertilizer because of the various micro and macro nutrients which it is composed of. It will control. At the same time, soil based pathogens as well as nematodes./h5>',
+      points:'',
+      head2:'Neem cake',
+      text:'Neem Cake is used as an organic fertilizer because of the various micro and macro nutrients which it is composed of. It will control. At the same time, soil based pathogens as well as nematodes. It will also inhibit nitrification of the soil plus enhance the efficiency of nitrogen providing fertilizer.'
+    },
+    {
+      type:'other',
+      imageToPass:'assets/img/vgb garden.jpeg',
+      head:'<h5>Ornanic manure prepared with coco peat, Neam cake, born meal, shrimp shell dust,Potash, micro nutrients etc.Suggested for Vegitables and Flower gardens.</h5>',
+      points:'',
+      head2:'Vegetable garden mix',
+      text:'Ornanic manure prepared with coco peat, Neam cake, born meal, shrimp shell dust, Potash, micro nutrients etc.Suggested for Vegitables and Flower gardens.'
+    },
+    // {
+    //   type:'other',
+    //   imageToPass:'assets/img/vgb garden.jpeg',
+    //   head:'',
+    //   points:'',
+    //   head2:'',
+    //   text:""    },
+      {
+      type:'other',
+      imageToPass:'assets/img/PLT VERMI COMPOST.png',
+      head:'<h5>Ornanic manure prepared with coco peat, Neam cake, born meal, shrimp shell dust,Potash, micro nutrients etc.Suggested for Vegitables and Flower gardens.</h5>',
+      points:'',
+      head2:'Vermicompost (vermi-compost, vermiculture)',
+      text:"Vermicompost (vermi-compost, vermiculture) is the product of the composting process using various species of worms, usually red wigglers, white worms, and other earthworms, to create a mixture of decomposing vegetable or food waste, bedding materials, and vermicast."    
+    },
+      {
+      type:'other',
+      imageToPass:'assets/img/plt compost.png',
+      head:'<h5>Farm yard Manure (FYM) is prepared basically using cow dung, cow urine, waste straw andother dairy wastes.It is highly useful and some of its properties are given below : FYM is rich in nutrients. When cow dung and urine are mixed, a balanced nutrition is made available to the plants.</h5>',
+      points:'',
+      head2:'Farm yard Manure (FYM)',
+      text:"Farm yard Manure (FYM) is prepared basically using cow dung, cow urine, waste straw and other dairy wastes. It is highly useful and some of its properties are given below : FYM is rich in nutrients. When cow dung and urine are mixed, a balanced nutrition is made available to the plants."    
+    },
+      {
+      type:'other',
+      imageToPass:'assets/img/cocopeat.jpeg',
+      head:'<h5>High water holding capacity of cocopeat helps in retaining the moisture.coco peat blocks will expandable up to 15 liters cocopeat / agropeat is an ideal media for all types of potted plants as well as for growing vegetables, flowers or herbs from seeds.</h5>',
+      points:'',
+      head2:'Cocopeat',
+      text:"High water holding capacity of cocopeat helps in retaining the moisture. coco peat blocks will expandable up to 15 liters cocopeat / agropeat is an ideal media for all types of potted plants as well as for growing vegetables, flowers or herbs from seeds."    
+    },
+      {
+      type:'other',
+      imageToPass:'assets/img/cpom.jpeg',
+      head:'<h5>Improves yield in floriculture crops. Reduces soil temperature. Supports soil’s microbiological activity (or the life of the soil). High moisture retention.Improves yield in floriculture crops. Reduces soil temperature. Supports soil’s microbiological activity (or the life of the soil). High moisture retention.</h5>',
+      points:'',
+      head2:'Cpom',
+      text:"Improves yield in floriculture crops. Reduces soil temperature. Supports soil’s microbiological activity (or the life of the soil). High moisture retention. Improves yield in floriculture crops. Reduces soil temperature. Supports soil’s microbiological activity (or the life of the soil). High moisture retention."   
+     },
+      {
+      type:'other',
+      imageToPass:'assets/img/grow bag.png',
+      head:'',
+      points:'',
+      head2:'Grow Bag',
+      text:""    },
+      {
+      type:'pestanddisease',
+      imageToPass:'assets/img/agrostick.png',
+      head:'<h5>Useful as a Spreader, Activator, Penetrator increases efficiency of Spraying. Recommended in rainy season to avoid washout, which reduces consumption of Agro Chemicals.</h5>',
+      points:'',
+      head2:'PLT AGRO STICK',
+      text:"Useful as a Spreader, Activator, Penetrator increases efficiency of Spraying. Recommended in rainy season to avoid washout, which reduces consumption of Agro Chemicals."    },
+      {
+      type:'pestanddisease',
+      imageToPass:'assets/img/agriboss.png',
+      head:'<h5>PLT AGRI BOSS is a systemic product against groups of aphids and thrips.Those attacks on plants by sucking its fluid from tender new growth and results in deformed growth, flowering, and discoloration. This is the product with translaminar bioactivity along with contact poison properties against thrips aphids and other insects. </h5>',
+      points:'<li><ul>It improves crop photosynthesis.</li><li>Increases production of crops.</li><li>It helps to prevent insect disease attack.</li></ul>,',
+      head2:'PLT AGRI BOSS',
+      text:"PLT AGRI BOSS is a systemic product against groups of aphids and thripes. Those attack on plants by sucking its fluid from tender new growth and results in deformed growth, flowering and discoloration."    },
+      {
+      type:'pestanddisease',
+      imageToPass:'assets/img/curetone1.png',
+      head:'<h5>(Organic Plant disease Protector) It is a highly effective fungicide which prevents and protects crops from fungal diseases, it is very effective for mahali disease of areca nut and against diseases caused by oomycetes fungi like phytophthora palmivora root rot, phythumrot, downy mildew, and for taking blight diseases.</h5>',
+      points:'</li><ul>Activates defense mechanism of plants. </li><li>Highly effective on fungal infections like downey mildew, powdery mildew,mahali diseases in areca nut, etc.</li></ul>,',
+      head2:'PLT Cureton',
+      text:"PLT CURETONE contains natural salt of phosphonic acid, which is an organic plant growth protector. It is highly effective fungicide which prevents and protects crops from fungal diseases."    },
+      
+
+    ]
+
+
+    if(c==='all'){
+      for(var i=0;i<prodArray.length;i++){
+        document.getElementById('productsByJs').innerHTML
+          +=`<div class="col-lg-4 col-md-4 ">
+                <a href="description.html?name=${prodArray[i].head2}" >
+                  <div class="productImageContainer"  >
+                    <img src="${prodArray[i].imageToPass}" alt="${prodArray[i].type}" class="image">
+                  </div>
+                  <div class="container">
+                    <h4 class="head">${prodArray[i].head2}</h4>
+                    <p class="text">
+                      ${prodArray[i].text}
+                    </p>
+                  </div>
+                </a>
+          </div>`
       }
+      
     }
-    element.className = arr1.join(" ");
+    else{
+      prodArray.filter((fil)=>fil.type===c).map((arr)=>document.getElementById('productsByJs').innerHTML
+       +=`<div class="col-lg-4 col-md-4 ">
+        <a href="description.html?name=${arr.head2}" >
+              <div class="productImageContainer" style="text-align: center;">
+                <img src="${arr.imageToPass}" alt="${arr.type}" class="image">
+              </div>
+              <div class="container">
+                <h4 class="head">${arr.head2}</h4>
+                <p class="text">
+                  ${arr.text}
+                </p>
+              </div>
+            </a>
+      </div>` );
+    }
   }
 
-  function pass(imageName,title,description){
-    localStorage.setItem("description",description)
-    localStorage.setItem("image",imageName)
-    localStorage.setItem("title",title)
-
-    location.href = "description.html";
+  
+  function pass(productName){
+    console.log("hhh");
+    // location.href = "description.html?id={productName}";
   }
-  // Add active class to the current button (highlight it)
-  var btnContainer = document.getElementById("myBtnContainerfilter");
-  var btns = btnContainer.getElementsByClassName("btnfilter");
-  for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function () {
-      var current = document.getElementsByClassName("activebtn");
-      current[0].className = current[0].className.replace(" activebtn", "");
-      this.className += " activebtn";
-    });
-  }
+  // function pass(imageName,title,description){
+  //   localStorage.setItem("description",description)
+  //   localStorage.setItem("image",imageName)
+  //   localStorage.setItem("title",title)
+  //   location.href = "description.html";
+  // }
 
 </script>
 
