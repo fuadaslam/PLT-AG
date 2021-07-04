@@ -37,7 +37,7 @@
     }
     .formmaincontainer{
       padding: 30px;
-      background-color: gray;
+      background-color:#8C1717;
       text-align: left;
 
     }.textOnImage{
@@ -53,11 +53,15 @@
       margin-bottom: 10px;
       display: none;
     }
-    .contactustext{
+    /* .contactustext{
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+    } */
+    .headContactUs {
+      font-size: 100px;
+      text-shadow: 1px  1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px  1px 0 #000,1px  1px 0 #000;
     }
     
 
@@ -72,24 +76,26 @@
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-xl-9 d-flex align-items-center">
-          <a href="/" class="logo mr-auto"><img src="assets/img/aboutimg.jpg" alt="" class="img-fluid"></a>
+          <a href="/" class="logo mr-auto"><img src="assets/img/pltaglog.png" alt="" class="img-fluid"></a>
           <h1 class="logo mr-auto"></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <nav class="nav-menu d-none d-lg-block">
             <ul>
-              <li><a href="education.html">Education</a></li>
-              <li ><a href="/#home">Home</a></li>
-              <li><a href="/#about">About</a></li>
-              <li><a href="/#services">Services</a></li>
+              <li class="active"><a href="/">Contact us</a></li>
+
+              <li ><a href="/">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
               <!-- <li><a href="#features">Features</a></li> -->
               <li><a href="Products.html">Products</a></li>
               <li><a href="consultancy.html">Consultancy</a></li>
+              <li><a href="education.html">Education</a></li>
               <li><a href="careers.html">Careers</a></li>
             </ul>
           </nav><!-- .nav-menu -->
 
           <!-- <a href="contactUs.html" class="get-started-btn scrollto">Contact Us</a> -->
-          <label for="show" class="get-started-btn get-started-btn-nav scrollto show-btn" style=" border-radius: 10px;">Connect Us</label>
+          <!-- <label for="show" class="get-started-btn get-started-btn-nav scrollto show-btn" style=" border-radius: 10px;">Connect Us</label> -->
           <!-- <a href="#about"><label for="show" class="get-started-btn scrollto show-btn" ></label>Connect Us</label></a> -->
 
            </div>
@@ -112,9 +118,9 @@
         <div class="formmaincontainer">
 
           <div class="textOnImage">
-            <img src="/assets/img/FarmDevelopment.jpg" class="headImage"/>
+            <!-- <img src="/assets/img/FarmDevelopment.jpg" class="headImage"/> -->
           <div class="section-title contactustext">
-            <h2>CONTACT US</h2>
+            <p class="headContactUs">CONTACT US</p>
       
           </div>
           </div>
