@@ -525,18 +525,18 @@
       $("#submit-form").submit((e)=>{
           e.preventDefault()
           $.ajax({
-              url:"https://script.google.com/macros/s/AKfycbzlYTJOAC-sa626N-PsquBvhtPv4UjafSL4ZYN4T8DjulHXoIP6uIWMosJd-3Uor8ktLg/exec",
+              url:"https://script.google.com/macros/s/AKfycbwiYjIUpPfEL1UChOXeq19BwW9y_0Wfwi0HBCHm6fwmKNak99kKm59CBWuLPwf-DUmx/exec",
               data:$("#submit-form").serialize(),
               method:"post",
               success:function (response){
-                document.getElementById("response").innerHTML = "Form submitted successfully our team will contact you shortly..";
-                document.getElementById("spanText").style.display = "block";                     // window.location="/index.html"
+                alert("Form submitted successfully our team will contact you shortly..");
+                // document.getElementById("response").innerHTML = "Form submitted successfully our team will contact you shortly..";
+                // document.getElementById("spanText").style.display = "block";                     // window.location="/index.html"
                   // window.location.reload()
                   //window.location.href="https://google.com"
               },
               error:function (err){
                   alert("Something Error")
-  
               }
           })
       })
