@@ -873,7 +873,7 @@ section {
 # Features
 --------------------------------------------------------------*/
 .features{
-  background-color: #EEEEEE;
+  background-color: #ffffff;
 }
 
 .features .icon-box h4 {
@@ -1781,12 +1781,12 @@ input[type=text], select, textarea {
 #careers {
   color: #fff;
   font-size: 14px;
-  background: linear-gradient(20deg, rgba(46, 134, 60, 0.575) 0%, rgba(14, 58, 19, 0.445) 100%), url("../img/leaf.jpg") center center no-repeat;
+  background: linear-gradient(20deg, rgba(46, 134, 60, 0.575) 0%, rgba(14, 58, 19, 0.445) 100%), url("https://drive.google.com/uc?export=view&id=181Hm_Z2TFiBLQ0Kur_pqt15HypWz62aU") center center no-repeat;
   background-size: cover;
 }
 #services {
   font-size: 14px;
-  background: linear-gradient(20deg, rgba(46, 134, 60, 0.575) 0%, rgba(14, 58, 19, 0.445) 100%), url("  https://drive.google.com/uc?export=view&id=181Hm_Z2TFiBLQ0Kur_pqt15HypWz62aU");
+  background: linear-gradient(20deg, rgba(46, 134, 60, 0.575) 0%, rgba(14, 58, 19, 0.445) 100%), url("https://drive.google.com/uc?export=view&id=181Hm_Z2TFiBLQ0Kur_pqt15HypWz62aU");
  
   background-size: cover;
 }
