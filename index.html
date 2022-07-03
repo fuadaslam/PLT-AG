@@ -445,7 +445,7 @@
 
 </head>
 
-<body>
+<body onload="showThisDialog()">
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
@@ -482,6 +482,17 @@
               <a href="contactUs.html" style="color: white;">Contact us</a>
             </button> -->
           <!-- <a href="#about"><label for="show" class="get-started-btn scrollto show-btn" ></label>Connect Us</label></a> -->
+
+
+
+          <div style="align-items: center;justify-content: center;">
+          <dialog id="this-dialog">
+            <!-- <p> I am a dialog-box </p> -->
+            <img style="height: 85vh;" src="https://drive.google.com/uc?export=view&id=12ihg9YrW0VjXw2DfmcqwE2jxOHFEND9P" />
+            <!-- https://drive.google.com/file/d/12ihg9YrW0VjXw2DfmcqwE2jxOHFEND9P/view?usp=sharing -->
+            <button onclick="hideThisDialog()">Close Me! </button>
+          <dialog> 
+          </div> 
 
         </div>
       </div>
@@ -636,7 +647,7 @@
           <h2 style="color: rgb(255, 255, 255);">Our Services </h2>
         </div>
 
-        <div class="row" style="justify-content: space-between;">
+        <div class="row" style="justify-content: space-evenly;">
 
           <div class="service-item col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box iconbox-blue">
@@ -1027,6 +1038,8 @@
           </div> -->
           <div>
 
+
+
           </div>
 
           <a class="prev" onclick="showNext(-1)">&#10094;</a>
@@ -1035,6 +1048,7 @@
         </div>
         <br>
         <script>
+
           var slideIndex = 1;
           showSlides(slideIndex);
           function showNext(n) {
@@ -1042,6 +1056,8 @@
             showSlidesTest(slideIndex += n);
 
           }
+
+          
 
           function plusSlides() {
             slideIndex++;
@@ -1086,7 +1102,16 @@
 
 
         
+          var dialog = document.querySelector('dialog');
+dialogPolyfill.registerDialog(dialog);
 
+function showThisDialog() {
+  document.getElementById('this-dialog').show();
+}
+
+function hideThisDialog() {
+  document.getElementById('this-dialog').close();
+}
         </script>
       </div>
 

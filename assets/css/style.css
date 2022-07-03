@@ -509,7 +509,7 @@ h6 {
 }
 
 .service-item {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.323);
   border-radius: 15px 15px 15px 15px;
   box-shadow: 0px 0px 30px 0px rgba(0, 42, 106, 0.1);
 }
@@ -554,7 +554,7 @@ h6 {
       rgba(15, 49, 20, 0.575) 0%,
       rgba(39, 44, 40, 0.445) 100%
     ),
-    url("https://img.freepik.com/free-photo/agriculture-iot-with-rice-field-background_53876-124635.jpg?t=st=1649606765~exp=1649607365~hmac=cd9a43d0f4c0b653d1f13ade14f665e710f9e1eeef23e5cd3facaf3401752b17&w=2000")
+    url("https://images.unsplash.com/photo-1559884743-74a57598c6c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1752&q=80")
       center center no-repeat;
 
   background-size: cover;
