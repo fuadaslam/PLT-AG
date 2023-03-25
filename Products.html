@@ -36,7 +36,7 @@
   }
 
   body {
-    background-color: #f1f1f1;
+    background-color: #bbf8bdd1;
     font-family: Arial;
   }
 
@@ -214,7 +214,7 @@
 <!-- MAIN (Center website) -->
 <section style="padding-top:140px; background-repeat: no-repeat;
 /* background-image: url('assets/img/leaf.jpg'); */
-background-color: white;
+background-color: #cddfe9ba;
 background-attachment: fixed;  min-height: 100vh; 
 background-size: auto;" class="services section-bg">
 
@@ -230,10 +230,11 @@ background-size: auto;" class="services section-bg">
     <div id="myBtnContainerfilter">
     
       <button class="button-33" role="button"  onclick="filterSelection('fertilizer')"> Fertilizer </button>
-      <button class="button-33" role="button"  onclick="filterSelection('plantgrowthregulators')"> Plant growth regulators</button>
+      <button class="button-33" role="button"  onclick="filterSelection('Bio-Stimulants')"> Bio-Stimulants</button>
       <!-- <button class="btnfilter" onclick="filterSelection('pestanddisease')"> Pest and Disease </button> -->
       <button class="button-33" role="button" onclick="filterSelection('pesticides')"> Pesticides </button>
       <button class="button-33" role="button"  onclick="filterSelection('fungicides')"> Fungicides </button>
+      <button class="button-33" role="button" onclick="filterSelection('weedicides')">Weedicides </button>
       <button class="button-33" role="button"  onclick="filterSelection('Adjuvants')"> Adjuvants </button>
       <button class="button-33" role="button" onclick="filterSelection('other')"> Other </button>
       <!-- <button class="btnfilter" onclick="filterSelection('all')"> Show all</button> -->
@@ -272,9 +273,67 @@ background-size: auto;" class="services section-bg">
       head:"<h5>Organic Fertilizer provides bio enriched organic manure with nitrogen, phosphorus,potash, organic carbon which contains hormones that prevent diseases and promote growth. ‘PLT Nutrimix’ enriched with NPK solubilizing bacteria; it provides plants 6 to 16 kg of nitrogen from the atmosphere. Easily gives Phosphorus and potash from soil and fertilizer. Bio enriched organic manure including, Neem cake,Protein, Fat, Bio-phosphorous, Bio-Potash, Fulvic Acid, Humic, Seaweed,Amino Acid etc. It increases the health and immunity of both plants and soil. Yieldincreases by 30% to 35% with the use of PLT Nutrimix.</h5>",
       points:"<ul><li>Increases the overall growth of the plant enhances the growth of baneficial soil microflora.</li><li>20% decrease in the use of chemical fertilizer</li><li>Plt nutri mix provide balanced  NPK into the soil</li><li>npk solubilising bacterias help to undertake more npk from soil</li><li>increases crop production upto 35 % </li><li> increases cell multiplication and flowering</li></ul>",
       head2:"PLT NUTRI MIX",
-      text:"Organic Fertilizer provides bio enriched  organic manure with nitrogen, phosphorus, potash, organic carbon ,npk solubulising bacteria and contain hormones that prevent diseases and promote growth. Bio enriched organic manure including ,Neemcake, Protein, Fat, Bio-phosphorous, Bio-Pottash, Fulvic Acid, Humic, Seaweed Amino Acid and much more"
+      text:"Organic Fertilizer provides bio enriched  organic manure with nitrogen, phosphorus, potash, organic carbon ,npk solubulising bacteria and contain hormones that prevent diseases and promote growth."
 
-    },{
+    },
+    {
+      type:'fertilizer',
+      imageToPass:'assets/img/NUTRIMEAL.jpeg',
+      head:'<h5>NUTRIMEAL is the best and most productive complete fertilizer blend that can be used for various agricultural crops like coconut, gourd, castor, rice, banana, vegetables and fruits./h5>',
+      points:
+      "<ul><li>Fertilizes the soil</li> ,<li>Creates earthworms in the soil.</li>  <li>Provides strong resistance to plants.</li>  <li>It also provides various nutrients to crops.</li></ul>",
+      head2:'PLT Nutri Meal',
+      text:'NUTRIMEAL is the best and most productive complete fertilizer blend that can be used for various agricultural crops like coconut, gourd, castor, rice, banana, vegetables and fruits.'
+    },
+    {
+      type:'fertilizer',
+      imageToPass:'assets/img/BoneMeal.jpeg',
+      head:'<h5>Bone Meal is a great source of phosphorus, which is an essential nutrient for plants to help them flower and new plants to produce strong roots,so is good for root vegetables.</h5>',
+      points:'',
+      head2:'PLT Bone Meal Diamond',
+      text:"It's a great source of phosphorus, which is an essential nutrient for plants to help them flower and new plants to produce strong roots,so is good for root vegetables."
+    },
+    {
+      type:'fertilizer',
+      imageToPass:'assets/img/bone meal 2kg.png',
+      head:'<h5>Bone Meal is a great source of phosphorus, which is an essential nutrient for plants to help them flower and new plants to produce strong roots,so is good for root vegetables.</h5>',
+      points:'',
+      head2:'PLT Bone Meal Diamond - 2 KG',
+      text:"It's a great source of phosphorus, which is an essential nutrient for plants to help them flower and new plants to produce strong roots,so is good for root vegetables."
+    },
+    {
+      type:'fertilizer',
+      imageToPass:'assets/img/bone meal 5kg.jpeg',
+      head:'<h5>Bone Meal is a great source of phosphorus, which is an essential nutrient for plants to help them flower and new plants to produce strong roots,so is good for root vegetables.</h5>',
+      points:'',
+      head2:'PLT Bone Meal Diamond - 5 KG',
+      text:"It's a great source of phosphorus, which is an essential nutrient for plants to help them flower and new plants to produce strong roots,so is good for root vegetables."
+    },
+    {
+      type:'fertilizer',
+      imageToPass:'assets/img/plt neem cake.jpeg',
+      head:'<h5>Neem Cake is used as an organic fertilizer because of the various micro and macro nutrients which it is composed of. It will control. At the same time, soil based pathogens as well as nematodes./h5>',
+      points:'',
+      head2:'PLT Neem cake Diamond',
+      text:'Neem Cake is used as an organic fertilizer because of the various micro and macro nutrients which it is composed of. It will control. At the same time, soil based pathogens as well as nematodes. It will also inhibit nitrification of the soil plus enhance the efficiency of nitrogen providing fertilizer.'
+    },
+    {
+      type: "fertilizer",
+      imageToPass: "assets/img/neem cake 2KG.png",
+      head: "<h5>Neem Cake is used as an organic fertilizer because of the various micro and macro nutrients which it is composed of. It will control. At the same time, soil based pathogens as well as nematodes./h5>",
+      points: "",
+      head2: "PLT Neem cake Diamond - 2 KG",
+      text: "Neem Cake is used as an organic fertilizer because of the various micro and macro nutrients which it is composed of. It will control. At the same time, soil based pathogens as well as nematodes.",
+    },
+    {
+      type: "fertilizer",
+      imageToPass: "assets/img/neem cake 5Kg.jpeg",
+      head: "<h5>Neem Cake is used as an organic fertilizer because of the various micro and macro nutrients which it is composed of. It will control. At the same time, soil based pathogens as well as nematodes./h5>",
+      points: "",
+      head2: "PLT Neem cake Diamond - 5 KG",
+      text: "Neem Cake is used as an organic fertilizer because of the various micro and macro nutrients which it is composed of. It will control. At the same time, soil based pathogens as well as nematodes. ",
+    },
+    {
       type:"fertilizer",
       imageToPass:"assets/img/ph tuner new blue.png",
       head:'<h5>Soil ph affects the amount of nutrients and chemicals that are soluble in soil water, and therefore the amount of nutrients available to plants.The ph level of the soil must be on seven. If Soil PH is normal soil pathogens and pest will not attack plants.PLT PH TUNER is 100% natural that the microbes in the soil will not be destroyed.The leonardite is used as soil conditioner, as a stabilizer for ion exhange and chelate soil nutrients. Enhance long term ph and rooting of plants.The non-treated mussel shells contained in the PLT PH TUNER stays in the soil for a long time and whenever the pH decreases, it gradually dissolves in the soil and gradually normalizes the pH of the soil. PLT PH TUNER is a unique product that provides continuous service for plants throughout the year.</h5>',
@@ -315,14 +374,16 @@ background-size: auto;" class="services section-bg">
       text:"Nutrimix+ is a Organic Fertilizer provides bio enriched manure with nitrogen, phosphorus, potash, organic carbon and NPK solubilizing bacteria. Also it contains hormones that prevent diseases and promote total growth"
     },
     {
-      type:"plantgrowthregulators",
-      imageToPass:"assets/img/soiltopup PouchMockup1.png",
-      head:'<h5>PLT SOIL TOPUP is a unique product that can enhance utilization rate of fertilizers and consequently increases crop yield. The damage caused by chemical fertilizers can be minimized and also it enhances the productivity of crops. It can be mixed with chemical fertilizers and organic fertilizers to boost the nutrient uptake of the crop. Establishes a beneficial residual effect, which is retained on the soil for the benefit of the next cropping.</h5>',
-      points:'<ul><li>PLT SOIL TOPUP increases the root mass for more absorption of nutrients from soil.</li><li>Thickens the cell wall of plants for better resistance to pest and thus less use of pesticides.</li><li>Increases production substantially with less input.</li><li>Sustainable /slow release of NPK to prevent wastage.</li><li>Creates a protective environment in the soil increases production up to 35%.</li><li>It provides organic matter into the soil and helps to rebuild the soil structure.</li></ul>',
-      head2:"PLT SOIL TOPUP",
-      text:"PLT SOIL TOPUP is an unique product that can enhance utilization rate of fertilizers and consequently increases crop yield. The damage caused by chemical fertilizers can be minimize and also it enhance the productivity of crops. It can be mixed with chemical fertilizers and organic fertilizers to boost the nutrient uptake of the crop."
-    },{
-      type:"plantgrowthregulators",
+      type: "Bio-Stimulants",
+      imageToPass: "assets/img/Paint Bucket Mockup 2.png",
+      head: "<h5>Rejuvenates and replenishes the soil with functional micro-organisms. Treating and preservation of soil microflora from beginning to end by the use of inoculants, organic amendments generate a more favourable soil microbiological environmentfor best possible for crop production.</h5>",
+      points:
+        "<ul><li>Increases the size, colour and weight of fruit.</li><li>Reduces weathering of young flowers and fruits.</li><li>Increases yield by 20-35%.</li><li>Increases root and shoot growth.</li><li>Strengthens the natural ability to resist pest and disease.</li><li> Improves the yield and quality of produce.</li></ul>,",
+      head2: "PLT SEATONE GEL",
+      text: "Rejuvenates and replenishes the soil with functional micro-organisms. Treating and preservation of soil microflora from beginning to end by the use of inoculants, organic amendments generate a more favourable soil microbiological environment for best possible for crop production.",
+    },
+  {
+      type:"Bio-Stimulants",
       imageToPass:"assets/img/humistarPouchMockup.png",
       head:'<h5>A natural trace mineral and humic acid based granular soil conditioner that acts as an organic chelator and microbial stimulator. Humic acid is a group of molecules that bind to, and help plant roots receive, water and nutrients. High humic acid levels can dramatically increase yields. It has unique carbon matrix incorporation a high concentration of trace minerals and organic acids, specifically humic acid,which improves that plants ability to take in vital nutrients for plant growth anddevelopment.</h5>',
       points:'<ul><li>Increases soil carbon.</li><li>Improves plant health.</li><li>Increases the microbial activity in the soil.</li><li>Stimulates white root development.</li><li>Increases carbon content in the soil.</li><li>Increases nutrient uptake.</li><li>It increases crop resistance and improves crop quality.</li><li>Improves long-term soil PH.</li></ul>',
@@ -330,61 +391,36 @@ background-size: auto;" class="services section-bg">
       text:"A natural trace mineral and humic acid based granular soil conditioner that acts as an organic chelator and microbial stimulator. Humic acid is a group of molecules that bind to and help plant roots receive. Water and nutrients. High humic acid levels can dramatically increase yields."
     },
     {
-      type:"plantgrowthregulators",
+      type:"Bio-Stimulants",
       imageToPass:"assets/img/seatonegel  PouchMockup.png",
       head:'<h5>PLT SEATONE GEL is an organic extract derived from nutrition marine algae.it contains humic, fulvic, vitamins, cytokines & seaweed and is mixed with water for basal application in soil or through drip irrigation. Especially designed for all kinds of seasonal crops/ cash crops. Supply well-balanced crop nutrients and help plants to endure environmental stress.</h5>',
       points:'<ul><li>Increases the size, colour, and weight of fruit.</li><li>Reduces weathering of young flowers and fruits.</li><li>Increases yield by 20-35%.</li><li>Increases root and shoot growth.</li><li>Strengthens the natural ability to resist pest and disease.</li><li>Improves the yield and quality of produce.</li></ul>,',
       head2:"PLT SEATONE GEL PLUS ",
       text:'PLT SEATONE GEL PLUS is an organic extract derived from nutrition marine algae. It contains  humic, fulvic, vitamins ,cytokines & seaweed and is mixed with water for basal application in soil or through drip irrigation. supply well balanced crop nutrients.'
     },
-    {
-      type:"plantgrowthregulators",
-      imageToPass:"assets/img/Paint Bucket Mockup 2.png",
-      head:'<h5>Rejuvenates and replenishes the soil with functional micro-organisms. Treating and preservation of soil microflora from beginning to end by the use of inoculants, organic amendments generate a more favourable soil microbiological environmentfor best possible for crop production.</h5>',
-      points:'<ul><li>Increases the size, colour and weight of fruit.</li><li>Reduces weathering of young flowers and fruits.</li><li>Increases yield by 20-35%.</li><li>Increases root and shoot growth.</li><li>Strengthens the natural ability to resist pest and disease.</li><li> Improves the yield and quality of produce.</li></ul>,',
-      head2:"PLT SEATONE GEL",
-      text:'Rejuvenates and replenishes the soil with functional micro-organisms. Treating and preservation of soil microflora from beginning to end by the use of inoculants, organic amendments generate a more favourable soil microbiological environment for best possible for crop production.'
-    }
-    ,
-    
     ,{
-      type:"plantgrowthregulators",
+      type:"Bio-Stimulants",
       imageToPass:"assets/img/growton.png",
       head:'<h5>GROWTON promotes the activation of vegetative development, improves the size and colour of fruits mainly promotes vegetative growth in all types of crops.Growton is a Nanotechnology product especially for the growth of new shoots and leaves.</h5>',
       points:'<ul><li>Increases photosynthesis thereby building strong plants giving better harvests.</li><li>It helps to produce chlorophyll (increases leaf colure and strature).</li><li>Improves overall growth.</li><li>Increases yield by 20-35%.</li><li>Increase shoot growth.</li><li>Strengthens the natural ability to resist pests and diseases.</li><li>Improves the yield and quality of produce.</li></ul>,',
       head2:"PLT GROWTON",
       text:'PLT GROWTON promotes the activation of vegetative development, mainly promotes the growth of new shoots and leaves. GROWTON is an effective organic plant growth promoter derived from vegetable source and suitable to promote cholorophyl production which improves the absorption and transport of nutrients.'
     },
-    {
-      type: "plantgrowthregulators",
-      imageToPass: "https://drive.google.com/uc?export=view&id=1X2H3yGTCsALc6v6nDRuugPUXNL2UeLVQ",
-      head: "<h5>amiton is a special fragments of proteins with amino acids ,protein hydrolysates structures capable of enhancing nutrient efficiancy thus improves the flowering and fruiting metabolisms in crops .through the foliar or drenching methods benefits including colouring ,nutrient delivery under drought conditions ,plant health and crop protection .the molecular mechanisms of bio active peptides in influencing plant stress relief ,disease control and nutrient assimilation efficiency and signaling routs are also elaborated .</h5>",
-      points:"<ul><li>Improves flowering and fruiting.</li><li>Improves quality and speed of flowering.</li><li>Improves fruit set and help them grow healthy.</li><li>Improves overall growth of the plant.</li></ul>,",
-      head2: "PLT AMITON",
-      text: "amiton is a special fragments of proteins with amino acids ,protein hydrolysates structures capable of enhancing nutrient efficiancy thus improves the flowering and fruiting metabolisms in crops .through the foliar or drenching methods benefits including colouring ,nutrient delivery under drought conditions ,plant health and crop protection .the molecular mechanisms of bio active peptides in influencing plant stress relief ,disease control and nutrient assimilation efficiency and signaling routs are also elaborated .",
-    },
+
    {
-      type:"plantgrowthregulators",
+      type:"Bio-Stimulants",
       imageToPass:"assets/img/amino40bottle1.png",
       head:'<h5>It is a rich farming input for soil application and thus enhances nutritional uptake and their utilization which improves colour, size, lustre and flowering.It is a bio nutritional product, accelerates cell division and increases flowering.</h5>',
       points:'<li><ul>Improves flowering and fruiting.</li><li>Improves quality and speed of flowering.</li><li>Improves fruit set and help them grow healthy.</li><li>Improves overall growth of the plant.</li></ul>,',
       head2:"PLT AMINO 40",
       text:'It is a nutritional product ,accelerates cell division and increase colour, size , luster and flowering. Amino boosts up the growth and development of plant resulting into health and Improvement of quality and yield.'
     },{
-      type:"plantgrowthregulators",
+      type:"Bio-Stimulants",
       imageToPass:'assets/img/humistarl.png',
       head:'<h5>Humic acids biologically stimulate the plant and the activities of micro-organisms.Stimulate root growth, uptake of nutrients and proliferation of desirable micro-organisms in soil. Enhance plant’s natural resistance against disease and pest.</h5>',
       points:'<li><ul>Increases the microbial activity of the soil.</li><li>Stimulates root development.</li><li>Increases carbon content in the soil.</li><li>Increases nutrient uptake.</li><li>Increases crop resistance and improves crop quality.</li><li>Improves long term soil PH.</li></ul>,',
       head2:"PLT HUMISTAR 18",
       text:'Humic acids biologically stimulate the plant and the activities of micro-organisms. Stimulate root growth, uptake of nutrients and proliferation of desirable micro-organisms in soil. Enhance plant’s natural resistance against disease and pest.'
-    },
-    {
-      type:"plantgrowthregulators",
-      imageToPass:'https://drive.google.com/uc?export=view&id=1hthKO11fbudpqzvBsJQMImkkRaVwdR0M',
-      head:'<h5>Special mixture combination of biostimulants specially for the tuber crops like ginger ,onion ,turmeric etc Plt tuber king  will encourages the nutrient up take by crops, Increase photosynthesis activity of plants.It will enhance more tuber development by increasing plant nutrient uptake from soil.Simulates plant enzymes and increase their production, involves in the process of more food production in plants Acts as an organic catalyst in many biological processes</h5>',
-      points:'<li><ul>Increases the microbial activity of the soil.</li><li>Stimulates root development.</li><li>Increases carbon content in the soil.</li><li>Increases nutrient uptake.</li><li>Increases crop resistance and improves crop quality.</li><li>Improves long term soil PH.</li></ul>,',
-      head2:"PLT TUBER KING",
-      text:'Special mixture combination of biostimulants specially for the tuber crops like ginger ,onion ,turmeric etc Plt tuber king  will encourages the nutrient up take by crops, Increase photosynthesis activity of plants.It will enhance more tuber development by increasing plant nutrient uptake from soil.Simulates plant enzymes and increase their production, involves in the process of more food production in plants Acts as an organic catalyst in many biological processes'
     },
     {
       type:'Adjuvants',
@@ -396,29 +432,13 @@ background-size: auto;" class="services section-bg">
     },
     {
       type:'Adjuvants',
-      imageToPass:'https://drive.google.com/uc?export=view&id=1h01lAFeMw1uGa9f3NlcA0xKKa-sdYN7Y',
+      imageToPass: "assets/img/POWER WET.jpg",
       head:'<h5Useful as a Spreader, Activator, Penetrator increases the efficiency of Spraying. Recommended in the rainy season to avoid washout, which reduces the consumption of Agro Chemicals. Powe wet breaks the water surface tension which improves pesticide absorption in crops, it also helps pesticides to remain on the crops for a longer time and penetrates the plant system very effectively.usage:1 ml/litre water </h5>',
       points:'',
-      head2:'PLT POWER VET',
-      text:"Useful as a Spreader, Activator, Penetrator increases the efficiency of Spraying. Recommended in the rainy season to avoid washout, which reduces the consumption of Agro Chemicals. Powe wet breaks the water surface tension which improves pesticide absorption in crops, it also helps pesticides to remain on the crops for a longer time and penetrates the plant system very effectively.usage:1 ml/litre water"    
+      head2:'PLT POWER WET',
+      text:"Useful as a Spreader, Activator, Penetrator increases the efficiency of Spraying. "    
     },
-    {
-      type:'other',
-      imageToPass:'assets/img/pltb bone meal.png',
-      head:'<h5>Bone Meal is a great source of phosphorus, which is an essential nutrient for plants to help them flower and new plants to produce strong roots,so is good for root vegetables.</h5>',
-      points:'',
-      head2:'Bone Meal',
-      text:"It's a great source of phosphorus, which is an essential nutrient for plants to help them flower and new plants to produce strong roots,so is good for root vegetables."
-
-    },
-    {
-      type:'other',
-      imageToPass:'assets/img/plt neem cake.png',
-      head:'<h5>Neem Cake is used as an organic fertilizer because of the various micro and macro nutrients which it is composed of. It will control. At the same time, soil based pathogens as well as nematodes./h5>',
-      points:'',
-      head2:'Neem cake',
-      text:'Neem Cake is used as an organic fertilizer because of the various micro and macro nutrients which it is composed of. It will control. At the same time, soil based pathogens as well as nematodes. It will also inhibit nitrification of the soil plus enhance the efficiency of nitrogen providing fertilizer.'
-    },
+  
       
      
       {
@@ -458,7 +478,7 @@ background-size: auto;" class="services section-bg">
       imageToPass: "assets/img/ACETAMIPRID.jpeg",
       head: "<h5>Acetamiprid 20%S.P  Control sucking pest like Aphids ,Jassids & Whitefly.</h5>",
       points: "<ul><li>     Dosage:0.5g per ltr of water.</li></ul>",
-      head2: "ATTENTION",
+      head2: "ASAPRID",
       text: '<p class="text">Acetamiprid 20%S.P  Control sucking pest like Aphids ,Jassids &Whitefly.</p>',
     },
     {
@@ -471,6 +491,15 @@ background-size: auto;" class="services section-bg">
     },
     {
       type: "pesticides",
+      imageToPass: "assets/img/KOREX 501.jpeg",
+      head: "<h5>PLT KOREX -50 have duel action contact and stomach action. PLT KOREX -50 controls sucking ,chewing ,biting and boring insects in various crops</h5>",
+      points:
+        "<ul><li>PLT KOREX -50 belongs to organo phosphorous chemical group.</li><li>It is recommended on wide range of crops for control of various pest.</li></ul>,",
+      head2: "PLT KOREX 50",
+      text: "PLT KOREX-50 has quick knockdown action having  longer persistence on leaves and specifically effective on most of the larva and termites",
+    },
+    {
+      type: "pesticides",
       imageToPass: "assets/img/CHLORO + CYPERM.jpeg",
       head: "<h5>(Chloropyriphos 50% +cypermethrin 5% EC):For the control of Aphids ,Jassids ,thripes whitefly ,American ballworm,spotted bollworm,pink bollworm etc</h5>",
       points: "<ul><li> Dosage:1-1.5 ml per litre of water</li></ul>",
@@ -479,7 +508,7 @@ background-size: auto;" class="services section-bg">
     },
     {
       type: "pesticides",
-      imageToPass: "https://drive.google.com/uc?export=view&id=1WMXhkHF8v1wqz1YXQnju2Vu6Nh9Xaga7",
+      imageToPass: "assets/img/Emaben.png",
       head: "<h5>Emamectin Benzoate 5% SG):For effective control of all types of Worms/Caterpillers , chewing pests.</h5>",
       points: "<ul><li>  Dosage:0.5-1g per litre of water</li></ul>",
       head2: "EMABEN",
@@ -512,7 +541,7 @@ background-size: auto;" class="services section-bg">
     },
     {
       type: "pesticides",
-      imageToPass: "https://drive.google.com/uc?export=view&id=16aeefrf7UJdWmz7u0-sOc_jzxDE-abWM",
+      imageToPass: "assets/img/finish.jpeg",
       head: "<h5>quinalphos 25%EC) FINISH effectively controls caterpillars on fruit trees, cotton, vegetables and peanuts scale insect on fruit trees and pest complex on rice.</h5>",
       points: "<ul><li>  Dosage:1-2 ml per ltr of water </li></ul>",
       head2: "FINISH",
@@ -535,34 +564,39 @@ background-size: auto;" class="services section-bg">
       text: '<p class="text">(THIAMETHOXAM 25% WG) It helps in controlling Stem borer, gall midge, leaf folder, brown plant hopper, White Blacked Plant hopper (WBPH), Green Leaf hopper (GLH), Thrips, etc. in rice. It is also very effective in controlling Aphids, Jassids, Thrips & White Flies in cotton.</p>',
     },
     {
-      type: "pesticides",
-      imageToPass: "https://drive.google.com/uc?export=view&id=10Hmduiv3c6taTicpFg_pRx7H2LybKRtW",
-      head: "<h5>(AZADIRACTIN 3000PPM) Neem oil based herbal pest repellent control thripes ,stemborer,leaf folder etc</h5>",
-      points: "<ul><li>  Dosage:1-2 ml per ltr of water </li></ul>",
-      head2: "NIM 3000",
-      text: '<p class="text">(AZADIRACTIN 3000PPM) Neem oil based herbal pest repellent control thripes ,stemborer,leaf folder etc</p>',
-    },
-    {
-      type: "pesticides",
-      imageToPass: "assets/img/agriboss.png",
-      head: "<h5>PLT AGRI BOSS is a systemic product against groups of aphids and thrips.Those attacks on plants by sucking its fluid from tender new growth and results in deformed growth, flowering, and discoloration. This is the product with translaminar bioactivity along with contact poison properties against thrips aphids and other insects. </h5>",
-      points:
-        "<ul><li>It improves crop photosynthesis.</li><li>Increases production of crops.</li><li>It helps to prevent insect disease attack.</li></ul>,",
-      head2: "PLT AGRI BOSS",
-      text: "PLT AGRI BOSS is a systemic product against groups of aphids and thripes. Those attack on plants by sucking its fluid from tender new growth and results in deformed growth, flowering and discoloration.",
-    },
-    {
-      type: "pesticides",
-      imageToPass: "https://drive.google.com/uc?export=view&id=1WNkXLALcbP_lfYVHuenRdxRkbTswTfDG",
+      type: "weedicides",
+      imageToPass: "assets/img/GLYSOPHATE.jpeg",
       head: "<h5>(Glyphosate 41% SL ) Glyphosate is an herbicide. It is applied to the leaves of plants to kill both broadleaf plants and grasses. The sodium salt form of glyphosate is used to regulate plant growth and ripen specific crops.</h5>",
       points:
-        "<ul><li>I</li></ul>,",
+        "<ul><li></li></ul>,",
       head2: "GATE",
       text: "(Glyphosate 41% SL ) Glyphosate is an herbicide. It is applied to the leaves of plants to kill both broadleaf plants and grasses. The sodium salt form of glyphosate is used to regulate plant growth and ripen specific crops.",
     },
+
+
+
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/Cimbol.jpeg",
+      head: "<h5>Cypermethrin 25% ec is a synthetic pyrethroid insecticide used to kill insects on cotton and lettuce, and to kill cockroaches, fleas, and termites in houses and other buildings.</h5>",
+      points:
+        "<ul><li></li></ul>,",
+      head2: "PLT Cymbol",
+      text: "Cypermethrin 25% ec is a synthetic pyrethroid insecticide used to kill insects on cotton and lettuce, and to kill cockroaches, fleas, and termites in houses and other buildings.",
+    },
+
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/MONO.jpeg",
+      head: "<h5>PLT MONO PLUS Highly (monoprotophos 36% ec) effective broad spectrum solution for management of various sucking and chewing pests in Agriculture.MONO PLUS quick knock down control at very affordable cost of treatment per acre.</h5>",
+      points: "<ul><li></li></ul>",
+      head2: "PLT MONO PLUS",
+      text: "PLT MONO PLUS Highly (monoprotophos 36% ec) effective broad spectrum solution for management of various sucking and chewing pests in Agriculture.MONO PLUS quick knock down control at very affordable cost of treatment per acre.",
+    },
+
       {
       type:'fungicides',
-      imageToPass:'https://drive.google.com/uc?export=view&id=1LX1X9fm93ffa-3924Ac-v12bePFAgyqA',
+      imageToPass:"assets/img/Evolve.jpeg",
       head:'<h5>(Carbendazim12% +Mancozeb 63% WP) Fungicide is a systemic and contact fungicide that is used to prevent Leaf Spot Blast disease and Rust disease in all vegetable plants.</h5>',
       points:'</li><ul></li></ul>,',
       head2:'EVOLVE',
@@ -570,7 +604,7 @@ background-size: auto;" class="services section-bg">
       },
       {
       type:'fungicides',
-      imageToPass:'https://drive.google.com/uc?export=view&id=1vTL3cffssV2iPQ8alouAuuRQmXtf9PmQ',
+      imageToPass: "assets/img/AZO+TUB.jpeg",
       head:'<h5>Zola-29 is a Broad spectrum fungicide for the control of many fungal pathogens & diseases. Zola-29 has very good preventive & curative properties which provides flexibility & broad window of application. It has a dual mode of action, hence it works at multiple stages of fungal development.</h5>',
       points:'</li><ul></li></ul>,',
       head2:'ZOLA-29',
@@ -578,7 +612,7 @@ background-size: auto;" class="services section-bg">
       },
       {
       type:'fungicides',
-      imageToPass:'https://drive.google.com/uc?export=view&id=1ap_960rR2rX4KtFG4kEZEai1sVHUVdvk',
+      imageToPass: "assets/img/SULPHUR.jpeg",
       head:'<h5>(Sulphur 80% WDG) SABLE  is a contact  fungicide, insecticide and miticide for use on Citrus, Field, Fruit, Nut, Ornamental, Turf and Vegetable applications</h5>',
       points:'</li><ul></li></ul>,',
       head2:'SABLE',
@@ -586,7 +620,7 @@ background-size: auto;" class="services section-bg">
       },
       {
       type:'fungicides',
-      imageToPass:'https://drive.google.com/uc?export=view&id=1WdcHyddkSH5K5axnDJLCJbGpDapLAzux',
+      imageToPass: "assets/img/META+MANCO.jpeg",
       head:'<h5>GUNNER a leading fungicide for control of important diseases caused by the Oomycete fungi and controls soil and leaf diseases in a number of crops including vegetables, grapes, water melon, ornamentals and cotton.</h5>',
       points:'</li><ul></li></ul>,',
       head2:'GUNNER',
@@ -594,7 +628,7 @@ background-size: auto;" class="services section-bg">
       },
       {
       type:'fungicides',
-      imageToPass:'https://drive.google.com/uc?export=view&id=1kGH4r7S7SA5IZkK34csmhfp5wNWk9dwV',
+      imageToPass: "assets/img/Rule75.jpeg",
       head:'<h5>(MANCOZEB 75% WP) RULE 75 is used to control brown and black rust & blight of wheat leaf blight & downy mildew of maize, A blast of paddy, leaf spot sorghum. Tip rot sigatoka leaf spot of banana and other fungal diseases of banana, guava and other field crops.</h5>',
       points:'</li><ul></li></ul>,',
       head2:'RULE 75',
@@ -602,7 +636,7 @@ background-size: auto;" class="services section-bg">
       },
       {
       type:'fungicides',
-      imageToPass:'https://drive.google.com/uc?export=view&id=1OiUMQQNPVu-ATDA1gbCC2gJxCA6HW3Kl',
+      imageToPass: "assets/img/Hexole.jpeg",
       head:'<h5>HEXOLE is a unique systemic triazole fungicide, acting as protective, curative and eradicant with strong antisporulant and translaminar action.For control of powdery mildew ,downey mildew etc.</h5>',
       points:'</li><ul>Dosage:1-2ml per ltr of water </li></ul>,',
       head2:'HEXOLE',
@@ -611,12 +645,22 @@ background-size: auto;" class="services section-bg">
 
       {
       type: "fungicides",
-      imageToPass: "https://drive.google.com/uc?export=view&id=1w8HoUM5oEz36J1Mtv0_BE7vkOQXv-es5",
+      imageToPass: "assets/img/arecatone.jpeg",
       head: "PLT ARECATONE contains natural salt of phosphonic acids ,which is an organic plant growth protector ,it is highly effective fungicide which prevents and protects crops from fungal diseases .PLT ARECATONE is very effective for mahali diseases of arecanut .plt arecatone spraying is effective for 60-90 days .plt arecatone has to be sprayed on arecanut just before the onset of monsoon .during rainy seasons when mahali diseases starts .plt arecatone prevents fungal disease , nut cracking and premature fall of areacanut two sprays at monthly intervals with  ARECATONE at the rate of 3-4 ml/L was effective in managing koleroga (nut rot disease)  of areca nut.PLT ARECATONE  has the unique property of increasing resistance against several disease and environmental stress issues by boosting both the rate and intensity of the existing plant defense systems. Application of PLT ARECATONE enhances the plants' existing defense responses.</h5>",
       points:
         "<ul><li>highly effective fungicide which prevents and protects crops from fungal diseases </li><li>increasing resistance against several disease and environmental stress issues by boosting both the rate and intensity of the existing plant defense systems</li></ul>,",
       head2: "PLT ARECATONE",
-      text: "PLT ARECATONE contains natural salt of phosphonic acids ,which is an organic plant growth protector ,it is highly effective fungicide which prevents and protects crops from fungal diseases .PLT ARECATONE is very effective for mahali diseases of arecanut .plt arecatone spraying is effective for 60-90 days .plt arecatone has to be sprayed on arecanut just before the onset of monsoon .during rainy seasons when mahali diseases starts .plt arecatone prevents fungal disease , nut cracking and premature fall of areacanut ",
+      text: "PLT ARECATONE contains natural salt of phosphonic acids ,which is an organic plant growth protector ,it is highly effective fungicide which prevents and protects crops from fungal diseases . ",
+    },
+
+    {
+      type: "fungicides",
+      imageToPass: "assets/img/Powermeta.jpeg",
+      head: "PLT POWER META (Metalaxyl 35% WS) is a systemic fungicide. It is used to control leaf spot and rust disease of different types of crops like potatoes, chili, cauliflower, cabbage, peas, groundnut, paddy, wheat, sugarcane, etc. It controls downy mildew in maize, bajra, sorghum, sunflower, and white rust in mustard.</h5>",
+      points:
+        "<ul><li></li></ul>,",
+      head2: "PLT POWER META",
+      text: "PLT POWER META (Metalaxyl 35% WS) is a systemic fungicide. It is used to control leaf spot and rust disease of different types of crops like potatoes, chili, cauliflower, cabbage, peas, groundnut, paddy, wheat, sugarcane, etc. It controls downy mildew in maize, bajra, sorghum, sunflower, and white rust in mustard. ",
     },
       
 
