@@ -11,7 +11,9 @@
   <!-- Favicons -->
   <link rel="icon" href="assets/img/favicon.png">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Vendor CSS Files -->
@@ -31,22 +33,26 @@
 
 
   <style>
-    .headImage{
+    .headImage {
       height: 300px;
 
     }
-    .formmaincontainer{
+
+    .formmaincontainer {
       padding: 30px;
-      background-color:#e4e4e4;
+      background-color: #e4e4e4;
       opacity: 0.7;
       text-align: left;
 
-    }.textOnImage{
+    }
+
+    .textOnImage {
       position: relative;
       text-align: center;
 
     }
-    #spanText{
+
+    #spanText {
       padding: 5px;
       background-color: green;
       color: white;
@@ -54,6 +60,7 @@
       margin-bottom: 10px;
       display: none;
     }
+
     /* .contactustext{
       position: absolute;
       top: 50%;
@@ -62,11 +69,8 @@
     } */
     .headContactUs {
       font-size: 100px;
-      text-shadow: 1px  1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px  1px 0 #000,1px  1px 0 #000;
+      text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
-    
-
-
   </style>
 </head>
 
@@ -84,7 +88,7 @@
             <ul>
               <!-- <li class="active"><a href="/">Contact us</a></li> -->
 
-              <li ><a href="#about">Home</a></li>
+              <li><a href="#about">Home</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#services">Services</a></li>
               <!-- <li><a href="#features">Features</a></li> -->
@@ -92,9 +96,10 @@
               <!-- <li><a href="consultancy.html">Consultancy</a></li>
               <li><a href="education.html">Education</a></li> -->
               <li><a href="careers.html">Careers</a></li>
-              <li><button class="get-started-button scrollto show-btn" style=" border-radius: 10px; background-color: inherit;">
-                <a href="contactUs.html" style="color: white;">Contact us</a>
-              </button></li>
+              <li><button class="get-started-button scrollto show-btn"
+                  style=" border-radius: 10px; background-color: inherit;">
+                  <a href="contactUs.html" style="color: white;">Contact us</a>
+                </button></li>
             </ul>
           </nav><!-- .nav-menu -->
 
@@ -102,90 +107,91 @@
           <!-- <label for="show" class="get-started-btn get-started-btn-nav scrollto show-btn" style=" border-radius: 10px;">Connect Us</label> -->
           <!-- <a href="#about"><label for="show" class="get-started-btn scrollto show-btn" ></label>Connect Us</label></a> -->
 
-           </div>
+        </div>
       </div>
     </div>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
- 
+
 
   <main id="main">
 
     <!-- ======= Services Section ======= -->
     <section style="padding-top:8vw;background: linear-gradient(20deg, rgba(46, 134, 60, 0.575) 0%, rgba(14, 58, 19, 0.445) 100%), url('assets/img/leaf.jpg') center center no-repeat;
-    background-size: cover; min-height: 70vh; " id="products" class="services section-bg" >
+    background-size: cover; min-height: 70vh; " id="products" class="services section-bg">
       <div class="container" data-aos="fade-up" style="text-align: center;">
 
 
-        
+
         <div class="formmaincontainer">
 
           <div class="textOnImage">
             <!-- <img src="/assets/img/FarmDevelopment.jpg" class="headImage"/> -->
-          <div class="section-title contactustext">
-            <p class="headContactUs">CONTACT US</p>
-      
+            <div class="section-title contactustext">
+              <p class="headContactUs">CONTACT US</p>
+
+            </div>
           </div>
-          </div>
-          
+
           <form id="submit-form" action="">
             <label for="name">First Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name.." >
-              <label for="email">Email</label>
-              <input type="text" id="email" name="email" placeholder="Enter your Email..">
-              
-              <label for="subject">Subject</label>
-              <textarea id="subject" name="message" placeholder="Write something.." style="height:100px"></textarea>
-              <span id="spanText">
-              <p id="response" > </p></span>
+            <input type="text" id="name" name="name" placeholder="Your name..">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Enter your Email..">
 
-              <input type="submit"  value="Submit">
-            </form>
-           
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="message" placeholder="Write something.." style="height:100px"></textarea>
+            <span id="spanText">
+              <p id="response"> </p>
+            </span>
+
+            <input type="submit" value="Submit">
+          </form>
+
         </div>
 
 
 
-        
-              
-            
-       
 
 
 
-        
+
+
+
+
+
       </div>
       <script>
-        $("#submit-form").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"https://script.google.com/macros/s/AKfycby1LPOGsKH1hIuZAWW8yeju9IptJXd6wsTMpdiMRVvjREcDqjdO6MkuRB_pRi_T3F_9ng/exec",
-                data:$("#submit-form").serialize(),
-                method:"post",
-                success:function (response){
-                  document.getElementById("response").innerHTML = "Form submitted successfully our team will contact you shortly..";
-                  document.getElementById("spanText").style.display = "block";                     // window.location="/index.html"
-                    // window.location.reload()
-                    //window.location.href="https://google.com"
-                },
-                error:function (err){
-                    alert("Something Error")
-    
-                }
-            })
+        $("#submit-form").submit((e) => {
+          e.preventDefault()
+          $.ajax({
+            url: "https://script.google.com/macros/s/AKfycby1LPOGsKH1hIuZAWW8yeju9IptJXd6wsTMpdiMRVvjREcDqjdO6MkuRB_pRi_T3F_9ng/exec",
+            data: $("#submit-form").serialize(),
+            method: "post",
+            success: function (response) {
+              document.getElementById("response").innerHTML = "Form submitted successfully our team will contact you shortly..";
+              document.getElementById("spanText").style.display = "block";                     // window.location="/index.html"
+              // window.location.reload()
+              //window.location.href="https://google.com"
+            },
+            error: function (err) {
+              alert("Something Error")
+
+            }
+          })
         })
       </script>
     </section><!-- End Services Section -->
 
-  </div>
+    </div>
 
-</div>
+    </div>
 
   </main><!-- End #main -->
 
-<!-- ======= Cntact us form ======= -->
-<!-- <div class="form-back">
+  <!-- ======= Cntact us form ======= -->
+  <!-- <div class="form-back">
   <div class="form-main" >
     <input type="checkbox" id="show">
     <div class="form-container">
@@ -228,7 +234,7 @@
     </div>
   </div>
 </div> -->
-<!-- ======= Cntact us form end ======= -->
+  <!-- ======= Cntact us form end ======= -->
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
@@ -248,7 +254,7 @@
             <strong>Head Office:</strong> 0483-2948800<br>
             <strong>Customer care :</strong> +91 82818 27426<br>
             <!-- <strong>Product knowledge:</strong> +91 8590456841<br>  -->
-            <strong>B2B Sales:</strong> +91 9747116691<br>
+            <!-- <strong>B2B Sales:</strong> +91 9747116691<br> -->
             <!-- +91 85904 67224<br /> -->
             <div></div>
             <!-- <strong>Phone:</strong> +91 000000000<br> -->

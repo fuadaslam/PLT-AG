@@ -449,7 +449,7 @@
 
 
 
-      <img src="./assets/img/hire.jpeg" alt="Italian Trulli">
+        <img src="./assets/img/hire.jpeg" alt="Italian Trulli">
         <!-- <div class="col-md-6 offset-md-3 mt-5">
           <br>
           <h1>Job Application</h1>
@@ -485,24 +485,24 @@
     </section><!-- End About Section -->
 
     <script>
-      $("#submit-form").submit((e)=>{
-          e.preventDefault()
-          $.ajax({
-              url:"https://script.google.com/macros/s/AKfycbwiYjIUpPfEL1UChOXeq19BwW9y_0Wfwi0HBCHm6fwmKNak99kKm59CBWuLPwf-DUmx/exec",
-              data:$("#submit-form").serialize(),
-              method:"post",
-              success:function (response){
-                alert("Form submitted successfully our team will contact you shortly..");
-            
-              },
-              error:function (err){
-                  alert("Something Error")
-              }
-          })
+      $("#submit-form").submit((e) => {
+        e.preventDefault()
+        $.ajax({
+          url: "https://script.google.com/macros/s/AKfycbwiYjIUpPfEL1UChOXeq19BwW9y_0Wfwi0HBCHm6fwmKNak99kKm59CBWuLPwf-DUmx/exec",
+          data: $("#submit-form").serialize(),
+          method: "post",
+          success: function (response) {
+            alert("Form submitted successfully our team will contact you shortly..");
+
+          },
+          error: function (err) {
+            alert("Something Error")
+          }
+        })
       })
     </script>
 
-   
+
 
 
 
@@ -570,13 +570,13 @@
             Ooty road, Manjeri-3, Kerala, 676123<br />
             Info@plantlabztech.com<br />
             Plant Labz Tech
-        
-       
+
+
             <div></div>
             <strong>Head Office:</strong> 0483-2948800<br>
             <strong>Customer care :</strong> +91 82818 27426<br>
             <!-- <strong>Product knowledge:</strong> +91 8590456841<br>  -->
-            <strong>B2B Sales:</strong> +91 9747116691<br>
+            <!-- <strong>B2B Sales:</strong> +91 9747116691<br> -->
             <!-- +91 85904 67224<br /> -->
             <div></div>
             <!-- <strong>Phone:</strong> +91 000000000<br> -->
