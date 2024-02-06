@@ -2090,3 +2090,37 @@ input[type="submit"]:hover {
     rgba(44, 187, 99, 0.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
+
+.gallery {
+  --s: 400px; /* control the size */
+  --g: 10px;  /* control the gap */
+  --f: 1.5;   /* control the scale factor */
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 100px;
+align-items: center;
+  display: grid;
+  gap: var(--g);
+  width: calc(4.6*var(--s) + 2*var(--g));
+  aspect-ratio: 1;
+  grid-template-columns: repeat(3,auto);
+}
+
+.gallery > img {
+  width: 0;
+  height: 0;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  filter: grayscale(80%);
+  transition: .35s linear;
+}
+
+.gallery img:hover{
+  filter: grayscale(0);
+  width:  calc(var(--s)*var(--f));
+  height: calc(var(--s)*var(--f));
+}
+
+
