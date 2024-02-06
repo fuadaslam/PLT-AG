@@ -1,0 +1,1158 @@
+﻿html {
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  font-size: 18px;
+  font-family: "FiraSans";
+  font-weight: 300;
+  max-width: 1920px;
+  min-width: 1000px;
+  background-color: #fff;
+  /*background-color:lawngreen;*/
+  background-image: url(../Images/background-pattern.jpg);
+  background-repeat: repeat;
+}
+
+strong {
+  font-weight: 400;
+}
+
+.content-wrapper {
+  width: 980px;
+  padding: 0 10px;
+  margin: auto;
+}
+
+* {
+  background-repeat: no-repeat;
+}
+
+img {
+  outline: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 24px;
+  font-family: Museo;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 24px;
+  font-family: Museo;
+  font-weight: 300;
+}
+
+header {
+  font-family: Museo;
+  font-size: 20px;
+  font-weight: 300;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  left: 0;
+  top: 30px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  padding-bottom: 0px;
+}
+
+header:after {
+  height: 95px;
+  /*background-color: rgba(255,255,255,.85);*/
+  /*box-shadow: 0 0 200px 0 rgba(255,255,255,1);*/
+  box-shadow: 100px 40px 100px 0px rgba(255, 255, 255, 0.3),
+    -100px 40px 100px 0px rgba(255, 255, 255, 0.3);
+  /*background-image:radial-gradient(circle at center -100%, rgba(255,255,255,.5), rgba(255,255,255,.0) 70%, rgba(255,255,255,0) 100%);*/
+  display: block;
+  content: "";
+  top: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.clearfix:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.clear-fix {
+  clear: both;
+  display: block;
+}
+
+.top-band {
+  background-color: #2e1e13;
+  height: 30px;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  font-family: FiraSans;
+  color: #e2eecc;
+  font-size: 13px;
+}
+
+.top-band .left {
+  float: left;
+}
+
+.top-band .right {
+  float: right;
+}
+
+.top-band:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.top-band a {
+  padding: 7px 10px 0 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.top-band .content-wrapper {
+  width: 980px;
+  margin: auto;
+}
+
+.marquee {
+  display: inline-block;
+  width: 550px;
+  margin: 0 auto;
+  margin-top: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.marquee span {
+  vertical-align: top;
+  display: inline-block;
+  padding-left: 100%; /* show the marquee just outside the paragraph */
+  animation: marquee 15s linear infinite;
+}
+
+.marquee span:hover {
+  animation-play-state: paused;
+}
+
+/* Make it move */
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+nav {
+  margin: auto;
+  text-align: center;
+  padding-top: 40px;
+  display: block;
+  width: 980px;
+  position: relative;
+  z-index: 1;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: #4a3219;
+}
+
+nav ul li {
+  width: 156px;
+  display: block;
+  float: left;
+  padding: 15px 20px;
+}
+
+nav a {
+  display: block;
+  margin: 0;
+  text-align: center;
+  color: #4a3219;
+}
+
+nav ul li.dropdown span {
+  display: block;
+  margin-bottom: 30px;
+}
+
+nav ul li.dropdown a.secondary {
+  position: relative;
+  display: none;
+  border-bottom: 1px solid #4a3219;
+  padding: 8px 4px;
+  font-size: 0.82em;
+}
+
+nav ul li.dropdown a.secondary:last-child {
+  border-bottom: none;
+}
+
+nav ul li.dropdown:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+nav ul li.dropdown:hover a.secondary {
+  display: block;
+}
+
+.logo img {
+  display: block;
+  margin: -26px auto 0 auto;
+}
+
+.featured {
+  height: 872px;
+  position: relative;
+  z-index: 1;
+  background-image: url(../Images/featured.png);
+  background-size: cover;
+}
+
+.featured img {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+.openning {
+  margin-left: auto;
+  margin-top: auto;
+  position: relative;
+  top: 330px;
+}
+
+.openning span {
+  background-color: rgba(166, 206, 58, 0.65);
+  max-width: 902px;
+  font-family: Museo;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  display: block;
+  margin: auto;
+  padding: 10px 0;
+  font-size: 35px;
+  text-shadow: 0 0 30px #000;
+}
+
+.intro {
+  background-image: url(../Images/earth.jpg);
+  background-size: cover;
+  text-align: center;
+  padding: 100px 0;
+  margin-top: -172px;
+}
+
+.intro .content {
+  max-width: 780px;
+  margin: auto;
+  background-color: rgba(64, 39, 34, 0.6);
+  padding: 50px 78px;
+  color: #bfe800;
+}
+
+.intro h2 {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 1em;
+  color: #e1ff55;
+  font-weight: 300;
+  font-family: Museo;
+}
+
+.intro p {
+  font-size: 18px;
+  font-family: "FiraSans";
+  font-weight: 300;
+  margin: 0 0 1em 0;
+}
+
+.home-products {
+  text-align: center;
+  padding: 10px 0 0 0;
+}
+
+.home-products .inner {
+  max-width: 780px;
+  margin: auto;
+}
+
+.home-products h2 {
+  color: #4a3219;
+  font-size: 24px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 10px 0;
+}
+
+.row:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.col-half {
+  width: calc(50% - 20px);
+  padding: 0 10px;
+}
+
+.product-list {
+  list-style: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.product-list li {
+  float: left;
+  width: calc(100% / 5 - 4px);
+  padding-right: 2px;
+  background-origin: content-box;
+  height: 340px;
+  background-size: 100% 100%;
+}
+
+.product-list li a {
+  height: 100%;
+  display: block;
+}
+
+.product-list li span {
+  display: block;
+  position: relative;
+  font-size: 17px;
+  font-weight: 700;
+  color: #726659;
+  top: 50%;
+  padding: 0 20px;
+  transform: translateY(-50%);
+}
+
+.organic-fertilizers {
+  background-image: url(../Images/background-organic-fertilizers.jpg);
+}
+
+.fungicides {
+  background-image: url(../Images/background-fungicides.jpg);
+}
+
+.insesticides {
+  background-image: url(../Images/background-insecticides.jpg);
+}
+
+.plant-growth-regulators {
+  background-image: url(../Images/background-plan-growth-regulators.jpg);
+}
+
+.bio-stimulants {
+  background-image: url(../Images/background-bio-stimulants.jpg);
+}
+
+.best-sellers,
+.testimonials {
+  background-color: rgba(166, 206, 57, 0.86);
+  background-image: url(../Images/background-best-seller-pattern.jpg);
+  background-repeat: repeat;
+}
+
+.best-sellers .slides {
+  position: relative;
+  background-image: url(../Images/background-best-sellers.jpg);
+  background-position: center bottom;
+}
+
+.slides {
+  position: relative;
+}
+
+.slides ul {
+  list-style: none;
+  position: relative;
+  height: 448px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.slides ul li {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin-left: 90px;
+  height: 100%;
+  width: calc(100% - 90px);
+}
+
+.testimonials .slides ul li {
+  margin-left: 45px;
+}
+
+.slides ul li:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.slides ul li:first-child {
+  left: 0;
+  position: relative;
+}
+
+.slides .prev {
+  width: 92px;
+  position: absolute;
+  top: 50%;
+  height: 62px;
+  cursor: pointer;
+  left: 0;
+  transform: translateY(-50%);
+  background-position: center center;
+  background-image: url(../Images/Assets/icon-arrow-left-brown.png);
+}
+
+.slides .next {
+  width: 92px;
+  right: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  height: 62px;
+  transform: translateY(-50%);
+  background-position: center center;
+  background-image: url(../Images/Assets/icon-arrow-right-brown.png);
+}
+
+.slides h4 {
+  font-family: "FiraSans";
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.slides h4 small {
+  font-weight: 300;
+}
+
+.slides .text {
+  width: 49%;
+  height: 100%;
+  position: relative;
+  float: left;
+}
+
+.testimonials .slides .text {
+  max-width: 623px;
+  float: none;
+  width: auto;
+  margin: auto;
+}
+
+.slides .image {
+  width: 49%;
+  height: 100%;
+  position: relative;
+  bottom: 0;
+  float: left;
+}
+
+.slides .text .inner-text {
+  position: absolute;
+  bottom: 40px;
+}
+
+.testimonials .slides .text .inner-text {
+  position: relative;
+  bottom: auto;
+  margin-top: 100px;
+}
+
+.slides .image img {
+  position: absolute;
+  bottom: -25px;
+  display: block;
+  max-width: 100%;
+  filter: drop-shadow(45px 8px 90px #000);
+}
+
+.slides h2 {
+  font-size: 24px;
+  font-family: "FiraSans";
+  font-weight: 400;
+  color: #fff;
+  position: absolute;
+  top: 60px;
+  left: 90px;
+}
+
+.slides h2:after {
+  height: 1px;
+  width: 50px;
+  content: "";
+  position: absolute;
+  display: block;
+  margin-top: 20px;
+  background-color: #4a3219;
+}
+
+.testimonials .cite {
+  text-align: right;
+  color: #4e3a1b;
+  font-size: 22px;
+  font-family: "Museo 100";
+  font-weight: 500;
+}
+
+.why-us {
+  background-image: url(../Images/background-why-us.png);
+  background-position: center bottom;
+  overflow: hidden;
+  height: 528px;
+  margin-top: -20px;
+}
+
+.shadow-after {
+  position: relative;
+}
+
+.shadow-after:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  width: 100%;
+  background-image: radial-gradient(
+    at center bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0) 60%
+  );
+  background-repeat: no-repeat;
+  height: 40px;
+}
+
+.why-us .content {
+  margin-top: 120px;
+  margin-left: 415px;
+}
+
+footer {
+  padding: 0;
+  min-height: 639px;
+}
+
+footer .footer-inner {
+  padding: 1px 0;
+  background-image: url(../Images/background-footer.jpg);
+  background-position: center top;
+  background-size: auto;
+}
+
+.tagline {
+  font-family: Museo;
+  font-size: 24px;
+  color: #6a4d25;
+  margin-top: 2em;
+  text-align: center;
+}
+
+.footer-logo {
+  float: left;
+}
+
+.toll-free {
+  color: #fff;
+  text-align: right;
+  float: right;
+  margin-bottom: 0;
+}
+
+.toll-free a:hover {
+  text-decoration: underline;
+}
+
+.footer-content {
+  margin-top: 230px;
+  color: #4a3219;
+}
+
+.social {
+  margin-top: 120px;
+}
+
+.social a {
+  margin-right: 10px;
+}
+
+footer hr {
+  height: 1px;
+  background-color: #4a3219;
+  border: none;
+  outline: none;
+  display: block;
+  margin: 0.5em 0;
+}
+
+footer .address-list {
+  padding: 0;
+  font-size: 0.85em;
+  list-style: none;
+  color: #fff;
+  line-height: 1.1em;
+  display: block;
+  margin-top: 20px;
+}
+
+footer .address-list p {
+  margin: 0 0 0.5em 0;
+}
+
+footer .address-list h4 {
+  margin: 0 0 0.5em 0;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+footer .address-list li {
+  width: 25%;
+  float: left;
+}
+
+footer .address-list li .address-inner {
+  padding-right: 20px;
+}
+
+footer .address-list .call-to-action-links {
+  font-size: 0.85em;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+footer .address-list .call-to-action-links .name {
+  display: block;
+}
+
+footer .address-list .call-to-action-links .value {
+  display: block;
+}
+
+footer .address-list .call-to-action-links .value a {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+footer .address-list .call-to-action-links .value a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  color: #4a3219;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.products-page {
+  background-image: url(../Images/background-products-page.jpg);
+  background-position: center top;
+}
+
+.raw-materials-page {
+  background-image: none;
+}
+
+.raw-materials-page .hero {
+  background-image: url(../Images/earth.jpg);
+  background-position: center top;
+}
+
+.products-page h1 {
+  text-align: center;
+  color: #4a3219;
+}
+
+.products-page .hero .content {
+  padding-top: 280px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 1)
+  );
+}
+
+.raw-materials-page .content {
+  padding-bottom: 40px;
+}
+
+.products-page.raw-materials-page .hero .content {
+  padding-top: 230px;
+}
+
+.products-page .tab {
+  display: none;
+}
+
+.products-page .content p {
+  margin: 1em auto;
+  max-width: 780px;
+  color: #4d372c;
+  text-align: center;
+}
+
+.products-page .product-list {
+  text-align: center;
+  margin-left: 0 !important;
+}
+
+.products-page .product-list li {
+  width: calc(100% / 5 - 0);
+}
+
+.product-intro {
+  text-align: center;
+  padding: 20px 0 40px 0;
+  color: #fff;
+}
+
+.product-intro p {
+  max-width: 780px;
+  margin: auto;
+}
+
+/*organic-fertilizers*/
+.tab#organic-fertilizers .product-intro {
+  text-align: center;
+  background-color: #c9926b;
+}
+
+.tab#organic-fertilizers .products h3 {
+  color: #c9926b;
+}
+
+/*fungicides*/
+.tab#fungicides .product-intro {
+  background-color: #cb2ca7;
+}
+
+.tab#fungicides .products h3 {
+  color: #cb2ca7;
+}
+
+/*Insesticides*/
+.tab#insesticides .product-intro {
+  text-align: center;
+  background-color: #c9926b;
+}
+
+.tab#insesticides .products h3 {
+  color: #c9926b;
+}
+
+/*plant-growth-regulators*/
+.tab#plant-growth-regulators .product-intro {
+  background-color: #cb2ca7;
+}
+
+.tab#plant-growth-regulators .products h3 {
+  color: #cb2ca7;
+}
+
+/*bio-stimulants*/
+/*.tab#bio-stimulants .product-intro {
+    text-align: center;
+    background-color: #c9926b;
+}
+
+.tab#bio-stimulants .products h3 {
+    color: #c9926b;
+}*/
+
+.raw-materials-page .tab .products li h3 {
+  color: #cb2ca7 !important;
+}
+
+.products {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-top: 10px;
+  padding-left: 0;
+}
+
+.products li {
+  width: calc(50% - 20px);
+  margin: 10px;
+  box-shadow: 5px 5px 30px 0 rgba(0, 0, 0, 0.3);
+}
+
+.products li:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+#fungicides .products li,
+.products li {
+  background-image: url(../Images/background-product-item-pattern.jpg);
+  background-size: cover;
+}
+
+.products li .inner {
+  padding: 30px;
+}
+
+.products li .text {
+  width: 60%;
+  float: left;
+}
+
+.products li p {
+  font-size: 15px;
+  color: #4e4e4e;
+}
+
+.products li .image {
+  width: 40%;
+  float: left;
+  padding: 10px 0;
+}
+
+.products li .image img {
+  max-width: 100%;
+  filter: drop-shadow(8px 8px 16px rgba(0, 0, 0, 0.5));
+}
+
+.products li h3 {
+  margin: 0 0 0.5em 0;
+}
+
+.products li h3 small {
+  font-family: FiraSans;
+  font-size: 15px;
+  display: block;
+  font-weight: 300;
+}
+
+.products h3 {
+  font-family: Museo;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.raw-materials-page .products h3 {
+  color: #cb2ca7;
+}
+
+.raw-materials-page .products li {
+  cursor: pointer;
+}
+
+.raw-materials-page .products li .text p {
+  display: none;
+}
+
+.product-viewer {
+  background-color: rgba(0, 0, 0, 0.8);
+  background-repeat: repeat;
+  position: fixed;
+  z-index: 11;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.product-viewer .control {
+  opacity: 0.8;
+  font-size: 22px;
+  color: #fff;
+  border: none;
+  background: transparent;
+  position: absolute;
+  text-align: center;
+  cursor: pointer;
+}
+
+.product-viewer .control.prev,
+.product-viewer .control.next {
+  font-size: 28px;
+}
+
+.product-viewer .control:hover {
+  opacity: 1;
+}
+
+.product-viewer .control:active {
+  opacity: 0.9;
+}
+
+.product-viewer .close {
+  right: -40px;
+  top: -40px;
+}
+
+.product-viewer .prev {
+  position: absolute;
+  top: 50%;
+  left: -40px;
+  transform: translateY(-50%);
+}
+
+.product-viewer .next {
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  transform: translateY(-50%);
+}
+
+.product-viewer .box {
+  position: relative;
+  margin: auto;
+  top: 50%;
+  max-width: 750px;
+  background-color: #fff;
+  transform: translateY(-50%);
+}
+
+.product-viewer .content {
+  padding: 40px;
+  background-image: url("../Images/background-product-item-pattern.jpg");
+  background-repeat: repeat-x;
+  background-size: cover;
+}
+
+.product-viewer .inner {
+  display: flex;
+  height: 270px;
+}
+
+.product-viewer .text {
+  width: 60%;
+}
+
+.product-viewer .image {
+  width: 40%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.product-viewer h3 {
+  color: #cb2ca7;
+  font-family: Museo;
+  font-size: 25px;
+  margin-top: 0;
+}
+
+.product-viewer h3 small {
+  font-family: FiraSans;
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.product-viewer .content img {
+  filter: drop-shadow(8px 8px 16px rgba(0, 0, 0, 0.5));
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+
+.gallery {
+  background-image: url(../Images/background-best-seller-pattern.jpg);
+  background-repeat: repeat;
+  color: #fff;
+}
+
+.gallery .hero {
+  height: 701px;
+  background-image: url(../Images/background-gallery.jpg);
+  background-position: center top;
+}
+
+.gallery .content {
+  padding: 40px 0;
+}
+
+.gallery ul {
+  margin: 1em -10px;
+  list-style: none;
+  padding: 0;
+}
+
+.gallery ul:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.gallery h3 {
+  font-family: Museo;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.gallery li {
+  display: block;
+  float: left;
+  margin: 10px;
+  width: calc(50% - 20px);
+}
+
+.gallery li img {
+  display: block;
+  max-width: 100%;
+}
+
+.gallery .caption {
+  font-family: Museo;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.careers {
+  background-color: rgba(84, 62, 37, 0.9);
+  z-index: 12;
+  position: fixed;
+  width: 460px;
+  left: 50%;
+  transform: translateX(-60px);
+  top: 30px;
+  display: none;
+}
+
+.careers .content {
+  padding: 5px 20px;
+  color: #fff;
+}
+
+.careers p {
+  font-size: 17px;
+}
+
+.careers .form {
+}
+
+.careers input,
+.careers select {
+  background-color: #7a5e40;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  color: #bce648;
+  box-sizing: content-box;
+  padding: 4px 9px;
+  margin-bottom: 10px;
+  width: 400px;
+  display: block;
+}
+
+.careers .mini {
+  width: 184px;
+  vertical-align: top;
+  display: inline-block;
+  margin-right: -4px;
+}
+
+.careers .mini.margin {
+  margin-right: 8px;
+}
+
+.careers select {
+  position: relative;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url(../Images/Assets/icon-dropdown.png);
+  background-position: calc(100% - 10px) center;
+}
+
+.file-picker-fake {
+  background-color: #7a5e40;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  color: #bce648;
+  box-sizing: content-box;
+  padding: 4px 9px;
+  margin-bottom: 10px;
+  width: 400px;
+  display: block;
+  background-image: url(../Images/Assets/icon-file-folder.png);
+  background-position: calc(100% - 10px) center;
+}
+
+.careers input[type="file"] {
+  visibility: hidden;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 0;
+}
+
+.careers .submit {
+  float: right;
+  text-align: right;
+  border: none;
+  background: none;
+  outline: none;
+  padding: 8px 0;
+  color: #fff;
+  font-size: 18px;
+  font-family: Museo;
+}
+
+.careers ::-webkit-input-placeholder {
+  color: #bce648;
+}
+
+.careers :-moz-placeholder {
+  /* Firefox 18- */
+  color: #bce648;
+}
+
+.careers ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #bce648;
+}
+
+.careers :-ms-input-placeholder {
+  color: #bce648;
+}

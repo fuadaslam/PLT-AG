@@ -1,0 +1,812 @@
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>PLT</title>
+  <meta content="" name="descriptison" />
+  <meta content="" name="keywords" />
+  <!-- Favicons -->
+  <link rel="icon" href="assets/img/favicon.png" />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet" />
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet" />
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="assets/css/whatsapp.css" rel="stylesheet" />
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <!-- <link href="assets/css/Site.css" rel="stylesheet"> -->
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  body {
+    /* background-color: rgba(198, 242, 198, 0.442); */
+    /* padding: 50px; */
+    /* margin: 50; */
+    font-family: Arial;
+  }
+
+  #myImage {
+    height: 500px;
+    width: 500px;
+    float: left;
+    padding-right: 20px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    #myImage {
+      height: 280px;
+      width: 280px;
+    }
+  }
+
+  #producthead {
+    text-align: justify;
+  }
+
+  #description {
+    text-align: justify;
+  }
+</style>
+
+<!-- ======= Header ======= -->
+<header id="header" style="background: rgba(0, 0, 0, 0.8)" class="fixed-top">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-xl-9 d-flex align-items-center">
+        <a href="/" class="logo mr-auto"><img src="assets/img/pltaglog.png" alt="" class="img-fluid" /></a>
+        <h1 class="logo mr-auto"></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li class="/#home"><a href="/">Home</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#services">Services</a></li>
+            <!-- <li><a href="#features">Features</a></li> -->
+            <!-- <li><a href="consultancy.html">Consultancy</a></li>
+            <li><a href="education.html">Education</a></li> -->
+            <li><a href="Products.html">Products</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li>
+              <button class="get-started-button scrollto show-btn"
+                style="border-radius: 10px; background-color: inherit">
+                <a href="contactUs.html" style="color: white">Contact us</a>
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <!-- .nav-menu -->
+
+        <!-- <a href="contactUs.html" class="get-started-btn scrollto">Contact Us</a> -->
+        <!-- <label
+          for="show"
+          class="get-started-btn get-started-btn-nav scrollto show-btn"
+          style="border-radius: 10px"
+          >Connect Us</label
+        > -->
+        <!-- <a href="#about"><label for="show" class="get-started-btn scrollto show-btn" ></label>Connect Us</label></a> -->
+      </div>
+    </div>
+  </div>
+</header>
+<!-- End Header -->
+
+<!-- MAIN (Center website) -->
+<section style="
+    padding-top: 140px;
+    background-repeat: no-repeat;
+    /* background-image: url('assets/img/leaf.jpg'); */
+    background-color: #cddfe9ba;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 50;
+    margin-top: 100;
+    background-size: auto;
+  " class="services section-bg">
+  <div class="main">
+    <div class="section-title">
+      <h2 style="text-align: center; font-family: Times New Roman" id="product"></h2>
+    </div>
+  </div>
+  <div class="content">
+    <img src="" alt="productImage" id="myImage" />
+    <h4 id="producthead" style="font-family: Times New Roman"></h4>
+    <div style="padding: 30px">
+      <h3 style="
+          font-size: 25px;
+          font-weight: bold;
+          font-family: Times New Roman;
+          text-transform: uppercase;
+          position: relative;
+        ">
+        Benefits
+      </h3>
+
+      <p id="description" style="font-family: Times New Roman"></p>
+    </div>
+  </div>
+
+  <!-- END MAIN -->
+</section>
+<script>
+  //   window.onload=function(){
+  //     var title=localStorage.getItem('title')
+  //     var image = localStorage.getItem('image')
+  //     var description=localStorage.getItem('description')
+  //     document.getElementById('myImage').src = image;
+  //     document.getElementById("producthead").innerHTML = title;
+  //     document.getElementById("description").innerHTML = description;
+
+  // }
+  const prodArray = [
+    {
+      type: "fertilizer",
+      imageToPass: "assets/img/MOCKUPnutrimixblue.png",
+      head: "<h5>Organic Fertilizer provides bio enriched organic manure with nitrogen, phosphorus,potash, organic carbon which contains hormones that prevent diseases and promote growth. ‘PLT Nutrimix’ enriched with NPK solubilizing bacteria; it provides plants 6 to 16 kg of nitrogen from the atmosphere. Easily gives Phosphorus and potash from soil and fertilizer. Bio enriched organic manure including, Neem cake,Protein, Fat, Bio-phosphorous, Bio-Potash, Fulvic Acid, Humic, Seaweed,Amino Acid etc. It increases the health and immunity of both plants and soil. Yieldincreases by 30% to 35% with the use of PLT Nutrimix.</h5>",
+      points:
+        "<ul><li>Increases the overall growth of the plant enhances the growth of baneficial soil microflora.</li><li>20% decrease in the use of chemical fertilizer</li><li>Plt nutri mix provide balanced  NPK into the soil</li><li>npk solubilising bacterias help to undertake more npk from soil</li><li>increases crop production upto 35 % </li><li> increases cell multiplication and flowering</li></ul>",
+      head2: "PLT NUTRI MIX",
+      text: "Organic Fertilizer provides bio enriched  organic manure with nitrogen, phosphorus, potash, organic carbon ,npk solubulising bacteria and contain hormones that prevent diseases and promote growth. Bio enriched organic manure including ,Neemcake, Protein, Fat, Bio-phosphorous, Bio-Pottash, Fulvic Acid, Humic, Seaweed Amino Acid and much more",
+    },
+    {
+      type: 'fertilizer',
+      imageToPass: 'assets/img/NUTRIMEAL.jpeg',
+      head: '<h5>NUTRIMEAL is the best and most productive complete fertilizer blend that can be used for various agricultural crops like coconut, rice, banana, vegetables and fruits etc./h5>',
+      points:
+        "<ul><li>A superior organic fertilizer that can be used as a substrate for any crop and at other growth stages.</li> <li>Rich in different types of nutrients. </li> <li>Reduces soil-borne diseases to crops. </li>It gives good growth and high productivity of crops.</li> <li> Provides strong root growth. </li> <li> It helps produce lots of flowers and fruits. </li>  <li> Improves overall plant health and enhances immunity.</li>",
+      head2: 'PLT Nutri Meal',
+      text: 'NUTRIMEAL is the best and most productive complete fertilizer blend that can be used for various agricultural crops like coconut, rice, banana, vegetables and fruits etc.'
+    },
+    {
+      type: 'fertilizer',
+      imageToPass: 'assets/img/BoneMeal.jpeg',
+      head: '<h5>Bone meal is animal bone meal prepared to ensure high quality and perfect purity. Bone meal is an excellent organic fertilizer traditionally used by farmers for rooting, flowering, fruiting etc. of agricultural crops.</h5>',
+      points: "<ul><li>   Adds strength and volume to plant roots.</li> <li>It increases growth and gives more activity and vitality to plants.</li> <li>It helps produce more flowers and fruits in crops.</li> <li>It provides phosphorus, calcium, protein, nitrogen etc. that agricultural crops need.</li></ul>",
+      head2: 'PLT Bone Meal Diamond',
+      text: "Bone meal is animal bone meal prepared to ensure high quality and perfect purity. Bone meal is an excellent organic fertilizer traditionally used by farmers for rooting, flowering, fruiting etc. of agricultural crops."
+    },
+    {
+      type: 'fertilizer',
+      imageToPass: 'assets/img/bone meal 2kg.png',
+      head: '<h5>Bone meal is animal bone meal prepared to ensure high quality and perfect purity. Bone meal is an excellent organic fertilizer traditionally used by farmers for rooting, flowering, fruiting etc. of agricultural crops.</h5>',
+      points: "<ul><li>   Adds strength and volume to plant roots.</li> <li>It increases growth and gives more activity and vitality to plants.</li> <li>It helps produce more flowers and fruits in crops.</li> <li>It provides phosphorus, calcium, protein, nitrogen etc. that agricultural crops need.</li></ul>",
+      head2: 'PLT Bone Meal Diamond - 2 KG',
+      text: "Bone meal is animal bone meal prepared to ensure high quality and perfect purity. Bone meal is an excellent organic fertilizer traditionally used by farmers for rooting, flowering, fruiting etc. of agricultural crops."
+    },
+    {
+      type: 'fertilizer',
+      imageToPass: 'assets/img/bone meal 5kg.jpeg',
+      head: '<h5>Bone meal is animal bone meal prepared to ensure high quality and perfect purity. Bone meal is an excellent organic fertilizer traditionally used by farmers for rooting, flowering, fruiting etc. of agricultural crops.</h5>',
+      points: "<ul><li>   Adds strength and volume to plant roots.</li> <li>It increases growth and gives more activity and vitality to plants.</li> <li>It helps produce more flowers and fruits in crops.</li> <li>It provides phosphorus, calcium, protein, nitrogen etc. that agricultural crops need.</li></ul>",
+      head2: 'PLT Bone Meal Diamond - 5 KG',
+      text: "Bone meal is animal bone meal prepared to ensure high quality and perfect purity. Bone meal is an excellent organic fertilizer traditionally used by farmers for rooting, flowering, fruiting etc. of agricultural crops."
+    },
+    {
+      type: "fertilizer",
+      imageToPass: "assets/img/plt neem cake.jpeg",
+      head: "<h5>PLT NEEM CAKE is pure neem cake. Neem cake is a traditional organic fertilizer that contains many nutrients and protects plants from insect attacks including nematodes.</h5>",
+      points: "<ul><li> Neem cake is a fertilizer that is easily absorbed by plants.</li> <li> It works as a food fertilizer and as a medicine to control plant pests at the same time. </li><li> Helps control soil pests such as earthworms. </li><li> Fertilizer that can be applied to any crop and at any age. </li>",
+      head2: "PLT Neem cake Diamond",
+      text: "PLT NEEM CAKE is pure neem cake. Neem cake is a traditional organic fertilizer that contains many nutrients and protects plants from insect attacks including nematodes.",
+    },
+    {
+      type: "fertilizer",
+      imageToPass: "assets/img/neem cake 2KG.png",
+      head: "<h5>PLT NEEM CAKE is pure neem cake. Neem cake is a traditional organic fertilizer that contains many nutrients and protects plants from insect attacks including nematodes.</h5>",
+      points: "<ul><li> Neem cake is a fertilizer that is easily absorbed by plants.</li> <li> It works as a food fertilizer and as a medicine to control plant pests at the same time. </li><li> Helps control soil pests such as earthworms. </li><li> Fertilizer that can be applied to any crop and at any age. </li>",
+      head2: "PLT Neem cake Diamond - 2 KG",
+      text: "PLT NEEM CAKE is pure neem cake. Neem cake is a traditional organic fertilizer that contains many nutrients and protects plants from insect attacks including nematodes.",
+    },
+    {
+      type: "fertilizer",
+      imageToPass: "assets/img/neemCake5kg.jpeg",
+      head: "<h5>Neem Cake is used as an organic fertilizer because of the various micro and macro nutrients which it is composed of. It will control. At the same time, soil based pathogens as well as nematodes.</h5>",
+      points: "",
+      head2: "PLT Neem cake Diamond - 5 KG",
+      text: "Neem Cake is used as an organic fertilizer because of the various micro and macro nutrients which it is composed of. It will control. At the same time, soil based pathogens as well as nematodes. ",
+    },
+    {
+      type: "fertilizer",
+      imageToPass: "assets/img/ph tuner new blue.png",
+      head: "<h5>It is a unique product that contains untreated oysters, which contain a lot of calcium carbonate, in addition to various plant growth aids such as magnesium and humic acid, which stabilizes the acidity of the soil for a relatively long period and helps plants absorb soil fertilizer. It also helps plants maintain good greenery, strengthens root growth, and helps plants grow healthily.</h5>",
+      points: "<ul><li>Maintains soil pH suitable for crops for a longer period than limestone.</li> <li> Prepare the soil so that plant roots can absorb fertilizers. </li> <li> Contains magnesium to keep plants green.</li><li> It prevents diseases like root rot in plants to some extent and strengthens root growth.</li> </ul>",
+      head2: "PLT PH TUNER",
+      text: '<p class="text">It is a unique product that contains untreated oysters, which contain a lot of calcium carbonate, in addition to various plant growth aids such as magnesium and humic acid, which stabilizes the acidity of the soil for a relatively long period and helps plants absorb soil fertilizer. It also helps plants maintain good greenery, strengthens root growth, and helps plants grow healthily.</p>',
+    },
+
+    {
+      type: "fertilizer",
+      imageToPass: "assets/img/bio mix.png",
+      head: "<h5>It is a high-quality basic fertilizer suitable for any crops, and contains various types of cake, bio-phosphorus, bio-potash and other nutrients.</h5>",
+      points: "<ul><li>Excellent compost fertilizer for any crops.</li><li> Rich in different types of nutrients.</li><li>It gives good growth and high productivity of crops. </li> </ul>",
+      head2: "PLT BIO MIX",
+      text: '<p class="text">It is a high-quality basic fertilizer suitable for any crops, and contains various types of cake, bio-phosphorus, bio-potash and other nutrients.</p>',
+    },
+
+    {
+      type: "fertilizer",
+      imageToPass: "assets/img/PLT MICRO MIX.png",
+      head: "<h5>It is an elemental micronutrient mixture that solves the deficiency of various elements necessary for plant growth.</h5>",
+      points: "<ul><li>Provides secondary and micro nutrients that plants need.</li><li> Promotes crop growth, flowering and fruit set.</li><li>  It solves problems such as falling fruits and cracking eggs. </li><li> Promotes smooth plant growth. </li><li> It can be applied to any crops.</li> </ul>",
+      head2: "PLT MICRO MIX",
+      text: '<p class="text">It is an elemental micronutrient mixture that solves the deficiency of various elements necessary for plant growth.</p>',
+    },
+
+    {
+      type: "fertilizer",
+      imageToPass: "assets/img/maxxtone gel .png",
+      head: "<h5>An organic nutrient that acts as a phytonutrient and overall health booster.PLT MAXTONE GEL is an organic extract derived from nutrition marine algae.it contains humic, fulvic, vitamins, cytokines & amino acids which is mixed with water for basal application in soil or through drip irrigation. Especially designed for all kinds of seasonal crops/ cash crops. Supply well-balanced crop nutrients and help plants to endure environmental stress.</h5>",
+      points: "<ul><li>Increases overall plant health. </li><li> It helps plants develop more leaves and strong branches during the growth stages to grow healthily. </li><li> It enables crops to flower and bear fruit without stunting. </li><li> It gives plants strong immunity against diseases. </li><li> The fruit provides good size, color and beauty. </li><li> Increase yield and quality. </li> </ul>",
+      head2: "PLT MAXTONE GEL",
+      text: '<p class="text">An organic nutrient that acts as a phytonutrient and overall health booster.PLT MAXTONE GEL is an organic extract derived from nutrition marine algae.it contains humic, fulvic, vitamins, cytokines & amino acids which is mixed with water for basal application in soil or through drip irrigation. Especially designed for all kinds of seasonal crops/ cash crops. Supply well-balanced crop nutrients and help plants to endure environmental stress.</p>',
+    },
+
+    {
+      type: "fertilizer",
+      imageToPass: "assets/img/agri dolomite.png",
+      head: "<h5>Dolomite is a limestone, rich in calcium and magnesium carbonates. It regulates soil acidity in agricultural lands and helps plants absorb fertilizers in the soil. Dolomite also contains magnesium which keeps plants green, and helps plants grow healthy.</h5>",
+      points: "<ui><li>Maintains soil pH suitable for crops. </li><li> Contains magnesium to keep plants green. </li><li> Helps Plants achieve good growth and resistance to diseases. </li></ui>",
+      head2: "PLT AGRI DOLOMITE",
+      text: "Dolomite is a limestone, rich in calcium and magnesium carbonates. It regulates soil acidity in agricultural lands and helps plants absorb fertilizers in the soil. Dolomite also contains magnesium which keeps plants green, and helps plants grow healthy.",
+    },
+    {
+      type: "fertilizer",
+      imageToPass: "assets/img/mix micro.jpeg",
+      head: "<h5>MIX MICRO effectively recovers the soil crop nutrient deficiency. It improves major and micronutrient use efficiency. It helps to increase crop yield. Micronutrients are essential for each crop as per their vegetative growth, flower setting and fruit setting. It can be applied along with chemical fertilizers during the vegetative, flowering and fruit stage.</h5>",
+      points: "<ul><li></li></ul>",
+      head2: "Mix Micro",
+      text: "MIX MICRO effectively recovers the soil crop nutrient deficiency. It improves major and micronutrient use efficiency. It helps to increase crop yield. Micronutrients are essential for each crop as per their vegetative growth, flower setting and fruit setting. It can be applied along with chemical fertilizers during the vegetative, flowering and fruit stage.",
+    },
+
+    {
+      type: "fertilizer",
+      imageToPass: "assets/img/nutrimix+ Pouch Mockup.jpg",
+      head: "<h5>Organic Fertilizer provides bio enriched manure with nitrogen, phosphorus, potash, organic carbon and NPK solubilizing bacteria. Also it contains hormones that prevent diseases and promote total growth. Bio-enriched organic manure including Neem cake, protein, fat, bio phosphorus, bio potash fulvic acid, humic acid, amino acid, seaweed and more. PLT NUTRIMIX + is  specialized for short term crops like home need Vegitables and Paddy etc.</h5>",
+      points:
+        "<ul><li>Induces the growth and flowering of the plant.</li><li>Improves fruit setting.</li><li>Reduces flower fall.</li><li>Increases active ingredients and stimulates growth.</li><li>Improves fertility of the soil.</li></ul>",
+      head2: "Nutrimix",
+      text: "Nutrimix+ is a Organic Fertilizer provides bio enriched manure with nitrogen, phosphorus, potash, organic carbon and NPK solubilizing bacteria. Also it contains hormones that prevent diseases and promote total growth.",
+    },
+    {
+      type: "fertilizer",
+      imageToPass: "assets/img/nutrimix 2 KG.jpg",
+      head: "<h5>Organic Fertilizer provides bio enriched manure with nitrogen, phosphorus, potash, organic carbon and NPK solubilizing bacteria. Also it contains hormones that prevent diseases and promote total growth. Bio-enriched organic manure including Neem cake, protein, fat, bio phosphorus, bio potash fulvic acid, humic acid, amino acid, seaweed and more. PLT NUTRIMIX + is  specialized for short term crops like home need Vegitables and Paddy etc.</h5>",
+      points:
+        "<ul><li>Induces the growth and flowering of the plant.</li><li>Improves fruit setting.</li><li>Reduces flower fall.</li><li>Increases active ingredients and stimulates growth.</li><li>Improves fertility of the soil.</li></ul>",
+      head2: "PLT Nutrimix 2 KG",
+      text: "Nutrimix+ is a Organic Fertilizer provides bio enriched manure with nitrogen, phosphorus, potash, organic carbon and NPK solubilizing bacteria. Also it contains hormones that prevent diseases and promote total growth",
+    },
+
+    {
+      type: "fertilizer",
+      imageToPass: "assets/img/nutri mix  5KG.jpeg",
+      head: "<h5>Organic Fertilizer provides bio enriched manure with nitrogen, phosphorus, potash, organic carbon and NPK solubilizing bacteria. Also it contains hormones that prevent diseases and promote total growth. Bio-enriched organic manure including Neem cake, protein, fat, bio phosphorus, bio potash fulvic acid, humic acid, amino acid, seaweed and more. PLT NUTRIMIX + is  specialized for short term crops like home need Vegitables and Paddy etc.</h5>",
+      points:
+        "<ul><li>Induces the growth and flowering of the plant.</li><li>Improves fruit setting.</li><li>Reduces flower fall.</li><li>Increases active ingredients and stimulates growth.</li><li>Improves fertility of the soil.</li></ul>",
+      head2: "PLT Nutrimix 5 KG",
+      text: "Nutrimix+ is a Organic Fertilizer provides bio enriched manure with nitrogen, phosphorus, potash, organic carbon and NPK solubilizing bacteria. Also it contains hormones that prevent diseases and promote total growth",
+    },
+
+    {
+      type: "Bio-Stimulants",
+      imageToPass: "assets/img/starshine21kg.png",
+      head: "<h5>PLT Star Shine’ is a soil conditioner with seaweed extract and Humic being the main active ingredient. Especially designed for seasonal / cash crops. It Supplies well balanced crop nutrients. Helps plant to endure environmental stress.This formulation has been made by more than 22 components; it’s a complete package of nutrients, enzymes, auxins, and proteins.</h5>",
+      points:
+        "<ul><li>It strengthens and stimulates the overall growth of crops. </li><li> Increases the plant’s immune strength against diseases. </li><li> Corrects deficiencies in various nutrients required for crops. </li><li> Increases fruits. </li><li> It can be applied to any crops, especially crops such as rice. </li><li> It can be used in combination with chemical fertilizers as well. </li></ul>",
+      head2: "PLT STAR SHINE",
+      text: "PLT STAR  SHINE is a soil conditioner with seaweed extract and humic being the main active ingredient. Especially designed for seasonal/cash crops. supply well balanced crop nutrients, it’s a complete package of nutrients ,enzymes, auxins & proteins.",
+    },
+
+    {
+      type: "Bio-Stimulants",
+      imageToPass: "assets/img/humistarPouchMockup.png",
+      head: "<h5>A natural trace mineral and humic acid based granular soil conditioner that acts as an organic chelator and microbial stimulator. Humic acid is a group of molecules that bind to, and help plant roots receive, water and nutrients. High humic acid levels can dramatically increase yields. It has unique carbon matrix incorporation a high concentration of trace minerals and organic acids, specifically humic acid,which improves that plants ability to take in vital nutrients for plant growth anddevelopment.</h5>",
+      points:
+        "<ul><li>Increases soil carbon.</li><li>Improves plant health.</li><li>Increases the microbial activity in the soil.</li><li>Stimulates white root development.</li><li>Increases carbon content in the soil.</li><li>Increases nutrient uptake.</li><li>It increases crop resistance and improves crop quality.</li><li>Improves long-term soil PH.</li></ul>",
+      head2: "PLT HUMISTAR 95",
+      text: "A natural trace mineral and humic acid based granular soil conditioner that acts as an organic chelator and microbial stimulator. Humic acid is a group of molecules that bind to and help plant roots receive. Water and nutrients. High humic acid levels can dramatically increase yields.",
+    },
+
+    {
+      type: "Bio-Stimulants",
+      imageToPass: "assets/img/HUMIC AG.jpeg",
+      head: "<h5>A product that can be used to condition farmland soil for agriculture and to nourish the soil.Humic Ag 15 is a group of molecules that bind to, and help plant roots receive, water and nutrients. High humic acid levels can dramatically increase yields. It has unique carbon matrix incorporation a high concentration of trace minerals and organic acids, which improves that plants ability to take in vital nutrients for plant growth and development.</h5>",
+      points:
+        "<ul><li>Adjust soil to suit vigorous growth of crops.</li><li> Enables plants to root easily in the soil. </li><li> It helps make the natural elements in the soil available to plants. </li><li> Accelerates the growth of plant roots. </li><li> Excellent for all crops.</li></ul>",
+      head2: "HUMIC AG 15",
+      text: "A product that can be used to condition farmland soil for agriculture and to nourish the soil.Humic Ag 15 is a group of molecules that bind to, and help plant roots receive, water and nutrients. High humic acid levels can dramatically increase yields. It has unique carbon matrix incorporation a high concentration of trace minerals and organic acids, which improves that plants ability to take in vital nutrients for plant growth and development.",
+    },
+
+    {
+      type: "Bio-Stimulants",
+      imageToPass: "assets/img/black panther.png",
+      head: "<h5>It is a mixture of many bio-stimulants and nutrients that plants need. BLACK PANTHER promotes the activation of vegetative development, improves the size and colour of fruits mainly promotes vegetative growth in all types of crops. BLACK PANTHER  is a Nanotechnology product especially for the growth of new shoots and leaves.</h5>",
+      points:
+        "<ul><li>Crops get a lot of protein.</li><li> Prevents pest attacks and reduces disease incidence. </li><li> It helps to produce new shoots and increases the branches. </li><li> Promotes uniform growth in all parts of the plant. </li><li> Excellent for all agricultural crops such as cardamom, tea, etc.</li></ul>",
+      head2: "BLACK PANTHER",
+      text: "It is a mixture of many bio-stimulants and nutrients that plants need. BLACK PANTHER promotes the activation of vegetative development, improves the size and colour of fruits mainly promotes vegetative growth in all types of crops. BLACK PANTHER  is a Nanotechnology product especially for the growth of new shoots and leaves.",
+    },
+
+    {
+      type: "Bio-Stimulants",
+      imageToPass: "assets/img/AMINO AG 30.jpeg",
+      head: "<h5>It is a unique organic product that helps plants flower and bear fruit. It is a rich farming input for foliar application and thus enhances nutritional uptake and their utilization which improves colour , size, lusture and flowering. It is a bio nutritional product, accelerates cell division and increases flowering.</h5>",
+      points:
+        "<ul><li>It enhances growth by supplying crops with protein. </li><li> It increases the ability of plants to flower and regulates plant metabolism. </li><li> It helps increase female flowers in crops. </li><li> It accelerates the process of delivering nutrients from the soil to different parts of the plant. </li><li> It helps produce more flowers in home gardens. </li><li> Beneficial for all crops and helps produce more fruit in vegetables and fruit trees.</li></ul>",
+      head2: "AMINO AG 30",
+      text: "It is a unique organic product that helps plants flower and bear fruit. It is a rich farming input for foliar application and thus enhances nutritional uptake and their utilization which improves colour , size, lusture and flowering. It is a bio nutritional product, accelerates cell division and increases flowering.",
+    },
+
+
+    {
+      type: "Bio-Stimulants",
+      imageToPass: "assets/img/Paint Bucket Mockup 2.png",
+      head: "<h5>Organic medicine that acts as a plant growth stimulant and health enhancer.</h5>",
+      points:
+        "<ul><li>Increases the plant growth rate. </li><li> Enhances productivity. </li><li>  Provides micronutrients and macronutrients that plants need. </li><li>  Increases fruits. </li></ul>",
+      head2: "PLT SEATONE GEL",
+      text: "Organic medicine that acts as a plant growth stimulant and health enhancer.",
+    },
+
+    {
+      type: "Bio-Stimulants",
+      imageToPass: "assets/img/seatonegel  PouchMockup.png",
+      head: "<h5>PLT SEATONE GEL is an organic extract derived from nutrition marine algae.it contains humic, fulvic, vitamins, cytokines & seaweed and is mixed with water for basal application in soil or through drip irrigation. Especially designed for all kinds of seasonal crops/ cash crops. Supply well-balanced crop nutrients and help plants to endure environmental stress.</h5>",
+      points:
+        "<ul><li>Increases the size, colour, and weight of fruit.</li><li>Reduces weathering of young flowers and fruits.</li><li>Increases yield by 20-35%.</li><li>Increases root and shoot growth.</li><li>Strengthens the natural ability to resist pest and disease.</li><li>Improves the yield and quality of produce.</li></ul>,",
+      head2: "PLT SEATONE GEL PLUS",
+      text: "PLT SEATONE GEL PLUS is an organic extract derived from nutrition marine algae. It contains  humic, fulvic, vitamins ,cytokines & seaweed and is mixed with water for basal application in soil or through drip irrigation. supply well balanced crop nutrients.",
+    },
+
+    {
+      type: "Bio-Stimulants",
+      imageToPass: "assets/img/proton1bottle.png",
+      head: "<h5>PROTON is an effective organic plant growth promoter derived from vegetable source and suitable in all crops. PROTON promotes activation of nutrient uptake by crops. Improves size and colour of fruit and mainly it promotes fruit enhancing in all types of crops.</h5>",
+      points:
+        "<ul><li>Increases flowering.</li><li>Enhances colour and size of fruits.</li><li>Reduces flower falling and fruit falling.</li><li>Provides all micronutrients to the crops.</li></ul>",
+      head2: "PLT PROTON",
+      text: "PLT PROTON is an effective organic plant growth promoter contains all micro nutrients which enhance fruiting and flowering. PROTON boosts up the growth and development of plant resulting into health and Improvement of quality and yield. PROTON is a special formula, containing specific micro nutrients meant for plantation crops, which give plants growth promotion and maximum yield.",
+    },
+    {
+      type: "Bio-Stimulants",
+      imageToPass: "assets/img/growton.png",
+      head: "<h5>GROWTON promotes the activation of vegetative development, improves the size and colour of fruits mainly promotes vegetative growth in all types of crops.Growton is a Nanotechnology product especially for the growth of new shoots and leaves.</h5>",
+      points:
+        "<ul><li>Increases photosynthesis thereby building strong plants giving better harvests.</li><li>It helps to produce chlorophyll (increases leaf colure and strature).</li><li>Improves overall growth.</li><li>Increases yield by 20-35%.</li><li>Increase shoot growth.</li><li>Strengthens the natural ability to resist pests and diseases.</li><li>Improves the yield and quality of produce.</li></ul>,",
+      head2: "PLT GROWTON",
+      text: "PLT GROWTON promotes the activation of vegetative development, mainly promotes the growth of new shoots and leaves. GROWTON is an effective organic plant growth promoter derived from vegetable source and suitable to promote cholorophyl production which improves the absorption and transport of nutrients.",
+    },
+    {
+      type: "Bio-Stimulants",
+      imageToPass: "assets/img/fruton 1bottle.png",
+      head: "<h5>FRUTON is a Nanotechnology product, especially for fruit falling. It promotes the activation of nutrient uptake by the crop. Improves the size and colour of the fruit.It mainly prevents fruit fall in all types of crop.</h5>",
+      points:
+        "<ul><li>Improves nutrient uptake of crops.</li><li>Reduces flower and fruit falling.</li><li>Contains high amount of Boron and trace elements.</li><li>Increases flower production, retention, pollen tube elongation and germination.</li><li>Increases size and colour of fruits.</li></ul>,",
+      head2: "FRUTON",
+      text: "PLT FRUTON is a Nano technology product , promotes nutrient uptakes of crops and prevent fruit falling in all types of crops. The bio extract contains high amount of boron and other trace elements which increase more availability of nutrients. Increases the quality of yields and improves their physical appearance.",
+    },
+
+    {
+      type: "Bio-Stimulants",
+      imageToPass: "assets/img/amino40bottle1.png",
+      head: "<h5>It is a rich farming input for soil application and thus enhances nutritional uptake and their utilization which improves colour, size, lustre and flowering.It is a bio nutritional product, accelerates cell division and increases flowering.</h5>",
+      points:
+        "<ul><li>Improves flowering and fruiting.</li><li>Improves quality and speed of flowering.</li><li>Improves fruit set and help them grow healthy.</li><li>Improves overall growth of the plant.</li></ul>,",
+      head2: "PLT AMINO 40",
+      text: "It is a nutritional product ,accelerates cell division and increase colour, size , luster and flowering. Amino boosts up the growth and development of plant resulting into health and Improvement of quality and yield.",
+    },
+    {
+      type: "Bio-Stimulants",
+      imageToPass: "assets/img/humistarl.png",
+      head: "<h5>Humic acids biologically stimulate the plant and the activities of micro-organisms.Stimulate root growth, uptake of nutrients and proliferation of desirable micro-organisms in soil. Enhance plant’s natural resistance against disease and pest.</h5>",
+      points:
+        "<ul><li>Increases the microbial activity of the soil.</li><li>Stimulates root development.</li><li>Increases carbon content in the soil.</li><li>Increases nutrient uptake.</li><li>Increases crop resistance and improves crop quality.</li><li>Improves long term soil PH.</li></ul>,",
+      head2: "PLT HUMISTAR 18",
+      text: "Humic acids biologically stimulate the plant and the activities of micro-organisms. Stimulate root growth, uptake of nutrients and proliferation of desirable micro-organisms in soil. Enhance plant’s natural resistance against disease and pest.",
+    },
+
+    {
+      type: "Bio-Stimulants",
+      imageToPass: "assets/img/nano king.png",
+      head: "<h5>PLT NANO KING is a concentrated organic growth stimulants containing 12 essential Amino acids , fulvic acids and flower stimulants.</h5>",
+      points:
+        "<ul><li>Improves yield drastically.</li><li>Improves quality & Taste.</li><li>Improves fruit set & help them grow healthy.</li><li>It improves resistance against various diseases & insects.</li><li>Easily absorbed by plants both through roots and leaves.</li><li>Can be used both protective and creative treatment.</li><li>Increases crop yield remarkably.</li><li>Improves general plant immunity system.</li><li>Effective on all crops, fruits, and vegetables.</li></ul>,",
+      head2: "PLT NANO KING",
+      text: "PLT NANO KING is a concentrated organic growth stimulants containing 12 essential Amino acids , fulvic acids and flower stimulants.",
+    },
+    {
+      type: "Adjuvants",
+      imageToPass: "assets/img/agrostick.png",
+      head: "<h5>Useful as a Spreader, Activator, Penetrator increases efficiency of Spraying. Recommended in rainy season to avoid washout, which reduces consumption of Agro Chemicals.</h5>",
+      points: "",
+      head2: "PLT AGRO STICK",
+      text: "Useful as a Spreader, Activator, Penetrator increases efficiency of Spraying. Recommended in rainy season to avoid washout, which reduces consumption of Agro Chemicals.",
+    },
+    {
+      type: "Adjuvants",
+      imageToPass: "assets/img/POWER WET.jpg",
+      head: "<h5>Useful as a Spreader, Activator, Penetrator increases the efficiency of Spraying. Recommended in the rainy season to avoid washout, which reduces the consumption of Agro Chemicals. Powe wet breaks the water surface tension which improves pesticide absorption in crops, it also helps pesticides to remain on the crops for a longer time and penetrates the plant system very effectively.usage:1 ml/litre water </h5>",
+      points: "",
+      head2: "PLT POWER WET",
+      text: "Useful as a Spreader, Activator, Penetrator increases the efficiency of Spraying. Recommended in the rainy season to avoid washout, which reduces the consumption of Agro Chemicals. Powe wet breaks the water surface tension which improves pesticide absorption in crops, it also helps pesticides to remain on the crops for a longer time and penetrates the plant system very effectively.usage:1 ml/litre water",
+    },
+    {
+      type: "other",
+      imageToPass: "assets/img/vgb garden.jpeg",
+      head: "<h5>Ornanic manure prepared with coco peat, Neam cake, born meal, shrimp shell dust,Potash, micro nutrients etc.Suggested for Vegitables and Flower gardens.</h5>",
+      points: "",
+      head2: "Vegetable garden mix",
+      text: "Ornanic manure prepared with coco peat, Neam cake, born meal, shrimp shell dust, Potash, micro nutrients etc.Suggested for Vegitables and Flower gardens.",
+    },
+    // {
+    //   type: "other",
+    //   imageToPass: "assets/img/vgb garden.jpeg",
+    //   head: "",
+    //   points: "",
+    //   head2: "",
+    //   text: "",
+    // },
+    {
+      type: "other",
+      imageToPass: "assets/img/PLT VERMI COMPOST.png",
+      head: "<h5>Ornanic manure prepared with coco peat, Neam cake, born meal, shrimp shell dust,Potash, micro nutrients etc.Suggested for Vegitables and Flower gardens.</h5>",
+      points: "",
+      head2: "Vermicompost (vermi-compost, vermiculture)",
+      text: "Vermicompost (vermi-compost, vermiculture) is the product of the composting process using various species of worms, usually red wigglers, white worms, and other earthworms, to create a mixture of decomposing vegetable or food waste, bedding materials, and vermicast.",
+    },
+    {
+      type: "other",
+      imageToPass: "assets/img/plt compost.png",
+      head: "<h5>Farm yard Manure (FYM) is prepared basically using cow dung, cow urine, waste straw andother dairy wastes.It is highly useful and some of its properties are given below : FYM is rich in nutrients. When cow dung and urine are mixed, a balanced nutrition is made available to the plants.</h5>",
+      points: "",
+      head2: "Farm yard Manure (FYM)",
+      text: "Farm yard Manure (FYM) is prepared basically using cow dung, cow urine, waste straw and other dairy wastes. It is highly useful and some of its properties are given below : FYM is rich in nutrients. When cow dung and urine are mixed, a balanced nutrition is made available to the plants.",
+    },
+    {
+      type: "other",
+      imageToPass: "assets/img/cocopeat.jpeg",
+      head: "<h5>High water holding capacity of cocopeat helps in retaining the moisture.coco peat blocks will expandable up to 15 liters cocopeat / agropeat is an ideal media for all types of potted plants as well as for growing vegetables, flowers or herbs from seeds.</h5>",
+      points: "",
+      head2: "Cocopeat",
+      text: "High water holding capacity of cocopeat helps in retaining the moisture. coco peat blocks will expandable up to 15 liters cocopeat / agropeat is an ideal media for all types of potted plants as well as for growing vegetables, flowers or herbs from seeds.",
+    },
+    {
+      type: "other",
+      imageToPass: "assets/img/cpom.jpeg",
+      head: "<h5>Improves yield in floriculture crops. Reduces soil temperature. Supports soil’s microbiological activity (or the life of the soil). High moisture retention.Improves yield in floriculture crops. Reduces soil temperature. Supports soil’s microbiological activity (or the life of the soil). High moisture retention.</h5>",
+      points: "",
+      head2: "Cpom",
+      text: "Improves yield in floriculture crops. Reduces soil temperature. Supports soil’s microbiological activity (or the life of the soil). High moisture retention. Improves yield in floriculture crops. Reduces soil temperature. Supports soil’s microbiological activity (or the life of the soil). High moisture retention.",
+    },
+    {
+      type: "other",
+      imageToPass: "assets/img/grow bag.png",
+      head: "",
+      points: "",
+      head2: "Grow Bag",
+      text: "",
+    },
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/ACEPHATE.jpeg",
+      head: "<h5>It is used to control jassids and bollworm of cotton and aphids on crops </h5>",
+      points: "<ul><li>I Dosage:2g per litre of water.</li><ul>",
+      head2: "ASATIN",
+      text: "(Acephate 75%sp) It is used to control jassids and bollworm of cotton and aphids on crops",
+    },
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/ACETAMIPRID.jpeg",
+      head: "<h5>Acetamiprid 20%S.P  Control sucking pest like Aphids ,Jassids & Whitefly.</h5>",
+      points: "<ul><li>     Dosage:0.5g per ltr of water.</li></ul>",
+      head2: "ASAPRID",
+      text: '<p class="text">Acetamiprid 20%S.P  Control sucking pest like Aphids ,Jassids &Whitefly.</p>',
+    },
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/CHLOROPYRIPHOS20.jpeg",
+      head: "<h5>(Chloropyriphos 20% EC) : It is a broad spectrum organophosphorus insecticide. It controls a wide range of insect pests in soil or on foliage in a variety of crops, by contact, ingestion and vapors action.</h5>",
+      points: "<ul><li>Dosage:1-1.5 ml per litre of water</li></ul>",
+      head2: "KOREX-20",
+      text: '<p class="text">(Chloropyriphos 20% EC) : It is a broad spectrum organophosphorus insecticide. It controls a wide range of insect pests in soil or on foliage in a variety of crops, by contact, ingestion and vapors action.</p>',
+    },
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/KOREX 501.jpeg",
+      head: "<h5>PLT KOREX -50 have duel action contact and stomach action. PLT KOREX -50 controls sucking ,chewing ,biting and boring insects in various crops</h5>",
+      points:
+        "<ul><li>PLT KOREX -50 belongs to organo phosphorous chemical group.</li><li>It is recommended on wide range of crops for control of various pest.</li></ul>",
+      head2: "PLT KOREX 50",
+      text: "PLT KOREX-50 has quick knockdown action having  longer persistence on leaves and specifically effective on most of the larva and termites",
+    },
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/CHLORO + CYPERM.jpeg",
+      head: "<h5>(Chloropyriphos 50% +cypermethrin 5% EC):For the control of Aphids ,Jassids ,thripes whitefly ,American ballworm,spotted bollworm,pink bollworm etc</h5>",
+      points: "<ul><li> Dosage:1-1.5 ml per litre of water</li></ul>",
+      head2: "DEFEN-X",
+      text: '<p class="text">(Chloropyriphos 50% +cypermethrin 5% EC):For the control of Aphids ,Jassids ,thripes whitefly ,American ballworm,spotted bollworm,pink bollworm etc</p>',
+    },
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/Emaben.png",
+      head: "<h5>Emamectin Benzoate 5% SG):For effective control of all types of Worms/Caterpillers , chewing pests.</h5>",
+      points: "<ul><li>  Dosage:0.5-1g per litre of water</li></ul>",
+      head2: "EMABEN",
+      text: '<p class="text">Emamectin Benzoate 5% SG):For effective control of all types of Worms/Caterpillers , chewing pests.</p>',
+    },
+
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/LAMBDACYHALOTHRIN.jpeg",
+      head: "<h5>(Lambdacyhalothrin 5% E.C) For control of ballworms ,jassids ,stemborer ,thripes ,BPH etc.</h5>",
+      points: "<ul><li>  Dosage:1-1.5 ml per litre of water</li></ul>",
+      head2: "KATCH",
+      text: '<p class="text">(Lambdacyhalothrin 5% E.C) For control of ballworms ,jassids ,stemborer ,thripes ,BPH etc.</p>',
+    },
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/IMIDA.jpeg",
+      head: "<h5>(Imidacloprid 17.8% SL) For control of sucking pests like aphids ,Jassid & Whitefly.</h5>",
+      points: "<ul><li> Dosage:0.75-1 ml per ltr of water</li></ul>",
+      head2: "IMIDEX",
+      text: '<p class="text">(Imidacloprid 17.8% SL) For control of sucking pests like aphids ,Jassid & Whitefly.</p>',
+    },
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/IMIDEX GOLD4.jpeg",
+      head: "<h5>(imidacloprid 70% W.S) For control of sucking pests like aphids ,Jassid & Whitefly.</h5>",
+      points: "<ul><li> </li></ul>",
+      head2: "IMIDEX GOLD",
+      text: '<p class="text">(imidacloprid 70% W.S) For control of sucking pests like aphids ,Jassid & Whitefly.</p>',
+    },
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/finish.jpeg",
+      head: "<h5>quinalphos 25%EC) FINISH effectively controls caterpillars on fruit trees, cotton, vegetables and peanuts scale insect on fruit trees and pest complex on rice.</h5>",
+      points: "<ul><li>  Dosage:1-2 ml per ltr of water </li></ul>",
+      head2: "FINISH",
+      text: '<p class="text">quinalphos 25%EC) FINISH effectively controls caterpillars on fruit trees, cotton, vegetables and peanuts scale insect on fruit trees and pest complex on rice.</p>',
+    },
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/THIAM+LAMDBA.jpeg",
+      head: "<h5>SOLGER Insecticide is a broad-spectrum insecticide that provides excellent control of sucking and chewing pests in potato, stringbeans, eggplant, ampalaya, corn, mango, banana, and rice.</h5>",
+      points: "<ul><li> </li></ul>",
+      head2: "SOLGER",
+      text: '<p class="text">SOLGER Insecticide is a broad-spectrum insecticide that provides excellent control of sucking and chewing pests in potato, stringbeans, eggplant, ampalaya, corn, mango, banana, and rice.</p>',
+    },
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/HYPEX.jpeg",
+      head: "<h5>(THIAMETHOXAM 25% WG) It helps in controlling Stem borer, gall midge, leaf folder, brown plant hopper, White Blacked Plant hopper (WBPH), Green Leaf hopper (GLH), Thrips, etc. in rice. It is also very effective in controlling Aphids, Jassids, Thrips & White Flies in cotton. </h5>",
+      points: "<ul><li> </li></ul>",
+      head2: "HYPEX",
+      text: '<p class="text">(THIAMETHOXAM 25% WG) It helps in controlling Stem borer, gall midge, leaf folder, brown plant hopper, White Blacked Plant hopper (WBPH), Green Leaf hopper (GLH), Thrips, etc. in rice. It is also very effective in controlling Aphids, Jassids, Thrips & White Flies in cotton.</p>',
+    },
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/GLYSOPHATE.jpeg",
+      head: "<h5>(Glyphosate 41% SL ) Glyphosate is an herbicide. It is applied to the leaves of plants to kill both broadleaf plants and grasses. The sodium salt form of glyphosate is used to regulate plant growth and ripen specific crops.</h5>",
+      points: "<ul><li></li></ul>",
+      head2: "GATE",
+      text: "(Glyphosate 41% SL ) Glyphosate is an herbicide. It is applied to the leaves of plants to kill both broadleaf plants and grasses. The sodium salt form of glyphosate is used to regulate plant growth and ripen specific crops.",
+    },
+
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/Cimbol.jpeg",
+      head: "<h5>Cypermethrin 25% ec is a synthetic pyrethroid insecticide used to kill insects on cotton and lettuce, and to kill cockroaches, fleas, and termites in houses and other buildings.</h5>",
+      points: "<ul><li></li></ul>",
+      head2: "Cymbol",
+      text: "Cypermethrin 25% ec is a synthetic pyrethroid insecticide used to kill insects on cotton and lettuce, and to kill cockroaches, fleas, and termites in houses and other buildings.",
+    },
+    {
+      type: "pesticides",
+      imageToPass: "assets/img/MONO.jpeg",
+      head: "<h5>PLT MONO PLUS Highly (monoprotophos 36% ec) effective broad spectrum solution for management of various sucking and chewing pests in Agriculture.MONO PLUS quick knock down control at very affordable cost of treatment per acre.</h5>",
+      points: "<ul><li></li></ul>",
+      head2: "PLT MONO PLUS",
+      text: "PLT MONO PLUS Highly (monoprotophos 36% ec) effective broad spectrum solution for management of various sucking and chewing pests in Agriculture.MONO PLUS quick knock down control at very affordable cost of treatment per acre.",
+    },
+
+    {
+      type: "fungicides",
+      imageToPass: "assets/img/Evolve.jpeg",
+      head: "<h5>(Carbendazim12% +Mancozeb 63% WP) Fungicide is a systemic and contact fungicide that is used to prevent Leaf Spot Blast disease and Rust disease in all vegetable plants.</h5>",
+      points: "</li><ul></li></ul>",
+      head2: "EVOLVE",
+      text: "(Carbendazim12% +Mancozeb 63% WP) Fungicide is a systemic and contact fungicide that is used to prevent Leaf Spot Blast disease and Rust disease in all vegetable plants.",
+    },
+    {
+      type: "fungicides",
+      imageToPass: "assets/img/AZO+TUB.jpeg",
+      head: "<h5>Zola-29 is a Broad spectrum fungicide for the control of many fungal pathogens & diseases. Zola-29 has very good preventive & curative properties which provides flexibility & broad window of application. It has a dual mode of action, hence it works at multiple stages of fungal development.</h5>",
+      points: "</li><ul></li></ul>",
+      head2: "ZOLA-29",
+      text: "Zola-29 is a Broad spectrum fungicide for the control of many fungal pathogens & diseases. Zola-29 has very good preventive & curative properties which provides flexibility & broad window of application. It has a dual mode of action, hence it works at multiple stages of fungal development.",
+    },
+    {
+      type: "fungicides",
+      imageToPass: "assets/img/SULPHUR.jpeg",
+      head: "<h5>(Sulphur 80% WDG) SABLE  is a contact  fungicide, insecticide and miticide for use on Citrus, Field, Fruit, Nut, Ornamental, Turf and Vegetable applications</h5>",
+      points: "</li><ul></li></ul>",
+      head2: "SABLE",
+      text: "(Sulphur 80% WDG) SABLE  is a contact  fungicide, insecticide and miticide for use on Citrus, Field, Fruit, Nut, Ornamental, Turf and Vegetable applications",
+    },
+    {
+      type: "fungicides",
+      imageToPass: "assets/img/META+MANCO.jpeg",
+      head: "<h5>GUNNER a leading fungicide for control of important diseases caused by the Oomycete fungi and controls soil and leaf diseases in a number of crops including vegetables, grapes, water melon, ornamentals and cotton.</h5>",
+      points: "</li><ul></li></ul>",
+      head2: "GUNNER",
+      text: "GUNNER a leading fungicide for control of important diseases caused by the Oomycete fungi and controls soil and leaf diseases in a number of crops including vegetables, grapes, water melon, ornamentals and cotton.",
+    },
+    {
+      type: "fungicides",
+      imageToPass: "assets/img/Rule75.jpeg",
+      head: "<h5>(MANCOZEB 75% WP) RULE 75 is used to control brown and black rust & blight of wheat leaf blight & downy mildew of maize, A blast of paddy, leaf spot sorghum. Tip rot sigatoka leaf spot of banana and other fungal diseases of banana, guava and other field crops.</h5>",
+      points: "</li><ul> </li></ul>",
+      head2: "RULE 75",
+      text: "(MANCOZEB 75% WP) RULE 75 is used to control brown and black rust & blight of wheat leaf blight & downy mildew of maize, A blast of paddy, leaf spot sorghum. Tip rot sigatoka leaf spot of banana and other fungal diseases of banana, guava and other field crops.",
+    },
+    {
+      type: "fungicides",
+      imageToPass: "assets/img/Hexole.jpeg",
+      head: "<h5>HEXOLE is a unique systemic triazole fungicide, acting as protective, curative and eradicant with strong antisporulant and translaminar action.For control of powdery mildew ,downey mildew etc.</h5>",
+      points: "</li><ul>Dosage:1-2ml per ltr of water </li></ul>",
+      head2: "HEXOLE",
+      text: "HEXOLE is a unique systemic triazole fungicide, acting as protective, curative and eradicant with strong antisporulant and translaminar action.For control of powdery mildew ,downey mildew etc.",
+    },
+    {
+      type: "pestanddisease",
+      imageToPass: "assets/img/agrostick.png",
+      head: "<h5>Useful as a Spreader, Activator, Penetrator increases efficiency of Spraying. Recommended in rainy season to avoid washout, which reduces consumption of Agro Chemicals.</h5>",
+      points: "",
+      head2: "PLT AGRO STICK",
+      text: "Useful as a Spreader, Activator, Penetrator increases efficiency of Spraying. Recommended in rainy season to avoid washout, which reduces consumption of Agro Chemicals.",
+    },
+    {
+      type: "pestanddisease",
+      imageToPass: "assets/img/agriboss.png",
+      head: "<h5>PLT AGRI BOSS is a systemic product against groups of aphids and thrips.Those attacks on plants by sucking its fluid from tender new growth and results in deformed growth, flowering, and discoloration. This is the product with translaminar bioactivity along with contact poison properties against thrips aphids and other insects. </h5>",
+      points:
+        "<ul><li>It improves crop photosynthesis.</li><li>Increases production of crops.</li><li>It helps to prevent insect disease attack.</li></ul>,",
+      head2: "PLT AGRI BOSS",
+      text: "PLT AGRI BOSS is a systemic product against groups of aphids and thripes. Those attack on plants by sucking its fluid from tender new growth and results in deformed growth, flowering and discoloration.",
+    },
+    {
+      type: "pestanddisease",
+      imageToPass: "assets/img/curetone1.png",
+      head: "<h5>(Organic Plant disease Protector) It is a highly effective fungicide which prevents and protects crops from fungal diseases, it is very effective for mahali disease of areca nut and against diseases caused by oomycetes fungi like phytophthora palmivora root rot, phythumrot, downy mildew, and for taking blight diseases.</h5>",
+      points:
+        "<ul><li>Activates defense mechanism of plants. </li><li>Highly effective on fungal infections like downey mildew, powdery mildew,mahali diseases in areca nut, etc.</li></ul>,",
+      head2: "PLT Cureton",
+      text: "PLT CURETONE contains natural salt of phosphonic acid, which is an organic plant growth protector. It is highly effective fungicide which prevents and protects crops from fungal diseases.",
+    },
+    {
+      type: "fungicides",
+      imageToPass: "assets/img/arecatone.jpeg",
+      head: "PLT ARECATONE contains natural salt of phosphonic acids ,which is an organic plant growth protector ,it is highly effective fungicide which prevents and protects crops from fungal diseases .PLT ARECATONE is very effective for mahali diseases of arecanut .plt arecatone spraying is effective for 60-90 days .plt arecatone has to be sprayed on arecanut just before the onset of monsoon .during rainy seasons when mahali diseases starts .plt arecatone prevents fungal disease , nut cracking and premature fall of areacanut two sprays at monthly intervals with  ARECATONE at the rate of 3-4 ml/L was effective in managing koleroga (nut rot disease)  of areca nut.PLT ARECATONE  has the unique property of increasing resistance against several disease and environmental stress issues by boosting both the rate and intensity of the existing plant defense systems. Application of PLT ARECATONE enhances the plants' existing defense responses.</h5>",
+      points:
+        "<ul><li>highly effective fungicide which prevents and protects crops from fungal diseases </li><li>increasing resistance against several disease and environmental stress issues by boosting both the rate and intensity of the existing plant defense systems</li></ul>,",
+      head2: "PLT ARECATONE",
+      text: "PLT ARECATONE contains natural salt of phosphonic acids ,which is an organic plant growth protector ,it is highly effective fungicide which prevents and protects crops from fungal diseases .PLT ARECATONE is very effective for mahali diseases of arecanut .plt arecatone spraying is effective for 60-90 days .plt arecatone has to be sprayed on arecanut just before the onset of monsoon .during rainy seasons when mahali diseases starts .plt arecatone prevents fungal disease , nut cracking and premature fall of areacanut ",
+    },
+    {
+      type: "fungicides",
+      imageToPass: "assets/img/Powermeta.jpeg",
+      head: "PLT POWER META (Metalaxyl 35% WS) is a systemic fungicide. It is used to control leaf spot and rust disease of different types of crops like potatoes, chili, cauliflower, cabbage, peas, groundnut, paddy, wheat, sugarcane, etc. It controls downy mildew in maize, bajra, sorghum, sunflower, and white rust in mustard.</h5>",
+      points: "<ul><li></li></ul>",
+      head2: "PLT POWER META",
+      text: "PLT POWER META (Metalaxyl 35% WS) is a systemic fungicide. It is used to control leaf spot and rust disease of different types of crops like potatoes, chili, cauliflower, cabbage, peas, groundnut, paddy, wheat, sugarcane, etc. It controls downy mildew in maize, bajra, sorghum, sunflower, and white rust in mustard. ",
+    },
+  ];
+
+  let searchParams = new URLSearchParams(window.location.search);
+  let productName = searchParams.get("name");
+  if (searchParams.has("name")) {
+    const prodData = prodArray.filter((pro) => pro.head2 === productName);
+    if (prodData.length !== 0) {
+      document.getElementById("product").innerHTML = prodData[0].head2;
+      document.getElementById("myImage").src = prodData[0].imageToPass;
+      document.getElementById("producthead").innerHTML = prodData[0].head;
+      document.getElementById("description").innerHTML = prodData[0].points;
+    }
+  }
+</script>
+
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+<!-- <div id="preloader"></div> -->
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="assets/vendor/counterup/counterup.min.js"></script>
+<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/venobox/venobox.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
+
+<div id="floating-menu">
+  <div id="floating-icon" style="padding: 5px">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div id="floating-ligar" style="display: block">
+    <a href="tel: 918281827426">
+      <svg class="svg-inline--fa fa-phone fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="phone" role="img"
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+        <path fill="currentColor"
+          d="M493.397 24.615l-104-23.997c-11.314-2.611-22.879 3.252-27.456 13.931l-48 111.997a24 24 0 0 0 6.862 28.029l60.617 49.596c-35.973 76.675-98.938 140.508-177.249 177.248l-49.596-60.616a24 24 0 0 0-28.029-6.862l-111.997 48C3.873 366.516-1.994 378.08.618 389.397l23.997 104C27.109 504.204 36.748 512 48 512c256.087 0 464-207.532 464-464 0-11.176-7.714-20.873-18.603-23.385z">
+        </path>
+      </svg><!-- <i class="fas fa-phone"></i> -->
+    </a>
+  </div>
+  <div id="floating-whatsapp" style="display: block">
+    <a href="https://api.whatsapp.com/send?phone=918281827426">
+      <svg class="svg-inline--fa fa-whatsapp fa-w-14" aria-hidden="true" data-prefix="fab" data-icon="whatsapp"
+        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+        <path fill="currentColor"
+          d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
+        </path>
+      </svg><!-- <i class="fab fa-whatsapp"></i> -->
+    </a>
+  </div>
+</div>
+
+<div id="floating-ligar" style="display: none">
+  <a href="tel: 8590467224">
+    <svg class="svg-inline--fa fa-phone fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="phone" role="img"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+      <path fill="currentColor"
+        d="M493.397 24.615l-104-23.997c-11.314-2.611-22.879 3.252-27.456 13.931l-48 111.997a24 24 0 0 0 6.862 28.029l60.617 49.596c-35.973 76.675-98.938 140.508-177.249 177.248l-49.596-60.616a24 24 0 0 0-28.029-6.862l-111.997 48C3.873 366.516-1.994 378.08.618 389.397l23.997 104C27.109 504.204 36.748 512 48 512c256.087 0 464-207.532 464-464 0-11.176-7.714-20.873-18.603-23.385z">
+      </path>
+    </svg><!-- <i class="fas fa-phone"></i> -->
+  </a>
+</div>
+
+<div id="floating-whatsapp" style="display: none">
+  <a href="https://api.whatsapp.com/send?phone=918281827426">
+    <svg class="svg-inline--fa fa-whatsapp fa-w-14" aria-hidden="true" data-prefix="fab" data-icon="whatsapp" role="img"
+      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+      <path fill="currentColor"
+        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
+      </path>
+    </svg><!-- <i class="fab fa-whatsapp"></i> -->
+  </a>
+</div>
+<div id="floating-emergencia" data-toggle="modal" data-target="#modalUrgencia" style="display: none">
+  <svg class="svg-inline--fa fa-plus fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="plus" role="img"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+    <path fill="currentColor"
+      d="M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z">
+    </path>
+  </svg><!-- <i class="fas fa-plus"></i> -->
+</div>
+
+<div class="modal fade col-lg-12" id="modalUrgencia" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <button type="button" class="fechaModal" data-dismiss="modal"></button>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+</div>
+<script src="assets/js/whatsapp.js"></script>
