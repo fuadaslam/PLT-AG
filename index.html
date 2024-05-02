@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9LE1YG72L4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-9LE1YG72L4');
+  </script>
+
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -443,7 +454,29 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1454682605442472');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1454682605442472&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
 </head>
+
+<meta name="google-site-verification" content="513fgK8GS1aaLpvF7TF3luN2dso1mZlo5_VL6iY0a84" />
 
 <body onload="showThisDialog()">
 
@@ -1132,7 +1165,7 @@
 
     </section>
 
-    <div class="gallery">
+    <!-- <div class="gallery">
       <img src="assets/img/PltImg1.jpeg">
       <img src="assets/img/PltImg2.jpeg">
       <img src="assets/img/PltImg3.jpg">
@@ -1145,6 +1178,23 @@
       <img src="assets/img/PltImg10.jpg">
       <img src="assets/img/PltImg11.jpeg">
       <img src="assets/img/PltImg12.jpeg">
+    </div> -->
+
+    <div class="section-title">
+      <h2>Gallery </h2>
+
+    </div>
+
+    <div class="gallery">
+      <img src="assets/img/pltgallery1.PNG" alt="">
+      <img src="assets/img/pltgallery2.PNG" alt="">
+      <img src="assets/img/pltgallery3.PNG" alt="">
+      <img src="assets/img/pltgallery4.PNG" alt="">
+      <img src="assets/img/pltgallery5.PNG" alt="">
+      <img src="assets/img/pltgallery6.PNG" alt="">
+      <img src="assets/img/pltgallery7.PNG" alt="">
+      <img src="assets/img/pltgallery8.PNG" alt="">
+      <img src="assets/img/pltgallery9.PNG" alt="">
     </div>
 
 
