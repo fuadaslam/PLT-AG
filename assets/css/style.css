@@ -552,7 +552,10 @@ h6 {
     ),
     url(../img/background.jpeg) center center no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   position: relative;
+  min-height: 100vh;
+  padding: 120px 0 80px;
 }
 
 .hero-enhanced::before {
@@ -669,12 +672,22 @@ h6 {
 .hero-image-wrapper {
   position: relative;
   text-align: center;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .hero-logo {
   animation: float 3s ease-in-out infinite;
   position: relative;
   z-index: 2;
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
 }
 
 .hero-tagline {
@@ -682,6 +695,11 @@ h6 {
   animation-delay: 0.5s;
   position: relative;
   z-index: 2;
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  margin-top: 20px;
 }
 
 .hero-glow {
@@ -718,6 +736,11 @@ h6 {
 
 /* Responsive */
 @media (max-width: 991px) {
+  .hero-enhanced {
+    min-height: 80vh;
+    padding: 100px 0 60px;
+  }
+  
   .hero-enhanced h1 {
     font-size: 38px;
   }
@@ -734,6 +757,9 @@ h6 {
 @media (max-width: 768px) {
   .hero-enhanced {
     text-align: center;
+    min-height: 90vh;
+    padding: 80px 0 50px;
+    background-attachment: scroll;
   }
   
   .hero-enhanced h1 {
@@ -762,6 +788,25 @@ h6 {
   .btn-get-started-enhanced {
     padding: 14px 30px;
     font-size: 15px;
+  }
+  
+  .hero-image-wrapper {
+    min-height: 300px;
+    padding: 15px;
+  }
+  
+  .hero-logo {
+    max-height: 200px;
+  }
+  
+  .hero-tagline {
+    max-height: 150px;
+    margin-top: 15px;
+  }
+  
+  .hero-glow {
+    width: 300px;
+    height: 300px;
   }
 }
 
