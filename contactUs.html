@@ -36,9 +36,8 @@
   <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/css/whatsapp.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/header-footer.css" rel="stylesheet">
   <!-- <link href="assets/css/Site.css" rel="stylesheet"> -->
 
   <style>
@@ -566,41 +565,108 @@
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" style="background: rgba(0, 0, 0, 0.8);" class="fixed-top ">
+  <!-- ======= Enhanced Header ======= -->
+  <header id="header" class="fixed-top">
     <div class="container-fluid">
       <div class="row justify-content-center">
-        <div class="col-xl-9 d-flex align-items-center">
-          <a href="/" class="logo mr-auto"><img src="assets/img/pltaglog.png" alt="" class="img-fluid"></a>
-          <h1 class="logo mr-auto"></h1>
-          <!-- Uncomment below if you prefer to use an image logo -->
+        <div class="col-xl-10 col-lg-11 d-flex align-items-center justify-content-between">
+          <a href="index.html" class="logo">
+            <img src="assets/img/pltaglog.png" alt="PLT AG Logo" class="img-fluid">
+          </a>
+
           <nav class="nav-menu d-none d-lg-block">
             <ul>
-              <!-- <li class="active"><a href="/">Contact us</a></li> -->
-
-              <li><a href="#about">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <!-- <li><a href="#features">Features</a></li> -->
-              <li><a href="Products.html">Products</a></li>
-              <!-- <li><a href="consultancy.html">Consultancy</a></li>
-              <li><a href="education.html">Education</a></li> -->
-              <li><a href="careers.html">Careers</a></li>
-              <li><button class="get-started-button scrollto show-btn"
-                  style=" border-radius: 10px; background-color: inherit;">
-                  <a href="contactUs.html" style="color: white;">Contact us</a>
-                </button></li>
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                  <i class="bx bx-home-alt"></i>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.html#about" class="nav-link">
+                  <i class="bx bx-info-circle"></i>
+                  <span>About</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.html#services" class="nav-link">
+                  <i class="bx bx-cog"></i>
+                  <span>Services</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="Products.html" class="nav-link">
+                  <i class="bx bx-package"></i>
+                  <span>Products</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="consultancy.html" class="nav-link">
+                  <i class="bx bx-user-voice"></i>
+                  <span>Consultancy</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="careers.html" class="nav-link">
+                  <i class="bx bx-briefcase"></i>
+                  <span>Careers</span>
+                </a>
+              </li>
+              <li class="nav-item-cta">
+                <a href="contactUs.html" class="btn-contact active">
+                  <i class="bx bx-phone-call"></i>
+                  <span>Contact Us</span>
+                </a>
+              </li>
             </ul>
-          </nav><!-- .nav-menu -->
+          </nav>
 
-          <!-- <a href="contactUs.html" class="get-started-btn scrollto">Contact Us</a> -->
-          <!-- <label for="show" class="get-started-btn get-started-btn-nav scrollto show-btn" style=" border-radius: 10px;">Connect Us</label> -->
-          <!-- <a href="#about"><label for="show" class="get-started-btn scrollto show-btn" ></label>Connect Us</label></a> -->
-
+          <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Toggle navigation">
+            <i class="bx bx-menu"></i>
+          </button>
         </div>
       </div>
     </div>
-  </header><!-- End Header -->
+
+    <div class="mobile-nav">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="mobile-logo">
+          <img src="assets/img/pltaglog.png" alt="PLT AG Logo">
+        </a>
+        <button type="button" class="mobile-nav-close" aria-label="Close navigation">
+          <i class="bx bx-x"></i>
+        </button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="index.html"><i class="bx bx-home-alt"></i> Home</a></li>
+        <li><a href="index.html#about"><i class="bx bx-info-circle"></i> About</a></li>
+        <li><a href="index.html#services"><i class="bx bx-cog"></i> Services</a></li>
+        <li><a href="Products.html"><i class="bx bx-package"></i> Products</a></li>
+        <li><a href="consultancy.html"><i class="bx bx-user-voice"></i> Consultancy</a></li>
+        <li><a href="careers.html"><i class="bx bx-briefcase"></i> Careers</a></li>
+        <li><a href="contactUs.html" class="mobile-cta active"><i class="bx bx-phone-call"></i> Contact Us</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <div class="mobile-contact-info">
+          <p><i class="bx bx-phone"></i> +91 82818 27426</p>
+          <p><i class="bx bx-envelope"></i> Info@plantlabztech.com</p>
+        </div>
+        <div class="mobile-social-links">
+          <a href="https://www.facebook.com/plantlabztech.ag/" target="_blank" aria-label="Facebook">
+            <i class="bx bxl-facebook"></i>
+          </a>
+          <a href="https://instagram.com/plt.ag?utm_medium=copy_link" target="_blank" aria-label="Instagram">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://youtube.com/channel/UCoZmzerLLc5-c6vqY5pJJ9w" target="_blank" aria-label="YouTube">
+            <i class="bx bxl-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-nav-overlay"></div>
+  </header>
+  <!-- End Enhanced Header -->
 
   <!-- ======= Hero Section ======= -->
 
@@ -610,7 +676,7 @@
     <!-- ======= Enhanced Contact Us Section ======= -->
     <section class="contact-page-enhanced">
       <div class="container" data-aos="fade-up">
-        
+
         <!-- Contact Header -->
         <div class="contact-header">
           <div class="contact-badge" data-aos="fade-down">
@@ -752,11 +818,13 @@
                   <i class='bx bxl-facebook'></i>
                   <span>Facebook</span>
                 </a>
-                <a href="https://instagram.com/plt.ag?utm_medium=copy_link" target="_blank" class="social-link instagram">
+                <a href="https://instagram.com/plt.ag?utm_medium=copy_link" target="_blank"
+                  class="social-link instagram">
                   <i class='bx bxl-instagram'></i>
                   <span>Instagram</span>
                 </a>
-                <a href="https://youtube.com/channel/UCoZmzerLLc5-c6vqY5pJJ9w" target="_blank" class="social-link youtube">
+                <a href="https://youtube.com/channel/UCoZmzerLLc5-c6vqY5pJJ9w" target="_blank"
+                  class="social-link youtube">
                   <i class='bx bxl-youtube'></i>
                   <span>YouTube</span>
                 </a>

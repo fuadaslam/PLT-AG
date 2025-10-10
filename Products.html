@@ -30,6 +30,7 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/css/whatsapp.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/header-footer.css" rel="stylesheet">
 
   <!-- Meta Pixel Code -->
   <script>
@@ -559,31 +560,112 @@
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" style="background: rgba(0, 0, 0, 0.8);" class="fixed-top">
+  <!-- ======= Enhanced Header ======= -->
+  <header id="header" class="fixed-top">
     <div class="container-fluid">
       <div class="row justify-content-center">
-        <div class="col-xl-9 d-flex align-items-center">
-          <a href="/" class="logo mr-auto"><img src="assets/img/pltaglog.png" alt="" class="img-fluid"></a>
+        <div class="col-xl-10 col-lg-11 d-flex align-items-center justify-content-between">
+          <!-- Logo -->
+          <a href="index.html" class="logo">
+            <img src="assets/img/pltaglog.png" alt="PLT AG Logo" class="img-fluid">
+          </a>
+
+          <!-- Desktop Navigation -->
           <nav class="nav-menu d-none d-lg-block">
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/#about">About</a></li>
-              <li><a href="/#services">Services</a></li>
-              <li><a class="active" href="Products.html">Products</a></li>
-              <li><a href="careers.html">Careers</a></li>
-              <li>
-                <button class="get-started-button scrollto show-btn"
-                  style="border-radius: 10px; background-color: inherit;">
-                  <a href="contactUs.html" style="color: white;">Contact us</a>
-                </button>
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                  <i class="bx bx-home-alt"></i>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.html#about" class="nav-link">
+                  <i class="bx bx-info-circle"></i>
+                  <span>About</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.html#services" class="nav-link">
+                  <i class="bx bx-cog"></i>
+                  <span>Services</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="Products.html" class="nav-link active">
+                  <i class="bx bx-package"></i>
+                  <span>Products</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="consultancy.html" class="nav-link">
+                  <i class="bx bx-user-voice"></i>
+                  <span>Consultancy</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="careers.html" class="nav-link">
+                  <i class="bx bx-briefcase"></i>
+                  <span>Careers</span>
+                </a>
+              </li>
+              <li class="nav-item-cta">
+                <a href="contactUs.html" class="btn-contact">
+                  <i class="bx bx-phone-call"></i>
+                  <span>Contact Us</span>
+                </a>
               </li>
             </ul>
           </nav>
+
+          <!-- Mobile Menu Toggle -->
+          <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Toggle navigation">
+            <i class="bx bx-menu"></i>
+          </button>
         </div>
       </div>
     </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="mobile-logo">
+          <img src="assets/img/pltaglog.png" alt="PLT AG Logo">
+        </a>
+        <button type="button" class="mobile-nav-close" aria-label="Close navigation">
+          <i class="bx bx-x"></i>
+        </button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="index.html"><i class="bx bx-home-alt"></i> Home</a></li>
+        <li><a href="index.html#about"><i class="bx bx-info-circle"></i> About</a></li>
+        <li><a href="index.html#services"><i class="bx bx-cog"></i> Services</a></li>
+        <li><a href="Products.html" class="active"><i class="bx bx-package"></i> Products</a></li>
+        <li><a href="consultancy.html"><i class="bx bx-user-voice"></i> Consultancy</a></li>
+        <li><a href="careers.html"><i class="bx bx-briefcase"></i> Careers</a></li>
+        <li><a href="contactUs.html" class="mobile-cta"><i class="bx bx-phone-call"></i> Contact Us</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <div class="mobile-contact-info">
+          <p><i class="bx bx-phone"></i> +91 82818 27426</p>
+          <p><i class="bx bx-envelope"></i> Info@plantlabztech.com</p>
+        </div>
+        <div class="mobile-social-links">
+          <a href="https://www.facebook.com/plantlabztech.ag/" target="_blank" aria-label="Facebook">
+            <i class="bx bxl-facebook"></i>
+          </a>
+          <a href="https://instagram.com/plt.ag?utm_medium=copy_link" target="_blank" aria-label="Instagram">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://youtube.com/channel/UCoZmzerLLc5-c6vqY5pJJ9w" target="_blank" aria-label="YouTube">
+            <i class="bx bxl-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-nav-overlay"></div>
   </header>
+  <!-- End Enhanced Header -->
 
   <!-- ======= Enhanced Products Page ======= -->
   <section class="products-page-enhanced">
@@ -641,61 +723,143 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer id="footer">
+  <!-- ======= Enhanced Footer ======= -->
+  <footer id="footer" class="footer-enhanced">
     <div class="footer-top">
       <div class="container">
         <div class="row">
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Plant labz tech</h3>
-            VP MALL,<br />
-            Ooty road, Manjeri-3, Kerala, 676123<br />
-            Info@plantlabztech.com<br />
-            <strong>Head Office:</strong> 0483-2948800<br>
-            <strong>Customer care:</strong> +91 82818 27426<br>
+
+          <!-- Company Info -->
+          <div class="col-lg-4 col-md-6 footer-about" data-aos="fade-up" data-aos-delay="100">
+            <div class="footer-logo">
+              <img src="assets/img/pltaglog.png" alt="PLT AG Logo">
+            </div>
+            <p class="footer-description">
+              PLT is an innovative initiative in agricultural commodity production that vows to sustain the ecosystem
+              and empower farmers with cutting-edge solutions.
+            </p>
+            <div class="footer-contact-info">
+              <div class="contact-item">
+                <i class="bx bx-location-plus"></i>
+                <div>
+                  <strong>Address:</strong>
+                  <p>VP MALL, Ooty road<br>Manjeri-3, Kerala, 676123</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="bx bx-envelope"></i>
+                <div>
+                  <strong>Email:</strong>
+                  <p><a href="mailto:Info@plantlabztech.com">Info@plantlabztech.com</a></p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
+            <h4>Quick Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/#about">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/#services">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="Products.html">Our Products</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#about">About Us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#services">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="Products.html">Products</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="consultancy.html">Consultancy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="careers.html">Careers</a></li>
             </ul>
           </div>
-          <div class="col-lg-3 col-md-6 footer-links">
+
+          <!-- Our Services -->
+          <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="300">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Integrated Fertilizer Nutrient Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Integrated Pest Control Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Integrated Disease Control Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Farm Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#services">Integrated Fertilizer Nutrient
+                  Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#services">Integrated Pest Control
+                  Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#services">Integrated Disease Control
+                  Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#services">Farm Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#services">Soil Testing</a></li>
             </ul>
           </div>
+
+          <!-- Contact Info -->
+          <div class="col-lg-3 col-md-6 footer-contact" data-aos="fade-up" data-aos-delay="400">
+            <h4>Contact Us</h4>
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="bx bx-phone-call"></i>
+                <div>
+                  <strong>Head Office:</strong>
+                  <p><a href="tel:04832948800">0483-2948800</a></p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="bx bx-support"></i>
+                <div>
+                  <strong>Customer Care:</strong>
+                  <p><a href="tel:918281827426">+91 82818 27426</a></p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="bx bx-briefcase"></i>
+                <div>
+                  <strong>B2B Sales:</strong>
+                  <p><a href="tel:919747116691">+91 9747116691</a></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="footer-social-links">
+              <a href="https://www.facebook.com/plantlabztech.ag/" target="_blank" aria-label="Facebook"
+                class="facebook">
+                <i class="bx bxl-facebook"></i>
+              </a>
+              <a href="https://instagram.com/plt.ag?utm_medium=copy_link" target="_blank" aria-label="Instagram"
+                class="instagram">
+                <i class="bx bxl-instagram"></i>
+              </a>
+              <a href="https://youtube.com/channel/UCoZmzerLLc5-c6vqY5pJJ9w" target="_blank" aria-label="YouTube"
+                class="youtube">
+                <i class="bx bxl-youtube"></i>
+              </a>
+              <a href="https://wa.me/918281827426" target="_blank" aria-label="WhatsApp" class="whatsapp">
+                <i class="bx bxl-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="copyright-wrap d-md-flex py-4">
-        <div class="mr-md-auto text-center text-md-left">
-          <div class="copyright">
-            &copy; Copyright <strong><span>Plant labz tech</span></strong>. All Rights Reserved
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="copyright">
+              &copy; <span id="currentYear"></span> <strong><span>Plant Labz Tech</span></strong>. All Rights Reserved
+            </div>
           </div>
-          <div class="credits">
-            Designed by <a href="https://www.linkedin.com/in/fuad-aslam-56915a129/">Fuad Aslam</a>
+          <div class="col-md-6">
+            <div class="credits">
+              Designed & Developed by <a href="https://www.linkedin.com/in/fuad-aslam-56915a129/" target="_blank">Fuad
+                Aslam</a>
+            </div>
           </div>
-        </div>
-        <div class="social-links text-center text-md-right pt-3 pt-md-0">
-          <a href="https://www.facebook.com/plantlabztech.ag/" target="_blank" class="facebook"><i
-              class="bx bxl-facebook"></i></a>
-          <a href="https://instagram.com/plt.ag?utm_medium=copy_link" target="_blank" class="instagram"><i
-              class="bx bxl-instagram"></i></a>
-          <a href="https://youtube.com/channel/UCoZmzerLLc5-c6vqY5pJJ9w" target="_blank" class="youtube"><i
-              class="bx bxl-youtube"></i></a>
         </div>
       </div>
     </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+      <i class="bx bx-up-arrow-alt"></i>
+    </a>
   </footer>
+  <!-- End Enhanced Footer -->
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
@@ -704,6 +868,7 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/whatsapp.js"></script>
   <script src="assets/js/products-data.js"></script>
+  <script src="assets/js/header-footer.js"></script>
 
   <script>
     // Check if AOS is loaded

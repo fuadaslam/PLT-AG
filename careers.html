@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <!-- Meta Pixel Code -->
 <script>
     !function (f, b, e, v, n, t, s) {
@@ -23,21 +22,19 @@
 <!-- End Meta Pixel Code -->
 
 <head>
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9LE1YG72L4"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-9LE1YG72L4');
     </script>
 
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>PLT</title>
+    <title>PLT - Careers</title>
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
 
@@ -47,736 +44,745 @@
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box
-        }
 
-        body {
-            font-family: Verdana, sans-serif;
-            margin: 0
-        }
-
-        .mySlides {
-            display: none
-        }
-
-        img {
-            vertical-align: middle;
-        }
-
-        /* Slideshow container */
-        .slideshow-container {
-            max-width: 1000px;
-            height: 75vh;
-            position: relative;
-            margin: auto;
-        }
-
-        /* Next & previous buttons */
-        .prev,
-        .next {
-            cursor: pointer;
-            position: absolute;
-            top: 35%;
-            width: auto;
-            padding: 20px;
-            margin-top: -19px;
-            color: white;
-            font-weight: bold;
-            font-size: 30px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-        }
-
-        /* Position the "next button" to the right */
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-
-        /* On hover, add a black background color with a little bit see-through */
-        /* .prev:hover, .next:hover {
-      background-color: rgba(0,0,0,0.8);
-    } */
-
-        /* Caption text */
-        .text {
-            color: #f2f2f2;
-            font-size: 15px;
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 8px;
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Number text (1/3 etc) */
-        .produc-description-div {
-            color: #000;
-            font-size: 12px;
-            padding-left: 80px;
-            /* padding-right: 50px; */
-            padding-top: 10;
-            padding-bottom: 10;
-            /* width:40vw; */
-
-            /* position: relative;
-      top: 0; */
-        }
-
-        .product-heading {
-            font-size: 50px;
-            color: #000;
-        }
-
-        .image-div {
-            /* width:35vw; */
-            text-align: center;
-            /* padding-left: 20px;
-      padding-right: 100px; */
-            padding-top: 10;
-            padding-bottom: 10;
-            /* justify-content: center; */
-        }
-
-        .product-image {
-            height: 40vh;
-        }
-
-        .grid-container-test {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            /* background-color: #2196F3; */
-            padding: 10px;
-        }
-
-        .grid-item-test {
-            padding: 20px;
-            font-size: 30px;
-            text-align: left;
-        }
-
-        /* The dots/bullets/indicators */
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-
-        .activedot,
-        .dot:hover {
-            background-color: #717171;
-        }
-
-        /* Fading animation */
-        /* .fade {
-      -webkit-animation-name: fade;
-      -webkit-animation-duration: 5s;
-      animation-name: fade;
-      animation-duration: 5s;
-    } */
-
-        @-webkit-keyframes fade {
-            from {
-                opacity: .4
-            }
-
-            to {
-                opacity: 1
-            }
-        }
-
-        @keyframes fade {
-            from {
-                opacity: .4
-            }
-
-            to {
-                opacity: 1
-            }
-        }
-
-        /* On smaller screens, decrease text size */
-        @media only screen and (max-width: 300px) {
-
-            .prev,
-            .next,
-            .text {
-                font-size: 11px
-            }
-
-            /* .form-container{
-        width: 100%;
-        top: 10%;
-        left: 1px;
-        right: 100%;
-        transform: translate(-90%, -90%);
-        
-      } */
-        }
-
-
-        .show-btn {
-            /* background: #fff; */
-            padding: 10px 20px;
-            font-size: 20px;
-            font-weight: 500;
-            color: #3498db;
-            cursor: pointer;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-container {
-            color: black;
-            /* position: absolute;
-  top: 50%;
-  left: 50%; */
-            /* transform: translate(-50%, 50%); */
-            /* top: 50%;
-  right: -50%;
-  transform: translate(50%, -50%); */
-            display: none;
-            background: #fff;
-            width: 100%;
-            padding: 30px;
-            padding-top: 50px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-main {
-            /* padding-top: 30px; */
-            /* margin-left: 10%; */
-            /* box-shadow: 50px  100px rgba(0,0,0,0.6), 
-   -50px  -100px rgba(0,0,0,0.6); */
-            position: fixed;
-            /* top: 0; */
-            left: 50%;
-            top: -25%;
-            width: 80%;
-            /* right: 15px; */
-            z-index: 9;
-            transform: translate(-50%, 50%);
-        }
-
-        /* .form-back {
-  background-color: black;
-  width: 100vw;
-  height: 100vh;
-} */
-        input[type="checkbox"] {
-            display: none;
-        }
-
-        #show:checked~.form-container {
-            display: block;
-        }
-
-        .form-container .close-btn {
-            position: absolute;
-            right: 20px;
-            top: 15px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        .form-container .close-btn:hover {
-            color: #3498db;
-        }
-
-        .form-container .text {
-            font-size: 35px;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .form-container form {
-            margin-top: -20px;
-
-        }
-
-        .form-container form .data {
-            height: 45px;
-            width: 100%;
-            margin: 40px 0;
-        }
-
-        form .data label {
-            font-size: 18px;
-        }
-
-        form .data input {
-
-            height: 100%;
-            width: 100%;
-            padding-left: 10px;
-            font-size: 17px;
-            border: 1px solid silver;
-        }
-
-        form .data input:focus {
-
-            border-color: #3498db;
-            border-bottom-width: 2px;
-        }
-
-        form .forgot-pass {
-            margin-top: -8px;
-        }
-
-        form .forgot-pass a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        form .forgot-pass a:hover {
-            text-decoration: underline;
-        }
-
-        form .btn {
-            margin: 30px 0;
-            height: 45px;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        form .btn .inner {
-            height: 100%;
-            width: 300%;
-            position: absolute;
-            left: -100%;
-            z-index: -1;
-            background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
-            transition: all 0.4s;
-        }
-
-        form .btn:hover .inner {
-            left: 0;
-        }
-
-        form .btn button {
-            height: 100%;
-            width: 100%;
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 18px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-        }
-
-        form .signup-link {
-            text-align: center;
-        }
-
-        form .signup-link a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        form .signup-link a:hover {
-            text-decoration: underline;
-        }
-
-        input[type=text],
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            margin-top: 6px;
-            margin-bottom: 16px;
-            resize: vertical;
-        }
-
-        input[type=submit] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            cursor: pointer;
-        }
-
-        input[type=submit]:hover {
-            background-color: #45a049;
-            /* box-shadow: 50px 50px 50px rgba(0,0,0,0.5); */
-
-        }
-    </style>
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/css/whatsapp.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-    <!-- <link href="assets/css/Site.css" rel="stylesheet"> -->
+    <link href="assets/css/header-footer.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <style>
+        /* Enhanced Careers Page Styles */
+        .careers-page-enhanced {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%);
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .careers-page-enhanced::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(76, 175, 80, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .careers-page-enhanced .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .careers-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .careers-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .careers-badge i {
+            font-size: 24px;
+        }
+
+        .careers-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #2c4964;
+            margin-bottom: 20px;
+        }
+
+        .careers-header p {
+            font-size: 18px;
+            color: #555555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Hero Image Section */
+        .careers-hero {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+        }
+
+        .careers-hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Benefits Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+        }
+
+        .benefit-icon i {
+            font-size: 40px;
+            color: white;
+        }
+
+        .benefit-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c4964;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Application Form */
+        .application-section {
+            background: white;
+            border-radius: 30px;
+            padding: 60px 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+        }
+
+        .application-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2c4964;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .application-section .subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .application-form {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group-custom {
+            margin-bottom: 25px;
+        }
+
+        .form-group-custom label {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            color: #2c4964;
+            margin-bottom: 10px;
+        }
+
+        .form-group-custom input,
+        .form-group-custom textarea,
+        .form-group-custom select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group-custom input:focus,
+        .form-group-custom textarea:focus,
+        .form-group-custom select:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+
+        .form-group-custom textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .file-upload-custom {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .file-upload-custom input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .file-upload-label {
+            flex: 1;
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border: 2px dashed #e0e0e0;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload-label:hover {
+            border-color: #4CAF50;
+            background: rgba(76, 175, 80, 0.05);
+        }
+
+        .file-upload-label i {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .btn-submit-application {
+            width: 100%;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(76, 175, 80, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-submit-application:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(76, 175, 80, 0.4);
+        }
+
+        .btn-submit-application i {
+            font-size: 20px;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #c3e6cb;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .careers-page-enhanced {
+                padding: 120px 0 70px;
+            }
+
+            .careers-header h1 {
+                font-size: 32px;
+            }
+
+            .application-section {
+                padding: 40px 25px;
+            }
+
+            .application-section h2 {
+                font-size: 28px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top ">
+    <!-- ======= Enhanced Header ======= -->
+    <header id="header" class="fixed-top">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-xl-9 d-flex align-items-center">
-                    <a href="/" class="logo mr-auto"><img src="assets/img/pltaglog.png" alt="" class="img-fluid"></a>
-                    <h1 class="logo mr-auto"></h1>
-                    <!-- Uncomment below if you prefer to use an image logo -->
+                <div class="col-xl-10 col-lg-11 d-flex align-items-center justify-content-between">
+                    <a href="index.html" class="logo">
+                        <img src="assets/img/pltaglog.png" alt="PLT AG Logo" class="img-fluid">
+                    </a>
+
                     <nav class="nav-menu d-none d-lg-block">
                         <ul>
-                            <!-- <li class="active"><a href="education.html">Careers</a></li> -->
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/#about">About</a></li>
-                            <li><a href="/#services">Services</a></li>
-                            <!-- <li><a href="#features">Features</a></li> -->
-                            <li><a href="Products.html">Products</a></li>
-                            <!-- <li><a href="consultancy.html">Consultancy</a></li> -->
-                            <li><a class="active" href="careers.html">Careers</a></li>
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link">
+                                    <i class="bx bx-home-alt"></i>
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.html#about" class="nav-link">
+                                    <i class="bx bx-info-circle"></i>
+                                    <span>About</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.html#services" class="nav-link">
+                                    <i class="bx bx-cog"></i>
+                                    <span>Services</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="Products.html" class="nav-link">
+                                    <i class="bx bx-package"></i>
+                                    <span>Products</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="consultancy.html" class="nav-link">
+                                    <i class="bx bx-user-voice"></i>
+                                    <span>Consultancy</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="careers.html" class="nav-link active">
+                                    <i class="bx bx-briefcase"></i>
+                                    <span>Careers</span>
+                                </a>
+                            </li>
+                            <li class="nav-item-cta">
+                                <a href="contactUs.html" class="btn-contact">
+                                    <i class="bx bx-phone-call"></i>
+                                    <span>Contact Us</span>
+                                </a>
+                            </li>
                         </ul>
-                    </nav><!-- .nav-menu -->
+                    </nav>
 
-                    <!-- <a href="contactUs.html" class="get-started-btn scrollto">Contact Us</a> -->
-                    <label for="show" class="get-started-btn get-started-btn-nav scrollto show-btn"
-                        style=" border-radius: 10px;">Connect Us</label>
-                    <!-- <a href="#about"><label for="show" class="get-started-btn scrollto show-btn" ></label>Connect Us</label></a> -->
-
+                    <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Toggle navigation">
+                        <i class="bx bx-menu"></i>
+                    </button>
                 </div>
             </div>
         </div>
-    </header><!-- End Header -->
 
-    <!-- ======= Hero Section ======= -->
-
-
-
-    <main id="main">
-
-
-        <!-- ======= About Section ======= -->
-        <section id="careers" class="about" style="min-height: 70vh;">
-
-
-            <div class="section-title">
-                <h2>CAREERS</h2>
-
+        <div class="mobile-nav">
+            <div class="mobile-nav-header">
+                <a href="index.html" class="mobile-logo">
+                    <img src="assets/img/pltaglog.png" alt="PLT AG Logo">
+                </a>
+                <button type="button" class="mobile-nav-close" aria-label="Close navigation">
+                    <i class="bx bx-x"></i>
+                </button>
             </div>
-            <div class="container">
-
-
-
-                <img src="./assets/img/hire.jpeg" alt="Italian Trulli">
-                <!-- <div class="col-md-6 offset-md-3 mt-5">
-          <br>
-          <h1>Job Application</h1>
-          <form 
-            id="submit-form" action="">
-          
-            <div class="form-group">
-              <label for="exampleInputName">Full Name</label>
-              <input type="text" name="fullname" class="form-control" id="exampleInputName"
-                placeholder="Enter your name and surname" required="required">
+            <ul class="mobile-nav-list">
+                <li><a href="index.html"><i class="bx bx-home-alt"></i> Home</a></li>
+                <li><a href="index.html#about"><i class="bx bx-info-circle"></i> About</a></li>
+                <li><a href="index.html#services"><i class="bx bx-cog"></i> Services</a></li>
+                <li><a href="Products.html"><i class="bx bx-package"></i> Products</a></li>
+                <li><a href="consultancy.html"><i class="bx bx-user-voice"></i> Consultancy</a></li>
+                <li><a href="careers.html" class="active"><i class="bx bx-briefcase"></i> Careers</a></li>
+                <li><a href="contactUs.html" class="mobile-cta"><i class="bx bx-phone-call"></i> Contact Us</a></li>
+            </ul>
+            <div class="mobile-nav-footer">
+                <div class="mobile-contact-info">
+                    <p><i class="bx bx-phone"></i> +91 82818 27426</p>
+                    <p><i class="bx bx-envelope"></i> Info@plantlabztech.com</p>
+                </div>
+                <div class="mobile-social-links">
+                    <a href="https://www.facebook.com/plantlabztech.ag/" target="_blank" aria-label="Facebook">
+                        <i class="bx bxl-facebook"></i>
+                    </a>
+                    <a href="https://instagram.com/plt.ag?utm_medium=copy_link" target="_blank" aria-label="Instagram">
+                        <i class="bx bxl-instagram"></i>
+                    </a>
+                    <a href="https://youtube.com/channel/UCoZmzerLLc5-c6vqY5pJJ9w" target="_blank" aria-label="YouTube">
+                        <i class="bx bxl-youtube"></i>
+                    </a>
+                </div>
             </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1" required="required">Email address</label>
-              <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter your email address">
+        </div>
+        <div class="mobile-nav-overlay"></div>
+    </header>
+    <!-- End Enhanced Header -->
+
+    <!-- ======= Enhanced Careers Page ======= -->
+    <section class="careers-page-enhanced">
+        <div class="container" data-aos="fade-up">
+
+            <!-- Careers Header -->
+            <div class="careers-header">
+                <div class="careers-badge" data-aos="fade-down">
+                    <i class="bx bx-briefcase"></i>
+                    <span>Join Our Team</span>
+                </div>
+                <h1 data-aos="fade-up">Build Your Career With Us</h1>
+                <p data-aos="fade-up" data-aos-delay="100">
+                    Join PLT AG and be part of an innovative team shaping the future of agriculture
+                </p>
             </div>
-            <div class="form-group">
-              <label for="example-tel-input" required="required">Telephone</label>
-              <input type="text" name="mobile" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter your phone Number">
+
+            <!-- Hero Image -->
+            <div class="careers-hero" data-aos="zoom-in" data-aos-delay="200">
+                <img src="./assets/img/hire.jpeg" alt="Join PLT AG Team">
             </div>
 
-
-            <div class="form-group mt-3">
-              <label class="mr-4">Upload your CV:</label>
-              <input type="file" name="file">
+            <!-- Benefits Section -->
+            <div class="section-title" data-aos="fade-up">
+                <h2 style="color: #2c4964;">Why Join PLT AG?</h2>
+                <p style="color: #555555; margin-top: 15px;">We offer more than just a job - we offer a career with
+                    purpose</p>
             </div>
-            <input type="submit" class="btn btn-primary" value="Submit">
-          </form>
-        </div> -->
 
+            <div class="benefits-grid">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="benefit-icon">
+                        <i class="bx bx-trending-up"></i>
+                    </div>
+                    <h3>Career Growth</h3>
+                    <p>Continuous learning opportunities and clear paths for advancement in your agricultural career</p>
+                </div>
+
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="benefit-icon">
+                        <i class="bx bx-group"></i>
+                    </div>
+                    <h3>Great Team</h3>
+                    <p>Work with passionate professionals dedicated to sustainable agriculture and innovation</p>
+                </div>
+
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="benefit-icon">
+                        <i class="bx bx-medal"></i>
+                    </div>
+                    <h3>Competitive Benefits</h3>
+                    <p>Comprehensive compensation packages and work-life balance initiatives</p>
+                </div>
+
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="benefit-icon">
+                        <i class="bx bx-bulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>Be at the forefront of agricultural technology and sustainable farming solutions</p>
+                </div>
             </div>
-        </section><!-- End About Section -->
 
-        <script>
-            $("#submit-form").submit((e) => {
-                e.preventDefault()
-                $.ajax({
-                    url: "https://script.google.com/macros/s/AKfycbwiYjIUpPfEL1UChOXeq19BwW9y_0Wfwi0HBCHm6fwmKNak99kKm59CBWuLPwf-DUmx/exec",
-                    data: $("#submit-form").serialize(),
-                    method: "post",
-                    success: function (response) {
-                        alert("Form submitted successfully our team will contact you shortly..");
+            <!-- Application Form -->
+            <div class="application-section" data-aos="fade-up">
+                <h2>Apply Now</h2>
+                <p class="subtitle">Take the first step towards an exciting career in agriculture</p>
 
-                    },
-                    error: function (err) {
-                        alert("Something Error")
-                    }
-                })
-            })
-        </script>
+                <div class="success-message" id="successMessage">
+                    <i class="bx bx-check-circle" style="font-size: 24px; margin-right: 10px;"></i>
+                    Your application has been submitted successfully! Our team will contact you shortly.
+                </div>
 
+                <form class="application-form" id="submit-form">
+                    <div class="form-group-custom">
+                        <label for="fullname">Full Name *</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                    </div>
 
+                    <div class="form-group-custom">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
 
+                    <div class="form-group-custom">
+                        <label for="mobile">Phone Number *</label>
+                        <input type="tel" id="mobile" name="mobile" placeholder="+91 XXXXX XXXXX" required>
+                    </div>
 
+                    <div class="form-group-custom">
+                        <label for="position">Position Applied For</label>
+                        <select id="position" name="position">
+                            <option value="">Select a position</option>
+                            <option value="agronomist">Agronomist</option>
+                            <option value="sales">Sales Representative</option>
+                            <option value="consultant">Agricultural Consultant</option>
+                            <option value="technician">Field Technician</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
 
+                    <div class="form-group-custom">
+                        <label for="message">Why do you want to join PLT AG?</label>
+                        <textarea id="message" name="message"
+                            placeholder="Tell us about yourself and why you'd be a great fit..."></textarea>
+                    </div>
 
+                    <div class="form-group-custom">
+                        <label>Upload Your Resume/CV *</label>
+                        <div class="file-upload-custom">
+                            <label class="file-upload-label">
+                                <i class="bx bx-upload"></i>
+                                <div>Click to upload or drag and drop</div>
+                                <small style="color: #999;">PDF, DOC, DOCX (Max 5MB)</small>
+                                <input type="file" name="file" accept=".pdf,.doc,.docx" required>
+                            </label>
+                        </div>
+                    </div>
 
+                    <button type="submit" class="btn-submit-application">
+                        <i class="bx bx-send"></i>
+                        Submit Application
+                    </button>
+                </form>
+            </div>
 
+        </div>
+    </section>
+    <!-- End Enhanced Careers Page -->
 
-    </main><!-- End #main -->
-
-    <!-- ======= Cntact us form ======= -->
-    <!-- <div class="form-back">
-  <div class="form-main" >
-    <input type="checkbox" id="show">
-    <div class="form-container">
-      <label for="show" class="btn-get-started scrollto close-btn" >close</label>
-      <form id="submit-form" action="">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="name" placeholder="Your name..">
-        <label for="lname">Email</label>
-        <input type="text" id="lname" name="email" placeholder="Your last name..">
-        <label for="country">Country</label>
-        <select id="country" name="color">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="message" placeholder="Write something.." style="height:100px"></textarea>
-     
-          <input type="submit"  value="Submit">
-      </form>
-      <script>
-        $("#submit-form").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"https://script.google.com/macros/s/AKfycby1LPOGsKH1hIuZAWW8yeju9IptJXd6wsTMpdiMRVvjREcDqjdO6MkuRB_pRi_T3F_9ng/exec",
-                data:$("#submit-form").serialize(),
-                method:"post",
-                success:function (response){
-                    alert("Form submitted successfully")
-                    // window.location.reload()
-                    //window.location.href="https://google.com"
-                },
-                error:function (err){
-                    alert("Something Error")
-    
-                }
-            })
-        })
-      </script>
-    </div>
-  </div>
-</div> -->
-    <!-- ======= Cntact us form end ======= -->
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-
+    <!-- ======= Enhanced Footer ======= -->
+    <footer id="footer" class="footer-enhanced">
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>Plant labz tech</h3>
-                        VP MALL,<br />
-                        Ooty road, Manjeri-3, Kerala, 676123<br />
-                        Info@plantlabztech.com<br />
-                        Plant Labz Tech
-
-
-                        <div></div>
-                        <strong>Head Office:</strong> 0483-2948800<br>
-                        <strong>Customer care :</strong> +91 82818 27426<br>
-                        <!-- <strong>Product knowledge:</strong> +91 8590456841<br>  -->
-                        <!-- <strong>B2B Sales:</strong> +91 9747116691<br> -->
-                        <!-- +91 85904 67224<br /> -->
-                        <div></div>
-                        <!-- <strong>Phone:</strong> +91 000000000<br> -->
-                        <!-- <strong>Email:</strong> info.example@gmail.com<br> -->
+                    <div class="col-lg-4 col-md-6 footer-about" data-aos="fade-up" data-aos-delay="100">
+                        <div class="footer-logo">
+                            <img src="assets/img/pltaglog.png" alt="PLT AG Logo">
+                        </div>
+                        <p class="footer-description">
+                            PLT is an innovative initiative in agricultural commodity production that vows to sustain
+                            the ecosystem and empower farmers with cutting-edge solutions.
                         </p>
+                        <div class="footer-contact-info">
+                            <div class="contact-item">
+                                <i class="bx bx-location-plus"></i>
+                                <div>
+                                    <strong>Address:</strong>
+                                    <p>VP MALL, Ooty road<br>Manjeri-3, Kerala, 676123</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="bx bx-envelope"></i>
+                                <div>
+                                    <strong>Email:</strong>
+                                    <p><a href="mailto:Info@plantlabztech.com">Info@plantlabztech.com</a></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
+                    <div class="col-lg-2 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
+                        <h4>Quick Links</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Our Products</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="index.html#about">About Us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="index.html#services">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="Products.html">Products</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="consultancy.html">Consultancy</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="careers.html">Careers</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
+                    <div class="col-lg-3 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="300">
                         <h4>Our Services</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Integrated Fertilizer Nutrient
-                                    Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Integrated Pest Control Management </a>
+                            <li><i class="bx bx-chevron-right"></i> <a href="index.html#services">Integrated Fertilizer
+                                    Nutrient Management</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="index.html#services">Integrated Pest
+                                    Control Management</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="index.html#services">Integrated Disease
+                                    Control Management</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="index.html#services">Farm Development</a>
                             </li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Integrated Disease Control
-                                    Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Farm Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Higher sustainability</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">For the consumer</a></li>
-
+                            <li><i class="bx bx-chevron-right"></i> <a href="index.html#services">Soil Testing</a></li>
                         </ul>
                     </div>
 
-                    <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
-          <h4>Join Our Newsletter</h4>
-          <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-          <form action="" method="post">
-            <input type="email" name="email"><input type="submit" value="Subscribe">
-          </form>
-        </div> -->
+                    <div class="col-lg-3 col-md-6 footer-contact" data-aos="fade-up" data-aos-delay="400">
+                        <h4>Contact Us</h4>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="bx bx-phone-call"></i>
+                                <div>
+                                    <strong>Head Office:</strong>
+                                    <p><a href="tel:04832948800">0483-2948800</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="bx bx-support"></i>
+                                <div>
+                                    <strong>Customer Care:</strong>
+                                    <p><a href="tel:918281827426">+91 82818 27426</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="bx bx-briefcase"></i>
+                                <div>
+                                    <strong>B2B Sales:</strong>
+                                    <p><a href="tel:919747116691">+91 9747116691</a></p>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="footer-social-links">
+                            <a href="https://www.facebook.com/plantlabztech.ag/" target="_blank" aria-label="Facebook"
+                                class="facebook">
+                                <i class="bx bxl-facebook"></i>
+                            </a>
+                            <a href="https://instagram.com/plt.ag?utm_medium=copy_link" target="_blank"
+                                aria-label="Instagram" class="instagram">
+                                <i class="bx bxl-instagram"></i>
+                            </a>
+                            <a href="https://youtube.com/channel/UCoZmzerLLc5-c6vqY5pJJ9w" target="_blank"
+                                aria-label="YouTube" class="youtube">
+                                <i class="bx bxl-youtube"></i>
+                            </a>
+                            <a href="https://wa.me/918281827426" target="_blank" aria-label="WhatsApp" class="whatsapp">
+                                <i class="bx bxl-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="container">
-
-            <div class="copyright-wrap d-md-flex py-4">
-                <div class="mr-md-auto text-center text-md-left">
-                    <div class="copyright">
-                        &copy; Copyright <strong><span>Plant labz tech</span></strong>. All Rights Reserved
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="copyright">
+                            &copy; <span id="currentYear"></span> <strong><span>Plant Labz Tech</span></strong>. All
+                            Rights Reserved
+                        </div>
                     </div>
-                    <div class="credits">
-                        <!-- All the links in the footer should remain intact. -->
-                        <!-- You can delete the links only if you purchased the pro version. -->
-                        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/techie-free-skin-bootstrap-3/ -->
-                        Designed by <a href="https://www.linkedin.com/in/fuad-aslam-56915a129/">Fuad Aslam</a>
+                    <div class="col-md-6">
+                        <div class="credits">
+                            Designed & Developed by <a href="https://www.linkedin.com/in/fuad-aslam-56915a129/"
+                                target="_blank">Fuad Aslam</a>
+                        </div>
                     </div>
-                </div>
-                <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                    <a href="https://www.facebook.com/plantlabztech.ag/" target="_blank" class="facebook"><i
-                            class="bx bxl-facebook"></i></a>
-                    <a href="https://instagram.com/plt.ag?utm_medium=copy_link" target="_blank" class="instagram"><i
-                            class="bx bxl-instagram"></i></a>
-                    <a href="https://youtube.com/channel/UCoZmzerLLc5-c6vqY5pJJ9w" target="_blank" class="youtube"><i
-                            class="bx bxl-youtube"></i></a>
                 </div>
             </div>
-
         </div>
-    </footer><!-- End Footer -->
 
-
-    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-    <!-- <div id="preloader"></div> -->
-    <!-- <div class="loader">Loading...</div> -->
-
+        <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+            <i class="bx bx-up-arrow-alt"></i>
+        </a>
+    </footer>
+    <!-- End Enhanced Footer -->
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-    <script src="assets/vendor/counterup/counterup.min.js"></script>
-    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/venobox/venobox.min.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
-
-    <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-
-
-    <div id="floating-menu">
-        <div id="floating-icon" style="padding: 5px;">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div id="floating-ligar" style="display: block;">
-            <a href="tel: 918281827426">
-                <svg class="svg-inline--fa fa-phone fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="phone"
-                    role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-                    <path fill="currentColor"
-                        d="M493.397 24.615l-104-23.997c-11.314-2.611-22.879 3.252-27.456 13.931l-48 111.997a24 24 0 0 0 6.862 28.029l60.617 49.596c-35.973 76.675-98.938 140.508-177.249 177.248l-49.596-60.616a24 24 0 0 0-28.029-6.862l-111.997 48C3.873 366.516-1.994 378.08.618 389.397l23.997 104C27.109 504.204 36.748 512 48 512c256.087 0 464-207.532 464-464 0-11.176-7.714-20.873-18.603-23.385z">
-                    </path>
-                </svg><!-- <i class="fas fa-phone"></i> -->
-            </a>
-        </div>
-        <div id="floating-whatsapp" style="display: block;">
-            <a href="https://api.whatsapp.com/send?phone=918281827426">
-                <svg class="svg-inline--fa fa-whatsapp fa-w-14" aria-hidden="true" data-prefix="fab"
-                    data-icon="whatsapp" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
-                    data-fa-i2svg="">
-                    <path fill="currentColor"
-                        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
-                    </path>
-                </svg><!-- <i class="fab fa-whatsapp"></i> -->
-            </a>
-        </div>
-
-    </div>
-
-    <div id="floating-ligar" style="display: none;">
-        <a href="tel: 011">
-            <svg class="svg-inline--fa fa-phone fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="phone"
-                role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-                <path fill="currentColor"
-                    d="M493.397 24.615l-104-23.997c-11.314-2.611-22.879 3.252-27.456 13.931l-48 111.997a24 24 0 0 0 6.862 28.029l60.617 49.596c-35.973 76.675-98.938 140.508-177.249 177.248l-49.596-60.616a24 24 0 0 0-28.029-6.862l-111.997 48C3.873 366.516-1.994 378.08.618 389.397l23.997 104C27.109 504.204 36.748 512 48 512c256.087 0 464-207.532 464-464 0-11.176-7.714-20.873-18.603-23.385z">
-                </path>
-            </svg><!-- <i class="fas fa-phone"></i> -->
-        </a>
-    </div>
-
-    <div id="floating-whatsapp" style="display: none;">
-        <a href="https://api.whatsapp.com/send?phone=918281827426g">
-            <svg class="svg-inline--fa fa-whatsapp fa-w-14" aria-hidden="true" data-prefix="fab" data-icon="whatsapp"
-                role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
-                <path fill="currentColor"
-                    d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
-                </path>
-            </svg><!-- <i class="fab fa-whatsapp"></i> -->
-        </a>
-    </div>
-    <div id="floating-emergencia" data-toggle="modal" data-target="#modalUrgencia" style="display: none;">
-        <svg class="svg-inline--fa fa-plus fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="plus" role="img"
-            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
-            <path fill="currentColor"
-                d="M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z">
-            </path>
-        </svg><!-- <i class="fas fa-plus"></i> -->
-    </div>
-
-    <div class="modal fade col-lg-12" id="modalUrgencia" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <button type="button" class="fechaModal" data-dismiss="modal">×</button>
-                <div class="modal-body">
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    <script src="assets/js/header-footer.js"></script>
     <script src="assets/js/whatsapp.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 100
+        });
+
+        // Form submission
+        $("#submit-form").submit((e) => {
+            e.preventDefault()
+            $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbwiYjIUpPfEL1UChOXeq19BwW9y_0Wfwi0HBCHm6fwmKNak99kKm59CBWuLPwf-DUmx/exec",
+                data: $("#submit-form").serialize(),
+                method: "post",
+                success: function (response) {
+                    $("#successMessage").addClass('show');
+                    $("#submit-form")[0].reset();
+                    setTimeout(function () {
+                        $("#successMessage").removeClass('show');
+                    }, 5000);
+                },
+                error: function (err) {
+                    alert("Something went wrong. Please try again or contact us directly.");
+                }
+            })
+        });
+
+        // File upload label update
+        $('input[type="file"]').on('change', function () {
+            var fileName = $(this).val().split('\\').pop();
+            if (fileName) {
+                $(this).siblings('.file-upload-label').find('div').first().text(fileName);
+            }
+        });
+    </script>
 </body>
 
 </html>

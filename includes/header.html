@@ -1,0 +1,571 @@
+<!-- ======= Enhanced Header ======= -->
+<header id="header" class="fixed-top">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-11 d-flex align-items-center justify-content-between">
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <img src="assets/img/pltaglog.png" alt="PLT AG Logo" class="img-fluid">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-menu d-none d-lg-block">
+                    <ul>
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">
+                                <i class="bx bx-home-alt"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#about" class="nav-link">
+                                <i class="bx bx-info-circle"></i>
+                                <span>About</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#services" class="nav-link">
+                                <i class="bx bx-cog"></i>
+                                <span>Services</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="Products.html" class="nav-link">
+                                <i class="bx bx-package"></i>
+                                <span>Products</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="consultancy.html" class="nav-link">
+                                <i class="bx bx-user-voice"></i>
+                                <span>Consultancy</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="careers.html" class="nav-link">
+                                <i class="bx bx-briefcase"></i>
+                                <span>Careers</span>
+                            </a>
+                        </li>
+                        <li class="nav-item-cta">
+                            <a href="contactUs.html" class="btn-contact">
+                                <i class="bx bx-phone-call"></i>
+                                <span>Contact Us</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Mobile Menu Toggle -->
+                <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Toggle navigation">
+                    <i class="bx bx-menu"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="mobile-logo">
+                <img src="assets/img/pltaglog.png" alt="PLT AG Logo">
+            </a>
+            <button type="button" class="mobile-nav-close" aria-label="Close navigation">
+                <i class="bx bx-x"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="bx bx-home-alt"></i> Home</a></li>
+            <li><a href="index.html#about"><i class="bx bx-info-circle"></i> About</a></li>
+            <li><a href="index.html#services"><i class="bx bx-cog"></i> Services</a></li>
+            <li><a href="Products.html"><i class="bx bx-package"></i> Products</a></li>
+            <li><a href="consultancy.html"><i class="bx bx-user-voice"></i> Consultancy</a></li>
+            <li><a href="careers.html"><i class="bx bx-briefcase"></i> Careers</a></li>
+            <li><a href="contactUs.html" class="mobile-cta"><i class="bx bx-phone-call"></i> Contact Us</a></li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <div class="mobile-contact-info">
+                <p><i class="bx bx-phone"></i> +91 82818 27426</p>
+                <p><i class="bx bx-envelope"></i> Info@plantlabztech.com</p>
+            </div>
+            <div class="mobile-social-links">
+                <a href="https://www.facebook.com/plantlabztech.ag/" target="_blank" aria-label="Facebook">
+                    <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="https://instagram.com/plt.ag?utm_medium=copy_link" target="_blank" aria-label="Instagram">
+                    <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="https://youtube.com/channel/UCoZmzerLLc5-c6vqY5pJJ9w" target="_blank" aria-label="YouTube">
+                    <i class="bx bxl-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-nav-overlay"></div>
+</header>
+<!-- End Enhanced Header -->
+
+<style>
+    /* ======================================
+     Enhanced Header Styles
+     ====================================== */
+
+    #header {
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 15px 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    #header.header-scrolled {
+        background: rgba(0, 0, 0, 0.98);
+        padding: 10px 0;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Logo Styles */
+    #header .logo {
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+
+    #header .logo img {
+        max-height: 60px;
+        transition: all 0.3s ease;
+    }
+
+    #header.header-scrolled .logo img {
+        max-height: 50px;
+    }
+
+    #header .logo:hover {
+        transform: scale(1.05);
+    }
+
+    /* Desktop Navigation */
+    .nav-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .nav-menu .nav-item {
+        position: relative;
+    }
+
+    .nav-menu .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 20px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #ffffff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav-menu .nav-link i {
+        font-size: 18px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu .nav-link::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #4CAF50, #81C784);
+        transform: translateX(-50%);
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu .nav-link:hover {
+        color: #4CAF50;
+        transform: translateY(-2px);
+    }
+
+    .nav-menu .nav-link:hover::before {
+        width: 80%;
+    }
+
+    .nav-menu .nav-link:hover i {
+        transform: scale(1.1);
+    }
+
+    .nav-menu .nav-link.active {
+        color: #4CAF50;
+        background: rgba(76, 175, 80, 0.1);
+    }
+
+    .nav-menu .nav-link.active::before {
+        width: 80%;
+    }
+
+    /* Contact Button */
+    .nav-item-cta {
+        margin-left: 10px;
+    }
+
+    .btn-contact {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+    }
+
+    .btn-contact:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 25px rgba(76, 175, 80, 0.6);
+        color: white;
+        text-decoration: none;
+    }
+
+    .btn-contact i {
+        font-size: 18px;
+        animation: ring 2s infinite;
+    }
+
+    @keyframes ring {
+
+        0%,
+        100% {
+            transform: rotate(0deg);
+        }
+
+        10%,
+        30% {
+            transform: rotate(-10deg);
+        }
+
+        20%,
+        40% {
+            transform: rotate(10deg);
+        }
+    }
+
+    /* Mobile Navigation Toggle */
+    .mobile-nav-toggle {
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 32px;
+        cursor: pointer;
+        padding: 5px;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-nav-toggle:hover {
+        color: #4CAF50;
+        transform: scale(1.1);
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+        z-index: 9999;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .mobile-nav.active {
+        right: 0;
+    }
+
+    .mobile-nav-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-logo img {
+        max-height: 50px;
+    }
+
+    .mobile-nav-close {
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 32px;
+        cursor: pointer;
+        padding: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-nav-close:hover {
+        color: #4CAF50;
+        transform: rotate(90deg);
+    }
+
+    .mobile-nav-list {
+        list-style: none;
+        padding: 20px 0;
+        margin: 0;
+    }
+
+    .mobile-nav-list li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .mobile-nav-list a {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 18px 25px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .mobile-nav-list a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background: linear-gradient(180deg, #4CAF50, #81C784);
+        transform: scaleY(0);
+        transition: all 0.3s ease;
+    }
+
+    .mobile-nav-list a:hover::before,
+    .mobile-nav-list a.active::before {
+        transform: scaleY(1);
+    }
+
+    .mobile-nav-list a:hover,
+    .mobile-nav-list a.active {
+        color: #4CAF50;
+        background: rgba(76, 175, 80, 0.1);
+        padding-left: 35px;
+    }
+
+    .mobile-nav-list a i {
+        font-size: 22px;
+    }
+
+    .mobile-nav-list .mobile-cta {
+        background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        color: white;
+        margin: 15px 20px;
+        border-radius: 50px;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+    }
+
+    .mobile-nav-list .mobile-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 25px rgba(76, 175, 80, 0.6);
+    }
+
+    .mobile-nav-footer {
+        padding: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-contact-info {
+        margin-bottom: 20px;
+    }
+
+    .mobile-contact-info p {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .mobile-contact-info i {
+        color: #4CAF50;
+        font-size: 18px;
+    }
+
+    .mobile-social-links {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .mobile-social-links a {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(76, 175, 80, 0.1);
+        border-radius: 50%;
+        color: #4CAF50;
+        font-size: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-social-links a:hover {
+        background: #4CAF50;
+        color: white;
+        transform: translateY(-5px);
+    }
+
+    /* Mobile Navigation Overlay */
+    .mobile-nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+        z-index: 9998;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+    }
+
+    .mobile-nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 991px) {
+        #header .logo img {
+            max-height: 50px;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .mobile-nav {
+            width: 100%;
+        }
+
+        #header .logo img {
+            max-height: 45px;
+        }
+    }
+
+    /* Active Page Highlighting */
+    body[data-page="home"] .nav-link[href*="index.html"],
+    body[data-page="products"] .nav-link[href*="Products.html"],
+    body[data-page="consultancy"] .nav-link[href*="consultancy.html"],
+    body[data-page="careers"] .nav-link[href*="careers.html"],
+    body[data-page="contact"] .nav-link[href*="contactUs.html"] {
+        color: #4CAF50;
+        background: rgba(76, 175, 80, 0.1);
+    }
+</style>
+
+<script>
+    // Enhanced Header JavaScript
+    (function () {
+        'use strict';
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        const headerScrolled = () => {
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        };
+        window.addEventListener('scroll', headerScrolled);
+        headerScrolled();
+
+        // Mobile navigation toggle
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+        const mobileNavClose = document.querySelector('.mobile-nav-close');
+
+        const toggleMobileNav = () => {
+            mobileNav.classList.toggle('active');
+            mobileNavOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        };
+
+        if (mobileNavToggle) {
+            mobileNavToggle.addEventListener('click', toggleMobileNav);
+        }
+
+        if (mobileNavClose) {
+            mobileNavClose.addEventListener('click', toggleMobileNav);
+        }
+
+        if (mobileNavOverlay) {
+            mobileNavOverlay.addEventListener('click', toggleMobileNav);
+        }
+
+        // Close mobile nav on link click
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-list a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileNav.classList.contains('active')) {
+                    toggleMobileNav();
+                }
+            });
+        });
+
+        // Active page highlighting
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-list a');
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && (href.includes(currentPage) || (currentPage === '' && href.includes('index.html')))) {
+                link.classList.add('active');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = target.offsetTop - headerHeight - 20;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    })();
+</script>
