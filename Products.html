@@ -1,41 +1,35 @@
-<head>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9LE1YG72L4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-0MCFHDPZWJ');
   </script>
 
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>PLT</title>
+  <title>PLT - Products</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
-  <!-- Favicons -->
   <link rel="icon" href="assets/img/favicon.png">
+
   <!-- Google Fonts -->
   <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/css/whatsapp.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <!-- <link href="assets/css/Site.css" rel="stylesheet"> -->
-
 
   <!-- Meta Pixel Code -->
   <script>
@@ -55,895 +49,797 @@
   </script>
   <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1454682605442472&ev=PageView&noscript=1" /></noscript>
-  <!-- End Meta Pixel Code -->
-</head>
 
-
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    background-color: #bbf8bdd1;
-    font-family: Arial;
-  }
-
-  /* Center website */
-  .main {
-    max-width: 1000px;
-    margin: auto;
-  }
-
-  h1 {
-    font-size: 50px;
-    word-break: break-all;
-    font-family: "Times New Roman;"
-  }
-
-  /* .row {
-    margin: 10px -16px;
-  } */
-
-  /* Add padding BETWEEN each column */
-  .row,
-  .row>.column {
-    padding: 8px;
-  }
-
-  /* Create three equal columns that floats next to each other */
-  .column {
-    float: left;
-    display: none;
-    /* Hide all elements by default */
-  }
-
-  /* Clear floats after rows */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  /* Content */
-  .content {
-    background-color: white;
-    padding: 10px;
-  }
-
-  /* The "show" class is added to the filtered elements */
-  .showfilter {
-    display: block;
-  }
-
-  /* Style the buttons */
-  .btnfilter {
-    border: none;
-    outline: none;
-    padding: 12px 16px;
-    background-color: white;
-    cursor: pointer;
-    border: 1px solid #eee;
-  }
-
-  .btnfilter:hover {
-    background-color: #ddd;
-  }
-
-  .btnfilter.activebtn {
-    background-color: #666;
-    color: white;
-  }
-
-  .head,
-  .text {
-    color: black;
-    font-family: "Times New Roman;"
-  }
-
-  .image {
-    height: 300px;
-    justify-content: center;
-    width: 100%;
-    transition: transform .9s;
-
-  }
-
-  #myBtnContainerfilter {
-    margin-left: 25px;
-  }
-
-  .transferButton {
-    border: none;
-    background-color: white;
-    text-align: left;
-    padding: 10px;
-    /* height: 700px; */
-    overflow: hidden;
-  }
-
-  .transferButton:hover {
-    background-color: gray;
-  }
-
-  .image:hover {
-    transform: scale(0.8);
-  }
-
-  .productImageContainer {
-    height: 300px;
-    /* width: 300px; */
-    margin-bottom: 15px;
-    overflow: hidden;
-
-  }
-
-  @media only screen and (max-width: 800px) {
-
-    .image {
-      height: 200px;
-      width: 100%;
+  <style>
+    /* Enhanced Products Page Styles */
+    :root {
+      --primary-color: #4CAF50;
+      --primary-dark: #388E3C;
+      --primary-light: #81C784;
+      --accent-color: #FF9800;
+      --text-dark: #2c4964;
+      --text-light: #666666;
+      --bg-gradient-start: #f0f8f0;
+      --bg-gradient-end: #e8f5e9;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+      --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.15);
+      --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .productImageContainer {
-      height: 280px;
-
-    }
-  }
-
-  @media only screen and (max-width: 400px) {
-
-    .image {
-      height: 280px;
-      width: 100%;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .productImageContainer {
-      height: 200px;
-      /* width: 200px; */
-
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
     }
 
-
-
-
-  }
-</style>
-
-
-<!-- ======= Header ======= -->
-<header id="header" style="background: rgba(0, 0, 0, 0.8); " class="fixed-top ">
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-xl-9 d-flex align-items-center">
-        <a href="/" class="logo mr-auto"><img src="assets/img/pltaglog.png" alt="" class="img-fluid"></a>
-        <h1 class="logo mr-auto"></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <nav class="nav-menu d-none d-lg-block">
-          <ul>
-            <!-- <li><a href="Products.html">Products</a></li> -->
-            <li class="/#home"><a href="/">Home</a></li>
-            <li><a href="/#about">About</a></li>
-            <li><a href="/#services">Services</a></li>
-            <!-- <li><a href="#features">Features</a></li> -->
-            <!-- <li><a href="consultancy.html">Consultancy</a></li>
-            <li><a href="education.html">Education</a></li> -->
-            <li><a class="active" href="Products.html">Products</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><button class="get-started-button scrollto show-btn"
-                style=" border-radius: 10px; background-color: inherit;">
-                <a href="contactUs.html" style="color: white;">Contact us</a>
-              </button></li>
-          </ul>
-        </nav><!-- .nav-menu -->
-
-        <!-- <a href="contactUs.html" class="get-started-btn scrollto">Contact Us</a> -->
-        <!-- <label for="show" class="get-started-btn get-started-btn-nav scrollto show-btn"
-          style=" border-radius: 10px;">Connect Us</label> -->
-        <!-- <a href="#about"><label for="show" class="get-started-btn scrollto show-btn" ></label>Connect Us</label></a> -->
-
-      </div>
-    </div>
-  </div>
-</header><!-- End Header -->
-
-
-<!-- MAIN (Center website) -->
-<section style="padding-top:140px; background-repeat: no-repeat;
-/* background-image: url('assets/img/leaf.jpg'); */
-background-color: #cddfe9ba;
-background-attachment: fixed;  min-height: 100vh; 
-background-size: auto;" class="services section-bg">
-
-
-  <div class="main">
-
-
-    <div class="section-title">
-      <h2>PRODUCTS</h2>
-
-    </div>
-
-    <div id="myBtnContainerfilter">
-
-      <button class="button-33" role="button" onclick="filterSelection('fertilizer')"> Fertilizer </button>
-      <button class="button-33" role="button" onclick="filterSelection('water-soluble')">water soluble</button>
-      <button class="button-33" role="button" onclick="filterSelection('Bio-Stimulants')"> Bio-Stimulants</button>
-      <!-- <button class="btnfilter" onclick="filterSelection('pestanddisease')"> Pest and Disease </button> -->
-      <button class="button-33" role="button" onclick="filterSelection('pesticides')"> Pesticides </button>
-      <button class="button-33" role="button" onclick="filterSelection('fungicides')"> Fungicides </button>
-      <button class="button-33" role="button" onclick="filterSelection('weedicides')">Weedicides </button>
-      <button class="button-33" role="button" onclick="filterSelection('Adjuvants')"> Adjuvants </button>
-      <button class="button-33" role="button" onclick="filterSelection('other')"> Other </button>
-      <!-- <button class="btnfilter" onclick="filterSelection('all')"> Show all</button> -->
-    </div>
-
-    <!-- <button class="button-33" role="button">Button 33</button> -->
-
-
-    <div id="productsByJs" class="row">
-
-    </div>
-
-  </div>
-</section>
-
-<script>
-
-  filterSelection("fertilizer")
-
-
-
-  function filterSelection(c) {
-    var btnContainer = document.getElementById("myBtnContainerfilter");
-    var btns = btnContainer.getElementsByClassName("btnfilter");
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].addEventListener("click", function () {
-        var current = document.getElementsByClassName("activebtn");
-        current[0].className = current[0].className.replace(" activebtn", "");
-        this.className += " activebtn";
-      });
+    .products-page-enhanced {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+      padding: 140px 0 100px;
+      position: relative;
     }
-    document.getElementById('productsByJs').innerHTML = ""
-    const prodArray = [
 
-      {
-        type: "fertilizer",
-        imageToPass: "assets/img/agri dolomite.png",
-        head: "<h5>Dolomite provides valuable nutrients to plants and alters soil PH to match plant needs and is sometimes called dolomitic lime. due to the presence of magnesium, the photosynthesis of plants takes place and the plants become extremely green.</h5>",
-        points: "<ui><li>Maintains soil pH suitable for crops. </li><li> Contains magnesium to keep plants green. </li><li> Helps Plants achieve good growth and resistance to diseases. </li></ui>",
-        head2: "PLT AGRI DOLOMITE",
-        text: "Dolomite provides valuable nutrients to plants and alters soil PH to match plant needs and is sometimes called dolomitic lime. due to the presence of magnesium, the photosynthesis of plants takes place and the plants become extremely green.",
-      },
+    /* Decorative background elements */
+    .products-page-enhanced::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(76, 175, 80, 0.05) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
 
+    .products-page-enhanced::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(76, 175, 80, 0.05) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
 
-      {
-        type: "fertilizer",
-        imageToPass: "assets/img/ph tuner new blue.png",
-        head: "<h5>PLT PH TUNER is a long-lasting soil-absorbing product that maintains the PH of slightly crumbly soil in acidic soils to help crops adsorb fertilizer without attacking the micro-organisms that can be described as the soul of the soil.</h5>",
-        points: "<ul><li>Maintains soil pH suitable for crops for a longer period than limestone.</li> <li> Prepare the soil so that plant roots can absorb fertilizers. </li> <li> Contains magnesium to keep plants green.</li><li> It prevents diseases like root rot in plants to some extent and strengthens root growth.</li> </ul>",
-        head2: "PLT PH TUNER",
-        text: '<p class="text">PLT PH TUNER is a long-lasting soil-absorbing product that maintains the PH of slightly crumbly soil in acidic soils to help crops adsorb fertilizer without attacking the micro-organisms that can be described as the soul of the soil.</p>',
-      },
-      {
-        type: "fertilizer",
-        imageToPass: "assets/img/MOCKUPnutrimixblue.png",
-        head: "<h5>Organic Fertilizer provides bio enriched organic manure with nitrogen, phosphorus,potash, organic carbon which contains hormones that prevent diseases and promote growth. ‘PLT Nutrimix’ enriched with NPK solubilizing bacteria; it provides plants 6 to 16 kg of nitrogen from the atmosphere. Easily gives Phosphorus and potash from soil and fertilizer. Bio enriched organic manure including, Neem cake,Protein, Fat, Bio-phosphorous, Bio-Potash, Fulvic Acid, Humic, Seaweed,Amino Acid etc. It increases the health and immunity of both plants and soil. Yieldincreases by 30% to 35% with the use of PLT Nutrimix.</h5>",
-        points: "<ul><li>Increases the overall growth of the plant enhances the growth of baneficial soil microflora.</li><li>20% decrease in the use of chemical fertilizer</li><li>Plt nutri mix provide balanced  NPK into the soil</li><li>npk solubilising bacterias help to undertake more npk from soil</li><li>increases crop production upto 35 % </li><li> increases cell multiplication and flowering</li></ul>",
-        head2: "PLT NUTRIMIX",
-        text: "Organic Fertilizer provides bio enriched  organic manure with nitrogen, phosphorus, potash, organic carbon ,npk solubulising bacteria and contain hormones that prevent diseases and promote growth."
+    .products-page-enhanced .container {
+      position: relative;
+      z-index: 1;
+    }
 
-      },
+    /* Header Section */
+    .products-header {
+      text-align: center;
+      margin-bottom: 60px;
+      animation: fadeInUp 0.8s ease-out;
+    }
 
-      {
-        type: "fertilizer",
-        imageToPass: "assets/img/bio mix.png",
-        head: "<h5>Bio mix, which contains ingredients such as cake mix, bio potash, bio phosphorus, is a moderate cost and good quality fertilizer that can be used as a base fertilizer for many crops like banana, rubber, paddy, kappa, ginger, turmeric, pineapple and vegetables.  </h5>",
-        points: "<ul><li>Excellent compost fertilizer for any crops.</li><li> Rich in different types of nutrients.</li><li>It gives good growth and high productivity of crops. </li> </ul>",
-        head2: "PLT BIO MIX",
-        text: '<p class="text">Bio mix, which contains ingredients such as cake mix, bio potash, bio phosphorus, is a moderate cost and good quality fertilizer that can be used as a base fertilizer for many crops like banana, rubber, paddy, kappa, ginger, turmeric, pineapple and vegetables.  </p>',
-      },
-
-      {
-        type: 'fertilizer',
-        imageToPass: 'assets/img/MAULTI-MEAL.png',
-        head: '<h5> It is a mixture of different organic fertilizers. An all in one solution that provides everything agricultural crops need to grow strong and healthy. A multi- nutrient supplement with various benefits like neem cake, castor cake, bone power, organic potash, organic carbon.</h5>',
-        points: '<ul><li></li></ul>',
-        head2: 'MULTI MEAL',
-        text: "It is a mixture of different organic fertilizers. An all in one solution that provides everything agricultural crops need to grow strong and healthy. A multi- nutrient supplement with various benefits like neem cake, castor cake, bone power, organic potash, organic carbon."
-      },
-
-      {
-        type: 'fertilizer',
-        imageToPass: 'assets/img/BoneMeal.jpeg',
-        head: '<h5>Bone MEAL t is an excellent organic fertilizer. Phosphorus is essential for good root development and flowering. Bone meal contains 24% calcium, 20% phosphorus, 3% nitrogen and trace elements such as iron, zinc, magnesium and trace elements Bone meal is an excellent organic fertilizer traditionally used by farmers for rooting, flowering, fruiting etc. of agricultural crops.</h5>',
-        points: "<ul><li>   Adds strength and volume to plant roots.</li> <li>It increases growth and gives more activity and vitality to plants.</li> <li>It helps produce more flowers and fruits in crops.</li> <li>It provides phosphorus, calcium, protein, nitrogen etc. that agricultural crops need.</li></ul>",
-        head2: 'PLT BONE MEAL',
-        text: "Bone MEAL t is an excellent organic fertilizer. Phosphorus is essential for good root development and flowering. Bone meal contains 24% calcium, 20% phosphorus, 3% nitrogen and trace elements such as iron, zinc, magnesium and trace elements Bone meal is an excellent organic fertilizer traditionally used by farmers for rooting, flowering, fruiting etc. of agricultural crops."
-      },
-
-
-      {
-        type: "fertilizer",
-        imageToPass: "assets/img/plt neem cake.jpeg",
-        head: "<h5>Neem cake is very useful for healthy growth and vigor of plants. This fertilizer protects the plants from pest attacks to some extent. </h5>",
-        points: "<ul><li> Neem cake is a fertilizer that is easily absorbed by plants.</li> <li> It works as a food fertilizer and as a medicine to control plant pests at the same time. </li><li> Helps control soil pests such as earthworms. </li><li> Fertilizer that can be applied to any crop and at any age. </li>",
-        head2: "PLT NEEM CAKE",
-        text: "Neem cake is very useful for healthy growth and vigor of plants. This fertilizer protects the plants from pest attacks to some extent. ",
-      },
-
-      {
-        type: "fertilizer",
-        imageToPass: "assets/img/PLT MICRO MIX.png",
-        head: "<h5>A mixture of secondary and micronutrients elements required for all agricultural crops. It helps to increase plant growth, flowering and fruit set. Elements like zine, boron and copper are essential for the smooth growth and production of agricultural crops. </h5>",
-        points: "<ul><li></li> </ul>",
-        head2: "PLT MICRO MIX",
-        text: '<p class="text">A mixture of secondary and micronutrients elements required for all agricultural crops. It helps to increase plant growth, flowering and fruit set. Elements like zine, boron and copper are essential for the smooth growth and production of agricultural crops. </p>',
-      },
-
-      {
-        type: "fertilizer",
-        imageToPass: "assets/img/plantpotash.png",
-        head: "<h5>Plant potash is a plant derived natural source extracted from spent wash fly ash.it containts high carbon bonded rich potash and micro nutrients making it more beneficial compared to chemical potash.</h5>",
-        points: "<ul><li></li> </ul>",
-        head2: "PLANT POTASH",
-        text: '<p class="text">Plant potash is a plant derived natural source extracted from spent wash fly ash.it containts high carbon bonded rich potash and micro nutrients making it more beneficial compared to chemical potash.</p>',
-      },
-
-      {
-        type: "fertilizer",
-        imageToPass: "assets/img/MICRO GREEN copy.PNG",
-        head: "<h5>MICRO GREEN (Magnesium sulphate) is a secondary nutrient and is used to correct magnesium deficiency in soil. MICRO GREEN improves nitrogen and phosphorus uptake by crops. It best for crop growth. </h5>",
-        points: "<ul><li></li> </ul>",
-        head2: "PLT MICRO GREEN",
-        text: '<p class="text">MICRO GREEN (Magnesium sulphate) is a secondary nutrient and is used to correct magnesium deficiency in soil. MICRO GREEN improves nitrogen and phosphorus uptake by crops. It best for crop growth. </p>',
-      },
-
-      {
-        type: "water-soluble",
-        imageToPass: "assets/img/trineblent.50.jpeg",
-        head: "<h5>NPK (19-19-19) is a balanced fertilizer containing equal amounts of nitrogen, phosphorus and potassium  .therefore it is a mixed fertilizer and its balanced composition distinguishes from other single nutrient straight fertilizers .</h5>",
-        points: "<ul><li></li> </ul>",
-        head2: "TRINE BLEND 19:19:19",
-        text: '<p class="text">NPK (19-19-19) is a balanced fertilizer containing equal amounts of nitrogen, phosphorus and potassium  .therefore it is a mixed fertilizer and its balanced composition distinguishes from other single nutrient straight fertilizers .</p>',
-      },
-
-      {
-        type: "water-soluble",
-        imageToPass: "assets/img/trineblend.jpeg",
-        head: "<h5>(0:0:50) Water soluble fertilizer with optimum sodium content along with high potassium and sulphate Sulphur. It is easily soluble in water making it ideal for drip irrigation and foliar application. This combination ensures vigorous flower and fruit growth.</h5>",
-        points: "<ul><li></li> </ul>",
-        head2: "TRINE BLEND 00:00:50",
-        text: '<p class="text">(0:0:50) Water soluble fertilizer with optimum sodium content along with high potassium and sulphate Sulphur. It is easily soluble in water making it ideal for drip irrigation and foliar application. This combination ensures vigorous flower and fruit growth.</p>',
-      },
-
-      {
-        type: "water-soluble",
-        imageToPass: "assets/img/trineblend45.jpeg",
-        head: "<h5>13:00:45 - Water soluble fertilizer with high potassium and nitrogen, optimum level of sodium.It is perfect mix for fruit development stages of plants .it increases fruit development ,reduces fruit drop,and improves fruit shelf life.It is easily soluble in water making it ideal for drip irrigation and foliar application</h5>",
-        points: "<ul><li></li> </ul>",
-        head2: "TRINE BLEND 13:00:45",
-        text: '<p class="text">13:00:45 - Water soluble fertilizer with high potassium and nitrogen, optimum level of sodium.It is perfect mix for fruit development stages of plants .it increases fruit development ,reduces fruit drop,and improves fruit shelf life.It is easily soluble in water making it ideal for drip irrigation and foliar application</p>',
-      },
-
-      {
-        type: "Bio-Stimulants",
-        imageToPass: "assets/img/maxxtone gel .png",
-        head: "<h5>An organic nutrient that acts as a phytonutrient and overall health booster.</h5>",
-        points:
-          "<ul><li> It increases overall plant health</li><li>It helps plants develop more leaves and strong branches during growth stages, promoting healthy development.</li>It enables crops to flower and bear fruit without stunting.<li>It strengthens plants' immunity against diseases.</li>It enhances the size, color, and appearance of fruits.<li>It increases yield and quality.</li></ul>",
-        head2: "PLT MAXTONE GEL",
-        text: "An organic nutrient that acts as a phytonutrient and overall health booster.",
-      },
-      {
-        type: "Bio-Stimulants",
-        imageToPass: "assets/img/Paint Bucket Mockup 2.png",
-        head: "<h5>Organic medicine that acts as a plant growth stimulant and health enhancer.</h5>",
-        points:
-          "<ul><li>Increases the plant growth rate. </li><li> Enhances productivity. </li><li>  Provides micronutrients and macronutrients that plants need. </li><li>  Increases fruits. </li></ul>",
-        head2: "PLT SEATONE GEL",
-        text: "Organic medicine that acts as a plant growth stimulant and health enhancer.",
-      },
-
-      {
-        type: "Bio-Stimulants",
-        imageToPass: "assets/img/starshine21kg.png",
-        head: "<h5>PLT Star Shine’ is a soil conditioner with seaweed extract and Humic being the main active ingredient. Especially designed for seasonal / cash crops. It Supplies well balanced crop nutrients. Helps plant to endure environmental stress.This formulation has been made by more than 22 components; it’s a complete package of nutrients, enzymes, auxins, and proteins.</h5>",
-        points:
-          "<ul><li>It strengthens and stimulates the overall growth of crops. </li><li> Increases the plant’s immune strength against diseases. </li><li> Corrects deficiencies in various nutrients required for crops. </li><li> Increases fruits. </li><li> It can be applied to any crops, especially crops such as rice. </li><li> It can be used in combination with chemical fertilizers as well. </li></ul>",
-        head2: "PLT STAR SHINE",
-        text: "PLT STAR  SHINE is a soil conditioner with seaweed extract and humic being the main active ingredient. Especially designed for seasonal/cash crops. supply well balanced crop nutrients, it’s a complete package of nutrients ,enzymes, auxins & proteins.",
-      },
-
-
-      {
-        type: "Bio-Stimulants",
-        imageToPass: "assets/img/black panther.png",
-        head: "<h5>It is a mixture of many bio-stimulants and nutrients that plants need. BLACK PANTHER promotes the activation of vegetative development, improves the size and colour of fruits mainly promotes vegetative growth in all types of crops. BLACK PANTHER  is a Nanotechnology product especially for the growth of new shoots and leaves.</h5>",
-        points:
-          "<ul><li>Crops get a lot of protein.</li><li> Prevents pest attacks and reduces disease incidence. </li><li> It helps to produce new shoots and increases the branches. </li><li> Promotes uniform growth in all parts of the plant. </li><li> Excellent for all agricultural crops such as cardamom, tea, etc.</li></ul>",
-        head2: "BLACK PANTHER",
-        text: "It is a mixture of many bio-stimulants and nutrients that plants need. BLACK PANTHER promotes the activation of vegetative development, improves the size and colour of fruits mainly promotes vegetative growth in all types of crops. BLACK PANTHER  is a Nanotechnology product especially for the growth of new shoots and leaves.",
-      },
-
-      {
-        type: "Bio-Stimulants",
-        imageToPass: "assets/img/HUMIC AG.jpeg",
-        head: "<h5>A product that can be used to condition farmland soil for agriculture and to nourish the soil.Humic Ag 15 is a group of molecules that bind to, and help plant roots receive, water and nutrients. High humic acid levels can dramatically increase yields. It has unique carbon matrix incorporation a high concentration of trace minerals and organic acids, which improves that plants ability to take in vital nutrients for plant growth and development.</h5>",
-        points:
-          "<ul><li>Adjust soil to suit vigorous growth of crops.</li><li> Enables plants to root easily in the soil. </li><li> It helps make the natural elements in the soil available to plants. </li><li> Accelerates the growth of plant roots. </li><li> Excellent for all crops.</li></ul>",
-        head2: "HUMIC AG 15",
-        text: "A product that can be used to condition farmland soil for agriculture and to nourish the soil.Humic Ag 15 is a group of molecules that bind to, and help plant roots receive, water and nutrients. High humic acid levels can dramatically increase yields. It has unique carbon matrix incorporation a high concentration of trace minerals and organic acids, which improves that plants ability to take in vital nutrients for plant growth and development.",
-      },
-
-      {
-        type: "Bio-Stimulants",
-        imageToPass: "assets/img/AMINO AG 30.jpeg",
-        head: "<h5>It is a unique organic product that helps plants flower and bear fruit. It is a rich farming input for foliar application and thus enhances nutritional uptake and their utilization which improves colour , size, lusture and flowering. It is a bio nutritional product, accelerates cell division and increases flowering.</h5>",
-        points:
-          "<ul><li>It enhances growth by supplying crops with protein. </li><li> It increases the ability of plants to flower and regulates plant metabolism. </li><li> It helps increase female flowers in crops. </li><li> It accelerates the process of delivering nutrients from the soil to different parts of the plant. </li><li> It helps produce more flowers in home gardens. </li><li> Beneficial for all crops and helps produce more fruit in vegetables and fruit trees.</li></ul>",
-        head2: "AMINO AG 30",
-        text: "It is a unique organic product that helps plants flower and bear fruit. It is a rich farming input for foliar application and thus enhances nutritional uptake and their utilization which improves colour , size, lusture and flowering. It is a bio nutritional product, accelerates cell division and increases flowering.",
-      },
-
-
-      {
-        type: 'Adjuvants',
-        imageToPass: 'assets/img/agrostick.png',
-        head: '<h5>Useful as a Spreader, Activator, Penetrator increases efficiency of Spraying. Recommended in rainy season to avoid washout, which reduces consumption of Agro Chemicals.</h5>',
-        points: '',
-        head2: 'PLT AGRO STICK',
-        text: "Useful as a Spreader, Activator, Penetrator increases efficiency of Spraying. Recommended in rainy season to avoid washout, which reduces consumption of Agro Chemicals."
-      },
-      {
-        type: 'Adjuvants',
-        imageToPass: "assets/img/POWER WET.jpg",
-        head: '<h5Useful as a Spreader, Activator, Penetrator increases the efficiency of Spraying. Recommended in the rainy season to avoid washout, which reduces the consumption of Agro Chemicals. Powe wet breaks the water surface tension which improves pesticide absorption in crops, it also helps pesticides to remain on the crops for a longer time and penetrates the plant system very effectively.usage:1 ml/litre water </h5>',
-        points: '',
-        head2: 'PLT POWER WET',
-        text: "Useful as a Spreader, Activator, Penetrator increases the efficiency of Spraying. "
-      },
-
-
-
-      {
-        type: 'other',
-        imageToPass: 'assets/img/cocopeat.jpeg',
-        head: '<h5>High water holding capacity of cocopeat helps in retaining the moisture.coco peat blocks will expandable up to 15 liters cocopeat / agropeat is an ideal media for all types of potted plants as well as for growing vegetables, flowers or herbs from seeds.</h5>',
-        points: '',
-        head2: 'Cocopeat',
-        text: "High water holding capacity of cocopeat helps in retaining the moisture. coco peat blocks will expandable up to 15 liters cocopeat / agropeat is an ideal media for all types of potted plants as well as for growing vegetables, flowers or herbs from seeds."
-      },
-      {
-        type: 'other',
-        imageToPass: 'assets/img/cpom.jpeg',
-        head: '<h5>Improves yield in floriculture crops. Reduces soil temperature. Supports soil’s microbiological activity (or the life of the soil). High moisture retention.Improves yield in floriculture crops. Reduces soil temperature. Supports soil’s microbiological activity (or the life of the soil). High moisture retention.</h5>',
-        points: '',
-        head2: 'Cpom',
-        text: "Improves yield in floriculture crops. Reduces soil temperature. Supports soil’s microbiological activity (or the life of the soil). High moisture retention. Improves yield in floriculture crops. Reduces soil temperature. Supports soil’s microbiological activity (or the life of the soil). High moisture retention."
-      },
-      {
-        type: 'other',
-        imageToPass: 'assets/img/grow bag.png',
-        head: '',
-        points: '',
-        head2: 'Grow Bag',
-        text: ""
-      },
-
-      {
-        type: 'pesticides',
-        imageToPass: "assets/img/ACEPHATE.jpeg",
-        head: '<h5>It is used to control jassids and bollworm of cotton and aphids on crops </h5>',
-        points: '<ul><li>I Dosage:2g per litre of water.</li><ul>',
-        head2: 'ASATIN',
-        text: "(Acephate 75%sp) It is used to control jassids and bollworm of cotton and aphids on crops"
-      },
-      {
-        type: "pesticides",
-        imageToPass: "assets/img/ACETAMIPRID.jpeg",
-        head: "<h5>Acetamiprid 20%S.P  Control sucking pest like Aphids ,Jassids & Whitefly.</h5>",
-        points: "<ul><li>     Dosage:0.5g per ltr of water.</li></ul>",
-        head2: "ASAPRID",
-        text: '<p class="text">Acetamiprid 20%S.P  Control sucking pest like Aphids ,Jassids &Whitefly.</p>',
-      },
-      {
-        type: "pesticides",
-        imageToPass: "assets/img/CHLOROPYRIPHOS20.jpeg",
-        head: "<h5>(Chloropyriphos 20% EC) : It is a broad spectrum organophosphorus insecticide. It controls a wide range of insect pests in soil or on foliage in a variety of crops, by contact, ingestion and vapors action.</h5>",
-        points: "<ul><li>Dosage:1-1.5 ml per litre of water</li></ul>",
-        head2: "KOREX-20",
-        text: '<p class="text">(Chloropyriphos 20% EC) : It is a broad spectrum organophosphorus insecticide. It controls a wide range of insect pests in soil or on foliage in a variety of crops, by contact, ingestion and vapors action.</p>',
-      },
-      {
-        type: "pesticides",
-        imageToPass: "assets/img/KOREX 501.jpeg",
-        head: "<h5>PLT KOREX -50 have duel action contact and stomach action. PLT KOREX -50 controls sucking ,chewing ,biting and boring insects in various crops</h5>",
-        points:
-          "<ul><li>PLT KOREX -50 belongs to organo phosphorous chemical group.</li><li>It is recommended on wide range of crops for control of various pest.</li></ul>,",
-        head2: "PLT KOREX 50",
-        text: "PLT KOREX-50 has quick knockdown action having  longer persistence on leaves and specifically effective on most of the larva and termites",
-      },
-      {
-        type: "pesticides",
-        imageToPass: "assets/img/CHLORO + CYPERM.jpeg",
-        head: "<h5>(Chloropyriphos 50% +cypermethrin 5% EC):For the control of Aphids ,Jassids ,thripes whitefly ,American ballworm,spotted bollworm,pink bollworm etc</h5>",
-        points: "<ul><li> Dosage:1-1.5 ml per litre of water</li></ul>",
-        head2: "DEFEN-X",
-        text: '<p class="text">(Chloropyriphos 50% +cypermethrin 5% EC):For the control of Aphids ,Jassids ,thripes whitefly ,American ballworm,spotted bollworm,pink bollworm etc</p>',
-      },
-      {
-        type: "pesticides",
-        imageToPass: "assets/img/Emaben.png",
-        head: "<h5>Emamectin Benzoate 5% SG):For effective control of all types of Worms/Caterpillers , chewing pests.</h5>",
-        points: "<ul><li>  Dosage:0.5-1g per litre of water</li></ul>",
-        head2: "EMABEN",
-        text: '<p class="text">Emamectin Benzoate 5% SG):For effective control of all types of Worms/Caterpillers , chewing pests.</p>',
-      },
-
-      {
-        type: "pesticides",
-        imageToPass: "assets/img/LAMBDACYHALOTHRIN.jpeg",
-        head: "<h5>(Lambdacyhalothrin 5% E.C) For control of ballworms ,jassids ,stemborer ,thripes ,BPH etc.</h5>",
-        points: "<ul><li>  Dosage:1-1.5 ml per litre of water</li></ul>",
-        head2: "KATCH",
-        text: '<p class="text">(Lambdacyhalothrin 5% E.C) For control of ballworms ,jassids ,stemborer ,thripes ,BPH etc.</p>',
-      },
-      {
-        type: "pesticides",
-        imageToPass: "assets/img/IMIDA.jpeg",
-        head: "<h5>(Imidacloprid 17.8% SL) For control of sucking pests like aphids ,Jassid & Whitefly.</h5>",
-        points: "<ul><li> Dosage:0.75-1 ml per ltr of water</li></ul>",
-        head2: "IMIDEX",
-        text: '<p class="text">(Imidacloprid 17.8% SL) For control of sucking pests like aphids ,Jassid & Whitefly.</p>',
-      },
-      {
-        type: "pesticides",
-        imageToPass: "assets/img/IMIDEX GOLD4.jpeg",
-        head: "<h5>(imidacloprid 70% W.S) For control of sucking pests like aphids ,Jassid & Whitefly.</h5>",
-        points: "<ul><li> </li></ul>",
-        head2: "IMIDEX GOLD",
-        text: '<p class="text">(imidacloprid 70% W.S) For control of sucking pests like aphids ,Jassid & Whitefly.</p>',
-      },
-      {
-        type: "pesticides",
-        imageToPass: "assets/img/finish.jpeg",
-        head: "<h5>quinalphos 25%EC) FINISH effectively controls caterpillars on fruit trees, cotton, vegetables and peanuts scale insect on fruit trees and pest complex on rice.</h5>",
-        points: "<ul><li>  Dosage:1-2 ml per ltr of water </li></ul>",
-        head2: "FINISH",
-        text: '<p class="text">quinalphos 25%EC) FINISH effectively controls caterpillars on fruit trees, cotton, vegetables and peanuts scale insect on fruit trees and pest complex on rice.</p>',
-      },
-      {
-        type: "pesticides",
-        imageToPass: "assets/img/THIAM+LAMDBA.jpeg",
-        head: "<h5>SOLGER Insecticide is a broad-spectrum insecticide that provides excellent control of sucking and chewing pests in potato, stringbeans, eggplant, ampalaya, corn, mango, banana, and rice.</h5>",
-        points: "<ul><li> </li></ul>",
-        head2: "SOLGER",
-        text: '<p class="text">SOLGER Insecticide is a broad-spectrum insecticide that provides excellent control of sucking and chewing pests in potato, stringbeans, eggplant, ampalaya, corn, mango, banana, and rice.</p>',
-      },
-      {
-        type: "pesticides",
-        imageToPass: "assets/img/HYPEX.jpeg",
-        head: "<h5>(THIAMETHOXAM 25% WG) It helps in controlling Stem borer, gall midge, leaf folder, brown plant hopper, White Blacked Plant hopper (WBPH), Green Leaf hopper (GLH), Thrips, etc. in rice. It is also very effective in controlling Aphids, Jassids, Thrips & White Flies in cotton. </h5>",
-        points: "<ul><li> </li></ul>",
-        head2: "HYPEX",
-        text: '<p class="text">(THIAMETHOXAM 25% WG) It helps in controlling Stem borer, gall midge, leaf folder, brown plant hopper, White Blacked Plant hopper (WBPH), Green Leaf hopper (GLH), Thrips, etc. in rice. It is also very effective in controlling Aphids, Jassids, Thrips & White Flies in cotton.</p>',
-      },
-      {
-        type: "weedicides",
-        imageToPass: "assets/img/GLYSOPHATE.jpeg",
-        head: "<h5>(Glyphosate 41% SL ) Glyphosate is an herbicide. It is applied to the leaves of plants to kill both broadleaf plants and grasses. The sodium salt form of glyphosate is used to regulate plant growth and ripen specific crops.</h5>",
-        points:
-          "<ul><li></li></ul>,",
-        head2: "GATE",
-        text: "(Glyphosate 41% SL ) Glyphosate is an herbicide. It is applied to the leaves of plants to kill both broadleaf plants and grasses. The sodium salt form of glyphosate is used to regulate plant growth and ripen specific crops.",
-      },
-
-
-
-      {
-        type: "pesticides",
-        imageToPass: "assets/img/Cimbol.jpeg",
-        head: "<h5>Cypermethrin 25% ec is a synthetic pyrethroid insecticide used to kill insects on cotton and lettuce, and to kill cockroaches, fleas, and termites in houses and other buildings.</h5>",
-        points:
-          "<ul><li></li></ul>,",
-        head2: "PLT Cymbol",
-        text: "Cypermethrin 25% ec is a synthetic pyrethroid insecticide used to kill insects on cotton and lettuce, and to kill cockroaches, fleas, and termites in houses and other buildings.",
-      },
-
-      {
-        type: "pesticides",
-        imageToPass: "assets/img/MONO.jpeg",
-        head: "<h5>PLT MONO PLUS Highly (monoprotophos 36% ec) effective broad spectrum solution for management of various sucking and chewing pests in Agriculture.MONO PLUS quick knock down control at very affordable cost of treatment per acre.</h5>",
-        points: "<ul><li></li></ul>",
-        head2: "PLT MONO PLUS",
-        text: "PLT MONO PLUS Highly (monoprotophos 36% ec) effective broad spectrum solution for management of various sucking and chewing pests in Agriculture.MONO PLUS quick knock down control at very affordable cost of treatment per acre.",
-      },
-
-      {
-        type: 'fungicides',
-        imageToPass: "assets/img/Evolve.jpeg",
-        head: '<h5>(Carbendazim12% +Mancozeb 63% WP) Fungicide is a systemic and contact fungicide that is used to prevent Leaf Spot Blast disease and Rust disease in all vegetable plants.</h5>',
-        points: '</li><ul></li></ul>,',
-        head2: 'EVOLVE',
-        text: "(Carbendazim12% +Mancozeb 63% WP) Fungicide is a systemic and contact fungicide that is used to prevent Leaf Spot Blast disease and Rust disease in all vegetable plants."
-      },
-      {
-        type: 'fungicides',
-        imageToPass: "assets/img/AZO+TUB.jpeg",
-        head: '<h5>Zola-29 is a Broad spectrum fungicide for the control of many fungal pathogens & diseases. Zola-29 has very good preventive & curative properties which provides flexibility & broad window of application. It has a dual mode of action, hence it works at multiple stages of fungal development.</h5>',
-        points: '</li><ul></li></ul>,',
-        head2: 'ZOLA-29',
-        text: "Zola-29 is a Broad spectrum fungicide for the control of many fungal pathogens & diseases. Zola-29 has very good preventive & curative properties which provides flexibility & broad window of application. It has a dual mode of action, hence it works at multiple stages of fungal development."
-      },
-      {
-        type: 'fungicides',
-        imageToPass: "assets/img/SULPHUR.jpeg",
-        head: '<h5>(Sulphur 80% WDG) SABLE  is a contact  fungicide, insecticide and miticide for use on Citrus, Field, Fruit, Nut, Ornamental, Turf and Vegetable applications</h5>',
-        points: '</li><ul></li></ul>,',
-        head2: 'SABLE',
-        text: "(Sulphur 80% WDG) SABLE  is a contact  fungicide, insecticide and miticide for use on Citrus, Field, Fruit, Nut, Ornamental, Turf and Vegetable applications"
-      },
-      {
-        type: 'fungicides',
-        imageToPass: "assets/img/META+MANCO.jpeg",
-        head: '<h5>GUNNER a leading fungicide for control of important diseases caused by the Oomycete fungi and controls soil and leaf diseases in a number of crops including vegetables, grapes, water melon, ornamentals and cotton.</h5>',
-        points: '</li><ul></li></ul>,',
-        head2: 'GUNNER',
-        text: "GUNNER a leading fungicide for control of important diseases caused by the Oomycete fungi and controls soil and leaf diseases in a number of crops including vegetables, grapes, water melon, ornamentals and cotton."
-      },
-      {
-        type: 'fungicides',
-        imageToPass: "assets/img/Rule75.jpeg",
-        head: '<h5>(MANCOZEB 75% WP) RULE 75 is used to control brown and black rust & blight of wheat leaf blight & downy mildew of maize, A blast of paddy, leaf spot sorghum. Tip rot sigatoka leaf spot of banana and other fungal diseases of banana, guava and other field crops.</h5>',
-        points: '</li><ul></li></ul>,',
-        head2: 'RULE 75',
-        text: "(MANCOZEB 75% WP) RULE 75 is used to control brown and black rust & blight of wheat leaf blight & downy mildew of maize, A blast of paddy, leaf spot sorghum. Tip rot sigatoka leaf spot of banana and other fungal diseases of banana, guava and other field crops."
-      },
-      {
-        type: 'fungicides',
-        imageToPass: "assets/img/Hexole.jpeg",
-        head: '<h5>HEXOLE is a unique systemic triazole fungicide, acting as protective, curative and eradicant with strong antisporulant and translaminar action.For control of powdery mildew ,downey mildew etc.</h5>',
-        points: '</li><ul>Dosage:1-2ml per ltr of water </li></ul>,',
-        head2: 'HEXOLE',
-        text: "HEXOLE is a unique systemic triazole fungicide, acting as protective, curative and eradicant with strong antisporulant and translaminar action.For control of powdery mildew ,downey mildew etc."
-      },
-
-      {
-        type: "fungicides",
-        imageToPass: "assets/img/arecatone.jpeg",
-        head: "PLT ARECATONE contains natural salt of phosphonic acids ,which is an organic plant growth protector ,it is highly effective fungicide which prevents and protects crops from fungal diseases .PLT ARECATONE is very effective for mahali diseases of arecanut .plt arecatone spraying is effective for 60-90 days .plt arecatone has to be sprayed on arecanut just before the onset of monsoon .during rainy seasons when mahali diseases starts .plt arecatone prevents fungal disease , nut cracking and premature fall of areacanut two sprays at monthly intervals with  ARECATONE at the rate of 3-4 ml/L was effective in managing koleroga (nut rot disease)  of areca nut.PLT ARECATONE  has the unique property of increasing resistance against several disease and environmental stress issues by boosting both the rate and intensity of the existing plant defense systems. Application of PLT ARECATONE enhances the plants' existing defense responses.</h5>",
-        points:
-          "<ul><li>highly effective fungicide which prevents and protects crops from fungal diseases </li><li>increasing resistance against several disease and environmental stress issues by boosting both the rate and intensity of the existing plant defense systems</li></ul>,",
-        head2: "PLT ARECATONE",
-        text: "PLT ARECATONE contains natural salt of phosphonic acids ,which is an organic plant growth protector ,it is highly effective fungicide which prevents and protects crops from fungal diseases . ",
-      },
-
-      {
-        type: "fungicides",
-        imageToPass: "assets/img/Powermeta.jpeg",
-        head: "PLT POWER META (Metalaxyl 35% WS) is a systemic fungicide. It is used to control leaf spot and rust disease of different types of crops like potatoes, chili, cauliflower, cabbage, peas, groundnut, paddy, wheat, sugarcane, etc. It controls downy mildew in maize, bajra, sorghum, sunflower, and white rust in mustard.</h5>",
-        points:
-          "<ul><li></li></ul>,",
-        head2: "PLT POWER META",
-        text: "PLT POWER META (Metalaxyl 35% WS) is a systemic fungicide. It is used to control leaf spot and rust disease of different types of crops like potatoes, chili, cauliflower, cabbage, peas, groundnut, paddy, wheat, sugarcane, etc. It controls downy mildew in maize, bajra, sorghum, sunflower, and white rust in mustard. ",
-      },
-
-
-    ]
-
-
-    if (c === 'all') {
-      for (var i = 0; i < prodArray.length; i++) {
-        document.getElementById('productsByJs').innerHTML
-          += `<div class="col-lg-4 col-md-4 ">
-                <a style="font-family: Times New Roman;"  href="description.html?name=${prodArray[i].head2}" >
-                  <div class="productImageContainer"  >
-                    <img src="${prodArray[i].imageToPass}" alt="${prodArray[i].type}" class="image">
-                  </div>
-                  <div class="container">
-                    <h4 style="font-family: Times New Roman;" class="head">${prodArray[i].head2}</h4>
-                    <p class="text">
-                      ${prodArray[i].text}
-                    </p>
-                  </div>
-                </a>
-          </div>`
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
 
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    else {
-      prodArray.filter((fil) => fil.type === c).map((arr) => document.getElementById('productsByJs').innerHTML
-        += `<div class="col-lg-4 col-md-4 ">
-        <a style="font-family: Times New Roman;" href="description.html?name=${arr.head2}" >
-              <div class="productImageContainer" style="text-align: center;">
-                <img src="${arr.imageToPass}" alt="${arr.type}" class="image">
+
+    .products-title-wrapper h1 {
+      font-size: 56px;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .products-title-wrapper h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      border-radius: 2px;
+    }
+
+    .products-title-wrapper p {
+      font-size: 20px;
+      color: var(--text-light);
+      font-weight: 400;
+      margin-top: 25px;
+    }
+
+    /* Filter Buttons */
+    .products-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 60px;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: white;
+      border: 2px solid transparent;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .filter-btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      transition: var(--transition-smooth);
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    .filter-btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .filter-btn i,
+    .filter-btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .filter-btn i {
+      font-size: 20px;
+      transition: var(--transition-smooth);
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-color);
+      color: white;
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+      color: white;
+      border-color: var(--primary-color);
+      box-shadow: var(--shadow-md);
+      transform: scale(1.05);
+    }
+
+    .filter-btn.active::before {
+      display: none;
+    }
+
+    /* Products Grid */
+    .products-grid-enhanced {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 35px;
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+
+    /* Product Card */
+    .product-card-enhanced {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .product-card-enhanced::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      transform: scaleX(0);
+      transition: var(--transition-smooth);
+    }
+
+    .product-card-enhanced:hover::before {
+      transform: scaleX(1);
+    }
+
+    .product-card-enhanced:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: var(--shadow-lg);
+      text-decoration: none;
+    }
+
+    /* Product Image */
+    .product-image-wrapper {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .product-image-wrapper img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: var(--transition-smooth);
+      filter: brightness(1);
+    }
+
+    .product-card-enhanced:hover .product-image-wrapper img {
+      transform: scale(1.08);
+      filter: brightness(1.1);
+    }
+
+    /* Product Overlay */
+    .product-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(76, 175, 80, 0.95) 0%, rgba(56, 142, 60, 0.95) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      opacity: 0;
+      transition: var(--transition-smooth);
+    }
+
+    .product-card-enhanced:hover .product-overlay {
+      opacity: 1;
+    }
+
+    .product-overlay i {
+      font-size: 56px;
+      color: white;
+      animation: bounceIn 0.6s ease-out;
+    }
+
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .product-overlay-text {
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Product Content */
+    .product-content-enhanced {
+      padding: 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      align-self: flex-start;
+    }
+
+    .product-content-enhanced h4 {
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+      line-height: 1.4;
+      min-height: 60px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .product-content-enhanced p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .product-action {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 14px;
+      margin-top: 18px;
+      transition: var(--transition-smooth);
+    }
+
+    .product-action i {
+      transition: var(--transition-smooth);
+    }
+
+    .product-card-enhanced:hover .product-action {
+      gap: 12px;
+    }
+
+    .product-card-enhanced:hover .product-action i {
+      transform: translateX(5px);
+    }
+
+    /* Loading State */
+    .loading-skeleton {
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 80px 20px;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .empty-state i {
+      font-size: 80px;
+      color: var(--text-light);
+      opacity: 0.3;
+      margin-bottom: 20px;
+    }
+
+    .empty-state h3 {
+      font-size: 24px;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    .empty-state p {
+      font-size: 16px;
+      color: var(--text-light);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .products-grid-enhanced {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .products-page-enhanced {
+        padding: 120px 0 70px;
+      }
+
+      .products-title-wrapper h1 {
+        font-size: 38px;
+      }
+
+      .products-title-wrapper p {
+        font-size: 16px;
+      }
+
+      .products-filter {
+        gap: 10px;
+      }
+
+      .filter-btn {
+        font-size: 13px;
+        padding: 11px 20px;
+      }
+
+      .filter-btn i {
+        font-size: 18px;
+      }
+
+      .products-grid-enhanced {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+      }
+
+      .product-image-wrapper {
+        height: 250px;
+      }
+
+      .product-content-enhanced h4 {
+        font-size: 18px;
+        min-height: 50px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .products-title-wrapper h1 {
+        font-size: 32px;
+      }
+
+      .products-filter {
+        gap: 8px;
+      }
+
+      .filter-btn {
+        font-size: 12px;
+        padding: 10px 16px;
+      }
+
+      .products-grid-enhanced {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    /* Scroll Animation */
+    [data-aos] {
+      pointer-events: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" style="background: rgba(0, 0, 0, 0.8);" class="fixed-top">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-xl-9 d-flex align-items-center">
+          <a href="/" class="logo mr-auto"><img src="assets/img/pltaglog.png" alt="" class="img-fluid"></a>
+          <nav class="nav-menu d-none d-lg-block">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/#about">About</a></li>
+              <li><a href="/#services">Services</a></li>
+              <li><a class="active" href="Products.html">Products</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li>
+                <button class="get-started-button scrollto show-btn"
+                  style="border-radius: 10px; background-color: inherit;">
+                  <a href="contactUs.html" style="color: white;">Contact us</a>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======= Enhanced Products Page ======= -->
+  <section class="products-page-enhanced">
+    <div class="container">
+
+      <!-- Section Title -->
+      <div class="products-header" data-aos="fade-up">
+        <div class="products-title-wrapper">
+          <h1>Our Products</h1>
+          <p>Discover our comprehensive range of agricultural solutions</p>
+        </div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="products-filter" data-aos="fade-up" data-aos-delay="100">
+        <button class="filter-btn active" onclick="filterSelection('fertilizer', this)">
+          <i class="icofont-leaf"></i>
+          <span>Fertilizer</span>
+        </button>
+        <button class="filter-btn" onclick="filterSelection('water-soluble', this)">
+          <i class="icofont-water-drop"></i>
+          <span>Water Soluble</span>
+        </button>
+        <button class="filter-btn" onclick="filterSelection('Bio-Stimulants', this)">
+          <i class="icofont-plant"></i>
+          <span>Bio-Stimulants</span>
+        </button>
+        <button class="filter-btn" onclick="filterSelection('pesticides', this)">
+          <i class="icofont-bug"></i>
+          <span>Pesticides</span>
+        </button>
+        <button class="filter-btn" onclick="filterSelection('fungicides', this)">
+          <i class="icofont-shield"></i>
+          <span>Fungicides</span>
+        </button>
+        <button class="filter-btn" onclick="filterSelection('weedicides', this)">
+          <i class="icofont-close-circled"></i>
+          <span>Weedicides</span>
+        </button>
+        <button class="filter-btn" onclick="filterSelection('Adjuvants', this)">
+          <i class="icofont-pills"></i>
+          <span>Adjuvants</span>
+        </button>
+        <button class="filter-btn" onclick="filterSelection('other', this)">
+          <i class="icofont-box"></i>
+          <span>Other</span>
+        </button>
+      </div>
+
+      <!-- Products Grid -->
+      <div id="productsByJs" class="products-grid-enhanced" data-aos="fade-up" data-aos-delay="200">
+        <!-- Products will be dynamically inserted here -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Plant labz tech</h3>
+            VP MALL,<br />
+            Ooty road, Manjeri-3, Kerala, 676123<br />
+            Info@plantlabztech.com<br />
+            <strong>Head Office:</strong> 0483-2948800<br>
+            <strong>Customer care:</strong> +91 82818 27426<br>
+          </div>
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/#services">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="Products.html">Our Products</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Integrated Fertilizer Nutrient Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Integrated Pest Control Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Integrated Disease Control Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Farm Development</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright-wrap d-md-flex py-4">
+        <div class="mr-md-auto text-center text-md-left">
+          <div class="copyright">
+            &copy; Copyright <strong><span>Plant labz tech</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            Designed by <a href="https://www.linkedin.com/in/fuad-aslam-56915a129/">Fuad Aslam</a>
+          </div>
+        </div>
+        <div class="social-links text-center text-md-right pt-3 pt-md-0">
+          <a href="https://www.facebook.com/plantlabztech.ag/" target="_blank" class="facebook"><i
+              class="bx bxl-facebook"></i></a>
+          <a href="https://instagram.com/plt.ag?utm_medium=copy_link" target="_blank" class="instagram"><i
+              class="bx bxl-instagram"></i></a>
+          <a href="https://youtube.com/channel/UCoZmzerLLc5-c6vqY5pJJ9w" target="_blank" class="youtube"><i
+              class="bx bxl-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/whatsapp.js"></script>
+  <script src="assets/js/products-data.js"></script>
+
+  <script>
+    // Check if AOS is loaded
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out',
+        once: true,
+        offset: 100
+      });
+    } else {
+      console.warn('AOS is not loaded');
+    }
+
+    // Filter selection function
+    function filterSelection(category, button) {
+      // Update active button
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      if (button) {
+        button.classList.add('active');
+      }
+
+      // Clear products
+      const container = document.getElementById('productsByJs');
+      if (!container) {
+        console.error('Products container not found');
+        return;
+      }
+      container.innerHTML = "";
+
+      // Get product data
+      const prodArray = window.productsData || [];
+
+      if (prodArray.length === 0) {
+        console.warn('No products data found. Make sure products-data.js is loaded.');
+        container.innerHTML = `
+          <div class="empty-state" style="grid-column: 1 / -1;">
+            <i class="icofont-search-1"></i>
+            <h3>Loading Products...</h3>
+            <p>Please wait while we load the products.</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Filter products
+      const filteredProducts = prodArray.filter(product => product.type === category);
+
+      // Display products
+      if (filteredProducts.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state" style="grid-column: 1 / -1;">
+            <i class="icofont-search-1"></i>
+            <h3>No Products Found</h3>
+            <p>We couldn't find any products in this category.</p>
+          </div>
+        `;
+      } else {
+        filteredProducts.forEach((product, index) => {
+          const categoryLabel = {
+            'fertilizer': 'Fertilizer',
+            'water-soluble': 'Water Soluble',
+            'Bio-Stimulants': 'Bio-Stimulants',
+            'pesticides': 'Pesticides',
+            'fungicides': 'Fungicides',
+            'weedicides': 'Weedicides',
+            'Adjuvants': 'Adjuvants',
+            'other': 'Other'
+          }[product.type] || product.type;
+
+          container.innerHTML += `
+            <a href="description.html?name=${encodeURIComponent(product.head2)}" class="product-card-enhanced" data-aos="fade-up" data-aos-delay="${index * 50}">
+              <div class="product-image-wrapper">
+                <img src="${product.imageToPass}" alt="${product.head2}" loading="lazy">
+                <div class="product-overlay">
+                  <i class="icofont-eye-alt"></i>
+                  <span class="product-overlay-text">View Details</span>
+                </div>
               </div>
-              <div class="container">
-                <h4 style="font-family: Times New Roman;" class="head">${arr.head2}</h4>
-                <p style="font-family: Times New Roman;" class="text">
-                  ${arr.text}
-                </p>
+              <div class="product-content-enhanced">
+                <span class="product-badge">${categoryLabel}</span>
+                <h4>${product.head2}</h4>
+                <p>${product.text}</p>
+                <div class="product-action">
+                  <span>Learn more</span>
+                  <i class="icofont-arrow-right"></i>
+                </div>
               </div>
             </a>
-      </div>` );
+          `;
+        });
+
+        // Reinitialize AOS for new elements
+        if (typeof AOS !== 'undefined') {
+          AOS.refresh();
+        }
+      }
     }
-  }
 
+    // Initialize with fertilizer category
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        const firstButton = document.querySelector('.filter-btn.active');
+        filterSelection('fertilizer', firstButton);
+      }, 300);
+    });
+  </script>
 
-  function pass(productName) {
-    console.log("hhh");
-    // location.href = "description.html?id={productName}";
-  }
-
-</script>
-<!-- ======= Footer ======= -->
-<footer id="footer">
-
-  <div class="footer-top">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-lg-3 col-md-6 footer-contact">
-          <h3>Plant labz tech</h3>
-          VP MALL,<br />
-          Ooty road, Manjeri-3, Kerala, 676123<br />
-          Info@plantlabztech.com<br />
-          Plant Labz Tech
-
-
-          <div></div>
-          <strong>Head Office:</strong> 0483-2948800<br>
-          <strong>Customer care :</strong> +91 82818 27426<br>
-          <!-- <strong>B2B Sales:</strong> +91 9747116691<br> -->
-          <div></div>
-          </p>
-        </div>
-
-        <div class="col-lg-2 col-md-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Our Products</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Integrated Fertilizer Nutrient Management</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Integrated Pest Control Management </a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Integrated Disease Control Management</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Farm Development</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Higher sustainability</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">For the consumer</a></li>
-
-          </ul>
-        </div>
-      </div>
+  <!-- Floating Menu -->
+  <div id="floating-menu">
+    <div id="floating-icon" style="padding: 5px;">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div id="floating-ligar" style="display: block;">
+      <a href="tel: 918281827426">
+        <svg class="svg-inline--fa fa-phone fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path fill="currentColor"
+            d="M493.397 24.615l-104-23.997c-11.314-2.611-22.879 3.252-27.456 13.931l-48 111.997a24 24 0 0 0 6.862 28.029l60.617 49.596c-35.973 76.675-98.938 140.508-177.249 177.248l-49.596-60.616a24 24 0 0 0-28.029-6.862l-111.997 48C3.873 366.516-1.994 378.08.618 389.397l23.997 104C27.109 504.204 36.748 512 48 512c256.087 0 464-207.532 464-464 0-11.176-7.714-20.873-18.603-23.385z">
+          </path>
+        </svg>
+      </a>
+    </div>
+    <div id="floating-whatsapp" style="display: block;">
+      <a href="https://api.whatsapp.com/send?phone=918281827426">
+        <svg class="svg-inline--fa fa-whatsapp fa-w-14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path fill="currentColor"
+            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
+          </path>
+        </svg>
+      </a>
     </div>
   </div>
 
-  <div class="container">
+</body>
 
-    <div class="copyright-wrap d-md-flex py-4">
-      <div class="mr-md-auto text-center text-md-left">
-        <div class="copyright">
-          &copy; Copyright <strong><span>Plant labz tech</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          Designed by <a href="https://www.linkedin.com/in/fuad-aslam-56915a129/">Fuad Aslam</a>
-        </div>
-      </div>
-      <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="https://www.facebook.com/plantlabztech.ag/" target="_blank" class="facebook"><i
-            class="bx bxl-facebook"></i></a>
-        <a href="https://instagram.com/plt.ag?utm_medium=copy_link" target="_blank" class="instagram"><i
-            class="bx bxl-instagram"></i></a>
-        <a href="https://youtube.com/channel/UCoZmzerLLc5-c6vqY5pJJ9w" target="_blank" class="youtube"><i
-            class="bx bxl-youtube"></i></a>
-      </div>
-    </div>
-
-  </div>
-</footer><!-- End Footer -->
-
-
-<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-<!-- <div id="preloader"></div> -->
-<!-- <div class="loader">Loading...</div> -->
-
-
-<!-- Vendor JS Files -->
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
-<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-<script src="assets/vendor/counterup/counterup.min.js"></script>
-<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/venobox/venobox.min.js"></script>
-<script src="assets/vendor/aos/aos.js"></script>
-
-<!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
-
-
-<div id="floating-menu">
-  <div id="floating-icon" style="padding: 5px;">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <div id="floating-ligar" style="display: block;">
-    <a href="tel: 918281827426">
-      <svg class="svg-inline--fa fa-phone fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="phone" role="img"
-        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-        <path fill="currentColor"
-          d="M493.397 24.615l-104-23.997c-11.314-2.611-22.879 3.252-27.456 13.931l-48 111.997a24 24 0 0 0 6.862 28.029l60.617 49.596c-35.973 76.675-98.938 140.508-177.249 177.248l-49.596-60.616a24 24 0 0 0-28.029-6.862l-111.997 48C3.873 366.516-1.994 378.08.618 389.397l23.997 104C27.109 504.204 36.748 512 48 512c256.087 0 464-207.532 464-464 0-11.176-7.714-20.873-18.603-23.385z">
-        </path>
-      </svg><!-- <i class="fas fa-phone"></i> -->
-    </a>
-  </div>
-  <div id="floating-whatsapp" style="display: block;">
-    <a href="https://api.whatsapp.com/send?phone=918281827426">
-      <svg class="svg-inline--fa fa-whatsapp fa-w-14" aria-hidden="true" data-prefix="fab" data-icon="whatsapp"
-        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
-        <path fill="currentColor"
-          d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
-        </path>
-      </svg><!-- <i class="fab fa-whatsapp"></i> -->
-    </a>
-  </div>
-
-</div>
-
-<div id="floating-ligar" style="display: none;">
-  <a href="tel: 011">
-    <svg class="svg-inline--fa fa-phone fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="phone" role="img"
-      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
-      <path fill="currentColor"
-        d="M493.397 24.615l-104-23.997c-11.314-2.611-22.879 3.252-27.456 13.931l-48 111.997a24 24 0 0 0 6.862 28.029l60.617 49.596c-35.973 76.675-98.938 140.508-177.249 177.248l-49.596-60.616a24 24 0 0 0-28.029-6.862l-111.997 48C3.873 366.516-1.994 378.08.618 389.397l23.997 104C27.109 504.204 36.748 512 48 512c256.087 0 464-207.532 464-464 0-11.176-7.714-20.873-18.603-23.385z">
-      </path>
-    </svg><!-- <i class="fas fa-phone"></i> -->
-  </a>
-</div>
-
-<div id="floating-whatsapp" style="display: none;">
-  <a href="https://api.whatsapp.com/send?phone=918281827426g">
-    <svg class="svg-inline--fa fa-whatsapp fa-w-14" aria-hidden="true" data-prefix="fab" data-icon="whatsapp" role="img"
-      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
-      <path fill="currentColor"
-        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
-      </path>
-    </svg><!-- <i class="fab fa-whatsapp"></i> -->
-  </a>
-</div>
-<div id="floating-emergencia" data-toggle="modal" data-target="#modalUrgencia" style="display: none;">
-  <svg class="svg-inline--fa fa-plus fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="plus" role="img"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
-    <path fill="currentColor"
-      d="M448 294.2v-76.4c0-13.3-10.7-24-24-24H286.2V56c0-13.3-10.7-24-24-24h-76.4c-13.3 0-24 10.7-24 24v137.8H24c-13.3 0-24 10.7-24 24v76.4c0 13.3 10.7 24 24 24h137.8V456c0 13.3 10.7 24 24 24h76.4c13.3 0 24-10.7 24-24V318.2H424c13.3 0 24-10.7 24-24z">
-    </path>
-  </svg><!-- <i class="fas fa-plus"></i> -->
-</div>
-
-<div class="modal fade col-lg-12" id="modalUrgencia" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <button type="button" class="fechaModal" data-dismiss="modal">×</button>
-      <div class="modal-body">
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<script src="assets/js/whatsapp.js"></script>
+</html>

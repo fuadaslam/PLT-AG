@@ -41,47 +41,502 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <!-- <link href="assets/css/Site.css" rel="stylesheet"> -->
 
-
-
-
   <style>
-    .headImage {
-      height: 300px;
-
-    }
-
-    .formmaincontainer {
-      padding: 30px;
-      background-color: #e4e4e4;
-      opacity: 0.7;
-      text-align: left;
-
-    }
-
-    .textOnImage {
+    /* Enhanced Contact Page Styles */
+    .contact-page-enhanced {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%);
+      padding: 150px 0 100px;
       position: relative;
-      text-align: center;
-
+      overflow: hidden;
     }
 
-    #spanText {
-      padding: 5px;
-      background-color: green;
-      color: white;
-      font-weight: bold;
-      margin-bottom: 10px;
-      display: none;
-    }
-
-    /* .contactustext{
+    .contact-page-enhanced::before {
+      content: '';
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    } */
-    .headContactUs {
-      font-size: 100px;
-      text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+      top: -20%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(56, 142, 60, 0.05) 100%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .contact-page-enhanced .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .contact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+    }
+
+    .contact-badge i {
+      font-size: 24px;
+    }
+
+    .contact-header h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: #2c4964;
+      margin-bottom: 20px;
+    }
+
+    .contact-header p {
+      font-size: 18px;
+      color: #555555;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .contact-info-card-enhanced {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: all 0.4s ease;
+      height: 100%;
+    }
+
+    .contact-info-card-enhanced:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .info-icon-wrapper {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 25px;
+      background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .contact-info-card-enhanced:hover .info-icon-wrapper {
+      transform: rotateY(360deg);
+    }
+
+    .info-icon-wrapper i {
+      font-size: 40px;
+      color: white;
+    }
+
+    .contact-info-card-enhanced h4 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #2c4964;
+      margin-bottom: 15px;
+    }
+
+    .info-detail {
+      font-size: 15px;
+      color: #444444;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .info-detail a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .info-detail a:hover {
+      color: #45a049;
+      text-decoration: underline;
+    }
+
+    .info-subtitle {
+      font-size: 13px;
+      color: #888888;
+      margin-top: 5px;
+    }
+
+    .contact-form-card {
+      background: white;
+      padding: 45px 40px;
+      border-radius: 25px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .form-header i {
+      font-size: 50px;
+      color: #4CAF50;
+      margin-bottom: 15px;
+    }
+
+    .form-header h3 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #2c4964;
+      margin-bottom: 10px;
+    }
+
+    .form-header p {
+      font-size: 14px;
+      color: #555555;
+      margin: 0;
+    }
+
+    .modern-contact-form .form-group {
+      margin-bottom: 25px;
+    }
+
+    .modern-contact-form label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: #2c4964;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .modern-contact-form label i {
+      font-size: 18px;
+      color: #4CAF50;
+    }
+
+    .modern-contact-form input,
+    .modern-contact-form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .modern-contact-form input:focus,
+    .modern-contact-form textarea:focus {
+      outline: none;
+      border-color: #4CAF50;
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+    }
+
+    .modern-contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .success-message {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 20px;
+      background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+      border: 1px solid #4CAF50;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      color: #155724;
+    }
+
+    .success-message i {
+      font-size: 24px;
+      color: #4CAF50;
+    }
+
+    .success-message p {
+      margin: 0;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .btn-submit-modern {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 35px;
+      background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(76, 175, 80, 0.3);
+    }
+
+    .btn-submit-modern:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(76, 175, 80, 0.4);
+    }
+
+    .why-contact-card {
+      background: white;
+      padding: 35px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .why-contact-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 700;
+      color: #2c4964;
+      margin-bottom: 25px;
+    }
+
+    .why-contact-card h3 i {
+      font-size: 28px;
+      color: #4CAF50;
+    }
+
+    .benefits-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .benefits-list li {
+      display: flex;
+      gap: 15px;
+      padding: 15px;
+      margin-bottom: 12px;
+      background: #f8f9fa;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .benefits-list li:hover {
+      background: #e8f5e9;
+      transform: translateX(5px);
+    }
+
+    .benefits-list li i {
+      font-size: 24px;
+      color: #4CAF50;
+      flex-shrink: 0;
+    }
+
+    .benefits-list li strong {
+      display: block;
+      font-size: 15px;
+      color: #2c4964;
+      margin-bottom: 3px;
+    }
+
+    .benefits-list li span {
+      display: block;
+      font-size: 13px;
+      color: #555555;
+    }
+
+    .social-media-card {
+      background: white;
+      padding: 35px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .social-media-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 700;
+      color: #2c4964;
+      margin-bottom: 15px;
+    }
+
+    .social-media-card h3 i {
+      font-size: 28px;
+      color: #4CAF50;
+    }
+
+    .social-media-card p {
+      font-size: 14px;
+      color: #555555;
+      margin-bottom: 25px;
+    }
+
+    .social-links-modern {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      color: white;
+    }
+
+    .social-link i {
+      font-size: 24px;
+    }
+
+    .social-link.facebook {
+      background: #1877f2;
+    }
+
+    .social-link.facebook:hover {
+      background: #145dbf;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+    }
+
+    .social-link.instagram {
+      background: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #8134af 100%);
+    }
+
+    .social-link.instagram:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(221, 42, 123, 0.4);
+    }
+
+    .social-link.youtube {
+      background: #ff0000;
+    }
+
+    .social-link.youtube:hover {
+      background: #cc0000;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+    }
+
+    .social-link.whatsapp {
+      background: #25d366;
+    }
+
+    .social-link.whatsapp:hover {
+      background: #1da851;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+    }
+
+    .business-hours-card {
+      background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+      padding: 40px 45px;
+      border-radius: 25px;
+      box-shadow: 0 15px 50px rgba(76, 175, 80, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .hours-icon {
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hours-icon i {
+      font-size: 40px;
+      color: white;
+    }
+
+    .hours-content {
+      flex: 1;
+    }
+
+    .hours-content h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .hours-item {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .hours-item strong {
+      font-size: 14px;
+      color: white;
+      font-weight: 600;
+    }
+
+    .hours-item span {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .contact-page-enhanced {
+        padding: 120px 0 70px;
+      }
+
+      .contact-header h1 {
+        font-size: 32px;
+      }
+
+      .contact-form-card {
+        padding: 35px 25px;
+      }
+
+      .why-contact-card,
+      .social-media-card {
+        padding: 30px 20px;
+      }
+
+      .social-links-modern {
+        grid-template-columns: 1fr;
+      }
+
+      .business-hours-card {
+        flex-direction: column;
+        padding: 30px 25px;
+        text-align: center;
+      }
+
+      .hours-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 
@@ -152,76 +607,222 @@
 
   <main id="main">
 
-    <!-- ======= Services Section ======= -->
-    <section style="padding-top:8vw;background: linear-gradient(20deg, rgba(46, 134, 60, 0.575) 0%, rgba(14, 58, 19, 0.445) 100%), url('assets/img/leaf.jpg') center center no-repeat;
-    background-size: cover; min-height: 70vh; " id="products" class="services section-bg">
-      <div class="container" data-aos="fade-up" style="text-align: center;">
+    <!-- ======= Enhanced Contact Us Section ======= -->
+    <section class="contact-page-enhanced">
+      <div class="container" data-aos="fade-up">
+        
+        <!-- Contact Header -->
+        <div class="contact-header">
+          <div class="contact-badge" data-aos="fade-down">
+            <i class='bx bxs-message-dots'></i>
+            <span>Get In Touch</span>
+          </div>
+          <h1 data-aos="fade-up">Contact Us</h1>
+          <p data-aos="fade-up" data-aos-delay="100">
+            We're here to help you grow. Reach out to us for any queries or support
+          </p>
+        </div>
 
-
-
-        <div class="formmaincontainer">
-
-          <div class="textOnImage">
-            <!-- <img src="/assets/img/FarmDevelopment.jpg" class="headImage"/> -->
-            <div class="section-title contactustext">
-              <p class="headContactUs">CONTACT US</p>
-
+        <!-- Contact Info Cards -->
+        <div class="row contact-info-cards-row" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="contact-info-card-enhanced">
+              <div class="info-icon-wrapper">
+                <i class='bx bxs-phone-call'></i>
+              </div>
+              <h4>Call Us</h4>
+              <p class="info-detail">Customer care: <a href="tel:+918281827426">+91 82818 27426</a></p>
+              <p class="info-detail">Head Office: <a href="tel:04832948800">0483-2948800</a></p>
+              <p class="info-subtitle">Monday to Saturday, 9 AM - 6 PM</p>
             </div>
           </div>
 
-          <form id="submit-form" action="">
-            <label for="name">First Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name..">
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email" placeholder="Enter your Email..">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="contact-info-card-enhanced">
+              <div class="info-icon-wrapper">
+                <i class='bx bxs-envelope'></i>
+              </div>
+              <h4>Email Us</h4>
+              <p class="info-detail"><a href="mailto:Info@plantlabztech.com">Info@plantlabztech.com</a></p>
+              <p class="info-subtitle">We'll respond within 24 hours</p>
+            </div>
+          </div>
 
-            <label for="subject">Subject</label>
-            <textarea id="subject" name="message" placeholder="Write something.." style="height:100px"></textarea>
-            <span id="spanText">
-              <p id="response"> </p>
-            </span>
-
-            <input type="submit" value="Submit">
-          </form>
-
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="contact-info-card-enhanced">
+              <div class="info-icon-wrapper">
+                <i class='bx bxs-map'></i>
+              </div>
+              <h4>Visit Us</h4>
+              <p class="info-detail">VP MALL, Ooty road</p>
+              <p class="info-detail">Manjeri-3, Kerala, 676123</p>
+              <p class="info-subtitle">Plant Labz Tech</p>
+            </div>
+          </div>
         </div>
 
+        <!-- Contact Form and Additional Info Row -->
+        <div class="row mt-5" data-aos="fade-up" data-aos-delay="300">
+          <!-- Contact Form -->
+          <div class="col-lg-6 mb-4">
+            <div class="contact-form-card">
+              <div class="form-header">
+                <i class='bx bxs-message-square-edit'></i>
+                <h3>Send Us A Message</h3>
+                <p>Fill out the form below and we'll get back to you as soon as possible</p>
+              </div>
 
+              <form id="submit-form" class="modern-contact-form">
+                <div class="form-group">
+                  <label for="name"><i class='bx bxs-user'></i> Full Name</label>
+                  <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
 
+                <div class="form-group">
+                  <label for="email"><i class='bx bxs-envelope'></i> Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
+                </div>
 
+                <div class="form-group">
+                  <label for="phone"><i class='bx bxs-phone'></i> Phone Number (Optional)</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+                </div>
 
+                <div class="form-group">
+                  <label for="subject"><i class='bx bxs-edit'></i> Message</label>
+                  <textarea id="subject" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+                </div>
 
+                <span id="spanText" class="success-message">
+                  <i class='bx bxs-check-circle'></i>
+                  <p id="response"></p>
+                </span>
 
+                <button type="submit" class="btn-submit-modern">
+                  <i class='bx bxs-send'></i>
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
 
+          <!-- Quick Links and Social -->
+          <div class="col-lg-6 mb-4">
+            <!-- Why Contact Us -->
+            <div class="why-contact-card mb-4">
+              <h3><i class='bx bxs-star'></i> Why Choose Us?</h3>
+              <ul class="benefits-list">
+                <li>
+                  <i class='bx bxs-check-circle'></i>
+                  <div>
+                    <strong>Expert Support</strong>
+                    <span>Get guidance from agricultural professionals</span>
+                  </div>
+                </li>
+                <li>
+                  <i class='bx bxs-check-circle'></i>
+                  <div>
+                    <strong>Quick Response</strong>
+                    <span>We respond to all inquiries within 24 hours</span>
+                  </div>
+                </li>
+                <li>
+                  <i class='bx bxs-check-circle'></i>
+                  <div>
+                    <strong>Quality Products</strong>
+                    <span>Certified and tested agricultural solutions</span>
+                  </div>
+                </li>
+                <li>
+                  <i class='bx bxs-check-circle'></i>
+                  <div>
+                    <strong>Sustainable Practices</strong>
+                    <span>Committed to eco-friendly farming methods</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
 
+            <!-- Social Media Card -->
+            <div class="social-media-card">
+              <h3><i class='bx bxs-share-alt'></i> Follow Us</h3>
+              <p>Stay connected on social media for updates and tips</p>
+              <div class="social-links-modern">
+                <a href="https://www.facebook.com/plantlabztech.ag/" target="_blank" class="social-link facebook">
+                  <i class='bx bxl-facebook'></i>
+                  <span>Facebook</span>
+                </a>
+                <a href="https://instagram.com/plt.ag?utm_medium=copy_link" target="_blank" class="social-link instagram">
+                  <i class='bx bxl-instagram'></i>
+                  <span>Instagram</span>
+                </a>
+                <a href="https://youtube.com/channel/UCoZmzerLLc5-c6vqY5pJJ9w" target="_blank" class="social-link youtube">
+                  <i class='bx bxl-youtube'></i>
+                  <span>YouTube</span>
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=918281827426" target="_blank" class="social-link whatsapp">
+                  <i class='bx bxl-whatsapp'></i>
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <!-- Business Hours Card -->
+        <div class="row mt-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-12">
+            <div class="business-hours-card">
+              <div class="hours-icon">
+                <i class='bx bxs-time-five'></i>
+              </div>
+              <div class="hours-content">
+                <h3>Business Hours</h3>
+                <div class="hours-grid">
+                  <div class="hours-item">
+                    <strong>Monday - Friday:</strong>
+                    <span>9:00 AM - 6:00 PM</span>
+                  </div>
+                  <div class="hours-item">
+                    <strong>Saturday:</strong>
+                    <span>9:00 AM - 4:00 PM</span>
+                  </div>
+                  <div class="hours-item">
+                    <strong>Sunday:</strong>
+                    <span>Closed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
-      <script>
-        $("#submit-form").submit((e) => {
-          e.preventDefault()
-          $.ajax({
-            url: "https://script.google.com/macros/s/AKfycby1LPOGsKH1hIuZAWW8yeju9IptJXd6wsTMpdiMRVvjREcDqjdO6MkuRB_pRi_T3F_9ng/exec",
-            data: $("#submit-form").serialize(),
-            method: "post",
-            success: function (response) {
-              document.getElementById("response").innerHTML = "Form submitted successfully our team will contact you shortly..";
-              document.getElementById("spanText").style.display = "block";                     // window.location="/index.html"
-              // window.location.reload()
-              //window.location.href="https://google.com"
-            },
-            error: function (err) {
-              alert("Something Error")
+    </section><!-- End Enhanced Contact Us Section -->
 
-            }
-          })
+    <script>
+      $("#submit-form").submit((e) => {
+        e.preventDefault()
+        $.ajax({
+          url: "https://script.google.com/macros/s/AKfycby1LPOGsKH1hIuZAWW8yeju9IptJXd6wsTMpdiMRVvjREcDqjdO6MkuRB_pRi_T3F_9ng/exec",
+          data: $("#submit-form").serialize(),
+          method: "post",
+          success: function (response) {
+            document.getElementById("response").innerHTML = "Form submitted successfully! Our team will contact you shortly.";
+            document.getElementById("spanText").style.display = "flex";
+            // Reset form
+            document.getElementById("submit-form").reset();
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+              document.getElementById("spanText").style.display = "none";
+            }, 5000);
+          },
+          error: function (err) {
+            alert("Something went wrong. Please try again or contact us directly.")
+          }
         })
-      </script>
-    </section><!-- End Services Section -->
-
-    </div>
-
-    </div>
+      })
+    </script>
 
   </main><!-- End #main -->
 

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9LE1YG72L4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-0MCFHDPZWJ');
+    </script>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>PLT - Products</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+    <link rel="icon" href="assets/img/favicon.png">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/css/whatsapp.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <style>
+        /* Enhanced Products Page Styles */
+        .products-page-enhanced {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%);
+            padding: 150px 0 100px;
+        }
+
+        .products-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .products-title-wrapper h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #2c4964;
+            margin-bottom: 15px;
+        }
+
+        .products-title-wrapper p {
+            font-size: 18px;
+            color: #555555;
+        }
+
+        .products-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .filter-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            color: #2c4964;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .filter-btn i {
+            font-size: 20px;
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+            border-color: #4CAF50;
+            color: #4CAF50;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            border-color: #4CAF50;
+            box-shadow: 0 6px 25px rgba(76, 175, 80, 0.4);
+        }
+
+        .products-grid-enhanced {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card-enhanced {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .product-card-enhanced:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+            background: #f8f8f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card-enhanced:hover .product-image-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.9) 0%, rgba(56, 142, 60, 0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .product-card-enhanced:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .product-overlay i {
+            font-size: 48px;
+            color: white;
+        }
+
+        .product-content-enhanced {
+            padding: 25px;
+        }
+
+        .product-content-enhanced h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c4964;
+            margin-bottom: 12px;
+            min-height: 50px;
+        }
+
+        .product-content-enhanced p {
+            font-size: 14px;
+            color: #444444;
+            line-height: 1.6;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .products-page-enhanced {
+                padding: 120px 0 70px;
+            }
+
+            .products-title-wrapper h1 {
+                font-size: 32px;
+            }
+
+            .products-grid-enhanced {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+
+            .filter-btn {
+                font-size: 13px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" style="background: rgba(0, 0, 0, 0.8);" class="fixed-top">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xl-9 d-flex align-items-center">
+                    <a href="/" class="logo mr-auto"><img src="assets/img/pltaglog.png" alt="" class="img-fluid"></a>
+                    <nav class="nav-menu d-none d-lg-block">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/#about">About</a></li>
+                            <li><a href="/#services">Services</a></li>
+                            <li><a class="active" href="Products.html">Products</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li>
+                                <button class="get-started-button scrollto show-btn"
+                                    style="border-radius: 10px; background-color: inherit;">
+                                    <a href="contactUs.html" style="color: white;">Contact us</a>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======= Enhanced Products Page ======= -->
+    <section class="products-page-enhanced">
+        <div class="container">
+
+            <!-- Section Title -->
+            <div class="products-header" data-aos="fade-up">
+                <div class="products-title-wrapper">
+                    <h1>Our Products</h1>
+                    <p>Discover our wide range of agricultural solutions</p>
+                </div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="products-filter" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active" onclick="filterSelection('fertilizer')">
+                    <i class="icofont-leaf"></i>
+                    <span>Fertilizer</span>
+                </button>
+                <button class="filter-btn" onclick="filterSelection('water-soluble')">
+                    <i class="icofont-water-drop"></i>
+                    <span>Water Soluble</span>
+                </button>
+                <button class="filter-btn" onclick="filterSelection('Bio-Stimulants')">
+                    <i class="icofont-plant"></i>
+                    <span>Bio-Stimulants</span>
+                </button>
+                <button class="filter-btn" onclick="filterSelection('pesticides')">
+                    <i class="icofont-bug"></i>
+                    <span>Pesticides</span>
+                </button>
+                <button class="filter-btn" onclick="filterSelection('fungicides')">
+                    <i class="icofont-shield"></i>
+                    <span>Fungicides</span>
+                </button>
+                <button class="filter-btn" onclick="filterSelection('weedicides')">
+                    <i class="icofont-close-circled"></i>
+                    <span>Weedicides</span>
+                </button>
+                <button class="filter-btn" onclick="filterSelection('Adjuvants')">
+                    <i class="icofont-pills"></i>
+                    <span>Adjuvants</span>
+                </button>
+                <button class="filter-btn" onclick="filterSelection('other')">
+                    <i class="icofont-box"></i>
+                    <span>Other</span>
+                </button>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="productsByJs" class="products-grid-enhanced" data-aos="fade-up" data-aos-delay="200">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+
+        </div>
+    </section>
+
+    <script src="assets/js/products-data.js"></script>
+    <script>
+        filterSelection("fertilizer");
+
+        function filterSelection(category) {
+            // Update active button
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.closest('.filter-btn').classList.add('active');
+
+            // Clear products
+            document.getElementById('productsByJs').innerHTML = "";
+
+            // Product data array (shortened for demo - you'd use your full array)
+            const prodArray = [
+                {
+                    type: "fertilizer",
+                    imageToPass: "assets/img/agri dolomite.png",
+                    head2: "PLT AGRI DOLOMITE",
+                    text: "Dolomite provides valuable nutrients to plants and alters soil PH to match plant needs and is sometimes called dolomitic lime."
+                },
+                {
+                    type: "fertilizer",
+                    imageToPass: "assets/img/ph tuner new blue.png",
+                    head2: "PLT PH TUNER",
+                    text: "PLT PH TUNER is a long-lasting soil-absorbing product that maintains the PH of slightly crumbly soil in acidic soils."
+                },
+                {
+                    type: "fertilizer",
+                    imageToPass: "assets/img/MOCKUPnutrimixblue.png",
+                    head2: "PLT NUTRIMIX",
+                    text: "Organic Fertilizer provides bio enriched organic manure with nitrogen, phosphorus, potash, organic carbon."
+                },
+                // Add all your products here from the original Products.html
+            ];
+
+            const filteredProducts = prodArray.filter(product => product.type === category);
+
+            filteredProducts.forEach(product => {
+                document.getElementById('productsByJs').innerHTML += `
+        <a href="description.html?name=${product.head2}" class="product-card-enhanced">
+          <div class="product-image-wrapper">
+            <img src="${product.imageToPass}" alt="${product.head2}">
+            <div class="product-overlay">
+              <i class="icofont-eye"></i>
+            </div>
+          </div>
+          <div class="product-content-enhanced">
+            <h4>${product.head2}</h4>
+            <p>${product.text}</p>
+          </div>
+        </a>
+      `;
+            });
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>Plant labz tech</h3>
+                        VP MALL,<br />
+                        Ooty road, Manjeri-3, Kerala, 676123<br />
+                        Info@plantlabztech.com<br />
+                        <strong>Head Office:</strong> 0483-2948800<br>
+                        <strong>Customer care:</strong> +91 82818 27426<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright-wrap d-md-flex py-4">
+                <div class="mr-md-auto text-center text-md-left">
+                    <div class="copyright">
+                        &copy; Copyright <strong><span>Plant labz tech</span></strong>. All Rights Reserved
+                    </div>
+                    <div class="credits">
+                        Designed by <a href="https://www.linkedin.com/in/fuad-aslam-56915a129/">Fuad Aslam</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/whatsapp.js"></script>
+
+    <!-- Floating Menu -->
+    <div id="floating-menu">
+        <div id="floating-icon" style="padding: 5px;">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="floating-ligar" style="display: block;">
+            <a href="tel: 918281827426">
+                <svg class="svg-inline--fa fa-phone fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path fill="currentColor"
+                        d="M493.397 24.615l-104-23.997c-11.314-2.611-22.879 3.252-27.456 13.931l-48 111.997a24 24 0 0 0 6.862 28.029l60.617 49.596c-35.973 76.675-98.938 140.508-177.249 177.248l-49.596-60.616a24 24 0 0 0-28.029-6.862l-111.997 48C3.873 366.516-1.994 378.08.618 389.397l23.997 104C27.109 504.204 36.748 512 48 512c256.087 0 464-207.532 464-464 0-11.176-7.714-20.873-18.603-23.385z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+        <div id="floating-whatsapp" style="display: block;">
+            <a href="https://api.whatsapp.com/send?phone=918281827426">
+                <svg class="svg-inline--fa fa-whatsapp fa-w-14" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512">
+                    <path fill="currentColor"
+                        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>
