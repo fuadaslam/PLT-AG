@@ -1,6 +1,6 @@
 /**
  * Enhanced Header & Footer JavaScript
- * PLT AG Website
+ * PLT Website
  */
 
 (function () {
@@ -422,7 +422,7 @@
    * Console welcome message
    */
   console.log(
-    "%c🌱 PLT AG - Plant Labz Tech %c\n" +
+    "%c🌱 PLT - Plant Labz Tech %c\n" +
       "Innovative Agricultural Solutions\n" +
       "Visit: https://plantlabztech.com",
     "color: #4CAF50; font-size: 20px; font-weight: bold;",

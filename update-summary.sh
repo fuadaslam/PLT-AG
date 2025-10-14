@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to apply enhanced header and footer to all PLT AG pages
+# Script to apply enhanced header and footer to all PLT pages
 # This is a reference script showing the changes made
 
 echo "Enhanced Header & Footer Update Summary"
@@ -39,4 +39,5 @@ echo "  • Consistent branding across all pages"
 echo "  • SEO-friendly semantic HTML"
 echo ""
 echo "🚀 Next: Updating remaining pages..."
+
 
