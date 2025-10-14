@@ -72,6 +72,24 @@ const productsData = [
   },
   {
     type: "fertilizer",
+    imageToPass: "assets/img/micro-gold.jpeg",
+    head2: "MICRO GOLD",
+    text: "Micro Gold is a scientifically formulated blend of six essential chelated micronutrients, magnesium, and amino acids designed to ensure balanced plant nutrition and maximum productivity.",
+    head: "<h5>Micro Gold is a scientifically formulated blend of six essential chelated micronutrients, magnesium, and amino acids designed to ensure balanced plant nutrition and maximum productivity. This premium chelated micronutrient formula corrects multiple micronutrient deficiencies and promotes greener, healthier, and stronger crops while enhancing flowering, fruiting, and yield quality. Compatible with all crops and fertilizers, Micro Gold is the smart choice for complete micronutrient nutrition.</h5>",
+    points:
+      "<ul><li>Corrects multiple micronutrient deficiencies</li><li>Promotes greener, healthier, and stronger crops</li><li>Enhances flowering, fruiting, and yield quality</li><li>Compatible with all crops and fertilizers</li><li>Scientifically formulated with chelated micronutrients and amino acids</li></ul>",
+  },
+  {
+    type: "fertilizer",
+    imageToPass: "assets/img/multi-plus.png",
+    head2: "MULTIPLUS",
+    text: "Multiplus is a premium organic fertilizer made from a powerful blend of 10 nutrient-rich oil cakes and turmeric powder, designed to improve soil health and crop productivity naturally.",
+    head: "<h5>Multiplus is a premium organic fertilizer made from a powerful blend of 10 nutrient-rich oil cakes and turmeric powder, designed to improve soil health and crop productivity naturally. Each ingredient provides balanced nutrition, supports beneficial microbes, and promotes sustainable growth. Composition includes Neem Powder, Castor Powder, Black Palm Powder, DOC Protein Powder, Palm Oil Cake Powder, Mahua Cake Powder, Turmeric Powder, Sal Cake Powder, Jatropha Cake Powder, and Groundnut Cake Powder.</h5>",
+    points:
+      "<ul><li>Enhances soil fertility and microbial activity</li><li>Promotes vigorous root growth and nutrient uptake</li><li>Improves flowering, fruit setting, and yield quality</li><li>100% organic, eco-friendly, and residue-free</li><li>Made from 10 nutrient-rich oil cakes and turmeric powder</li><li>Natural strength for healthier crops</li></ul>",
+  },
+  {
+    type: "fertilizer",
     imageToPass: "assets/img/plantpotash.png",
     head2: "PLANT POTASH",
     text: "Plant potash is a plant derived natural source extracted from spent wash fly ash. It contains high carbon bonded rich potash and micro nutrients.",
