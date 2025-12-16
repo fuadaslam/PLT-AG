@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLT Admin Portal - Login</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/admin-style.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Inter', sans-serif;
+        }
+        .login-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .login-logo {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4a5568;
+            font-weight: 500;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-login:hover {
+            background: #43a047;
+        }
+        .error-message {
+            color: #e53e3e;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <img src="../assets/img/pltaglog.png" alt="PLT Logo" class="login-logo">
+        <h2 style="margin-bottom: 30px; color: #2d3748;">Admin Portal</h2>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="email" class="form-control" required placeholder="admin@example.com">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password" class="form-control" required placeholder="••••••••">
+            </div>
+            <button type="submit" class="btn-login" id="loginBtn">
+                <span id="btnText">Sign In</span>
+            </button>
+            <p id="errorMsg" class="error-message"></p>
+        </form>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    
+    <!-- Config and App Logic -->
+    <script src="../assets/js/firebase-config.js"></script>
+    <script>
+        // Check for config
+        if (!window.firebaseConfig || window.firebaseConfig.apiKey === "YOUR_API_KEY") {
+            alert("Please configure Firebase in assets/js/firebase-config.js first!");
+        } else {
+            firebase.initializeApp(window.firebaseConfig);
+        }
+
+        const auth = firebase.auth();
+        const loginForm = document.getElementById('loginForm');
+        const loginBtn = document.getElementById('loginBtn');
+        const btnText = document.getElementById('btnText');
+        const errorMsg = document.getElementById('errorMsg');
+
+        // Check if already logged in
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                window.location.href = 'index.html';
+            }
+        });
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Loading state
+            btnText.textContent = 'Signing in...';
+            loginBtn.disabled = true;
+            errorMsg.style.display = 'none';
+
+            try {
+                await auth.signInWithEmailAndPassword(email, password);
+                // Redirect will happen via onAuthStateChanged
+            } catch (error) {
+                console.error(error);
+                errorMsg.textContent = "Invalid email or password.";
+                errorMsg.style.display = 'block';
+                btnText.textContent = 'Sign In';
+                loginBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

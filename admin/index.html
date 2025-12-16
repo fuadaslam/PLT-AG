@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLT Admin - Product Management</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #4CAF50;
+            --primary-dark: #388E3C;
+            --bg: #f8fafc;
+            --sidebar-width: 260px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: white;
+            border-right: 1px solid #e2e8f0;
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+        }
+
+        .sidebar-header {
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .sidebar-header img {
+            height: 32px;
+        }
+
+        .sidebar-header h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+            color: #1e293b;
+        }
+
+        .nav-links {
+            padding: 24px;
+            flex: 1;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #64748b;
+            border-radius: 8px;
+            margin-bottom: 4px;
+            transition: all 0.2s;
+        }
+
+        .nav-item.active {
+            background: #f0fdf4;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-item:hover:not(.active) {
+            background: #f1f5f9;
+            color: #334155;
+        }
+
+        .user-profile {
+            padding: 24px;
+            border-top: 1px solid #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .btn-logout {
+            background: none;
+            border: none;
+            color: #ef4444;
+            cursor: pointer;
+            font-size: 20px;
+            padding: 4px;
+            border-radius: 4px;
+        }
+
+        .btn-logout:hover {
+            background: #fef2f2;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 32px;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .page-title h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .products-table {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+        }
+
+        .products-table th,
+        .products-table td {
+            text-align: left;
+            padding: 16px 24px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .products-table th {
+            background: #f8fafc;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-cell {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .product-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 6px;
+            object-fit: cover;
+            background: #f1f5f9;
+        }
+
+        .product-info h3 {
+            margin: 0 0 4px 0;
+            font-size: 15px;
+            color: #1e293b;
+        }
+
+        .product-info span {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            background: #e2e8f0;
+            color: #475569;
+        }
+
+        .badge-fertilizer {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .badge-pesticides {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .badge-fungicides {
+            background: #e0f2fe;
+            color: #075985;
+        }
+
+        .actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-icon {
+            padding: 6px;
+            border-radius: 6px;
+            border: none;
+            background: white;
+            color: #64748b;
+            cursor: pointer;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+
+        .btn-icon:hover {
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        .btn-icon.delete:hover {
+            background: #fef2f2;
+            color: #ef4444;
+            border-color: #fecaca;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #64748b;
+        }
+
+        .modal-body {
+            padding: 24px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #475569;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .modal-footer {
+            padding: 20px 24px;
+            border-top: 1px solid #f1f5f9;
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        .btn-secondary {
+            background: white;
+            border: 1px solid #e2e8f0;
+            color: #475569;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="../assets/img/pltaglog.png" alt="PLT Logo">
+            <h2>PLT Admin</h2>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-item active" data-view="products">
+                <i class='bx bx-grid-alt'></i>
+                Products
+            </a>
+            <a href="#" class="nav-item" data-view="about">
+                <i class='bx bx-info-circle'></i>
+                About Us
+            </a>
+            <a href="#" class="nav-item" data-view="core-values">
+                <i class='bx bx-heart'></i>
+                Core Values
+            </a>
+            <a href="#" class="nav-item" data-view="services">
+                <i class='bx bx-cog'></i>
+                Services
+            </a>
+            <a href="#" class="nav-item" data-view="consultancy">
+                <i class='bx bx-user-voice'></i>
+                Consultancy
+            </a>
+            <a href="#" class="nav-item" data-view="careers">
+                <i class='bx bx-briefcase'></i>
+                Careers
+            </a>
+            <a href="#" class="nav-item" data-view="contact">
+                <i class='bx bx-phone'></i>
+                Contact Info
+            </a>
+        </div>
+        <div class="user-profile">
+            <div style="font-size: 14px; font-weight: 500; color: #334155;">
+                <span id="userEmail">Admin</span>
+            </div>
+            <button class="btn-logout" id="logoutBtn" title="Logout">
+                <i class='bx bx-log-out'></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- PRODUCTS VIEW -->
+        <div id="view-products" class="view-section">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>Products</h1>
+                    <p style="color: #64748b; margin-top: 4px;">Manage your product details content</p>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button id="seedDataBtn" class="btn-secondary">
+                        <i class='bx bx-data'></i> Initialize Data
+                    </button>
+                    <button id="addProductBtn" class="btn-primary">
+                        <i class='bx bx-plus'></i> Add Product
+                    </button>
+                </div>
+            </div>
+
+            <!-- Products Table -->
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="productsTableBody">
+                    <!-- Rows will be populated by JS -->
+                </tbody>
+            </table>
+
+            <div id="loadingState" style="text-align: center; padding: 40px; color: #64748b;">
+                <i class='bx bx-loader-alt bx-spin' style="font-size: 24px;"></i>
+                <p>Loading products...</p>
+            </div>
+
+            <div id="emptyState" style="text-align: center; padding: 40px; color: #64748b; display: none;">
+                <i class='bx bx-package' style="font-size: 48px; opacity: 0.5;"></i>
+                <p>No products found. Add one or click 'Initialize Data'.</p>
+            </div>
+        </div>
+
+        <!-- ABOUT US VIEW -->
+        <div id="view-about" class="view-section" style="display: none;">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>About Us</h1>
+                    <p style="color: #64748b; margin-top: 4px;">Manage About Us section content</p>
+                </div>
+                <button id="saveAboutBtn" class="btn-primary">
+                    <i class='bx bx-save'></i> Save Changes
+                </button>
+            </div>
+            <div id="aboutFormContainer">
+                <div style="text-align: center; color: #64748b;">Loading About Us data...</div>
+            </div>
+        </div>
+
+        <!-- CORE VALUES VIEW -->
+        <div id="view-core-values" class="view-section" style="display: none;">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>Core Values</h1>
+                    <p style="color: #64748b; margin-top: 4px;">Manage Core Values items</p>
+                </div>
+                <button id="addValueBtn" class="btn-primary">
+                    <i class='bx bx-plus'></i> Add Value
+                </button>
+            </div>
+            <div id="coreValuesList" class="form-grid" style="grid-template-columns: 1fr; gap: 10px;">
+                <!-- List injected by JS -->
+            </div>
+        </div>
+
+        <!-- SERVICES VIEW -->
+        <div id="view-services" class="view-section" style="display: none;">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>Services</h1>
+                    <p style="color: #64748b; margin-top: 4px;">Manage Services items</p>
+                </div>
+                <button id="addServiceBtn" class="btn-primary">
+                    <i class='bx bx-plus'></i> Add Service
+                </button>
+            </div>
+            <div id="servicesList" class="form-grid" style="grid-template-columns: 1fr; gap: 10px;">
+                <!-- List injected by JS -->
+            </div>
+        </div>
+
+        <!-- CONSULTANCY VIEW -->
+        <div id="view-consultancy" class="view-section" style="display: none;">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>Consultancy</h1>
+                    <p style="color: #64748b; margin-top: 4px;">Manage Consultancy content and Team</p>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button id="saveConsultancyBtn" class="btn-secondary">
+                        <i class='bx bx-save'></i> Save Texts
+                    </button>
+                    <button id="addTeamBtn" class="btn-primary">
+                        <i class='bx bx-plus'></i> Add Team Member
+                    </button>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+                <h3>General Content</h3>
+                <div id="consultancyFormContainer"></div>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <h3>Team Members</h3>
+                <div id="teamList" class="form-grid"
+                    style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;"></div>
+            </div>
+        </div>
+
+        <!-- CAREERS VIEW -->
+        <div id="view-careers" class="view-section" style="display: none;">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>Careers</h1>
+                    <p style="color: #64748b; margin-top: 4px;">Manage Career Benefits</p>
+                </div>
+                <button id="addBenefitBtn" class="btn-primary">
+                    <i class='bx bx-plus'></i> Add Benefit
+                </button>
+            </div>
+            <div id="benefitsList" class="form-grid" style="grid-template-columns: 1fr; gap: 10px;">
+                <!-- List injected by JS -->
+            </div>
+        </div>
+
+        <!-- CONTACT VIEW -->
+        <div id="view-contact" class="view-section" style="display: none;">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>Contact Info</h1>
+                    <p style="color: #64748b; margin-top: 4px;">Manage Address, Phones, Emails & Social Links</p>
+                </div>
+                <button id="saveContactBtn" class="btn-primary">
+                    <i class='bx bx-save'></i> Save Changes
+                </button>
+            </div>
+            <div id="contactFormContainer">
+                <div style="text-align: center; color: #64748b;">Loading Contact data...</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Add/Edit Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Add Product</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="productForm">
+                <div class="modal-body">
+                    <input type="hidden" id="productId">
+                    <div class="form-grid">
+                        <div class="full-width">
+                            <div class="form-group">
+                                <label>Name (head2)</label>
+                                <input type="text" id="head2" class="form-control" required
+                                    placeholder="e.g., PLT AGRI DOLOMITE">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Category (type)</label>
+                            <select id="type" class="form-control" required>
+                                <option value="fertilizer">Fertilizer</option>
+                                <option value="water-soluble">Water Soluble</option>
+                                <option value="Bio-Stimulants">Bio-Stimulants</option>
+                                <option value="pesticides">Pesticides</option>
+                                <option value="fungicides">Fungicides</option>
+                                <option value="weedicides">Weedicides</option>
+                                <option value="Adjuvants">Adjuvants</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Product Image</label>
+                            <div
+                                style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px dashed #cbd5e1;">
+                                <div style="margin-bottom: 10px;">
+                                    <label style="font-size: 12px; color: #64748b; margin-bottom: 4px;">Option 1: Upload
+                                        Image</label>
+                                    <input type="file" id="imageFile" class="form-control" accept="image/*">
+                                    <div id="uploadProgressContainer" style="display: none; margin-top: 8px;">
+                                        <div style="height: 4px; background: #e2e8f0; border-radius: 2px;">
+                                            <div id="uploadProgressBar"
+                                                style="width: 0%; height: 100%; background: #4CAF50; border-radius: 2px; transition: width 0.3s;">
+                                            </div>
+                                        </div>
+                                        <small id="uploadStatus"
+                                            style="color: #64748b; font-size: 11px;">Uploading...</small>
+                                    </div>
+                                </div>
+
+                                <div style="text-align: center; margin: 8px 0; font-size: 12px; color: #94a3b8;">- OR -
+                                </div>
+
+                                <div>
+                                    <label style="font-size: 12px; color: #64748b; margin-bottom: 4px;">Option 2: Image
+                                        URL</label>
+                                    <input type="text" id="imageToPass" class="form-control"
+                                        placeholder="assets/img/...">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="full-width">
+                            <div class="form-group">
+                                <label>Short Description (text)</label>
+                                <textarea id="text" class="form-control" rows="3" required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="full-width">
+                            <div class="form-group">
+                                <label>Long Description (HTML Allowed in 'head')</label>
+                                <textarea id="head" class="form-control" rows="3" placeholder="<h5>...</h5>"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="full-width">
+                            <div class="form-group">
+                                <label>Key Points (HTML &lt;ul&gt;&lt;li&gt;)</label>
+                                <textarea id="points" class="form-control" rows="4"
+                                    placeholder="<ul><li>Point 1</li></ul>"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary close-modal">Cancel</button>
+                    <button type="submit" class="btn-primary" id="saveBtn">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Core Value Modal -->
+    <div class="modal" id="coreValueModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="coreValueModalTitle">Add Core Value</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="coreValueForm">
+                <div class="modal-body">
+                    <input type="hidden" id="coreValueId">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" id="cvTitle" class="form-control" required
+                            placeholder="e.g., Sustainability">
+                    </div>
+                    <div class="form-group">
+                        <label>Icon Class (icofont)</label>
+                        <input type="text" id="cvIcon" class="form-control" required placeholder="e.g., icofont-leaf">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="cvDesc" class="form-control" rows="3" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary close-modal">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Value</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Service Modal -->
+    <div class="modal" id="serviceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="serviceModalTitle">Add Service</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="serviceForm">
+                <div class="modal-body">
+                    <input type="hidden" id="serviceId">
+                    <div class="form-group">
+                        <label>Service Title</label>
+                        <input type="text" id="servTitle" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Service Number</label>
+                        <input type="text" id="servNumber" class="form-control" placeholder="01" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Icon Class (icofont)</label>
+                        <input type="text" id="servIcon" class="form-control" required placeholder="e.g., icofont-leaf">
+                    </div>
+                    <div class="form-group">
+                        <label>Service Image URL</label>
+                        <input type="text" id="servImage" class="form-control" required placeholder="assets/img/...">
+                        <!-- Could add file upload later if needed, sticking to URL/existing pattern for now or will implement upload in JS -->
+                        <input type="file" id="servImageFile" class="form-control" accept="image/*"
+                            style="margin-top:5px;">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="servDesc" class="form-control" rows="3" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary close-modal">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Service</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Team Member Modal -->
+    <div class="modal" id="teamModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="teamModalTitle">Add Team Member</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="teamForm">
+                <div class="modal-body">
+                    <input type="hidden" id="teamId">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="teamName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Role</label>
+                        <input type="text" id="teamRole" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" id="teamPhone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="teamEmail" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Photo URL</label>
+                        <input type="text" id="teamImage" class="form-control" placeholder="assets/img/...">
+                        <input type="file" id="teamImageFile" class="form-control" accept="image/*"
+                            style="margin-top:5px;">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary close-modal">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Member</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Benefit Modal -->
+    <div class="modal" id="benefitModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="benefitModalTitle">Add Career Benefit</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="benefitForm">
+                <div class="modal-body">
+                    <input type="hidden" id="benefitId">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" id="benTitle" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Icon Class (bx)</label>
+                        <input type="text" id="benIcon" class="form-control" required
+                            placeholder="e.g., bx bx-trending-up">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="benDesc" class="form-control" rows="3" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary close-modal">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Benefit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Config -->
+    <script src="../assets/js/firebase-config.js"></script>
+    <script src="../assets/js/site-data.js"></script>
+    <script src="../assets/js/products-data.js"></script> <!-- Load local data for seeding -->
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

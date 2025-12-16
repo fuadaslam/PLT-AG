@@ -867,6 +867,12 @@
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/whatsapp.js"></script>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="assets/js/firebase-config.js"></script>
+
   <script src="assets/js/products-data.js"></script>
   <script src="assets/js/header-footer.js"></script>
 
@@ -975,6 +981,16 @@
         const firstButton = document.querySelector('.filter-btn.active');
         filterSelection('fertilizer', firstButton);
       }, 300);
+    });
+
+    // Listen for data updates from Firebase
+    window.addEventListener('productsLoaded', function () {
+      console.log('Products loaded event received. Refreshing view...');
+      const activeBtn = document.querySelector('.filter-btn.active');
+      const activeCategory = activeBtn
+        ? activeBtn.getAttribute('onclick').match(/'([^']+)'/)[1]
+        : 'fertilizer';
+      filterSelection(activeCategory, activeBtn);
     });
   </script>
 

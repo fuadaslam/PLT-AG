@@ -410,5 +410,59 @@ const productsData = [
   },
 ];
 
-// Store products data globally
-window.productsData = productsData;
+// Store fallback data properly
+const fallbackProductsData = productsData;
+window.productsData = fallbackProductsData; // Initial sync set
+
+// Firebase Integration
+(async function initProducts() {
+  console.log("Initializing Products Data...");
+  
+  // Check if Firebase is available
+  if (typeof firebase === 'undefined' || !window.firebaseConfig || window.firebaseConfig.apiKey === "YOUR_API_KEY") {
+    console.log("Firebase not configured or loaded. Using static fallback data.");
+    return;
+  }
+
+  try {
+    // Initialize if not already
+    if (!firebase.apps.length) {
+      firebase.initializeApp(window.firebaseConfig);
+    }
+    const db = firebase.firestore();
+    
+    // Fetch from Firestore
+    console.log("Fetching products from Firestore...");
+    const snapshot = await db.collection('products').get();
+    
+    if (!snapshot.empty) {
+      const dbProducts = [];
+      snapshot.forEach(doc => {
+        dbProducts.push(doc.data());
+      });
+      
+      console.log(`Loaded ${dbProducts.length} products from Firestore.`);
+      window.productsData = dbProducts;
+      
+      // Dispatch event for other pages (like description.html)
+      window.dispatchEvent(new Event('productsLoaded'));
+      
+      // Refresh UI if the function exists (it's in Products.html)
+      if (typeof filterSelection === 'function') {
+        // Find active filter
+        const activeBtn = document.querySelector('.filter-btn.active');
+        const activeCategory = activeBtn 
+            ? activeBtn.getAttribute('onclick').match(/'([^']+)'/)[1] 
+            : 'fertilizer';
+            
+        filterSelection(activeCategory, activeBtn);
+      }
+    } else {
+        console.log("No products found in Firestore. Keeping static data.");
+    }
+    
+  } catch (error) {
+    console.error("Error fetching products from Firebase:", error);
+    // Fallback data is already set, so no action needed
+  }
+})();

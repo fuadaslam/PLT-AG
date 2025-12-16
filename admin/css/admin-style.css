@@ -1,0 +1,18 @@
+/* Admin Portal Styles */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Common Utilities */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+}
+
+.form-control {
+    font-family: inherit;
+}

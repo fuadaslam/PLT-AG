@@ -667,67 +667,95 @@
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/whatsapp.js"></script>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="assets/js/firebase-config.js"></script>
+
   <script src="assets/js/products-data.js"></script>
 
   <script>
     // Initialize AOS
-    AOS.init({
-      duration: 800,
-      easing: 'ease-out',
-      once: true,
-      offset: 100
-    });
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out',
+        once: true,
+        offset: 100
+      });
+    }
 
-    // Get product name from URL
-    const searchParams = new URLSearchParams(window.location.search);
-    const productName = searchParams.get('name');
+    // Product Rendering Logic
+    function renderProductDetails() {
+      const searchParams = new URLSearchParams(window.location.search);
+      const productName = searchParams.get('name');
+      const container = document.getElementById('productDetailContainer');
 
-    if (productName && window.productsData) {
-      const product = window.productsData.find(p => p.head2 === productName);
+      if (!container) return;
 
-      if (product) {
-        // Update breadcrumb
-        document.getElementById('breadcrumb-product').textContent = product.head2;
-
-        // Category mapping
-        const categoryLabel = {
-          'fertilizer': 'Fertilizer',
-          'water-soluble': 'Water Soluble',
-          'Bio-Stimulants': 'Bio-Stimulants',
-          'pesticides': 'Pesticides',
-          'fungicides': 'Fungicides',
-          'weedicides': 'Weedicides',
-          'Adjuvants': 'Adjuvants',
-          'other': 'Other'
-        }[product.type] || product.type;
-
-        // Extract benefits from points
-        let benefitsList = '';
-        if (product.points) {
-          const tempDiv = document.createElement('div');
-          tempDiv.innerHTML = product.points;
-          const listItems = tempDiv.querySelectorAll('li');
-          listItems.forEach(li => {
-            if (li.textContent.trim()) {
-              benefitsList += `<li>${li.textContent.trim()}</li>`;
-            }
-          });
-        }
-
-        // Extract description
-        let description = product.text;
-        if (product.head) {
-          const tempDiv = document.createElement('div');
-          tempDiv.innerHTML = product.head;
-          const h5 = tempDiv.querySelector('h5');
-          if (h5) {
-            description = h5.textContent.trim();
-          }
-        }
-
-        // Render product details
-        const container = document.getElementById('productDetailContainer');
+      if (!productName) {
+        // No product specified in URL
         container.innerHTML = `
+                <div style="text-align: center; padding: 80px 20px;">
+                    <i class="icofont-search-user" style="font-size: 80px; color: #ccc; margin-bottom: 20px;"></i>
+                    <h3 style="color: var(--text-dark); margin-bottom: 10px;">No Product Selected</h3>
+                    <p style="color: var(--text-light); margin-bottom: 30px;">Please select a product to view its details.</p>
+                    <a href="Products.html" class="btn-primary-custom">
+                        <i class="icofont-arrow-left"></i>
+                        <span>Browse Products</span>
+                    </a>
+                </div>
+            `;
+        return;
+      }
+
+      if (window.productsData) {
+        const product = window.productsData.find(p => p.head2 === productName);
+
+        if (product) {
+          // Update breadcrumb
+          const breadcrumbElement = document.getElementById('breadcrumb-product');
+          if (breadcrumbElement) breadcrumbElement.textContent = product.head2;
+
+          // Category mapping
+          const categoryLabel = {
+            'fertilizer': 'Fertilizer',
+            'water-soluble': 'Water Soluble',
+            'Bio-Stimulants': 'Bio-Stimulants',
+            'pesticides': 'Pesticides',
+            'fungicides': 'Fungicides',
+            'weedicides': 'Weedicides',
+            'Adjuvants': 'Adjuvants',
+            'other': 'Other'
+          }[product.type] || product.type;
+
+          // Extract benefits
+          let benefitsList = '';
+          if (product.points) {
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = product.points;
+            const listItems = tempDiv.querySelectorAll('li');
+            listItems.forEach(li => {
+              if (li.textContent.trim()) {
+                benefitsList += `<li>${li.textContent.trim()}</li>`;
+              }
+            });
+          }
+
+          // Extract description
+          let description = product.text;
+          if (product.head) {
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = product.head;
+            const h5 = tempDiv.querySelector('h5');
+            if (h5) {
+              description = h5.textContent.trim();
+            }
+          }
+
+          // Render
+          container.innerHTML = `
                     <div class="product-detail-inner">
                         <div class="product-image-section" data-aos="fade-right">
                             <div class="product-image-wrapper-detail">
@@ -762,63 +790,40 @@
                                     <span>Back to Products</span>
                                 </a>
                             </div>
-                            
-                            <div class="product-features">
-                                <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
-                                    <div class="feature-icon">
-                                        <i class="icofont-leaf"></i>
-                                    </div>
-                                    <div class="feature-title">Organic & Inorganic</div>
-                                </div>
-                                <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
-                                    <div class="feature-icon">
-                                        <i class="icofont-shield"></i>
-                                    </div>
-                                    <div class="feature-title">Safe</div>
-                                </div>
-                                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
-                                    <div class="feature-icon">
-                                        <i class="icofont-check-circled"></i>
-                                    </div>
-                                    <div class="feature-title">Tested</div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 `;
 
-        // Reinitialize AOS
-        AOS.refresh();
-      } else {
-        // Product not found
-        const container = document.getElementById('productDetailContainer');
-        container.innerHTML = `
-                    <div style="text-align: center; padding: 80px 20px;">
-                        <i class="icofont-close-circled" style="font-size: 80px; color: #ccc; margin-bottom: 20px;"></i>
-                        <h3 style="color: var(--text-dark); margin-bottom: 10px;">Product Not Found</h3>
-                        <p style="color: var(--text-light); margin-bottom: 30px;">The product you're looking for doesn't exist.</p>
-                        <a href="Products.html" class="btn-primary-custom">
-                            <i class="icofont-arrow-left"></i>
-                            <span>Back to Products</span>
-                        </a>
-                    </div>
-                `;
-      }
-    } else {
-      // No product specified
-      const container = document.getElementById('productDetailContainer');
-      container.innerHTML = `
+          // Reinitialize AOS
+          if (typeof AOS !== 'undefined') AOS.refresh();
+        } else {
+          // Product not found in current data
+          // Check if we are still waiting for Firebase
+          const isFirebaseConfigured = window.firebaseConfig && window.firebaseConfig.apiKey !== "YOUR_API_KEY";
+          // If we have static data but product not found, and firebase might load later...
+          // We just wait. If firebase loads, it will helper trigger this function again.
+          // But if firebase IS loaded or not configured, then it's truly 404.
+
+          // Rough heuristic: if productsData is exactly the fallback length, maybe we are waiting?
+          // But we can just show "Not Found" and if it updates later, it updates.
+
+          container.innerHTML = `
                 <div style="text-align: center; padding: 80px 20px;">
                     <i class="icofont-close-circled" style="font-size: 80px; color: #ccc; margin-bottom: 20px;"></i>
-                    <h3 style="color: var(--text-dark); margin-bottom: 10px;">No Product Selected</h3>
-                    <p style="color: var(--text-light); margin-bottom: 30px;">Please select a product to view its details.</p>
-                    <a href="Products.html" class="btn-primary-custom">
-                        <i class="icofont-arrow-left"></i>
-                        <span>Browse Products</span>
-                    </a>
+                    <h3 style="color: var(--text-dark); margin-bottom: 10px;">Product Not Found</h3>
+                    <p style="color: var(--text-light); margin-bottom: 30px;">The product "${productName}" could not be found.</p>
+                    <a href="Products.html" class="btn-primary-custom">Back to Products</a>
                 </div>
-            `;
+             `;
+        }
+      }
     }
+
+    // Initial render
+    window.addEventListener('load', renderProductDetails);
+
+    // Listen for updates from Firebase fetch
+    window.addEventListener('productsLoaded', renderProductDetails);
   </script>
 
   <!-- Floating Menu -->
