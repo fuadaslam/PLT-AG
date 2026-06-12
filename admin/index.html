@@ -12,6 +12,7 @@
 
     <!-- Icons -->
     <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
 
     <style>
         :root {
@@ -489,6 +490,12 @@
             <a href="#" class="nav-item" data-view="recognitions">
                 <i class='bx bx-award'></i> Recognitions
             </a>
+            <a href="#" class="nav-item" data-view="gallery">
+                <i class='bx bx-images'></i> Gallery
+            </a>
+            <a href="#" class="nav-item" data-view="customer-reviews">
+                <i class='bx bx-video'></i> Customer Reviews
+            </a>
 
             <h6 style="color: #a0aec0; margin: 20px 0 10px 20px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Global</h6>
             <a href="#" class="nav-item" data-view="site-settings">
@@ -566,7 +573,7 @@
                     <i class='bx bx-plus'></i> Add Value
                 </button>
             </div>
-            <div id="coreValuesList" class="form-grid" style="grid-template-columns: 1fr; gap: 10px;">
+            <div id="coreValuesList" class="admin-grid">
                 <!-- List injected by JS -->
             </div>
         </div>
@@ -699,6 +706,34 @@
             <div id="recogList" class="admin-grid"></div>
         </div>
 
+        <!-- GALLERY VIEW -->
+        <div id="view-gallery" class="view-section" style="display: none;">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>Gallery</h1>
+                    <p style="color: #64748b; margin-top: 4px;">Manage home page gallery images</p>
+                </div>
+                <button id="addGalleryBtn" class="btn-primary">
+                    <i class='bx bx-plus'></i> Add Image
+                </button>
+            </div>
+            <div id="galleryAdminGrid" class="admin-grid"></div>
+        </div>
+
+        <!-- CUSTOMER REVIEWS VIEW -->
+        <div id="view-customer-reviews" class="view-section" style="display: none;">
+            <div class="page-header">
+                <div class="page-title">
+                    <h1>Customer Reviews</h1>
+                    <p style="color: #64748b; margin-top: 4px;">Manage home page YouTube review videos</p>
+                </div>
+                <button id="addReviewBtn" class="btn-primary">
+                    <i class='bx bx-plus'></i> Add Review
+                </button>
+            </div>
+            <div id="reviewsAdminGrid" class="admin-grid"></div>
+        </div>
+
         <!-- SITE SETTINGS VIEW -->
         <div id="view-site-settings" class="view-section" style="display: none;">
             <div class="page-header">
@@ -715,6 +750,69 @@
             </div>
         </div>
 
+    </div>
+
+    <!-- Gallery Modal -->
+    <div class="modal" id="galleryModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="galleryModalTitle">Add Gallery Image</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="galleryForm">
+                <div class="modal-body">
+                    <input type="hidden" id="galleryId">
+                    <div class="form-group">
+                        <label>Alt Text / Caption</label>
+                        <input type="text" id="galleryAlt" class="form-control" placeholder="e.g. Farmer using PLT products">
+                    </div>
+                    <div class="form-group">
+                        <label>Sort Order</label>
+                        <input type="number" id="galleryOrder" class="form-control" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Image</label>
+                        <input type="file" id="galleryImageFile" class="form-control" accept="image/*">
+                        <input type="hidden" id="galleryImageToPass">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="close-modal btn-secondary">Cancel</button>
+                    <button type="submit" class="btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div class="modal" id="reviewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="reviewModalTitle">Add Customer Review</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="reviewForm">
+                <div class="modal-body">
+                    <input type="hidden" id="reviewId">
+                    <div class="form-group">
+                        <label>YouTube URL or Embed URL</label>
+                        <input type="text" id="reviewYoutubeUrl" class="form-control" placeholder="https://www.youtube.com/watch?v=...">
+                    </div>
+                    <div class="form-group">
+                        <label>Label</label>
+                        <input type="text" id="reviewLabel" class="form-control" value="Customer Review">
+                    </div>
+                    <div class="form-group">
+                        <label>Sort Order</label>
+                        <input type="number" id="reviewOrder" class="form-control" value="0">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="close-modal btn-secondary">Cancel</button>
+                    <button type="submit" class="btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <!-- Add/Edit Modal -->

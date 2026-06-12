@@ -823,6 +823,12 @@ h6 {
   color: #2c4964;
 }
 
+.recognition-section-enhanced .section-title p {
+  color: #555555;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
 .recognition-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -1111,6 +1117,14 @@ section {
 
 .services-enhanced .section-title {
   margin-bottom: 60px;
+}
+
+.services-enhanced .section-title h2 {
+  color: #2c4964;
+}
+
+.services-enhanced .section-title p {
+  color: #555555;
 }
 
 .services-grid {
@@ -1475,6 +1489,11 @@ section {
   color: #2c4964;
 }
 
+.test-report-enhanced .section-title p {
+  margin-top: 20px;
+  color: #555555;
+}
+
 .report-card {
   background: white;
   border-radius: 25px;
@@ -1649,6 +1668,16 @@ section {
   z-index: 1;
 }
 
+.video-section-enhanced .section-title h2 {
+  color: #fff;
+}
+
+.video-section-enhanced .section-title p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  margin-top: 15px;
+}
+
 .main-video-wrapper {
   max-width: 1000px;
   margin: 50px auto 0;
@@ -1719,6 +1748,12 @@ section {
 
 .reviews-section-enhanced .section-title h2 {
   color: #2c4964;
+}
+
+.reviews-section-enhanced .section-title p {
+  color: #555555;
+  font-size: 18px;
+  margin-top: 15px;
 }
 
 .reviews-grid {
@@ -2960,6 +2995,12 @@ input[type="submit"]:hover {
   color: #2c4964;
 }
 
+.gallery-section-enhanced .section-title p {
+  color: #555555;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
 .gallery-enhanced {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -3921,6 +3962,19 @@ input[type="submit"]:hover {
     height: 60px;
     font-size: 30px;
   }
+}
+
+.product-heading {
+  color: #000;
+}
+
+.produc-description-div p {
+  font-size: 18px;
+  color: #000;
+}
+
+#floating-icon {
+  padding: 5px;
 }
 
 

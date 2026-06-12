@@ -95,21 +95,16 @@ function switchView(viewName) {
     else if (viewName === 'blogs') loadBlogs();
     else if (viewName === 'certifications') loadCertifications();
     else if (viewName === 'recognitions') loadRecognitions();
+    else if (viewName === 'gallery') loadGallery();
+    else if (viewName === 'customer-reviews') loadCustomerReviews();
     else if (viewName === 'site-settings') loadSiteSettings();
 }
 
 // ==========================================
 // HELPERS
 // ==========================================
-function escapeHTML(str) {
-    if (!str) return '';
-    return str.toString()
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
+// Alias so all code can use either name consistently
+const escapeHTML = esc;
 async function deleteGeneric(collection, id, reloadFn) {
     try {
         const { error } = await supabaseClient.from(collection).delete().eq('id', id);
@@ -129,13 +124,21 @@ async function handleFormSubmit(form, collection, idFieldId, getDataFn, reloadFn
         // Handle File Upload if present
         if (fileInputId && document.getElementById(fileInputId).files.length > 0) {
              const file = document.getElementById(fileInputId).files[0];
+
+             if (!file.type.startsWith('image/')) {
+                 throw new Error('Only image files are allowed.');
+             }
+             if (file.size > 5 * 1024 * 1024) {
+                 throw new Error('File size must be under 5 MB.');
+             }
+
              btn.textContent = 'Uploading...';
              const filePath = `${collection}/${Date.now()}_${file.name.replace(/[^a-zA-Z0-9_.-]/g, '')}`;
-             
+
              // Upload to Supabase Storage 'images' bucket
              const { error: uploadError } = await supabaseClient.storage.from('images').upload(filePath, file);
              if (uploadError) throw uploadError;
-             
+
              const { data: { publicUrl } } = supabaseClient.storage.from('images').getPublicUrl(filePath);
              document.getElementById(urlInputId).value = publicUrl;
         }
@@ -406,27 +409,24 @@ async function loadCoreValues() {
         if(currentCoreValues.length === 0) list.innerHTML = '<p>No values added.</p>';
 
         currentCoreValues.forEach(val => {
-            const div = document.createElement('div');
-            div.className = 'products-table';
-            div.style.padding = '15px';
-            div.style.background = 'white';
-            div.style.marginBottom = '10px';
-            div.innerHTML = `
-                <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <div style="display:flex; gap:10px; align-items:center;">
-                        <i class="${esc(val.icon)}" style="font-size:24px; color:#4CAF50;"></i>
-                        <div>
-                            <strong>${escapeHTML(val.title)}</strong>
-                            <p style="margin:0; color:#666; font-size:13px;">${escapeHTML(val.description)}</p>
-                        </div>
-                    </div>
-                     <div class="actions">
+            const card = document.createElement('div');
+            card.className = 'admin-card';
+            card.innerHTML = `
+                <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:28px 16px; background:#f0fdf4; min-height:120px; gap:10px;">
+                    <i class="${esc(val.icon)}" style="font-size:42px; color:#4CAF50;"></i>
+                </div>
+                <div class="admin-card-body">
+                    <h3>${escapeHTML(val.title)}</h3>
+                    <p>${escapeHTML(val.description)}</p>
+                </div>
+                <div class="admin-card-footer">
+                    <div class="actions">
                         <button class="btn-icon" onclick="editCoreValue('${esc(String(val.id))}')"><i class='bx bx-edit-alt'></i></button>
                         <button class="btn-icon delete" onclick="deleteCoreValue('${esc(String(val.id))}')"><i class='bx bx-trash'></i></button>
                     </div>
                 </div>
             `;
-            list.appendChild(div);
+            list.appendChild(card);
         });
     } catch(e) { handleError(e); }
 }
@@ -1037,10 +1037,13 @@ async function loadCertifications() {
         if(currentCertifications.length === 0) list.innerHTML = '<p>No certifications added.</p>';
 
         currentCertifications.forEach(item => {
+            const imgSrc = item.image
+                ? (item.image.startsWith('http') ? item.image : '../' + item.image)
+                : 'https://via.placeholder.com/200';
             const card = document.createElement('div');
             card.className = 'admin-card';
             card.innerHTML = `
-                <img src="${esc(item.image || '')}" class="admin-card-img" style="object-fit:contain; padding:16px;" onerror="this.src='https://via.placeholder.com/200'">
+                <img src="${esc(imgSrc)}" class="admin-card-img" style="object-fit:contain; padding:16px;" onerror="this.src='https://via.placeholder.com/200'">
                 <div class="admin-card-footer">
                     <span style="font-size:13px; font-weight:600; color:#1e293b;">${escapeHTML(item.name)}</span>
                     <div class="actions">
@@ -1099,10 +1102,13 @@ async function loadRecognitions() {
         if(currentRecognitions.length === 0) list.innerHTML = '<p>No recognitions added.</p>';
 
         currentRecognitions.forEach(item => {
+            const imgSrc = item.image
+                ? (item.image.startsWith('http') ? item.image : '../' + item.image)
+                : 'https://via.placeholder.com/200';
             const card = document.createElement('div');
             card.className = 'admin-card';
             card.innerHTML = `
-                <img src="${esc(item.image || '')}" class="admin-card-img" style="object-fit:contain; padding:16px;" onerror="this.src='https://via.placeholder.com/200'">
+                <img src="${esc(imgSrc)}" class="admin-card-img" style="object-fit:contain; padding:16px;" onerror="this.src='https://via.placeholder.com/200'">
                 <div class="admin-card-footer">
                     <span style="font-size:13px; font-weight:600; color:#1e293b;">${escapeHTML(item.name)}</span>
                     <div class="actions">
@@ -1271,5 +1277,160 @@ if (document.getElementById('saveSiteSettingsBtn')) {
             btn.innerHTML = "<i class='bx bx-save'></i> Save Settings";
             btn.disabled = false;
         }
+    });
+}
+
+// ==========================================
+// 12. GALLERY LOGIC
+// ==========================================
+let currentGallery = [];
+async function loadGallery() {
+    const grid = document.getElementById('galleryAdminGrid');
+    if (!grid) return;
+    grid.innerHTML = '<p>Loading...</p>';
+    try {
+        const { data: snap, error } = await supabaseClient.from('gallery').select('*').order('sort_order');
+        if (error) throw error;
+        currentGallery = snap || [];
+        grid.innerHTML = '';
+        if (currentGallery.length === 0) { grid.innerHTML = '<p>No images yet. Click Add Image.</p>'; return; }
+        currentGallery.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'admin-card';
+            card.innerHTML = `
+                <img src="${esc(item.image.startsWith('http') ? item.image : '../' + item.image)}" class="admin-card-img" style="object-fit:cover;" onerror="this.src='https://via.placeholder.com/200'">
+                <div class="admin-card-body">
+                    <h3>${escapeHTML(item.alt || 'Gallery Image')}</h3>
+                    <p style="color:#94a3b8;">Order: ${escapeHTML(String(item.sort_order || 0))}</p>
+                </div>
+                <div class="admin-card-footer">
+                    <div class="actions">
+                        <button class="btn-icon" onclick="editGallery('${esc(String(item.id))}')"><i class='bx bx-edit-alt'></i></button>
+                        <button class="btn-icon delete" onclick="deleteGeneric('gallery', '${esc(String(item.id))}', loadGallery)"><i class='bx bx-trash'></i></button>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    } catch(e) { handleError(e); }
+}
+
+const galleryModal = document.getElementById('galleryModal');
+const galleryForm = document.getElementById('galleryForm');
+
+if (document.getElementById('addGalleryBtn')) {
+    document.getElementById('addGalleryBtn').addEventListener('click', () => {
+        galleryForm.reset();
+        document.getElementById('galleryId').value = '';
+        document.getElementById('galleryImageToPass').value = '';
+        document.getElementById('galleryModalTitle').textContent = 'Add Gallery Image';
+        galleryModal.classList.add('active');
+    });
+}
+
+window.editGallery = (id) => {
+    const item = currentGallery.find(i => i.id == id);
+    if (!item) return;
+    document.getElementById('galleryId').value = id;
+    document.getElementById('galleryAlt').value = item.alt || '';
+    document.getElementById('galleryOrder').value = item.sort_order || 0;
+    document.getElementById('galleryImageToPass').value = item.image || '';
+    document.getElementById('galleryModalTitle').textContent = 'Edit Gallery Image';
+    galleryModal.classList.add('active');
+};
+
+if (galleryForm) {
+    galleryForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        await handleFormSubmit(galleryForm, 'gallery', 'galleryId', () => ({
+            image: document.getElementById('galleryImageToPass').value,
+            alt: document.getElementById('galleryAlt').value,
+            sort_order: parseInt(document.getElementById('galleryOrder').value) || 0
+        }), loadGallery, 'galleryModal', 'galleryImageFile', 'galleryImageToPass');
+    });
+}
+
+// ==========================================
+// 13. CUSTOMER REVIEWS LOGIC
+// ==========================================
+let currentReviews = [];
+async function loadCustomerReviews() {
+    const grid = document.getElementById('reviewsAdminGrid');
+    if (!grid) return;
+    grid.innerHTML = '<p>Loading...</p>';
+    try {
+        const { data: snap, error } = await supabaseClient.from('customer_reviews').select('*').order('sort_order');
+        if (error) throw error;
+        currentReviews = snap || [];
+        grid.innerHTML = '';
+        if (currentReviews.length === 0) { grid.innerHTML = '<p>No reviews yet. Click Add Review.</p>'; return; }
+        currentReviews.forEach(item => {
+            const videoId = (item.youtube_url || '').match(/(?:embed\/|watch\?v=|youtu\.be\/)([^&?/]+)/);
+            const thumbUrl = videoId ? `https://img.youtube.com/vi/${videoId[1]}/mqdefault.jpg` : 'https://via.placeholder.com/200x120';
+            const card = document.createElement('div');
+            card.className = 'admin-card';
+            card.innerHTML = `
+                <img src="${esc(thumbUrl)}" class="admin-card-img" style="object-fit:cover;" onerror="this.src='https://via.placeholder.com/200'">
+                <div class="admin-card-body">
+                    <h3>${escapeHTML(item.label || 'Customer Review')}</h3>
+                    <p style="font-size:11px; word-break:break-all;">${escapeHTML(item.youtube_url)}</p>
+                </div>
+                <div class="admin-card-footer">
+                    <div class="actions">
+                        <button class="btn-icon" onclick="editReview('${esc(String(item.id))}')"><i class='bx bx-edit-alt'></i></button>
+                        <button class="btn-icon delete" onclick="deleteGeneric('customer_reviews', '${esc(String(item.id))}', loadCustomerReviews)"><i class='bx bx-trash'></i></button>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    } catch(e) { handleError(e); }
+}
+
+const reviewModal = document.getElementById('reviewModal');
+const reviewForm = document.getElementById('reviewForm');
+
+if (document.getElementById('addReviewBtn')) {
+    document.getElementById('addReviewBtn').addEventListener('click', () => {
+        reviewForm.reset();
+        document.getElementById('reviewId').value = '';
+        document.getElementById('reviewLabel').value = 'Customer Review';
+        document.getElementById('reviewOrder').value = currentReviews.length + 1;
+        document.getElementById('reviewModalTitle').textContent = 'Add Customer Review';
+        reviewModal.classList.add('active');
+    });
+}
+
+window.editReview = (id) => {
+    const item = currentReviews.find(i => i.id == id);
+    if (!item) return;
+    document.getElementById('reviewId').value = id;
+    document.getElementById('reviewYoutubeUrl').value = item.youtube_url || '';
+    document.getElementById('reviewLabel').value = item.label || 'Customer Review';
+    document.getElementById('reviewOrder').value = item.sort_order || 0;
+    document.getElementById('reviewModalTitle').textContent = 'Edit Review';
+    reviewModal.classList.add('active');
+};
+
+if (reviewForm) {
+    reviewForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const id = document.getElementById('reviewId').value;
+        const payload = {
+            youtube_url: document.getElementById('reviewYoutubeUrl').value,
+            label: document.getElementById('reviewLabel').value,
+            sort_order: parseInt(document.getElementById('reviewOrder').value) || 0
+        };
+        const btn = reviewForm.querySelector('[type=submit]');
+        btn.textContent = 'Saving...'; btn.disabled = true;
+        try {
+            const { error } = id
+                ? await supabaseClient.from('customer_reviews').update(payload).eq('id', id)
+                : await supabaseClient.from('customer_reviews').insert(payload);
+            if (error) throw error;
+            reviewModal.classList.remove('active');
+            loadCustomerReviews();
+        } catch(err) { handleError(err); }
+        finally { btn.textContent = 'Save'; btn.disabled = false; }
     });
 }

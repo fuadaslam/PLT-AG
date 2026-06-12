@@ -26,6 +26,8 @@ if (typeof supabaseClient !== 'undefined') {
             loadServices();
             loadCertifications();
             loadRecognitions();
+            loadGallery();
+            loadCustomerReviews();
         }
 
         // 2. Consultancy Page
@@ -120,7 +122,7 @@ if (typeof supabaseClient !== 'undefined') {
                     div.setAttribute('data-aos', 'zoom-in');
                     div.innerHTML = `
                         <div class="service-image-wrapper">
-                            <img src="${esc(s.image || s.icon)}" alt="${esc(s.title)}" class="service-image" onerror="this.src='assets/img/ferlilizer.jpg'"/>
+                            <img src="${esc(s.image || 'assets/img/ferlilizer.jpg')}" alt="${esc(s.title)}" class="service-image" onerror="this.src='assets/img/ferlilizer.jpg'"/>
                             <div class="service-overlay">
                                 <i class="${esc(s.icon)}"></i>
                             </div>
@@ -539,6 +541,59 @@ if (typeof supabaseClient !== 'undefined') {
             // Dispatch event even on error so pages can show their error/empty state
             window.dispatchEvent(new Event('productsLoaded'));
         }
+    }
+
+    // --- Gallery ---
+    async function loadGallery() {
+        const container = document.getElementById('galleryGrid');
+        if (!container) return;
+        try {
+            const { data: snap, error } = await supabaseClient.from('gallery').select('*').order('sort_order');
+            if (error || !snap || snap.length === 0) return;
+            container.innerHTML = '';
+            snap.forEach((item, idx) => {
+                const div = document.createElement('div');
+                div.className = 'gallery-item';
+                div.setAttribute('data-aos', 'zoom-in');
+                div.setAttribute('data-aos-delay', String((idx % 6 + 1) * 50));
+                div.innerHTML = `
+                    <img src="${esc(item.image)}" alt="${esc(item.alt || 'Gallery Image')}">
+                    <div class="gallery-overlay"><i class="icofont-eye"></i></div>
+                `;
+                container.appendChild(div);
+            });
+        } catch(e) { console.error("Error loading gallery:", e); }
+    }
+
+    // --- Customer Reviews ---
+    async function loadCustomerReviews() {
+        const container = document.getElementById('reviewsGrid');
+        if (!container) return;
+        try {
+            const { data: snap, error } = await supabaseClient.from('customer_reviews').select('*').order('sort_order');
+            if (error || !snap || snap.length === 0) return;
+            container.innerHTML = '';
+            snap.forEach((item, idx) => {
+                const rawUrl = item.youtube_url || '';
+                const embedUrl = rawUrl.includes('/embed/')
+                    ? rawUrl
+                    : rawUrl.replace('watch?v=', 'embed/');
+                const div = document.createElement('div');
+                div.className = 'review-card';
+                div.setAttribute('data-aos', 'flip-up');
+                div.setAttribute('data-aos-delay', String(((idx % 3) + 1) * 100));
+                div.innerHTML = `
+                    <div class="review-video-wrapper">
+                        <iframe src="${esc(embedUrl)}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="review-label">
+                        <i class="icofont-quote-left"></i>
+                        <span>${esc(item.label || 'Customer Review')}</span>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        } catch(e) { console.error("Error loading reviews:", e); }
     }
 
 } else {
