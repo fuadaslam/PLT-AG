@@ -414,34 +414,25 @@ const productsData = [
 const fallbackProductsData = productsData;
 window.productsData = fallbackProductsData; // Initial sync set
 
-// Firebase Integration
+// Supabase Integration
 (async function initProducts() {
   console.log("Initializing Products Data...");
   
-  // Check if Firebase is available
-  if (typeof firebase === 'undefined' || !window.firebaseConfig || window.firebaseConfig.apiKey === "YOUR_API_KEY") {
-    console.log("Firebase not configured or loaded. Using static fallback data.");
+  // Check if Supabase is available
+  if (typeof supabaseClient === 'undefined') {
+    console.log("Supabase not configured or loaded. Using static fallback data.");
     return;
   }
 
   try {
-    // Initialize if not already
-    if (!firebase.apps.length) {
-      firebase.initializeApp(window.firebaseConfig);
-    }
-    const db = firebase.firestore();
+    // Fetch from Supabase
+    console.log("Fetching products from Supabase...");
+    const { data: dbProducts, error } = await supabaseClient.from('products').select('*');
     
-    // Fetch from Firestore
-    console.log("Fetching products from Firestore...");
-    const snapshot = await db.collection('products').get();
+    if (error) throw error;
     
-    if (!snapshot.empty) {
-      const dbProducts = [];
-      snapshot.forEach(doc => {
-        dbProducts.push(doc.data());
-      });
-      
-      console.log(`Loaded ${dbProducts.length} products from Firestore.`);
+    if (dbProducts && dbProducts.length > 0) {
+      console.log(`Loaded ${dbProducts.length} products from Supabase.`);
       window.productsData = dbProducts;
       
       // Dispatch event for other pages (like description.html)
@@ -458,11 +449,11 @@ window.productsData = fallbackProductsData; // Initial sync set
         filterSelection(activeCategory, activeBtn);
       }
     } else {
-        console.log("No products found in Firestore. Keeping static data.");
+        console.log("No products found in Supabase. Keeping static data.");
     }
     
   } catch (error) {
-    console.error("Error fetching products from Firebase:", error);
+    console.error("Error fetching products from Supabase:", error);
     // Fallback data is already set, so no action needed
   }
 })();

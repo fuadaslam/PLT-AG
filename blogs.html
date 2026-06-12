@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9LE1YG72L4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-0MCFHDPZWJ');
+  </script>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>PLT - Blogs</title>
+  <meta content="Agricultural Blogs and News" name="description">
+  <meta content="Agriculture, Farming, Blogs, News, PLT" name="keywords">
+  <link rel="icon" href="assets/img/pltaglog.png">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/whatsapp.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/header-footer.css" rel="stylesheet">
+
+  <style>
+    /* Enhanced Blogs Page Styles */
+    :root {
+      --primary-color: #4CAF50;
+      --primary-dark: #388E3C;
+      --primary-light: #81C784;
+      --accent-color: #FF9800;
+      --text-dark: #2c4964;
+      --text-light: #666666;
+      --bg-gradient-start: #f0f8f0;
+      --bg-gradient-end: #e8f5e9;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+      --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.15);
+      --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .blogs-page-enhanced {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+      padding: 140px 0 100px;
+      position: relative;
+    }
+
+    /* Decorative background elements */
+    .blogs-page-enhanced::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(76, 175, 80, 0.05) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .blogs-page-enhanced .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header Section */
+    .blogs-header {
+      text-align: center;
+      margin-bottom: 60px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .blogs-title-wrapper h1 {
+      font-size: 56px;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .blogs-title-wrapper h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      border-radius: 2px;
+    }
+
+    .blogs-title-wrapper p {
+      font-size: 20px;
+      color: var(--text-light);
+      font-weight: 400;
+      margin-top: 25px;
+    }
+
+    /* Blogs Grid */
+    .blogs-grid-enhanced {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 35px;
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+
+    /* Blog Card */
+    .blog-card-enhanced {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .blog-card-enhanced:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Blog Image/Video Wrapper */
+    .blog-media-wrapper {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+
+    .blog-media-wrapper img, .blog-media-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+
+    .blog-card-enhanced:hover .blog-media-wrapper img {
+      transform: scale(1.05);
+    }
+
+    /* Blog Content */
+    .blog-content-enhanced {
+      padding: 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-date {
+      font-size: 13px;
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .blog-content-enhanced h4 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    .blog-content-enhanced p {
+      font-size: 15px;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .blog-read-more {
+        margin-top: auto;
+    }
+
+    .btn-read-more {
+        display: inline-block;
+        padding: 8px 20px;
+        background: #f0fdf4;
+        color: var(--primary-dark);
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        transition: var(--transition-smooth);
+    }
+
+    .btn-read-more:hover {
+        background: var(--primary-color);
+        color: white;
+        text-decoration: none;
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 80px 20px;
+      grid-column: 1 / -1;
+    }
+
+    .empty-state i {
+      font-size: 80px;
+      color: var(--text-light);
+      opacity: 0.3;
+      margin-bottom: 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .blogs-page-enhanced {
+        padding: 120px 0 70px;
+      }
+      .blogs-title-wrapper h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Enhanced Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-xl-10 col-lg-11 d-flex align-items-center justify-content-between">
+          <a href="index.html" class="logo">
+            <img src="assets/img/pltaglog.png" alt="PLT Logo" class="img-fluid">
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="nav-menu d-none d-lg-block">
+            <ul>
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                  <i class="bx bx-home-alt"></i>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.html#about" class="nav-link">
+                  <i class="bx bx-info-circle"></i>
+                  <span>About</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.html#services" class="nav-link">
+                  <i class="bx bx-cog"></i>
+                  <span>Services</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="Products.html" class="nav-link">
+                  <i class="bx bx-package"></i>
+                  <span>Products</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="consultancy.html" class="nav-link">
+                  <i class="bx bx-user-voice"></i>
+                  <span>Consultancy</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="careers.html" class="nav-link">
+                  <i class="bx bx-briefcase"></i>
+                  <span>Careers</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="blogs.html" class="nav-link active">
+                  <i class="bx bx-news"></i>
+                  <span>Blogs</span>
+                </a>
+              </li>
+              <li class="nav-item-cta">
+                <a href="contactUs.html" class="btn-contact">
+                  <i class="bx bx-phone-call"></i>
+                  <span>Contact Us</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Toggle navigation">
+            <i class="bx bx-menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="mobile-logo">
+          <img src="assets/img/pltaglog.png" alt="PLT Logo">
+        </a>
+        <button type="button" class="mobile-nav-close" aria-label="Close navigation">
+          <i class="bx bx-x"></i>
+        </button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="index.html"><i class="bx bx-home-alt"></i> Home</a></li>
+        <li><a href="index.html#about"><i class="bx bx-info-circle"></i> About</a></li>
+        <li><a href="index.html#services"><i class="bx bx-cog"></i> Services</a></li>
+        <li><a href="Products.html"><i class="bx bx-package"></i> Products</a></li>
+        <li><a href="consultancy.html"><i class="bx bx-user-voice"></i> Consultancy</a></li>
+        <li><a href="careers.html"><i class="bx bx-briefcase"></i> Careers</a></li>
+        <li><a href="blogs.html" class="active"><i class="bx bx-news"></i> Blogs</a></li>
+        <li><a href="contactUs.html" class="mobile-cta"><i class="bx bx-phone-call"></i> Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="mobile-nav-overlay"></div>
+  </header>
+
+  <!-- ======= Enhanced Blogs Page ======= -->
+  <section class="blogs-page-enhanced">
+    <div class="container">
+      <div class="blogs-header" data-aos="fade-up">
+        <div class="blogs-title-wrapper">
+          <h1>Latest Blogs</h1>
+          <p>Read about the latest news and insights in agriculture</p>
+        </div>
+      </div>
+
+      <div id="blogsContainer" class="blogs-grid-enhanced" data-aos="fade-up" data-aos-delay="200">
+        <div class="empty-state">
+            <i class='bx bx-loader-alt bx-spin' style="font-size: 48px;"></i>
+            <h3>Loading Blogs...</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Enhanced Footer ======= -->
+  <footer id="footer" class="footer-enhanced">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <div class="footer-logo">
+              <img src="assets/img/pltaglog.png" alt="PLT Logo">
+            </div>
+            <p class="footer-description">
+              PLT is an innovative initiative in agricultural commodity production that vows to sustain the ecosystem.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="copyright">
+              &copy; <span id="currentYear"></span> <strong><span>Plant Labz Tech</span></strong>. All Rights Reserved
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/header-footer.js"></script>
+
+    <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/supabase-config.js"></script>
+  
+  <!-- DOMPurify for blog HTML sanitization -->
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+  <!-- Blogs Fetcher -->
+  <script src="assets/js/blogs.js"></script>
+
+  <script>
+    if (typeof AOS !== 'undefined') {
+      AOS.init({ duration: 800, easing: 'ease-out', once: true, offset: 100 });
+    }
+  </script>
+</body>
+</html>

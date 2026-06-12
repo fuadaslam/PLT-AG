@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLT Admin Portal - Login</title>
+    <link rel="icon" href="../assets/img/pltaglog.png">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -104,29 +105,29 @@
         </form>
     </div>
 
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-    
-    <!-- Config and App Logic -->
-    <script src="../assets/js/firebase-config.js"></script>
+      <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../assets/js/supabase-config.js?v=2"></script>
     <script>
-        // Check for config
-        if (!window.firebaseConfig || window.firebaseConfig.apiKey === "YOUR_API_KEY") {
-            alert("Please configure Firebase in assets/js/firebase-config.js first!");
-        } else {
-            firebase.initializeApp(window.firebaseConfig);
+        if (typeof supabaseClient === 'undefined') {
+            alert("Please configure Supabase in assets/js/supabase-config.js first!");
+            throw new Error("Supabase not configured");
         }
 
-        const auth = firebase.auth();
         const loginForm = document.getElementById('loginForm');
         const loginBtn = document.getElementById('loginBtn');
         const btnText = document.getElementById('btnText');
         const errorMsg = document.getElementById('errorMsg');
 
         // Check if already logged in
-        auth.onAuthStateChanged(user => {
-            if (user) {
+        supabaseClient.auth.getSession().then(({ data: { session } }) => {
+            if (session) {
+                window.location.href = 'index.html';
+            }
+        });
+
+        supabaseClient.auth.onAuthStateChange((event, session) => {
+            if (event === 'SIGNED_IN') {
                 window.location.href = 'index.html';
             }
         });
@@ -141,10 +142,12 @@
             loginBtn.disabled = true;
             errorMsg.style.display = 'none';
 
-            try {
-                await auth.signInWithEmailAndPassword(email, password);
-                // Redirect will happen via onAuthStateChanged
-            } catch (error) {
+            const { data, error } = await supabaseClient.auth.signInWithPassword({
+                email: email,
+                password: password,
+            });
+
+            if (error) {
                 console.error(error);
                 errorMsg.textContent = "Invalid email or password.";
                 errorMsg.style.display = 'block';

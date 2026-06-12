@@ -868,15 +868,23 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/whatsapp.js"></script>
 
-  <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-  <script src="assets/js/firebase-config.js"></script>
+    <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/supabase-config.js"></script>
 
-  <script src="assets/js/products-data.js"></script>
+  <script src="assets/js/dynamic-content.js"></script>
   <script src="assets/js/header-footer.js"></script>
 
   <script>
+    function esc(s) {
+      return (s == null ? '' : String(s))
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
     // Check if AOS is loaded
     if (typeof AOS !== 'undefined') {
       AOS.init({
@@ -910,7 +918,7 @@
       const prodArray = window.productsData || [];
 
       if (prodArray.length === 0) {
-        console.warn('No products data found. Make sure products-data.js is loaded.');
+        console.warn('No products data found. Waiting for Supabase to load data.');
         container.innerHTML = `
           <div class="empty-state" style="grid-column: 1 / -1;">
             <i class="icofont-search-1"></i>
@@ -949,16 +957,16 @@
           container.innerHTML += `
             <a href="description.html?name=${encodeURIComponent(product.head2)}" class="product-card-enhanced" data-aos="fade-up" data-aos-delay="${index * 50}">
               <div class="product-image-wrapper">
-                <img src="${product.imageToPass}" alt="${product.head2}" loading="lazy">
+                <img src="${esc(product.imageToPass)}" alt="${esc(product.head2)}" loading="lazy">
                 <div class="product-overlay">
                   <i class="icofont-eye-alt"></i>
                   <span class="product-overlay-text">View Details</span>
                 </div>
               </div>
               <div class="product-content-enhanced">
-                <span class="product-badge">${categoryLabel}</span>
-                <h4>${product.head2}</h4>
-                <p>${product.text}</p>
+                <span class="product-badge">${esc(categoryLabel)}</span>
+                <h4>${esc(product.head2)}</h4>
+                <p>${esc(product.text)}</p>
                 <div class="product-action">
                   <span>Learn more</span>
                   <i class="icofont-arrow-right"></i>
@@ -975,15 +983,7 @@
       }
     }
 
-    // Initialize with fertilizer category
-    window.addEventListener('load', function () {
-      setTimeout(function () {
-        const firstButton = document.querySelector('.filter-btn.active');
-        filterSelection('fertilizer', firstButton);
-      }, 300);
-    });
-
-    // Listen for data updates from Firebase
+    // Listen for data updates from Supabase
     window.addEventListener('productsLoaded', function () {
       console.log('Products loaded event received. Refreshing view...');
       const activeBtn = document.querySelector('.filter-btn.active');

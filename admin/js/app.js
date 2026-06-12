@@ -1,17 +1,27 @@
 // Check configuration
-if (!window.firebaseConfig || window.firebaseConfig.apiKey === "YOUR_API_KEY") {
-    alert("Please configure Firebase in assets/js/firebase-config.js first!");
-    throw new Error("Firebase not configured");
+if (typeof supabaseClient === 'undefined') {
+    alert("Please configure Supabase in assets/js/supabase-config.js first!");
+    throw new Error("Supabase not configured");
 }
 
-// Initialize Firebase
-if (!firebase.apps.length) {
-    firebase.initializeApp(window.firebaseConfig);
+// HTML-escape helper — all DB text inserted into innerHTML must go through this
+function esc(s) {
+    return (s == null ? '' : String(s))
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
 }
 
-const auth = firebase.auth();
-const db = firebase.firestore();
-const storage = firebase.storage();
+// Validate URLs — only allow http/https
+function safeUrl(url) {
+    if (!url) return '#';
+    try {
+        const u = new URL(url);
+        return (u.protocol === 'https:' || u.protocol === 'http:') ? url : '#';
+    } catch(e) { return '#'; }
+}
 
 // DOM Elements - Global
 const userEmailSpan = document.getElementById('userEmail');
@@ -26,21 +36,27 @@ let currentCoreValues = [];
 let currentServices = [];
 let currentTeam = [];
 let currentBenefits = [];
+let currentBlogs = [];
 
 // Auth Protection
-auth.onAuthStateChanged(user => {
-    if (!user) {
+supabaseClient.auth.getSession().then(({ data: { session } }) => {
+    if (!session) {
         window.location.href = 'login.html';
     } else {
-        userEmailSpan.textContent = user.email;
-        // Load initial view
+        userEmailSpan.textContent = session.user.email;
         switchView('products');
     }
 });
 
+supabaseClient.auth.onAuthStateChange((event, session) => {
+    if (event === 'SIGNED_OUT' || !session) {
+        window.location.href = 'login.html';
+    }
+});
+
 // Logout
-logoutBtn.addEventListener('click', () => {
-    auth.signOut();
+logoutBtn.addEventListener('click', async () => {
+    await supabaseClient.auth.signOut();
 });
 
 // Navigation
@@ -65,7 +81,8 @@ function switchView(viewName) {
     viewSections.forEach(section => {
         section.style.display = 'none';
     });
-    document.getElementById(`view-${viewName}`).style.display = 'block';
+    const activeSection = document.getElementById(`view-${viewName}`);
+    if(activeSection) activeSection.style.display = 'block';
 
     // Load Data based on View
     if (viewName === 'products') loadProducts();
@@ -75,12 +92,91 @@ function switchView(viewName) {
     else if (viewName === 'consultancy') loadConsultancy();
     else if (viewName === 'careers') loadCareers();
     else if (viewName === 'contact') loadContact();
+    else if (viewName === 'blogs') loadBlogs();
+    else if (viewName === 'certifications') loadCertifications();
+    else if (viewName === 'recognitions') loadRecognitions();
+    else if (viewName === 'site-settings') loadSiteSettings();
 }
+
+// ==========================================
+// HELPERS
+// ==========================================
+function escapeHTML(str) {
+    if (!str) return '';
+    return str.toString()
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+async function deleteGeneric(collection, id, reloadFn) {
+    try {
+        const { error } = await supabaseClient.from(collection).delete().eq('id', id);
+        if (error) throw error;
+        reloadFn();
+    } catch(e) { handleError(e); }
+}
+
+async function handleFormSubmit(form, collection, idFieldId, getDataFn, reloadFn, modalId, fileInputId = null, urlInputId = null) {
+    const id = document.getElementById(idFieldId).value;
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Processing...';
+
+    try {
+        // Handle File Upload if present
+        if (fileInputId && document.getElementById(fileInputId).files.length > 0) {
+             const file = document.getElementById(fileInputId).files[0];
+             btn.textContent = 'Uploading...';
+             const filePath = `${collection}/${Date.now()}_${file.name.replace(/[^a-zA-Z0-9_.-]/g, '')}`;
+             
+             // Upload to Supabase Storage 'images' bucket
+             const { error: uploadError } = await supabaseClient.storage.from('images').upload(filePath, file);
+             if (uploadError) throw uploadError;
+             
+             const { data: { publicUrl } } = supabaseClient.storage.from('images').getPublicUrl(filePath);
+             document.getElementById(urlInputId).value = publicUrl;
+        }
+
+        const data = getDataFn();
+        
+        btn.textContent = 'Saving...';
+        if (id) {
+            const { error } = await supabaseClient.from(collection).update(data).eq('id', id);
+            if (error) throw error;
+        } else {
+            const { error } = await supabaseClient.from(collection).insert([data]);
+            if (error) throw error;
+        }
+        
+        document.getElementById(modalId).classList.remove('active');
+        reloadFn();
+    } catch (error) {
+        handleError(error);
+    } finally {
+        btn.textContent = originalText;
+        btn.disabled = false;
+    }
+}
+
+function handleError(error) {
+    console.error(error);
+    alert("Error: " + (error.message || JSON.stringify(error)));
+}
+
+// Modal Closers
+document.querySelectorAll('.close-modal').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.modal').forEach(m => m.classList.remove('active'));
+    });
+});
 
 // ==========================================
 // 1. PRODUCTS LOGIC
 // ==========================================
-const productsTableBody = document.getElementById('productsTableBody');
+const productsTableBody = document.getElementById('productsGrid');
 const loadingState = document.getElementById('loadingState');
 const emptyState = document.getElementById('emptyState');
 const productModal = document.getElementById('productModal');
@@ -92,14 +188,15 @@ async function loadProducts() {
     emptyState.style.display = 'none';
 
     try {
-        const snapshot = await db.collection('products').get();
-        currentProducts = [];
-        if (snapshot.empty) {
+        const { data: snapshot, error } = await supabaseClient.from('products').select('*');
+        if (error) throw error;
+        
+        currentProducts = snapshot || [];
+        if (currentProducts.length === 0) {
             loadingState.style.display = 'none';
             emptyState.style.display = 'block';
             return;
         }
-        snapshot.forEach(doc => currentProducts.push({ id: doc.id, ...doc.data() }));
         renderProductsTable();
     } catch (error) {
         handleError(error);
@@ -111,30 +208,29 @@ async function loadProducts() {
 function renderProductsTable() {
     productsTableBody.innerHTML = '';
     currentProducts.forEach(product => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-            <td>
-                <div class="product-cell">
-                    <img src="../${product.imageToPass}" class="product-img" onerror="this.src='https://via.placeholder.com/48'">
-                    <div class="product-info">
-                        <h3>${product.head2}</h3>
-                        <span>${product.text ? product.text.substring(0, 50) : ''}...</span>
-                    </div>
-                </div>
-            </td>
-            <td><span class="badge badge-${product.type}">${product.type}</span></td>
-            <td>
+        const imgSrc = product.imageToPass
+            ? (product.imageToPass.startsWith('http') ? product.imageToPass : '../' + product.imageToPass)
+            : 'https://via.placeholder.com/200';
+        const card = document.createElement('div');
+        card.className = 'admin-card';
+        card.innerHTML = `
+            <img src="${esc(imgSrc)}" class="admin-card-img" onerror="this.src='https://via.placeholder.com/200'">
+            <div class="admin-card-body">
+                <h3>${escapeHTML(product.head2)}</h3>
+                <p>${escapeHTML(product.text ? product.text.substring(0, 80) : '')}</p>
+            </div>
+            <div class="admin-card-footer">
+                <span class="badge badge-${escapeHTML(product.type)}">${escapeHTML(product.type)}</span>
                 <div class="actions">
-                    <button class="btn-icon" onclick="editProduct('${product.id}')"><i class='bx bx-edit-alt'></i></button>
-                    <button class="btn-icon delete" onclick="deleteProduct('${product.id}')"><i class='bx bx-trash'></i></button>
+                    <button class="btn-icon" onclick="editProduct('${esc(String(product.id))}')"><i class='bx bx-edit-alt'></i></button>
+                    <button class="btn-icon delete" onclick="deleteProduct('${esc(String(product.id))}')"><i class='bx bx-trash'></i></button>
                 </div>
-            </td>
+            </div>
         `;
-        productsTableBody.appendChild(tr);
+        productsTableBody.appendChild(card);
     });
 }
 
-// Add/Edit Product Handlers
 document.getElementById('addProductBtn').addEventListener('click', () => {
     productForm.reset();
     document.getElementById('productId').value = '';
@@ -143,7 +239,7 @@ document.getElementById('addProductBtn').addEventListener('click', () => {
 });
 
 window.editProduct = (id) => {
-    const product = currentProducts.find(p => p.id === id);
+    const product = currentProducts.find(p => p.id == id); // == intentionally as id might be int or string
     if (!product) return;
     document.getElementById('productId').value = id;
     document.getElementById('head2').value = product.head2 || '';
@@ -158,8 +254,7 @@ window.editProduct = (id) => {
 
 window.deleteProduct = async (id) => {
     if (confirm('Delete this product?')) {
-        await db.collection('products').doc(id).delete();
-        loadProducts();
+        await deleteGeneric('products', id, loadProducts);
     }
 };
 
@@ -169,7 +264,7 @@ productForm.addEventListener('submit', async (e) => {
         return {
             head2: document.getElementById('head2').value,
             type: document.getElementById('type').value,
-            imageToPass: document.getElementById('imageToPass').value, // Logic handles upload separately
+            imageToPass: document.getElementById('imageToPass').value,
             text: document.getElementById('text').value,
             head: document.getElementById('head').value,
             points: document.getElementById('points').value
@@ -179,82 +274,53 @@ productForm.addEventListener('submit', async (e) => {
 
 // Seed Data
 document.getElementById('seedDataBtn').addEventListener('click', async () => {
-    // Check if we are in "products" view or if we want to seed everything
-    if (!confirm("This will overwrite existing data in Firestore. Continue?")) return;
+    if (!confirm("This will seed data into Supabase. Continue?")) return;
     
     const btn = document.getElementById('seedDataBtn');
     btn.disabled = true;
     btn.textContent = "Seeding...";
-    const batch = db.batch();
 
     try {
-        // 1. Seed Products (from products-data.js)
-        if (window.productsData) {
-           // We won't delete all explicitly to save reads/writes, but batch set new IDs
-           // Ideally we should wipe collection but that is expensive.
-           // For now, let's just add/overwrite if we knew IDs. Since we don't, we add new ones.
-           // To avoid duplicates, user should clear manually or we implement clear.
-           // Let's just add for now as requested.
-           
-           // Actually, let's use the new site-data structure for consistency if we wanted, 
-           // but `productsData` is separate. Let's keep products as is.
-           window.productsData.forEach(p => {
-                const docRef = db.collection('products').doc();
-                batch.set(docRef, p);
-           });
+        const checkEmpty = async (table) => {
+            const { data } = await supabaseClient.from(table).select('id').limit(1);
+            return !data || data.length === 0;
+        };
+
+        if (window.productsData && await checkEmpty('products')) {
+           const { error } = await supabaseClient.from('products').insert(window.productsData);
+           if (error) throw error;
         }
 
-        // 2. Seed Site Data (from site-data.js)
         if (window.initialSiteData) {
             const d = window.initialSiteData;
             
-            // About
-            batch.set(db.collection('content').doc('about'), d.about);
+            const { error: err1 } = await supabaseClient.from('static_content').upsert([
+                { id: 'about', data: d.about },
+                { id: 'consultancy', data: d.consultancy },
+                { id: 'contact', data: d.contact }
+            ]);
+            if (err1) throw err1;
             
-            // Consultancy Text
-            batch.set(db.collection('content').doc('consultancy'), d.consultancy);
-
-            // Contact Info
-            if(d.contact) {
-                batch.set(db.collection('content').doc('contact'), d.contact);
+            if (d.coreValues.length > 0 && await checkEmpty('core_values')) {
+                const { error } = await supabaseClient.from('core_values').insert(d.coreValues);
+                if (error) throw error;
             }
-
-            // Contact Info
-            if(d.contact) {
-                batch.set(db.collection('content').doc('contact'), d.contact);
+            if (d.services.length > 0 && await checkEmpty('services')) {
+                const { error } = await supabaseClient.from('services').insert(d.services);
+                if (error) throw error;
             }
-            
-            // Core Values - Add individually
-            d.coreValues.forEach(v => {
-                const ref = db.collection('core_values').doc();
-                batch.set(ref, v);
-            });
-
-            // Services
-            d.services.forEach(s => {
-                const ref = db.collection('services').doc();
-                batch.set(ref, s);
-            });
-
-             // Team
-            d.team.forEach(t => {
-                const ref = db.collection('team_members').doc();
-                batch.set(ref, t);
-            });
-
-             // Benefits
-            d.benefits.forEach(b => {
-                const ref = db.collection('career_benefits').doc();
-                batch.set(ref, b);
-            });
+            if (d.team.length > 0 && await checkEmpty('team_members')) {
+                const { error } = await supabaseClient.from('team_members').insert(d.team);
+                if (error) throw error;
+            }
+            if (d.benefits.length > 0 && await checkEmpty('career_benefits')) {
+                const { error } = await supabaseClient.from('career_benefits').insert(d.benefits);
+                if (error) throw error;
+            }
         }
 
-        await batch.commit();
-        alert("All content seeded successfully!");
-        
-        // Reload current view
-        const currentV = currentView; // stored global
-        switchView(currentV);
+        alert("All content seeded successfully (existing data was kept safe)!");
+        switchView(currentView);
 
     } catch(e) { console.error(e); alert(e.message); }
     finally { btn.textContent = "Initialize Data"; btn.disabled = false; }
@@ -263,53 +329,62 @@ document.getElementById('seedDataBtn').addEventListener('click', async () => {
 // ==========================================
 // 2. ABOUT US LOGIC
 // ==========================================
-// We will simply build a form dynamically for the single 'about' doc
 async function loadAbout() {
     const container = document.getElementById('aboutFormContainer');
     container.innerHTML = '<p>Loading...</p>';
     
     try {
-        const doc = await db.collection('content').doc('about').get();
-        const data = doc.exists ? doc.data() : {
-            title: 'ABOUT US',
-            subtitle: 'Redefining Agricultural Excellence',
-            description: '',
-            features: [] // We could manage features here or in a separate collection. Let's keep it simple for now as text fields.
-        };
+        const { data: row } = await supabaseClient.from('static_content').select('data').eq('id', 'about').maybeSingle();
+        const data = row ? row.data : { title: 'ABOUT US', subtitle: 'Redefining Agricultural Excellence', description: '' };
 
-        // Simple Form Generation
         container.innerHTML = `
             <form id="aboutForm">
                 <div class="form-group">
                     <label>Main Title</label>
-                    <input type="text" id="aboutTitle" class="form-control" value="${data.title || ''}">
+                    <input type="text" id="aboutTitle" class="form-control" value="${esc(data.title || '')}">
                 </div>
                 <div class="form-group">
                     <label>Subtitle</label>
-                    <input type="text" id="aboutSubtitle" class="form-control" value="${data.subtitle || ''}">
+                    <input type="text" id="aboutSubtitle" class="form-control" value="${esc(data.subtitle || '')}">
                 </div>
                  <div class="form-group">
                     <label>Description (Main Text)</label>
-                    <textarea id="aboutDesc" class="form-control" rows="6">${data.description || ''}</textarea>
+                    <textarea id="aboutDesc" class="form-control" rows="6">${esc(data.description || '')}</textarea>
                 </div>
-                <!-- Extend with more fields as needed -->
+                <div class="form-group">
+                    <label>About Us Image</label>
+                    <input type="file" id="aboutImageFile" class="form-control" accept="image/*">
+                    <input type="hidden" id="aboutImageToPass" value="${esc(data.image || '')}">
+                    ${data.image ? `<img src="${esc(data.image)}" style="max-height:100px; margin-top:10px;">` : ''}
+                </div>
             </form>
         `;
     } catch (e) { handleError(e); }
 }
 
 document.getElementById('saveAboutBtn').addEventListener('click', async () => {
+    if (!document.getElementById('aboutTitle')) { alert('Please wait for the form to load.'); return; }
     const title = document.getElementById('aboutTitle').value;
     const subtitle = document.getElementById('aboutSubtitle').value;
     const description = document.getElementById('aboutDesc').value;
     const btn = document.getElementById('saveAboutBtn');
 
-    btn.textContent = 'Saving...';
+    btn.textContent = 'Uploading...';
     btn.disabled = true;
     try {
-        await db.collection('content').doc('about').set({
-            title, subtitle, description
-        }, { merge: true });
+        let imageUrl = document.getElementById('aboutImageToPass').value;
+        const fileInput = document.getElementById('aboutImageFile');
+        if (fileInput && fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            const filePath = `static_content/${Date.now()}_${file.name.replace(/[^a-zA-Z0-9_.-]/g, '')}`;
+            const { error: uploadError } = await supabaseClient.storage.from('images').upload(filePath, file);
+            if (uploadError) throw uploadError;
+            const { data: { publicUrl } } = supabaseClient.storage.from('images').getPublicUrl(filePath);
+            imageUrl = publicUrl;
+        }
+        btn.textContent = 'Saving...';
+        const { error } = await supabaseClient.from('static_content').upsert({ id: 'about', data: { title, subtitle, description, image: imageUrl } });
+        if (error) throw error;
         alert('About Us saved!');
     } catch(e) { handleError(e); }
     finally { btn.textContent = 'Save Changes'; btn.disabled = false; }
@@ -322,32 +397,32 @@ async function loadCoreValues() {
     const list = document.getElementById('coreValuesList');
     list.innerHTML = 'Loading...';
     try {
-        const snap = await db.collection('core_values').get();
-        currentCoreValues = [];
-        snap.forEach(doc => currentCoreValues.push({ id: doc.id, ...doc.data() }));
+        const { data: snap, error } = await supabaseClient.from('core_values').select('*');
+        if (error) throw error;
         
-        list.style.display = 'grid'; // ensure grid
+        currentCoreValues = snap || [];
+        list.style.display = 'grid';
         list.innerHTML = '';
         if(currentCoreValues.length === 0) list.innerHTML = '<p>No values added.</p>';
 
         currentCoreValues.forEach(val => {
             const div = document.createElement('div');
-            div.className = 'products-table'; // reuse style container
+            div.className = 'products-table';
             div.style.padding = '15px';
             div.style.background = 'white';
             div.style.marginBottom = '10px';
             div.innerHTML = `
                 <div style="display:flex; justify-content:space-between; align-items:center;">
                     <div style="display:flex; gap:10px; align-items:center;">
-                        <i class="${val.icon}" style="font-size:24px; color:#4CAF50;"></i>
+                        <i class="${esc(val.icon)}" style="font-size:24px; color:#4CAF50;"></i>
                         <div>
-                            <strong>${val.title}</strong>
-                            <p style="margin:0; color:#666; font-size:13px;">${val.description}</p>
+                            <strong>${escapeHTML(val.title)}</strong>
+                            <p style="margin:0; color:#666; font-size:13px;">${escapeHTML(val.description)}</p>
                         </div>
                     </div>
                      <div class="actions">
-                        <button class="btn-icon" onclick="editCoreValue('${val.id}')"><i class='bx bx-edit-alt'></i></button>
-                        <button class="btn-icon delete" onclick="deleteCoreValue('${val.id}')"><i class='bx bx-trash'></i></button>
+                        <button class="btn-icon" onclick="editCoreValue('${esc(String(val.id))}')"><i class='bx bx-edit-alt'></i></button>
+                        <button class="btn-icon delete" onclick="deleteCoreValue('${esc(String(val.id))}')"><i class='bx bx-trash'></i></button>
                     </div>
                 </div>
             `;
@@ -367,7 +442,7 @@ document.getElementById('addValueBtn').addEventListener('click', () => {
 });
 
 window.editCoreValue = (id) => {
-    const val = currentCoreValues.find(i => i.id === id);
+    const val = currentCoreValues.find(i => i.id == id);
     if(!val) return;
     document.getElementById('coreValueId').value = id;
     document.getElementById('cvTitle').value = val.title;
@@ -378,10 +453,7 @@ window.editCoreValue = (id) => {
 };
 
 window.deleteCoreValue = async(id) => {
-    if(confirm('Delete this value?')) {
-        await db.collection('core_values').doc(id).delete();
-        loadCoreValues();
-    }
+    if(confirm('Delete this value?')) await deleteGeneric('core_values', id, loadCoreValues);
 }
 
 coreValueForm.addEventListener('submit', async(e)=>{
@@ -393,7 +465,6 @@ coreValueForm.addEventListener('submit', async(e)=>{
     }), loadCoreValues, 'coreValueModal');
 });
 
-
 // ==========================================
 // 4. SERVICES LOGIC
 // ==========================================
@@ -401,34 +472,34 @@ async function loadServices() {
     const list = document.getElementById('servicesList');
     list.innerHTML = 'Loading...';
     try {
-        const snap = await db.collection('services').get();
-        currentServices = [];
-        snap.forEach(doc => currentServices.push({ id: doc.id, ...doc.data() }));
+        const { data: snap, error } = await supabaseClient.from('services').select('*').order('number');
+        if (error) throw error;
+
+        currentServices = snap || [];
         list.innerHTML = '';
         if(currentServices.length === 0) list.innerHTML = '<p>No services added.</p>';
 
         currentServices.forEach(s => {
-             const div = document.createElement('div');
-            div.className = 'products-table';
-            div.style.padding = '15px';
-            div.style.background = 'white';
-            div.style.marginBottom = '10px';
-             div.innerHTML = `
-                <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <div style="display:flex; gap:10px; align-items:center;">
-                        <img src="../${s.image}" style="width:50px; height:50px; object-fit:cover; border-radius:4px;" onerror="this.src='https://via.placeholder.com/50'">
-                        <div>
-                            <strong>${s.number} - ${s.title}</strong>
-                            <p style="margin:0; color:#666; font-size:13px;">${s.description.substring(0,60)}...</p>
-                        </div>
-                    </div>
-                     <div class="actions">
-                        <button class="btn-icon" onclick="editService('${s.id}')"><i class='bx bx-edit-alt'></i></button>
-                        <button class="btn-icon delete" onclick="deleteService('${s.id}')"><i class='bx bx-trash'></i></button>
+            const imgSrc = s.image
+                ? (s.image.startsWith('http') ? s.image : '../' + s.image)
+                : 'https://via.placeholder.com/200';
+            const card = document.createElement('div');
+            card.className = 'admin-card';
+            card.innerHTML = `
+                <img src="${esc(imgSrc)}" class="admin-card-img" style="object-fit:cover;" onerror="this.src='https://via.placeholder.com/200'">
+                <div class="admin-card-body">
+                    <span style="font-size:11px; font-weight:700; color:#4CAF50; letter-spacing:0.5px;">${escapeHTML(String(s.number || ''))}</span>
+                    <h3>${escapeHTML(s.title)}</h3>
+                    <p>${escapeHTML(s.description ? s.description.substring(0, 80) : '')}</p>
+                </div>
+                <div class="admin-card-footer">
+                    <div class="actions">
+                        <button class="btn-icon" onclick="editService('${esc(String(s.id))}')"><i class='bx bx-edit-alt'></i></button>
+                        <button class="btn-icon delete" onclick="deleteService('${esc(String(s.id))}')"><i class='bx bx-trash'></i></button>
                     </div>
                 </div>
             `;
-            list.appendChild(div);
+            list.appendChild(card);
         });
     } catch(e) { handleError(e); }
 }
@@ -444,7 +515,7 @@ document.getElementById('addServiceBtn').addEventListener('click', () => {
 });
 
 window.editService = (id) => {
-    const s = currentServices.find(i => i.id === id);
+    const s = currentServices.find(i => i.id == id);
     if(!s) return;
     document.getElementById('serviceId').value = id;
     document.getElementById('servTitle').value = s.title;
@@ -457,10 +528,7 @@ window.editService = (id) => {
 };
 
 window.deleteService = async(id) => {
-    if(confirm('Delete service?')) {
-        await db.collection('services').doc(id).delete();
-        loadServices();
-    }
+    if(confirm('Delete service?')) await deleteGeneric('services', id, loadServices);
 }
 
 serviceForm.addEventListener('submit', async(e)=>{
@@ -474,41 +542,99 @@ serviceForm.addEventListener('submit', async(e)=>{
     }), loadServices, 'serviceModal', 'servImageFile', 'servImage');
 });
 
-
 // ==========================================
 // 5. CONSULTANCY LOGIC
 // ==========================================
 async function loadConsultancy() {
-    // 1. Load Text Content
      const container = document.getElementById('consultancyFormContainer');
      try {
-        const doc = await db.collection('content').doc('consultancy').get();
-        const data = doc.exists ? doc.data() : {};
+        const { data: row } = await supabaseClient.from('static_content').select('data').eq('id', 'consultancy').maybeSingle();
+        const data = row ? row.data : {};
         container.innerHTML = `
+            <h6 style="margin-bottom:15px;">Hero Section</h6>
             <div class="form-grid">
                 <div class="form-group">
                     <label>Hero Title</label>
-                    <input type="text" id="consTitle" class="form-control" value="${data.title || ''}">
+                    <input type="text" id="consTitle" class="form-control" value="${esc(data.title || '')}">
                 </div>
                 <div class="form-group">
                     <label>Hero Subtitle</label>
-                    <input type="text" id="consSubtitle" class="form-control" value="${data.subtitle || ''}">
+                    <input type="text" id="consSubtitle" class="form-control" value="${esc(data.subtitle || '')}">
                 </div>
                 <div class="form-group full-width">
-                     <label>Hero Description</label>
-                     <textarea id="consDesc" class="form-control" rows="2">${data.description || ''}</textarea>
+                    <label>Hero Description</label>
+                    <textarea id="consDesc" class="form-control" rows="2">${esc(data.description || '')}</textarea>
+                </div>
+            </div>
+            <hr style="margin: 20px 0;">
+            <h6 style="margin-bottom:15px;">Why Our Agro Advisory? Section</h6>
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label>Section Title</label>
+                    <input type="text" id="consWhyTitle" class="form-control" value="${esc(data.whyTitle || '')}">
+                </div>
+                <div class="form-group full-width">
+                    <label>Body (one paragraph per line)</label>
+                    <textarea id="consWhyBody" class="form-control" rows="5">${esc(data.whyBody || '')}</textarea>
+                </div>
+            </div>
+            <hr style="margin: 20px 0;">
+            <h6 style="margin-bottom:15px;">What PLT-AG Provides Section</h6>
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label>Section Title</label>
+                    <input type="text" id="consProvidesTitle" class="form-control" value="${esc(data.providesTitle || '')}">
+                </div>
+                <div class="form-group full-width">
+                    <label>Body (one paragraph per line)</label>
+                    <textarea id="consProvidesBody" class="form-control" rows="5">${esc(data.providesBody || '')}</textarea>
+                </div>
+            </div>
+            <hr style="margin: 20px 0;">
+            <h6 style="margin-bottom:15px;">What Agro Advisory Has For You Section</h6>
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label>Section Title</label>
+                    <input type="text" id="consBenefitsTitle" class="form-control" value="${esc(data.benefitsTitle || '')}">
+                </div>
+                <div class="form-group full-width">
+                    <label>List Items (one item per line)</label>
+                    <textarea id="consBenefitsList" class="form-control" rows="8">${esc(data.benefitsList || '')}</textarea>
+                </div>
+            </div>
+            <hr style="margin: 20px 0;">
+            <h6 style="margin-bottom:15px;">Info Box</h6>
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label>Info Box Text</label>
+                    <textarea id="consInfoText" class="form-control" rows="3">${esc(data.infoText || '')}</textarea>
+                </div>
+            </div>
+            <hr style="margin: 20px 0;">
+            <h6 style="margin-bottom:15px;">Mid-Section Images</h6>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Consultation Image</label>
+                    <input type="file" id="consultImg1File" class="form-control" accept="image/*">
+                    <input type="hidden" id="consultImg1ToPass" value="${esc(data.consultImage1 || '')}">
+                    ${data.consultImage1 ? `<img src="${esc(data.consultImage1)}" style="max-height:100px; margin-top:10px; border-radius:8px;">` : ''}
+                </div>
+                <div class="form-group">
+                    <label>Technology Image</label>
+                    <input type="file" id="consultImg2File" class="form-control" accept="image/*">
+                    <input type="hidden" id="consultImg2ToPass" value="${esc(data.consultImage2 || '')}">
+                    ${data.consultImage2 ? `<img src="${esc(data.consultImage2)}" style="max-height:100px; margin-top:10px; border-radius:8px;">` : ''}
                 </div>
             </div>
         `;
     } catch(e) { handleError(e); }
 
-    // 2. Load Team
     const list = document.getElementById('teamList');
     list.innerHTML = 'Loading Team...';
     try {
-        const snap = await db.collection('team_members').get();
-        currentTeam = [];
-        snap.forEach(doc => currentTeam.push({ id: doc.id, ...doc.data() }));
+        const { data: snap, error } = await supabaseClient.from('team_members').select('*');
+        if (error) throw error;
+        currentTeam = snap || [];
         list.innerHTML = '';
         if(currentTeam.length === 0) list.innerHTML = '<p>No team members.</p>';
 
@@ -519,36 +645,74 @@ async function loadConsultancy() {
             div.style.background = 'white';
              div.innerHTML = `
                 <div style="text-align:center;">
-                    <img src="../${t.image}" style="width:80px; height:80px; object-fit:cover; border-radius:50%; border:3px solid #eee;" onerror="this.src='https://via.placeholder.com/80'">
-                    <h4 style="margin:10px 0 5px;">${t.name}</h4>
-                    <p style="margin:0; color:#4CAF50;">${t.role}</p>
+                    <img src="../${esc(t.image || '')}" style="width:80px; height:80px; object-fit:cover; border-radius:50%; border:3px solid #eee;" onerror="this.src='https://via.placeholder.com/80'">
+                    <h4 style="margin:10px 0 5px;">${escapeHTML(t.name)}</h4>
+                    <p style="margin:0; color:#4CAF50;">${escapeHTML(t.role)}</p>
                     <div class="actions" style="justify-content:center; margin-top:15px;">
-                        <button class="btn-icon" onclick="editTeam('${t.id}')"><i class='bx bx-edit-alt'></i></button>
-                        <button class="btn-icon delete" onclick="deleteTeam('${t.id}')"><i class='bx bx-trash'></i></button>
+                        <button class="btn-icon" onclick="editTeam('${esc(String(t.id))}')"><i class='bx bx-edit-alt'></i></button>
+                        <button class="btn-icon delete" onclick="deleteTeam('${esc(String(t.id))}')"><i class='bx bx-trash'></i></button>
                     </div>
                 </div>
             `;
             list.appendChild(div);
         });
-
     }catch(e) { handleError(e); }
 }
 
 document.getElementById('saveConsultancyBtn').addEventListener('click', async () => {
+    if (!document.getElementById('consTitle')) { alert('Please wait for the form to load.'); return; }
     const title = document.getElementById('consTitle').value;
     const subtitle = document.getElementById('consSubtitle').value;
     const description = document.getElementById('consDesc').value;
+    const whyTitle = document.getElementById('consWhyTitle').value;
+    const whyBody = document.getElementById('consWhyBody').value;
+    const providesTitle = document.getElementById('consProvidesTitle').value;
+    const providesBody = document.getElementById('consProvidesBody').value;
+    const benefitsTitle = document.getElementById('consBenefitsTitle').value;
+    const benefitsList = document.getElementById('consBenefitsList').value;
+    const infoText = document.getElementById('consInfoText').value;
     const btn = document.getElementById('saveConsultancyBtn');
-    
+
     btn.textContent = 'Saving...';
     btn.disabled = true;
     try {
-        await db.collection('content').doc('consultancy').set({
-            title, subtitle, description
-        }, { merge: true });
-        alert('Consultancy text saved!');
+        let consultImage1 = document.getElementById('consultImg1ToPass').value;
+        let consultImage2 = document.getElementById('consultImg2ToPass').value;
+
+        async function uploadConsultImg(inputId, folder) {
+            const fileInput = document.getElementById(inputId);
+            if (fileInput && fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const filePath = `${folder}/${Date.now()}_${file.name.replace(/[^a-zA-Z0-9_.-]/g, '')}`;
+                const { error } = await supabaseClient.storage.from('images').upload(filePath, file);
+                if (error) throw error;
+                const { data: { publicUrl } } = supabaseClient.storage.from('images').getPublicUrl(filePath);
+                return publicUrl;
+            }
+            return null;
+        }
+
+        const newImg1 = await uploadConsultImg('consultImg1File', 'consultancy');
+        if (newImg1) consultImage1 = newImg1;
+        const newImg2 = await uploadConsultImg('consultImg2File', 'consultancy');
+        if (newImg2) consultImage2 = newImg2;
+
+        const { error } = await supabaseClient.from('static_content').upsert({
+            id: 'consultancy',
+            data: {
+                title, subtitle, description,
+                whyTitle, whyBody,
+                providesTitle, providesBody,
+                benefitsTitle, benefitsList,
+                infoText,
+                consultImage1, consultImage2
+            }
+        });
+        if (error) throw error;
+        alert('Consultancy content saved!');
+        loadConsultancy();
     } catch(e) { handleError(e); }
-    finally { btn.textContent = 'Save Texts'; btn.innerHTML = '<i class="bx bx-save"></i> Save Texts'; btn.disabled = false; }
+    finally { btn.innerHTML = '<i class="bx bx-save"></i> Save Texts'; btn.disabled = false; }
 });
 
 const teamModal = document.getElementById('teamModal');
@@ -562,7 +726,7 @@ document.getElementById('addTeamBtn').addEventListener('click', () => {
 });
 
 window.editTeam = (id) => {
-    const t = currentTeam.find(i => i.id === id);
+    const t = currentTeam.find(i => i.id == id);
     if(!t) return;
     document.getElementById('teamId').value = id;
     document.getElementById('teamName').value = t.name;
@@ -589,7 +753,6 @@ teamForm.addEventListener('submit', async(e)=>{
     }), loadConsultancy, 'teamModal', 'teamImageFile', 'teamImage');
 });
 
-
 // ==========================================
 // 6. CAREERS LOGIC
 // ==========================================
@@ -597,10 +760,11 @@ async function loadCareers() {
     const list = document.getElementById('benefitsList');
     list.innerHTML = 'Loading Benefits...';
     try {
-        const snap = await db.collection('career_benefits').get();
-        currentBenefits = [];
-        snap.forEach(doc => currentBenefits.push({ id: doc.id, ...doc.data() }));
-        list.style.display = 'grid'; // ensure
+        const { data: snap, error } = await supabaseClient.from('career_benefits').select('*');
+        if (error) throw error;
+
+        currentBenefits = snap || [];
+        list.style.display = 'grid';
         list.innerHTML = '';
         if(currentBenefits.length === 0) list.innerHTML = '<p>No benefits added.</p>';
 
@@ -612,21 +776,20 @@ async function loadCareers() {
              div.innerHTML = `
                 <div style="display:flex; justify-content:space-between; align-items:center;">
                     <div style="display:flex; gap:10px; align-items:center;">
-                        <i class="${b.icon}" style="font-size:24px; color:#4CAF50;"></i>
+                        <i class="${esc(b.icon)}" style="font-size:24px; color:#4CAF50;"></i>
                         <div>
-                            <strong>${b.title}</strong>
-                            <p style="margin:0; color:#666; font-size:13px;">${b.description}</p>
+                            <strong>${escapeHTML(b.title)}</strong>
+                            <p style="margin:0; color:#666; font-size:13px;">${escapeHTML(b.description)}</p>
                         </div>
                     </div>
                      <div class="actions">
-                        <button class="btn-icon" onclick="editBenefit('${b.id}')"><i class='bx bx-edit-alt'></i></button>
-                        <button class="btn-icon delete" onclick="deleteBenefit('${b.id}')"><i class='bx bx-trash'></i></button>
+                        <button class="btn-icon" onclick="editBenefit('${esc(String(b.id))}')"><i class='bx bx-edit-alt'></i></button>
+                        <button class="btn-icon delete" onclick="deleteBenefit('${esc(String(b.id))}')"><i class='bx bx-trash'></i></button>
                     </div>
                 </div>
             `;
             list.appendChild(div);
         });
-
     } catch(e) { handleError(e); }
 }
 
@@ -641,7 +804,7 @@ document.getElementById('addBenefitBtn').addEventListener('click', () => {
 });
 
 window.editBenefit = (id) => {
-    const b = currentBenefits.find(i => i.id === id);
+    const b = currentBenefits.find(i => i.id == id);
     if(!b) return;
     document.getElementById('benefitId').value = id;
     document.getElementById('benTitle').value = b.title;
@@ -671,51 +834,51 @@ async function loadContact() {
     const container = document.getElementById('contactFormContainer');
     container.innerHTML = 'Loading...';
     try {
-        const doc = await db.collection('content').doc('contact').get();
-        const data = doc.exists ? doc.data() : {};
+        const { data: row } = await supabaseClient.from('static_content').select('data').eq('id', 'contact').maybeSingle();
+        const data = row ? row.data : {};
         
         container.innerHTML = `
             <form id="contactForm">
                 <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap:20px;">
                     <div class="form-group">
                         <label>Main Email</label>
-                        <input type="email" id="contEmail" class="form-control" value="${data.email || ''}">
+                        <input type="email" id="contEmail" class="form-control" value="${esc(data.email || '')}">
                     </div>
                      <div class="form-group">
                         <label>Customer Care Phone</label>
-                        <input type="text" id="contPhoneCC" class="form-control" value="${data.phoneCustomerCare || ''}">
+                        <input type="text" id="contPhoneCC" class="form-control" value="${esc(data.phoneCustomerCare || '')}">
                     </div>
                      <div class="form-group">
                         <label>Head Office Phone</label>
-                        <input type="text" id="contPhoneHO" class="form-control" value="${data.phoneHeadOffice || ''}">
+                        <input type="text" id="contPhoneHO" class="form-control" value="${esc(data.phoneHeadOffice || '')}">
                     </div>
                      <div class="form-group">
                         <label>B2B Sales Phone</label>
-                        <input type="text" id="contPhoneSales" class="form-control" value="${data.phoneSales || ''}">
+                        <input type="text" id="contPhoneSales" class="form-control" value="${esc(data.phoneSales || '')}">
                     </div>
                      <div class="form-group">
                         <label>Address Line 1</label>
-                        <input type="text" id="contAddr1" class="form-control" value="${data.addressLine1 || ''}">
+                        <input type="text" id="contAddr1" class="form-control" value="${esc(data.addressLine1 || '')}">
                     </div>
                      <div class="form-group">
                         <label>Address Line 2</label>
-                        <input type="text" id="contAddr2" class="form-control" value="${data.addressLine2 || ''}">
+                        <input type="text" id="contAddr2" class="form-control" value="${esc(data.addressLine2 || '')}">
                     </div>
                      <div class="form-group">
                         <label>Facebook URL</label>
-                        <input type="text" id="contFB" class="form-control" value="${data.facebook || ''}">
+                        <input type="text" id="contFB" class="form-control" value="${esc(data.facebook || '')}">
                     </div>
                      <div class="form-group">
                         <label>Instagram URL</label>
-                        <input type="text" id="contInsta" class="form-control" value="${data.instagram || ''}">
+                        <input type="text" id="contInsta" class="form-control" value="${esc(data.instagram || '')}">
                     </div>
                      <div class="form-group">
                         <label>YouTube URL</label>
-                        <input type="text" id="contYT" class="form-control" value="${data.youtube || ''}">
+                        <input type="text" id="contYT" class="form-control" value="${esc(data.youtube || '')}">
                     </div>
                      <div class="form-group">
                         <label>WhatsApp URL</label>
-                        <input type="text" id="contWA" class="form-control" value="${data.whatsapp || ''}">
+                        <input type="text" id="contWA" class="form-control" value="${esc(data.whatsapp || '')}">
                     </div>
                 </div>
             </form>
@@ -724,6 +887,7 @@ async function loadContact() {
 }
 
 document.getElementById('saveContactBtn').addEventListener('click', async () => {
+    if (!document.getElementById('contEmail')) { alert('Please wait for the form to load.'); return; }
     const btn = document.getElementById('saveContactBtn');
     btn.textContent = 'Saving...';
     btn.disabled = true;
@@ -742,76 +906,370 @@ document.getElementById('saveContactBtn').addEventListener('click', async () => 
     };
 
     try {
-        await db.collection('content').doc('contact').set(data, { merge: true });
+        const { error } = await supabaseClient.from('static_content').upsert({ id: 'contact', data: data });
+        if (error) throw error;
         alert('Contact Info saved!');
     } catch(e) { handleError(e); }
     finally { btn.textContent = 'Save Changes'; btn.innerHTML = '<i class="bx bx-save"></i> Save Changes'; btn.disabled = false; }
 });
 
 // ==========================================
-// HELPERS
+// 8. BLOGS LOGIC
 // ==========================================
+async function loadBlogs() {
+    const tableBody = document.getElementById('blogsGrid');
+    const loadingState = document.getElementById('blogsLoadingState');
+    const emptyState = document.getElementById('blogsEmptyState');
 
-async function deleteGeneric(collection, id, reloadFn) {
-    try {
-        await db.collection(collection).doc(id).delete();
-        reloadFn();
-    } catch(e) { handleError(e); }
-}
-
-// Universal Form Submit Handler with optional Image Upload
-async function handleFormSubmit(form, collection, idFieldId, getDataFn, reloadFn, modalId, fileInputId = null, urlInputId = null) {
-    const id = document.getElementById(idFieldId).value;
-    const btn = form.querySelector('button[type="submit"]');
-    const originalText = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = 'Processing...';
+    loadingState.style.display = 'block';
+    tableBody.innerHTML = '';
+    emptyState.style.display = 'none';
 
     try {
-        // Handle File Upload if present
-        if (fileInputId && document.getElementById(fileInputId).files.length > 0) {
-             const file = document.getElementById(fileInputId).files[0];
-             btn.textContent = 'Uploading...';
-             const ref = storage.ref(`${collection}/${Date.now()}_${file.name}`);
-             await ref.put(file);
-             const url = await ref.getDownloadURL();
-             // set the url to the hidden or text input
-             document.getElementById(urlInputId).value = url;
-        }
-
-        const data = getDataFn();
+        const { data: snapshot, error } = await supabaseClient.from('blogs').select('*').order('createdAt', { ascending: false });
+        if (error) throw error;
         
-        btn.textContent = 'Saving...';
-        if (id) {
-            await db.collection(collection).doc(id).update(data);
-        } else {
-            await db.collection(collection).add(data);
+        currentBlogs = snapshot || [];
+        if (currentBlogs.length === 0) {
+            loadingState.style.display = 'none';
+            emptyState.style.display = 'block';
+            return;
         }
-        
-        document.getElementById(modalId).classList.remove('active');
-        reloadFn();
+        renderBlogsTable();
     } catch (error) {
         handleError(error);
     } finally {
-        btn.textContent = originalText;
-        btn.disabled = false;
+        loadingState.style.display = 'none';
     }
 }
 
-function handleError(error) {
-    console.error(error);
-    if (error.code === 'permission-denied') {
-        alert("Permission Denied: Update Firebase Firestore Rules to allow read/write.");
-    } else if (error.code === 'storage/unauthorized') {
-        alert("Storage Permission Denied: Update Firebase Storage Rules.");
-    } else {
-        alert("Error: " + error.message);
-    }
-}
-
-// Modal Closers
-document.querySelectorAll('.close-modal').forEach(btn => {
-    btn.addEventListener('click', () => {
-        document.querySelectorAll('.modal').forEach(m => m.classList.remove('active'));
+function renderBlogsTable() {
+    const grid = document.getElementById('blogsGrid');
+    grid.innerHTML = '';
+    currentBlogs.forEach(blog => {
+        const imgSrc = blog.image
+            ? (blog.image.startsWith('http') ? blog.image : '../' + blog.image)
+            : 'https://via.placeholder.com/200';
+        const videoTag = blog.youtubeUrl
+            ? `<a href="${esc(safeUrl(blog.youtubeUrl))}" target="_blank" rel="noopener noreferrer" style="font-size:12px; color:#4CAF50;"><i class='bx bxl-youtube'></i> Watch Video</a>`
+            : `<span style="font-size:12px; color:#94a3b8;">No Video</span>`;
+        const card = document.createElement('div');
+        card.className = 'admin-card';
+        card.innerHTML = `
+            <img src="${esc(imgSrc)}" class="admin-card-img" onerror="this.src='https://via.placeholder.com/200'" style="object-fit:cover;">
+            <div class="admin-card-body">
+                <h3>${escapeHTML(blog.title)}</h3>
+                <p>${escapeHTML(blog.shortDesc ? blog.shortDesc.substring(0, 80) : '')}</p>
+                ${videoTag}
+            </div>
+            <div class="admin-card-footer">
+                <div class="actions">
+                    <button class="btn-icon" onclick="editBlog('${esc(String(blog.id))}')"><i class='bx bx-edit-alt'></i></button>
+                    <button class="btn-icon delete" onclick="deleteBlog('${esc(String(blog.id))}')"><i class='bx bx-trash'></i></button>
+                </div>
+            </div>
+        `;
+        grid.appendChild(card);
     });
-});
+}
+
+const blogModal = document.getElementById('blogModal');
+const blogForm = document.getElementById('blogForm');
+
+if (document.getElementById('addBlogBtn')) {
+    document.getElementById('addBlogBtn').addEventListener('click', () => {
+        blogForm.reset();
+        document.getElementById('blogId').value = '';
+        document.getElementById('blogModalTitle').textContent = 'Add Blog';
+        blogModal.classList.add('active');
+    });
+}
+
+window.editBlog = (id) => {
+    const b = currentBlogs.find(i => i.id == id);
+    if (!b) return;
+    document.getElementById('blogId').value = id;
+    document.getElementById('blogTitle').value = b.title || '';
+    document.getElementById('blogImageToPass').value = b.image || '';
+    document.getElementById('blogYoutubeUrl').value = b.youtubeUrl || '';
+    document.getElementById('blogShortDesc').value = b.shortDesc || '';
+    document.getElementById('blogContent').value = b.content || '';
+    document.getElementById('blogModalTitle').textContent = 'Edit Blog';
+    blogModal.classList.add('active');
+};
+
+window.deleteBlog = async (id) => {
+    if (confirm('Delete this blog post?')) await deleteGeneric('blogs', id, loadBlogs);
+};
+
+if (blogForm) {
+    blogForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        await handleFormSubmit(blogForm, 'blogs', 'blogId', () => {
+            const data = {
+                title: document.getElementById('blogTitle').value,
+                image: document.getElementById('blogImageToPass').value,
+                youtubeUrl: document.getElementById('blogYoutubeUrl').value,
+                shortDesc: document.getElementById('blogShortDesc').value,
+                content: document.getElementById('blogContent').value
+            };
+            if (!document.getElementById('blogId').value) {
+                data.createdAt = new Date().toISOString();
+            }
+            return data;
+        }, loadBlogs, 'blogModal', 'blogImageFile', 'blogImageToPass');
+    });
+}
+
+
+// ==========================================
+// 9. CERTIFICATIONS LOGIC
+// ==========================================
+let currentCertifications = [];
+async function loadCertifications() {
+    const list = document.getElementById('certList');
+    list.innerHTML = 'Loading...';
+    try {
+        const { data: snap, error } = await supabaseClient.from('certifications').select('*');
+        if (error) throw error;
+        currentCertifications = snap || [];
+        list.innerHTML = '';
+        if(currentCertifications.length === 0) list.innerHTML = '<p>No certifications added.</p>';
+
+        currentCertifications.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'admin-card';
+            card.innerHTML = `
+                <img src="${esc(item.image || '')}" class="admin-card-img" style="object-fit:contain; padding:16px;" onerror="this.src='https://via.placeholder.com/200'">
+                <div class="admin-card-footer">
+                    <span style="font-size:13px; font-weight:600; color:#1e293b;">${escapeHTML(item.name)}</span>
+                    <div class="actions">
+                        <button class="btn-icon" onclick="editCert('${esc(String(item.id))}')"><i class='bx bx-edit-alt'></i></button>
+                        <button class="btn-icon delete" onclick="deleteGeneric('certifications', '${esc(String(item.id))}', loadCertifications)"><i class='bx bx-trash'></i></button>
+                    </div>
+                </div>
+            `;
+            list.appendChild(card);
+        });
+    } catch(e) { handleError(e); }
+}
+
+const certModal = document.getElementById('certModal');
+const certForm = document.getElementById('certForm');
+if(document.getElementById('addCertBtn')) {
+    document.getElementById('addCertBtn').addEventListener('click', () => {
+        certForm.reset();
+        document.getElementById('certId').value = '';
+        document.getElementById('certImageToPass').value = '';
+        document.getElementById('certModalTitle').textContent = 'Add Certification';
+        certModal.classList.add('active');
+    });
+}
+window.editCert = (id) => {
+    const item = currentCertifications.find(i => i.id == id);
+    if(!item) return;
+    document.getElementById('certId').value = id;
+    document.getElementById('certName').value = item.name;
+    document.getElementById('certImageToPass').value = item.image;
+    document.getElementById('certModalTitle').textContent = 'Edit Certification';
+    certModal.classList.add('active');
+};
+if(certForm) {
+    certForm.addEventListener('submit', async(e)=>{
+        e.preventDefault();
+        await handleFormSubmit(certForm, 'certifications', 'certId', () => ({
+            name: document.getElementById('certName').value,
+            image: document.getElementById('certImageToPass').value
+        }), loadCertifications, 'certModal', 'certImageFile', 'certImageToPass');
+    });
+}
+
+// ==========================================
+// 10. RECOGNITIONS LOGIC
+// ==========================================
+let currentRecognitions = [];
+async function loadRecognitions() {
+    const list = document.getElementById('recogList');
+    list.innerHTML = 'Loading...';
+    try {
+        const { data: snap, error } = await supabaseClient.from('recognitions').select('*');
+        if (error) throw error;
+        currentRecognitions = snap || [];
+        list.innerHTML = '';
+        if(currentRecognitions.length === 0) list.innerHTML = '<p>No recognitions added.</p>';
+
+        currentRecognitions.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'admin-card';
+            card.innerHTML = `
+                <img src="${esc(item.image || '')}" class="admin-card-img" style="object-fit:contain; padding:16px;" onerror="this.src='https://via.placeholder.com/200'">
+                <div class="admin-card-footer">
+                    <span style="font-size:13px; font-weight:600; color:#1e293b;">${escapeHTML(item.name)}</span>
+                    <div class="actions">
+                        <button class="btn-icon" onclick="editRecog('${esc(String(item.id))}')"><i class='bx bx-edit-alt'></i></button>
+                        <button class="btn-icon delete" onclick="deleteGeneric('recognitions', '${esc(String(item.id))}', loadRecognitions)"><i class='bx bx-trash'></i></button>
+                    </div>
+                </div>
+            `;
+            list.appendChild(card);
+        });
+    } catch(e) { handleError(e); }
+}
+
+const recogModal = document.getElementById('recogModal');
+const recogForm = document.getElementById('recogForm');
+if(document.getElementById('addRecogBtn')) {
+    document.getElementById('addRecogBtn').addEventListener('click', () => {
+        recogForm.reset();
+        document.getElementById('recogId').value = '';
+        document.getElementById('recogImageToPass').value = '';
+        document.getElementById('recogModalTitle').textContent = 'Add Recognition';
+        recogModal.classList.add('active');
+    });
+}
+window.editRecog = (id) => {
+    const item = currentRecognitions.find(i => i.id == id);
+    if(!item) return;
+    document.getElementById('recogId').value = id;
+    document.getElementById('recogName').value = item.name;
+    document.getElementById('recogImageToPass').value = item.image;
+    document.getElementById('recogModalTitle').textContent = 'Edit Recognition';
+    recogModal.classList.add('active');
+};
+if(recogForm) {
+    recogForm.addEventListener('submit', async(e)=>{
+        e.preventDefault();
+        await handleFormSubmit(recogForm, 'recognitions', 'recogId', () => ({
+            name: document.getElementById('recogName').value,
+            image: document.getElementById('recogImageToPass').value
+        }), loadRecognitions, 'recogModal', 'recogImageFile', 'recogImageToPass');
+    });
+}
+
+// ==========================================
+// 11. SITE SETTINGS LOGIC
+// ==========================================
+async function loadSiteSettings() {
+    const container = document.getElementById('siteSettingsContainer');
+    container.innerHTML = '<p>Loading...</p>';
+    try {
+        const { data: row } = await supabaseClient.from('static_content').select('data').eq('id', 'site_images').maybeSingle();
+        const data = row ? row.data : {};
+        
+        container.innerHTML = `
+            <form id="siteSettingsForm">
+                <h6 style="margin-bottom:15px;">Hero Section Text</h6>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label>Headline (h1)</label>
+                        <input type="text" id="heroHeadline" class="form-control" value="${esc(data.heroHeadline || '')}">
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Sub-headline (h2)</label>
+                        <input type="text" id="heroSubheadline" class="form-control" value="${esc(data.heroSubheadline || '')}">
+                    </div>
+                    <div class="form-group">
+                        <label>Feature 1</label>
+                        <input type="text" id="heroFeature1" class="form-control" value="${esc(data.heroFeature1 || '')}">
+                    </div>
+                    <div class="form-group">
+                        <label>Feature 2</label>
+                        <input type="text" id="heroFeature2" class="form-control" value="${esc(data.heroFeature2 || '')}">
+                    </div>
+                    <div class="form-group">
+                        <label>Feature 3</label>
+                        <input type="text" id="heroFeature3" class="form-control" value="${esc(data.heroFeature3 || '')}">
+                    </div>
+                    <div class="form-group">
+                        <label>Hero Logo Image</label>
+                        <input type="file" id="heroLogoFile" class="form-control" accept="image/*">
+                        <input type="hidden" id="heroLogoToPass" value="${esc(data.heroLogo || '')}">
+                        ${data.heroLogo ? `<img src="${esc(data.heroLogo)}" style="max-height:80px; margin-top:10px;">` : ''}
+                    </div>
+                </div>
+                <hr style="margin: 20px 0;">
+                <h6 style="margin-bottom:15px;">Site Images</h6>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Home Hero Tagline Image</label>
+                        <input type="file" id="heroTaglineFile" class="form-control" accept="image/*">
+                        <input type="hidden" id="heroTaglineToPass" value="${esc(data.heroTagline || '')}">
+                        ${data.heroTagline ? `<img src="${esc(data.heroTagline)}" style="max-height:60px; margin-top:10px; background:#000;">` : ''}
+                    </div>
+                    <div class="form-group">
+                        <label>Careers Hero Image</label>
+                        <input type="file" id="careersHeroFile" class="form-control" accept="image/*">
+                        <input type="hidden" id="careersHeroToPass" value="${esc(data.careersHero || '')}">
+                        ${data.careersHero ? `<img src="${esc(data.careersHero)}" style="max-height:100px; margin-top:10px;">` : ''}
+                    </div>
+                </div>
+            </form>
+        `;
+    } catch(e) { handleError(e); }
+}
+
+if (document.getElementById('saveSiteSettingsBtn')) {
+    document.getElementById('saveSiteSettingsBtn').addEventListener('click', async () => {
+        if (!document.getElementById('heroTaglineToPass')) { alert('Please wait for the form to load.'); return; }
+        const btn = document.getElementById('saveSiteSettingsBtn');
+        btn.textContent = 'Saving...';
+        btn.disabled = true;
+
+        try {
+            let heroTaglineUrl = document.getElementById('heroTaglineToPass').value;
+            let careersHeroUrl = document.getElementById('careersHeroToPass').value;
+            let heroLogoUrl = document.getElementById('heroLogoToPass').value;
+
+            const heroHeadline = document.getElementById('heroHeadline').value;
+            const heroSubheadline = document.getElementById('heroSubheadline').value;
+            const heroFeature1 = document.getElementById('heroFeature1').value;
+            const heroFeature2 = document.getElementById('heroFeature2').value;
+            const heroFeature3 = document.getElementById('heroFeature3').value;
+
+            // Upload helper
+            async function uploadSingleFile(inputId) {
+                const fileInput = document.getElementById(inputId);
+                if (fileInput && fileInput.files.length > 0) {
+                    const file = fileInput.files[0];
+                    const filePath = `site_images/${Date.now()}_${file.name.replace(/[^a-zA-Z0-9_.-]/g, '')}`;
+                    const { error } = await supabaseClient.storage.from('images').upload(filePath, file);
+                    if (error) throw error;
+                    const { data: { publicUrl } } = supabaseClient.storage.from('images').getPublicUrl(filePath);
+                    return publicUrl;
+                }
+                return null;
+            }
+
+            const newHero = await uploadSingleFile('heroTaglineFile');
+            if (newHero) heroTaglineUrl = newHero;
+
+            const newCareers = await uploadSingleFile('careersHeroFile');
+            if (newCareers) careersHeroUrl = newCareers;
+
+            const newLogo = await uploadSingleFile('heroLogoFile');
+            if (newLogo) heroLogoUrl = newLogo;
+
+            const { error } = await supabaseClient.from('static_content').upsert({
+                id: 'site_images',
+                data: {
+                    heroTagline: heroTaglineUrl,
+                    careersHero: careersHeroUrl,
+                    heroLogo: heroLogoUrl,
+                    heroHeadline,
+                    heroSubheadline,
+                    heroFeature1,
+                    heroFeature2,
+                    heroFeature3
+                }
+            });
+            if (error) throw error;
+
+            alert('Site Settings Saved!');
+            loadSiteSettings();
+        } catch(e) { handleError(e); }
+        finally {
+            btn.innerHTML = "<i class='bx bx-save'></i> Save Settings";
+            btn.disabled = false;
+        }
+    });
+}

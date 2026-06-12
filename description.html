@@ -668,14 +668,21 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/whatsapp.js"></script>
 
-  <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-  <script src="assets/js/firebase-config.js"></script>
-
-  <script src="assets/js/products-data.js"></script>
+    <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/supabase-config.js"></script>
+  <script src="assets/js/dynamic-content.js"></script>
 
   <script>
+    function esc(s) {
+      return (s == null ? '' : String(s))
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
     // Initialize AOS
     if (typeof AOS !== 'undefined') {
       AOS.init({
@@ -759,14 +766,14 @@
                     <div class="product-detail-inner">
                         <div class="product-image-section" data-aos="fade-right">
                             <div class="product-image-wrapper-detail">
-                                <img src="${product.imageToPass}" alt="${product.head2}">
+                                <img src="${esc(product.imageToPass)}" alt="${esc(product.head2)}">
                             </div>
                         </div>
-                        
+
                         <div class="product-info-section" data-aos="fade-left">
-                            <span class="product-category-badge">${categoryLabel}</span>
-                            <h1 class="product-title">${product.head2}</h1>
-                            <p class="product-description">${description}</p>
+                            <span class="product-category-badge">${esc(categoryLabel)}</span>
+                            <h1 class="product-title">${esc(product.head2)}</h1>
+                            <p class="product-description">${esc(description)}</p>
                             
                             ${benefitsList ? `
                                 <div class="benefits-section">
@@ -799,19 +806,13 @@
         } else {
           // Product not found in current data
           // Check if we are still waiting for Firebase
-          const isFirebaseConfigured = window.firebaseConfig && window.firebaseConfig.apiKey !== "YOUR_API_KEY";
-          // If we have static data but product not found, and firebase might load later...
-          // We just wait. If firebase loads, it will helper trigger this function again.
-          // But if firebase IS loaded or not configured, then it's truly 404.
-
-          // Rough heuristic: if productsData is exactly the fallback length, maybe we are waiting?
-          // But we can just show "Not Found" and if it updates later, it updates.
+          // Product not in current dataset — show 404 state.
 
           container.innerHTML = `
                 <div style="text-align: center; padding: 80px 20px;">
                     <i class="icofont-close-circled" style="font-size: 80px; color: #ccc; margin-bottom: 20px;"></i>
                     <h3 style="color: var(--text-dark); margin-bottom: 10px;">Product Not Found</h3>
-                    <p style="color: var(--text-light); margin-bottom: 30px;">The product "${productName}" could not be found.</p>
+                    <p style="color: var(--text-light); margin-bottom: 30px;">The product "${esc(productName)}" could not be found.</p>
                     <a href="Products.html" class="btn-primary-custom">Back to Products</a>
                 </div>
              `;
@@ -819,10 +820,7 @@
       }
     }
 
-    // Initial render
-    window.addEventListener('load', renderProductDetails);
-
-    // Listen for updates from Firebase fetch
+    // Listen for updates from Supabase fetch
     window.addEventListener('productsLoaded', renderProductDetails);
   </script>
 

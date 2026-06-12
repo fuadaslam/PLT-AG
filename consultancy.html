@@ -588,7 +588,7 @@
           <div class="col-lg-6 col-md-12" data-aos="fade-right" data-aos-delay="100">
 
             <!-- Why Our Agro Advisory Card -->
-            <div class="content-card">
+            <div class="content-card" id="consult-why-card">
               <h3>Why Our Agro Advisory?</h3>
               <p>
                 The primary sector is the foundation for any other business sector to be built on and flourish. This is
@@ -612,11 +612,11 @@
 
             <!-- Image Card -->
             <div class="image-card" data-aos="zoom-in" data-aos-delay="200">
-              <img src="assets/img/consulthand.jpg" alt="Agricultural Consultation" />
+              <img id="consult-img-1" src="assets/img/consulthand.jpg" alt="Agricultural Consultation" />
             </div>
 
             <!-- What PLT-AG Provides Card -->
-            <div class="content-card" data-aos="fade-right" data-aos-delay="300">
+            <div class="content-card" id="consult-provides-card" data-aos="fade-right" data-aos-delay="300">
               <h3>What PLT-AG Provides</h3>
               <p>
                 PLANT LABZ TECH and its team has witnessed and studied over the years how this chain of exploitation
@@ -639,11 +639,11 @@
 
             <!-- Image Card -->
             <div class="image-card" data-aos="zoom-in" data-aos-delay="100">
-              <img src="assets/img/consulttech.jpg" alt="Agricultural Technology" />
+              <img id="consult-img-2" src="assets/img/consulttech.jpg" alt="Agricultural Technology" />
             </div>
 
             <!-- What Agro Advisory Has For You Card -->
-            <div class="content-card">
+            <div class="content-card" id="consult-benefits-card">
               <h3>What Agro Advisory Has For You</h3>
               <ul>
                 <li>
@@ -677,7 +677,7 @@
         </div>
 
         <!-- Info Box -->
-        <div class="info-box" data-aos="fade-up" data-aos-delay="200">
+        <div class="info-box" id="consult-info-box" data-aos="fade-up" data-aos-delay="200">
           <p>
             <i class="bx bx-info-circle"></i>
             We are conscious and aware of the services we provide and their importance in the field of agriculture. Our
@@ -889,10 +889,9 @@
   <script src="assets/vendor/aos/aos.js"></script>
 
   <!-- Template Main JS File -->
-  <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-  <script src="assets/js/firebase-config.js"></script>
+    <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/supabase-config.js"></script>
   <script src="assets/js/dynamic-content.js"></script>
 
   <script src="assets/js/main.js"></script>
