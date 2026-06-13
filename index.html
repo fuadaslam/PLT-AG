@@ -327,6 +327,8 @@
 
   <!-- ======= Enhanced Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center hero-enhanced">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
     <div class="container-fluid" data-aos="fade-up">
       <div class="row justify-content-center">
         <div
@@ -374,8 +376,22 @@
   </section>
   <!-- End Enhanced Hero -->
 
-
-
+  <!-- ======= Scroll Frame Animation Section ======= -->
+  <section id="pltScrollSection" class="plt-scroll-section">
+    <div class="plt-scroll-sticky">
+      <canvas id="pltScrollCanvas"></canvas>
+      <div class="plt-scroll-overlay">
+        <div class="plt-scroll-text">
+          <h2 id="pltScrollHeading" data-current="">Pure from Nature</h2>
+          <p id="pltScrollSub">Every ingredient sourced from the earth, carefully selected for your crops.</p>
+        </div>
+        <div class="plt-scroll-progress">
+          <div class="plt-scroll-bar" id="pltScrollBar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Scroll Frame Animation Section -->
 
 
   <main id="main">
@@ -1423,6 +1439,7 @@
     <!-- Supabase SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="assets/js/supabase-config.js"></script>
+  <script src="assets/js/scroll-animation.js"></script>
   <script src="assets/js/dynamic-content.js"></script>
 
   <!-- Template Main JS File -->

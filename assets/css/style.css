@@ -3977,4 +3977,162 @@ input[type="submit"]:hover {
   padding: 5px;
 }
 
+/*--------------------------------------------------------------
+# Scroll Frame Animation
+--------------------------------------------------------------*/
+.plt-scroll-section {
+  height: 350vh;
+  position: relative;
+}
+
+.plt-scroll-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #0a1a0a;
+}
+
+#pltScrollCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.plt-scroll-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 80px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.2) 40%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.plt-scroll-text {
+  text-align: center;
+  color: #fff;
+  max-width: 700px;
+  padding: 0 24px;
+}
+
+.plt-scroll-text h2 {
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: #fff;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.plt-scroll-text p {
+  font-size: clamp(15px, 2vw, 20px);
+  color: rgba(255,255,255,0.88);
+  line-height: 1.6;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.plt-scroll-text h2.fade-out,
+.plt-scroll-text p.fade-out {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.plt-scroll-progress {
+  width: 120px;
+  height: 3px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+  margin-top: 28px;
+  overflow: hidden;
+}
+
+.plt-scroll-bar {
+  height: 100%;
+  width: 0%;
+  background: #4CAF50;
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+@media (max-width: 768px) {
+  .plt-scroll-section {
+    height: 280vh;
+  }
+  .plt-scroll-overlay {
+    padding-bottom: 50px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Hero Animated Orbs (additional polish)
+--------------------------------------------------------------*/
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: orb-drift 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-orb-1 {
+  width: 300px;
+  height: 300px;
+  background: rgba(76, 175, 80, 0.18);
+  top: 10%;
+  right: 5%;
+  animation-delay: 0s;
+}
+
+.hero-orb-2 {
+  width: 200px;
+  height: 200px;
+  background: rgba(139, 195, 74, 0.14);
+  bottom: 15%;
+  left: 5%;
+  animation-delay: -3s;
+}
+
+@keyframes orb-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(20px, -20px) scale(1.05); }
+  66%       { transform: translate(-10px, 15px) scale(0.97); }
+}
+
+/*--------------------------------------------------------------
+# Section entrance polish — smoother AOS feel
+--------------------------------------------------------------*/
+.section-title h2 {
+  background: linear-gradient(135deg, #2c4964 0%, #4CAF50 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Override white-text sections */
+.video-section-enhanced .section-title h2 {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: #fff;
+  background-clip: unset;
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Smooth scroll behaviour
+--------------------------------------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+
 
